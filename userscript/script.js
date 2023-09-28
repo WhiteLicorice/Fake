@@ -15,5 +15,10 @@
 
     console.log("The script is live!")
 
-    //TODO: Ping a backend server hosted on some port and spoof results.
+    //  TODO: Ping a backend server hosted on some port and spoof results.
+    //  TODO: Add buttons to the post div on FB and Twitter
+    //  TODO: Add function for scraping text off an article
+    //  TODO: Add function for sending scraped text to backend server
+    //  TODO: Add function for displaying result of query to the user
+    
 })();
