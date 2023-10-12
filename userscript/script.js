@@ -5,10 +5,9 @@
 // @description  A userscript that connects with a Node-hosted machine learning model to determine if an article or a post is authentic or otherwise.
 // @author       Rene Andre Jocsing, Kobe Austin Lupac, Chancy Ponce de Leon
 // @icon         https://cdn0.iconfinder.com/data/icons/modern-fake-news/500/asp1430a_9_newspaper_fake_news_icon_outline_vector_thin-1024.png
-// @grant        none
-// @match https://www.philstar.com/*
-// @match https://news.abs-cbn.com/*
-// @match https://www.gmanetwork.com/*
+// @grant        GM_registerMenuCommand
+// @match *://*/*
+// @connect localhost
 // ==/UserScript==
 
 (function() {
@@ -49,8 +48,8 @@
 		try {
 			const responseData = await FAKE_API_CALL.json(); // Parse the response as JSON
 			console.log('API Response:', responseData);
-			// Now you can access the data in the responseData variable
-			return ((responseData.status).toLowerCase)
+            var isTrueSet = (responseData?.status.toLowerCase?.() === 'true')// The JS way of parsing a string as a boolean
+			return isTrueSet
 		} catch (error) {
 			console.error('API Request Error:', error);
 		}
@@ -61,7 +60,7 @@
 		var news_article = []//  Initialize an array to contain all the paragraph.textContents
 		try {
 			paragraphs.forEach(paragraph => {
-				const paragraph_text = paragraph.textContent.trim()
+				var paragraph_text = paragraph.textContent.trim()
 				if (paragraph_text.length > 0) {
 					news_article.push(paragraph_text)
 				}
@@ -89,6 +88,13 @@
 		document.body.appendChild(floatingButton);
 	}
 
-	add_floating_button()
+    const detect_fake_news_command = GM_registerMenuCommand("Detect Fake News", function(MouseEvent) {// Add menu entry to Tampermonkey for cleaner UI
+		run_script_pipeline()
+	}, {
+		accessKey: "f",
+		autoClose: true
+	});
+
+	//add_floating_button()
 
 })();
