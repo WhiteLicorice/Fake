@@ -15,8 +15,7 @@
 
 	console.log("The script is live!")
 
-	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
-    var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
+	var API_ENDPOINT = "http://127.0.0.1:5000/check-news"
 
 	async function run_script_pipeline(){
 		var processed_article = await scrape_paragraphs()

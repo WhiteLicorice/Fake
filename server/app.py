@@ -4,12 +4,6 @@ from fastapi.middleware.cors import CORSMiddleware
 import pickle
 from pydantic import BaseModel
 import sklearn
-import random
-import numpy as np
-import nltk
-import tokenizers
-import scipy
-import secrets
 
 # Declaring our FastAPI instance
 app = FastAPI()
