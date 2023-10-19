@@ -1,19 +1,21 @@
 // ==UserScript==
 // @name         Fake News Detector
 // @namespace    http://tampermonkey.net/
-// @version      0.1
-// @description  A userscript that connects with a Node-hosted machine learning model to determine if an article or a post is authentic or otherwise.
+// @version      0.5.2
+// @description  A userscript that connects with a cloud-hosted machine learning model to determine if an article is fake news.
 // @author       Rene Andre Jocsing, Kobe Austin Lupac, Chancy Ponce de Leon
 // @icon         https://cdn0.iconfinder.com/data/icons/modern-fake-news/500/asp1430a_9_newspaper_fake_news_icon_outline_vector_thin-1024.png
 // @grant        GM_registerMenuCommand
 // @match *://*/*
 // @connect localhost
+// @downloadURL https://github.com/WhiteLicorice/Fake/blob/production/userscript/script.js
+// @updateURL https://github.com/WhiteLicorice/Fake/blob/production/userscript/script.js
 // ==/UserScript==
 
 (function() {
 	'use strict';
 
-	console.log("The script is live!")
+	//console.log("The script is live!")
 
 	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
     var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
