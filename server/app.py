@@ -17,7 +17,7 @@ version = "0.0.0.0.0.0.0.1"
 model_id = "svm"
 # Replace this list with the actual origins you want to allow
 origins = [
-    "https://www.philstar.com",
+    "*",
 ]
 
 app.add_middleware(
