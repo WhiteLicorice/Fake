@@ -5,14 +5,14 @@ from pydantic import BaseModel
 from pickle import load as ml_load
 from json import load as js_load
 from tokenizers import Tokenizer
-from nltk.stem import PorterStemmer
+from Stemmer import Stemmer as PorterStemmer
 import root.tagalog_stemmer as stemmer_tl
 import string as string
 app = FastAPI()
 version = "0.0.0.0.0.0.0.1"
 model_id = "svm"
 origins = [
-    "https://www.philstar.com",
+    "*",
 ]
 app.add_middleware(
     CORSMiddleware,
@@ -38,7 +38,7 @@ async def load_processors():
         stop_words_tl = set(js_load(tl))
     global stop_words_en
     global stemmer_en
-    stemmer_en = PorterStemmer()
+    stemmer_en = PorterStemmer('porter')
 @app.get('/')
 def health_check():
 	return {'health': f'Running version {version} of Fake_API with model {model_id}'}
@@ -57,11 +57,10 @@ async def model_predict(data):
   else:
       return("True") 
 async def preprocess_text(text):
-    stemmer_en = PorterStemmer()
     text = text.lower()
     text = text.translate(str.maketrans('', '', string.punctuation + string.digits))
     words = tokenizer.encode(text)
     words = [word for word in words.tokens if word not in stop_words_tl and stop_words_en]
-    words = [stemmer_en.stem(stemmer_tl.stemmer(word)) for word in words]
+    words = [stemmer_en.stemWord(stemmer_tl.stemmer(word)) for word in words]
     text = ' '.join(words)
     return text
