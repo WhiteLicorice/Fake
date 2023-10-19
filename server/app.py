@@ -7,7 +7,7 @@ from pickle import load as ml_load
 #from random import randint as random_randint
 from json import load as js_load
 from tokenizers import Tokenizer
-from nltk.stem import PorterStemmer
+from Stemmer import Stemmer as PorterStemmer
 import root.tagalog_stemmer as stemmer_tl
 import string as string
 
@@ -15,9 +15,10 @@ import string as string
 app = FastAPI()
 version = "0.0.0.0.0.0.0.1"
 model_id = "svm"
-# Replace this list with the actual origins you want to allow
+
+# Allow all origins to make CORS request
 origins = [
-    "https://www.philstar.com",
+    "*",
 ]
 
 app.add_middleware(
@@ -51,7 +52,7 @@ async def load_processors():
         #stop_words_en = set(js_load(en))
     #stop_words_en = set(js_load(en))
     global stemmer_en
-    stemmer_en = PorterStemmer()
+    stemmer_en = PorterStemmer('porter')
 
 @app.get('/')
 def health_check():
@@ -76,7 +77,6 @@ async def model_predict(data):
 
 async def preprocess_text(text):
 
-    stemmer_en = PorterStemmer()
     # Lowercase the text
     text = text.lower()
 
@@ -90,7 +90,7 @@ async def preprocess_text(text):
     words = [word for word in words.tokens if word not in stop_words_tl and stop_words_en]
 
     # Stem or lemmatize the words
-    words = [stemmer_en.stem(stemmer_tl.stemmer(word)) for word in words]
+    words = [stemmer_en.stemWord(stemmer_tl.stemmer(word)) for word in words]
 
     # Join the words back into a string
     text = ' '.join(words)
