@@ -3,8 +3,6 @@ from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
 
 from pydantic import BaseModel
-from pickle import load as ml_load
-#from random import randint as random_randint
 from json import load as js_load
 from tokenizers import Tokenizer
 from Stemmer import Stemmer as PorterStemmer
