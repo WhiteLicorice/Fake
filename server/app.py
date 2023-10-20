@@ -10,11 +10,13 @@ from tokenizers import Tokenizer
 from Stemmer import Stemmer as PorterStemmer
 import root.tagalog_stemmer as stemmer_tl
 import string as string
+import httpx
 
 # Declaring our FastAPI instance
 app = FastAPI()
 version = "0.0.0.0.0.0.0.1"
-model_id = "svm"
+model_id = "svm" 
+model_api = "http://127.0.0.1:6996/predict"
 
 # Allow all origins to make CORS request
 origins = [
@@ -33,12 +35,6 @@ stop_words_en = ["'ll","'tis","'twas","'ve","10","39","a","a's","able","ableabou
 
 class News(BaseModel):
 	news_body: str
-
-@app.on_event("startup")
-async def asyncload_ml():
-	global vectorizer, ml_model
-	with open(f"root/{model_id}.pkl", "rb") as model_in:       
-	    vectorizer, ml_model = ml_load(model_in)
 
 @app.on_event("startup")
 async def load_processors():
@@ -60,39 +56,21 @@ def health_check():
 
 @app.post("/check-news")
 async def check_news(news: News):
-    #is_fake_news = str(bool(random_randint(0, 1)))   ##  Scaffold: Quickly test coupling between frontend and backend
-    is_fake_news = await model_predict(str(news.news_body))
-    print(news.news_body)
+    prepocessed_text = await preprocess_text(news.news_body)
+    is_fake_news = await call_model(prepocessed_text)
     print(is_fake_news)
     return {"status": is_fake_news}
 
-async def model_predict(data):
-  preprocessed_text = await preprocess_text(data)
-  X = vectorizer.transform([preprocessed_text])
-  y_pred = ml_model.predict(X)
-  if y_pred[0] == 1:
-      return("False") #   Real
-  else:
-      return("True") #   Fake
-
 async def preprocess_text(text):
-
-    # Lowercase the text
     text = text.lower()
-
-    # Remove punctuation and digits
     text = text.translate(str.maketrans('', '', string.punctuation + string.digits))
-
-    # Tokenize the text
     words = tokenizer.encode(text)
-
-    # Remove stop words
     words = [word for word in words.tokens if word not in stop_words_tl and stop_words_en]
-
-    # Stem or lemmatize the words
     words = [stemmer_en.stemWord(stemmer_tl.stemmer(word)) for word in words]
-
-    # Join the words back into a string
     text = ' '.join(words)
-
     return text
+
+async def call_model(tokens):
+    async with httpx.AsyncClient() as async_client:
+        result = await async_client.post(model_api, json={'tokens': tokens})
+    return result.text
