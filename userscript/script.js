@@ -8,8 +8,6 @@
 // @grant        GM_registerMenuCommand
 // @match *://*/*
 // @connect localhost
-// @downloadURL https://github.com/WhiteLicorice/Fake/blob/production/userscript/script.js
-// @updateURL https://github.com/WhiteLicorice/Fake/blob/production/userscript/script.js
 // ==/UserScript==
 
 (function() {
@@ -17,8 +15,8 @@
 
 	//console.log("The script is live!")
 
-	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
-    var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
+	var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
+    //var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
 
 	async function run_script_pipeline(){
 		var processed_article = await scrape_paragraphs()
@@ -27,7 +25,8 @@
 	}
 
 	async function display_is_fake_news(api_result){
-		if (api_result) {
+        console.log(api_result)
+		if (api_result == "true") {
 			alert("This is FAKE!!!")
 		}
 		else {
@@ -50,9 +49,8 @@
 
 		try {
 			const responseData = await FAKE_API_CALL.json(); // Parse the response as JSON
-			console.log('API Response:', responseData);
-            var isTrueSet = (responseData?.status.toLowerCase?.() === 'true')// The JS way of parsing a string as a boolean
-			return isTrueSet
+            //console.log(responseData)
+			return responseData.status
 		} catch (error) {
 			console.error('API Request Error:', error);
 		}
@@ -60,6 +58,7 @@
 
 	async function scrape_paragraphs(){
 		var paragraphs = document.querySelectorAll("p")//  Returns an array of all the paragraph elements on the page
+        console.log(paragraphs)
 		var news_article = []//  Initialize an array to contain all the paragraph.textContents
 		try {
 			paragraphs.forEach(paragraph => {

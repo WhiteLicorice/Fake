@@ -55,6 +55,7 @@ def health_check():
 
 @app.post("/check-news")
 async def check_news(news: News):
+    print(news.news_body)
     prepocessed_text = await preprocess_text(news.news_body)
     is_fake_news = await call_model(prepocessed_text)
     print(is_fake_news)
