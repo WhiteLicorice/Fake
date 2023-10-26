@@ -8,6 +8,7 @@
 // @grant        GM_registerMenuCommand
 // @grant        GM_addStyle
 // @match *://*/*
+// @connect https://fake-ph.cyclic.cloud
 // @connect localhost
 // ==/UserScript==
 
@@ -34,18 +35,18 @@
 	async function is_fake_news(news_article) {
         try {
             var FAKE_API_CALL = await fetch(API_ENDPOINT, {
-			                    	method: 'POST',
-			                   	 	body: JSON.stringify({ news_body: news_article }), // Assuming news_article is a string
-			                    	headers: {
-				                       	'Content-Type': 'application/json', // Set the content type to JSON
-			                   		},
+			                    method: 'POST',
+			                    body: JSON.stringify({ news_body: news_article }), // Assuming news_article is a string
+			                    headers: {
+				                       'Content-Type': 'application/json', // Set the content type to JSON
+			                    },
 		    });
 
         } catch (error) {
             console.log(error.message)
             alert("Error connecting to Fake_API! Please try again!")
         }
-		
+
 		if (!FAKE_API_CALL.ok) {
 			throw new Error('Network response was not ok');
 		}
