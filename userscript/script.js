@@ -6,6 +6,7 @@
 // @author       Rene Andre Jocsing, Kobe Austin Lupac, Chancy Ponce de Leon
 // @icon         https://cdn0.iconfinder.com/data/icons/modern-fake-news/500/asp1430a_9_newspaper_fake_news_icon_outline_vector_thin-1024.png
 // @grant        GM_registerMenuCommand
+// @grant        GM_addStyle
 // @match *://*/*
 // @connect localhost
 // ==/UserScript==
@@ -15,8 +16,8 @@
 
 	//console.log("The script is live!")
 
-	var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
-    //var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
+	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
+    var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
 
 	async function run_script_pipeline(){
 		var processed_article = await scrape_paragraphs()
@@ -25,24 +26,26 @@
 	}
 
 	async function display_is_fake_news(api_result){
-        console.log(api_result)
-		if (api_result == "true") {
-			alert("This is FAKE!!!")
-		}
-		else {
-			alert("This is REAL!!!")
-		}
+        const isFakeNews = api_result === "true";
+        const message = isFakeNews ? "Fake_API says this is probably FAKE!!!" : "Fake_API says this is probably REAL!!!";
+        alert(message);
 	}
 
 	async function is_fake_news(news_article) {
-		var FAKE_API_CALL = await fetch(API_ENDPOINT, {
-			method: 'POST',
-			body: JSON.stringify({ news_body: news_article }), // Assuming news_article is a string
-			headers: {
-				'Content-Type': 'application/json', // Set the content type to JSON
-			},
-		});
+        try {
+            var FAKE_API_CALL = await fetch(API_ENDPOINT, {
+			                    	method: 'POST',
+			                   	 	body: JSON.stringify({ news_body: news_article }), // Assuming news_article is a string
+			                    	headers: {
+				                       	'Content-Type': 'application/json', // Set the content type to JSON
+			                   		},
+		    });
 
+        } catch (error) {
+            console.log(error.message)
+            alert("Error connecting to Fake_API! Please try again!")
+        }
+		
 		if (!FAKE_API_CALL.ok) {
 			throw new Error('Network response was not ok');
 		}
@@ -70,7 +73,7 @@
 			console.log(news_article.join("\n"))
 			return (news_article.join("\n"))
 		} catch(error) {
-			console.log('Error parsing paragraphs occured: ${error}')
+			console.log('Error parsing paragraphs occured: ${error.message}')
 		}
 	}
 
