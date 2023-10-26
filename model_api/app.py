@@ -45,7 +45,8 @@ async def predict(payload: Payload):
 async def model_predict(tokens):
   X = vectorizer.transform([tokens])
   y_pred = ml_model.predict(X)
+  print(y_pred)
   if y_pred[0] == 1:
-      return("False") #   Real
+      return(False) #   Real
   else:
-      return("True") #   Fake
+      return(True) #   Fake
