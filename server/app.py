@@ -5,7 +5,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from json import load as js_load
 from tokenizers import Tokenizer
-import Stemmer
+from Stemmer import Stemmer as PorterStemmer
 import root.tagalog_stemmer as stemmer_tl
 import string as string
 import httpx
@@ -47,7 +47,7 @@ async def load_processors():
         #stop_words_en = set(js_load(en))
     #stop_words_en = set(js_load(en))
     global stemmer_en
-    stemmer_en = Stemmer.Stemmer('english')
+    stemmer_en = PorterStemmer('porter')
 
 @app.get('/')
 def health_check():
@@ -66,7 +66,8 @@ async def preprocess_text(text):
     text = text.translate(str.maketrans('', '', string.punctuation + string.digits))
     words = tokenizer.encode(text)
     words = [word for word in words.tokens if word not in stop_words_tl and stop_words_en]
-    words = [stemmer_en.stemWords(stemmer_tl.stemmer(word)) for word in words]
+    words = [stemmer_en.stemWord(stemmer_tl.stemmer(word)) for word in words]
+    text = ' '.join(words)
     return text
 
 async def call_model(tokens):
