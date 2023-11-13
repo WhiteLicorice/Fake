@@ -5,7 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from json import load as js_load
 from tokenizers import Tokenizer
-from Stemmer import Stemmer as PorterStemmer
+#from Stemmer import Stemmer as PorterStemmer
+from nltk.stem.porter import PorterStemmer
+
 import root.tagalog_stemmer as stemmer_tl
 import string as string
 import httpx
@@ -14,8 +16,8 @@ import httpx
 app = FastAPI()
 version = "0.0.0.0.0.0.0.1"
 model_id = "svm" 
-#model_api = "http://127.0.0.1:6996/predict"             #   Localhost endpoint
-model_api = "https://fake-ph-ml.cyclic.app/predict"      #   Cyclic enpoint
+model_api = "http://127.0.0.1:6996/predict"             #   Localhost endpoint
+#model_api = "https://fake-ph-ml.cyclic.app/predict"      #   Cyclic enpoint
 
 # Allow all origins to make CORS request
 origins = [
@@ -47,7 +49,8 @@ async def load_processors():
         #stop_words_en = set(js_load(en))
     #stop_words_en = set(js_load(en))
     global stemmer_en
-    stemmer_en = PorterStemmer('porter')
+    #stemmer_en = PorterStemmer('porter')
+    stemmer_en = PorterStemmer()
 
 @app.get('/')
 def health_check():
@@ -66,7 +69,8 @@ async def preprocess_text(text):
     text = text.translate(str.maketrans('', '', string.punctuation + string.digits))
     words = tokenizer.encode(text)
     words = [word for word in words.tokens if word not in stop_words_tl and stop_words_en]
-    words = [stemmer_en.stemWord(stemmer_tl.stemmer(word)) for word in words]
+    #words = [stemmer_en.stemWord(stemmer_tl.stemmer(word)) for word in words]
+    words = [stemmer_en.stem(stemmer_tl.stemmer(word)) for word in words]
     text = ' '.join(words)
     return text
 
