@@ -16,8 +16,8 @@ import httpx
 app = FastAPI()
 version = "0.0.0.0.0.0.0.1"
 model_id = "svm" 
-model_api = "http://127.0.0.1:6996/predict"             #   Localhost endpoint
-#model_api = "https://fake-ph-ml.cyclic.app/predict"      #   Cyclic enpoint
+#model_api = "http://127.0.0.1:6996/predict"             #   Localhost endpoint
+model_api = "https://fake-ph-ml.cyclic.app/predict"      #   Cyclic enpoint
 
 # Allow all origins to make CORS request
 origins = [
