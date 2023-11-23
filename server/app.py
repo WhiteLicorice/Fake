@@ -40,7 +40,21 @@ stop_words_en = ["'ll","'tis","'twas","'ve","10","39","a","a's","able","ableabou
 class News(BaseModel):
 	news_body: str
 
-
+#   Download "punkt" from nltk
+@app.on_event("startup")
+def nltk_download_punkt():
+    try:
+        nltk.data.find("tokenizers/punkt")
+    except LookupError:
+        nltk.download("punkt")
+        
+#   Download "stopwords" from nltk    
+@app.on_event("startup")
+def nltk_download_stopwords_en():
+    try:
+        nltk.data.find("corpora/stopwords")
+    except LookupError:
+        nltk.download("stopwords")
 
 @app.on_event("startup")
 async def load_processors():
