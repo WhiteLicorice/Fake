@@ -13,7 +13,7 @@ from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
-nltk.data.path.append('/_nltk')
+nltk.data.path.append('/nltk_')
 
 import root.tagalog_stemmer as stemmer_tl
 import string as string
