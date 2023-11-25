@@ -7,6 +7,10 @@ from json import load as js_load
 from tokenizers import Tokenizer
 #from Stemmer import Stemmer as PorterStemmer
 
+import os
+
+os.environ["NLTK_DATA"] = '/nltk_'
+
 import nltk
 from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
