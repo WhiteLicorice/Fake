@@ -7,9 +7,8 @@ from json import load as js_load
 from tokenizers import Tokenizer
 #from Stemmer import Stemmer as PorterStemmer
 
-
-import nltk as nltk
-from nltk.stem.porter import PorterStemmer
+import nltk
+from nltk.stem import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
