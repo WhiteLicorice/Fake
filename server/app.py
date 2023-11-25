@@ -8,12 +8,12 @@ from tokenizers import Tokenizer
 #from Stemmer import Stemmer as PorterStemmer
 
 import nltk
-from nltk.stem import PorterStemmer
+from nltk.stem.porter import PorterStemmer
 from nltk.corpus import stopwords
 from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
-nltk.data.path.append('/nltk')
+nltk.data.path.append('/_nltk')
 
 import root.tagalog_stemmer as stemmer_tl
 import string as string
