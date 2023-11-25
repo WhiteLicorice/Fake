@@ -7,18 +7,17 @@ from json import load as js_load
 from tokenizers import Tokenizer
 #from Stemmer import Stemmer as PorterStemmer
 
-import os
-
-os.environ["NLTK_DATA"] = '/nltk_'
+#import os
+#os.environ["NLTK_DATA"] = '/nltk_'
 
 import nltk
 from nltk.stem.porter import PorterStemmer
-from nltk.corpus import stopwords
-from nltk.tokenize import word_tokenize
+#from nltk.corpus import stopwords
+#from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
-nltk.data.path.append('/nltk_')
-nltk.data.path.append('/home/sbx_user1051/nltk_')
+#nltk.data.path.append('/nltk_')
+#nltk.data.path.append('/home/sbx_user1051/nltk_')
 
 import root.tagalog_stemmer as stemmer_tl
 import string as string
@@ -47,24 +46,24 @@ app.add_middleware(
 class News(BaseModel):
 	news_body: str
 
-##  TODO: PREDOWNLOAD NLTK STUFF
-#   Download "punkt" from nltk
-@app.on_event("startup")
-def nltk_download_punkt():
-    try:
-        #nltk.data.find("tokenizers/punkt")
-        pass
-    except LookupError:
-        nltk.download("punkt")
+# ##  TODO: PREDOWNLOAD NLTK STUFF
+# #   Download "punkt" from nltk
+# @app.on_event("startup")
+# def nltk_download_punkt():
+#     try:
+#         #nltk.data.find("tokenizers/punkt")
+#         pass
+#     except LookupError:
+#         nltk.download("punkt")
         
-#   Download "stopwords" from nltk    
-@app.on_event("startup")
-def nltk_download_stopwords_en():
-    try:
-        #nltk.data.find("corpora/stopwords")
-        pass
-    except LookupError:
-        nltk.download("stopwords")
+# #   Download "stopwords" from nltk    
+# @app.on_event("startup")
+# def nltk_download_stopwords_en():
+#     try:
+#         #nltk.data.find("corpora/stopwords")
+#         pass
+#     except LookupError:
+#         nltk.download("stopwords")
 
 @app.on_event("startup")
 async def load_processors():
@@ -74,7 +73,9 @@ async def load_processors():
     with open("root/stopwords-tl.json", "r") as tl:
         stop_words_tl = set(js_load(tl))
     global stop_words_en
-    stop_words_en = set(stopwords.words('english'))
+    with open("root/stopwords-en.txt", 'r') as en:
+        stop_words_en = set(en.read().splitlines())
+    #stop_words_en = set(stopwords.words('english'))
     global stemmer_en
     stemmer_en = PorterStemmer()
 
