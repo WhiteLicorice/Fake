@@ -14,6 +14,7 @@ from nltk.tokenize import word_tokenize
 from nltk.stem import PorterStemmer
 
 nltk.data.path.append('/nltk_')
+nltk.data.path.append('/home/sbx_user1051/nltk_')
 
 import root.tagalog_stemmer as stemmer_tl
 import string as string
