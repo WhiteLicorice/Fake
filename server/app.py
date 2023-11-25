@@ -47,7 +47,8 @@ class News(BaseModel):
 @app.on_event("startup")
 def nltk_download_punkt():
     try:
-        nltk.data.find("tokenizers/punkt")
+        #nltk.data.find("tokenizers/punkt")
+        pass
     except LookupError:
         nltk.download("punkt")
         
@@ -55,7 +56,8 @@ def nltk_download_punkt():
 @app.on_event("startup")
 def nltk_download_stopwords_en():
     try:
-        nltk.data.find("corpora/stopwords")
+        #nltk.data.find("corpora/stopwords")
+        pass
     except LookupError:
         nltk.download("stopwords")
 
