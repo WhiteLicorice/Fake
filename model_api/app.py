@@ -5,48 +5,47 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pickle import load as ml_load
 
+from contextlib import asynccontextmanager
+
+@asynccontextmanager
+async def lifespan():
+	global vectorizer, ml_model
+	with open(f"root/{model_id}.pkl", "rb") as model_in:       
+		vectorizer, ml_model = ml_load(model_in)
+	yield
+	vectorizer.clear()
+	ml_model.clear()
+	
 # Declaring our FastAPI instance
-app = FastAPI()
+app = FastAPI(lifespan=lifespan)
 version = "0.0.0.0.0.0.0.1"
 model_id = "svm"
 
-# Allow all origins to make CORS request
-origins = [
-    "*",
-]
-
 app.add_middleware(
-    CORSMiddleware,
-    allow_origins=origins,
-    allow_credentials=True,
-    allow_methods=["*"],
-    allow_headers=["*"],
+	CORSMiddleware,
+	allow_origins=['*'],
+	allow_credentials=True,
+	allow_methods=['*'],
+	allow_headers=['*'],
 )
 
-@app.on_event("startup")
-async def asyncload_ml():
-	global vectorizer, ml_model
-	with open(f"root/{model_id}.pkl", "rb") as model_in:       
-	    vectorizer, ml_model = ml_load(model_in)
-
 class Payload(BaseModel):
-    tokens: str
-    
+	tokens: str
+	
 @app.get('/')
 def health_check():
 	return {'health': f'Running version {version} of Fake_ML with model {model_id}'}
 
 @app.post("/predict")
 async def predict(payload: Payload):
-    prediction = await model_predict(payload.tokens)
-    print(prediction)
-    return prediction
+	prediction = await model_predict(payload.tokens)
+	print(prediction)
+	return prediction
 
 async def model_predict(tokens):
-  X = vectorizer.transform([tokens])
-  y_pred = ml_model.predict(X)
-  print(y_pred)
-  if y_pred[0] == 1:
-      return(False) #   Real
-  else:
-      return(True) #   Fake
+	X = vectorizer.transform([tokens])
+	y_pred = ml_model.predict(X)
+	if y_pred[0] == 1:
+		return False	#	Real
+	else:
+		return True		#	Fake
