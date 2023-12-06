@@ -105,7 +105,7 @@ classifiers = [
             ('svc', SVC(probability=True))
         ], voting = 'hard'),
         'params': {
-            'voting': ['hard', 'soft']
+            'classifier__voting': ['hard', 'soft']
         }
     }
 ]
