@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import warnings
+import sys
 
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline, FeatureUnion
@@ -20,6 +21,8 @@ from json import load as js_load
 
 #   Suppress specific warning about tokenize_pattern from sklearn.feature_extraction.text
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_extraction.text")
+
+sys.stdout = open("results.txt", 'w')
 
 #   Preamble, load external files
 global tokenizer
@@ -57,7 +60,7 @@ y = data['label']  # Labels are 0 -> Fake or 1 -> Real
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 #   Wrapper around pretrained BPE Tokenizer from Cruz et al.
-def custom_tokenizer(doc):
+def bpe_tokenizer(doc):
     return tokenizer.encode(doc).tokens
 
 #   Classifiers to test
@@ -71,10 +74,10 @@ classifiers = [
     },
     {
         'name': 'Logistic Regression',
-        'model': LogisticRegression(max_iter=10000, n_jobs=-1),
+        'model': LogisticRegression(max_iter=2000, n_jobs=-1),
         'params': {
             'classifier__C': [0.1, 1.0, 10.0],
-            'classifier__penalty': ['l1', 'l2']
+            'classifier__penalty': ['l2']
         }
     },
     {
@@ -99,7 +102,7 @@ classifiers = [
         'name': 'Voting Classifier',
         'model': VotingClassifier(estimators=[
             ('nb', MultinomialNB()),
-            ('lr', LogisticRegression(max_iter=10000, n_jobs=-1)),
+            ('lr', LogisticRegression(max_iter=2000, n_jobs=-1)),
             ('rf', RandomForestClassifier(n_jobs=-1)),
             ('svc', SVC())
         ], voting='hard'),
@@ -109,23 +112,51 @@ classifiers = [
     }
 ]
 
-
-#   Test classifiers with pipeline
+print("CLASSIFIERS WITHOUT GRIDSEARCH")
+#   Test classifiers with no gridsearch
 for clf_info in classifiers:
-    print(f"Training {clf_info['name']}")
+    print(f"\nTraining Model: {clf_info['name']}")
+    pipeline = Pipeline([
+        ('features', FeatureUnion([
+            ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=bpe_tokenizer)),        #   Get unigrams, bigrams, and trigrams
+            ('bow', CountVectorizer()),                                                     #   Get bag of words
+            ('trad', TRADExtractor()),                                                      #   Extract TRAD features
+            ('syll', SYLLExtractor())                                                       #   Extract SYLL features
+        ])),
+        ('classifier', clf_info['model'])
+    ])
+
+    #   Fit the entire pipeline on the training data
+    pipeline.fit(X_train, y_train)
+
+    #   Make predictions
+    y_pred = pipeline.predict(X_test)
+
+    #   Evaluate the model
+    accuracy = accuracy_score(y_test, y_pred)
+    print(f"Accuracy: {accuracy}")
+
+    #   Classification report
+    class_report = classification_report(y_test, y_pred)
+    print("Classification Report:\n", class_report)
     
+
+print("CLASSIFIERS WITH GRIDSEARCH")
+#   Test classifiers with gridsearch
+for clf_info in classifiers:
+    print(f"\nTraining {clf_info['name']}")
     # Create the pipeline with TruncatedSVD and the specified classifier
     pipeline = Pipeline([
         ('features', FeatureUnion([
-            ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=custom_tokenizer)),
-            ('bow', CountVectorizer()),
-            ('trad', TRADExtractor()),
-            ('syll', SYLLExtractor())
+            ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=bpe_tokenizer)),        #   Get unigrams, bigrams, and trigrams
+            ('bow', CountVectorizer()),                                                     #   Get bag of words
+            ('trad', TRADExtractor()),                                                      #   Extract TRAD features
+            ('syll', SYLLExtractor())                                                       #   Extract SYLL features
         ])),
         ('classifier', clf_info['model'])
     ])
     
-    # Perform grid search
+    #   Perform grid search
     grid_search = GridSearchCV(pipeline, clf_info['params'], cv=5, scoring='accuracy')
     grid_search.fit(X_train, y_train)
 
