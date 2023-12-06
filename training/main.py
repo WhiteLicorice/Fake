@@ -76,16 +76,15 @@ classifiers = [
         'name': 'Logistic Regression',
         'model': LogisticRegression(max_iter=2000, n_jobs=-1),
         'params': {
-            'classifier__C': [0.1, 1.0, 10.0],
-            'classifier__penalty': ['l2']
+            'classifier__C': [0.1, 1.0, 10.0]
         }
     },
     {
         'name': 'Random Forest',
         'model': RandomForestClassifier(n_jobs=-1),
         'params': {
-            'classifier__n_estimators': [50, 100, 200],
-            'classifier__max_depth': [None, 10, 20],
+            'classifier__n_estimators': [50, 100],
+            'classifier__max_depth': [10, 20],
             'classifier__min_samples_split': [2, 5, 10]
         }
     },
@@ -101,11 +100,10 @@ classifiers = [
     {
         'name': 'Voting Classifier',
         'model': VotingClassifier(estimators=[
-            ('nb', MultinomialNB()),
-            ('lr', LogisticRegression(max_iter=2000, n_jobs=-1)),
+            ('lr', LogisticRegression(max_iter=2000, n_jobs=-1, solver='liblinear')),
             ('rf', RandomForestClassifier(n_jobs=-1)),
-            ('svc', SVC())
-        ], voting='hard'),
+            ('svc', SVC(probability=True))
+        ], voting = 'hard'),
         'params': {
             'voting': ['hard', 'soft']
         }
@@ -159,6 +157,9 @@ for clf_info in classifiers:
     #   Perform grid search
     grid_search = GridSearchCV(pipeline, clf_info['params'], cv=5, scoring='accuracy')
     grid_search.fit(X_train, y_train)
+    
+    # Print the best parameters
+    print(f"Best Estimator for {clf_info['name']}:\n{grid_search.best_estimator_}")
 
     #   Make predictions
     y_pred = grid_search.predict(X_test)
