@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import warnings
-import sys
+#import sys
 
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline, FeatureUnion
@@ -22,7 +22,7 @@ from json import load as js_load
 #   Suppress specific warning about tokenize_pattern from sklearn.feature_extraction.text
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_extraction.text")
 
-sys.stdout = open("results.txt", 'w')
+#sys.stdout = open("results.txt", 'w')
 
 #   Preamble, load external files
 global tokenizer
