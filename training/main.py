@@ -11,11 +11,13 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.svm import SVC
 from sklearn.ensemble import VotingClassifier
-from sklearn.model_selection import GridSearchCV
-from sklearn.metrics import accuracy_score, classification_report
-
+from sklearn.model_selection import GridSearchCV, learning_curve
+from sklearn.metrics import confusion_matrix, precision_recall_curve, roc_curve, auc, accuracy_score, classification_report
 from tokenizers import Tokenizer
 from filipino_transformers import TRADExtractor, SYLLExtractor
+
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 from json import load as js_load
 
@@ -27,13 +29,6 @@ warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_
 #   Preamble, load external files
 global tokenizer
 tokenizer = Tokenizer.from_file("root/tokenizers/tokenizer.json")
-
-global stop_words_tl
-with open("root/stopwords/stopwords-tl.json", "r") as tl:
-	stop_words_tl = set(js_load(tl))
-global stop_words_en
-with open("root/stopwords/stopwords-en.txt", 'r') as en:
-	stop_words_en = set(en.read().splitlines())
 
 #   Read PHNews dataset
 data = pd.read_csv("root/datasets/PHNews.csv")
@@ -100,7 +95,7 @@ classifiers = [
     {
         'name': 'Voting Classifier',
         'model': VotingClassifier(estimators=[
-            ('lr', LogisticRegression(max_iter=2000, n_jobs=-1, solver='liblinear')),
+            ('lr', LogisticRegression(max_iter=2000, solver='liblinear')),
             ('rf', RandomForestClassifier(n_jobs=-1)),
             ('svc', SVC(probability=True))
         ], voting = 'hard'),
@@ -138,12 +133,20 @@ for clf_info in classifiers:
     class_report = classification_report(y_test, y_pred)
     print("Classification Report:\n", class_report)
     
+    # Confusion Matrix
+    cm = confusion_matrix(y_test, y_pred)
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    plt.xlabel('Predicted')
+    plt.ylabel('Actual')
+    plt.title(f'Confusion Matrix - {clf_info["name"]}')
+    plt.show()
+    
 
 print("CLASSIFIERS WITH GRIDSEARCH")
 #   Test classifiers with gridsearch
 for clf_info in classifiers:
     print(f"\nTraining {clf_info['name']}")
-    # Create the pipeline with TruncatedSVD and the specified classifier
+    # Create the pipeline with specified classifier
     pipeline = Pipeline([
         ('features', FeatureUnion([
             ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=bpe_tokenizer)),        #   Get unigrams, bigrams, and trigrams
@@ -171,3 +174,24 @@ for clf_info in classifiers:
     #   Classification report
     class_report = classification_report(y_test, y_pred)
     print("Classification Report:\n", class_report)
+    
+    # Confusion Matrix
+    cm = confusion_matrix(y_test, y_pred)
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    plt.xlabel('Predicted')
+    plt.ylabel('Actual')
+    plt.title(f'Confusion Matrix - {clf_info["name"]}')
+    plt.show()
+
+    # Learning Curve
+    train_sizes, train_scores, test_scores = learning_curve(grid_search.best_estimator_, X_train, y_train, cv=5, scoring='accuracy')
+    train_scores_mean = np.mean(train_scores, axis=1)
+    test_scores_mean = np.mean(test_scores, axis=1)
+
+    plt.plot(train_sizes, train_scores_mean, label='Training Accuracy')
+    plt.plot(train_sizes, test_scores_mean, label='Validation Accuracy')
+    plt.xlabel('Training Examples')
+    plt.ylabel('Accuracy')
+    plt.title(f'Learning Curve - {clf_info["name"]}')
+    plt.legend()
+    plt.show()
