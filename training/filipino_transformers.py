@@ -7,10 +7,9 @@ from root.scripts import TGLStem as TGLStem
 from sklearn.base import BaseEstimator, TransformerMixin
 
 from nltk.stem import PorterStemmer
-#from tokenizers import Tokenizer
 
 import numpy as np
-#import string
+import string
 
 #   Custom transformer for TRAD feature extraction
 class TRADExtractor(BaseEstimator, TransformerMixin):
@@ -45,6 +44,9 @@ class TRADExtractor(BaseEstimator, TransformerMixin):
 
 #   Custom transformer for SYLL feature extraction
 class SYLLExtractor(BaseEstimator, TransformerMixin):
+    def get_cc_cluster(self, text):
+        return SYLL.get_consonant_cluster(text)
+    
     def get_v_density(self, text):
         return SYLL.get_v(text)
 
@@ -75,6 +77,7 @@ class SYLLExtractor(BaseEstimator, TransformerMixin):
     def transform(self, X):
         features = []
         for doc in X:
+            cc_cluster = self.get_cc_cluster(doc)
             v_density = self.get_v_density(doc)
             cv_density = self.get_cv_density(doc)
             vc_density = self.get_vc_density(doc)
@@ -84,7 +87,7 @@ class SYLLExtractor(BaseEstimator, TransformerMixin):
             ccvcc_density = self.get_ccvcc_density(doc)
             ccvccc_density = self.get_ccvccc_density(doc)
             features.append([
-                v_density, cv_density, vc_density, cvc_density,
+                cc_cluster, v_density, cv_density, vc_density, cvc_density,
                 vcc_density, cvcc_density, ccvcc_density, ccvccc_density
             ])
         return np.array(features)
