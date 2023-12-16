@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -23,7 +22,7 @@ from filipino_transformers import TRADExtractor, SYLLExtractor
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-from json import load as js_load
+#from json import load as js_load
 
 #   Suppress specific warning about tokenize_pattern from sklearn.feature_extraction.text
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_extraction.text")

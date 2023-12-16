@@ -8,7 +8,6 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 from nltk.stem import PorterStemmer
 
-import numpy as np
 import string
 
 #   Custom transformer for TRAD feature extraction
@@ -40,7 +39,7 @@ class TRADExtractor(BaseEstimator, TransformerMixin):
             ave_word_length = self.ave_word_length(doc)
             ave_phrase_count = self.ave_phrase_count_per_doc(doc)
             features.append([word_count, sentence_count, polysyll_count, ave_word_length, ave_phrase_count])
-        return np.array(features)
+        return features
 
 #   Custom transformer for SYLL feature extraction
 class SYLLExtractor(BaseEstimator, TransformerMixin):
@@ -90,7 +89,7 @@ class SYLLExtractor(BaseEstimator, TransformerMixin):
                 cc_cluster, v_density, cv_density, vc_density, cvc_density,
                 vcc_density, cvcc_density, ccvcc_density, ccvccc_density
             ])
-        return np.array(features)
+        return features
 
 
 #   Custom transformer for pre-processing text, not used since we do not preprocess the text to preserve mispelled words, spaces, punctuations, etc.
