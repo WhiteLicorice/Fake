@@ -26,10 +26,10 @@ async def lifespan(app: FastAPI):
 	with open(f"root/models/{model_id}.pkl", "rb") as file:
 		ml_model = ml_load(file)
 	global tf_idf
-	with open(f"root\models\tfidf.pkl", "rb") as file:
+	with open(f"root/models/tfidf.pkl", "rb") as file:
 		tf_idf = ml_load(file)
 	global bag_of_words
-	with open(f'root\models\cv.pkl', "rb") as file:
+	with open(f"root/models/cv.pkl", "rb") as file:
 		bag_of_words = ml_load(file)
 	yield
 
