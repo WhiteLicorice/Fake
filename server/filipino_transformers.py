@@ -2,8 +2,12 @@ from root.scripts import LM as LM
 from root.scripts import SYLL as SYLL
 from root.scripts import TRAD as TRAD
 
+from sklearn.base import BaseEstimator, TransformerMixin
+
+# import string
+
 #   Custom transformer for TRAD feature extraction
-class TRADExtractor():
+class TRADExtractor(BaseEstimator, TransformerMixin):
     def word_count_per_doc(self, text):
         return TRAD.word_count_per_doc(text)
     
@@ -34,7 +38,7 @@ class TRADExtractor():
         return features
 
 #   Custom transformer for SYLL feature extraction
-class SYLLExtractor():
+class SYLLExtractor(BaseEstimator, TransformerMixin):
     def get_cc_cluster(self, text):
         return SYLL.get_consonant_cluster(text)
     
@@ -82,3 +86,40 @@ class SYLLExtractor():
                 vcc_density, cvcc_density, ccvcc_density, ccvccc_density
             ])
         return features
+
+
+# #   Custom transformer for pre-processing text, not used since we do not preprocess the text to preserve mispelled words, spaces, punctuations, etc.
+# class TextPreprocessor(BaseEstimator, TransformerMixin):
+#     def __init__(self, stop_words_en=None, stop_words_tl=None, stemmer_en=None, stemmer_tl=None):
+#         self.stop_words_en = stop_words_en or set()
+#         self.stop_words_tl = stop_words_tl or set()
+#         self.stemmer_en = stemmer_en if stemmer_en else PorterStemmer()
+#         self.stemmer_tl = stemmer_tl if stemmer_tl else TGLStem
+#         #self.tokenizer = tokenizer if tokenizer else Tokenizer()
+        
+#     def fit(self, X, y=None):
+#         return self
+
+#     def transform(self, X):
+#         processed_text = []
+#         for text in X:
+#             # Convert to lowercase
+#             text = text.lower()
+
+#             # Remove punctuation
+#             text = text.translate(str.maketrans('', '', string.punctuation))
+
+#             # Tokenize
+#             #words = self.tokenizer.encode(text)
+
+#             # Remove stop words
+#             words = [word for word in words if word not in self.stop_words_en and word not in self.stop_words_tl]
+
+#             # Apply stemming
+#             words = [self.stemmer_en.stem(word) for word in words]
+#             words = [self.stemmer_tl.stemmer(word) for word in words]
+
+#             # Rejoin the words into a single string
+#             processed_text.append(' '.join(words))
+
+#         return processed_text

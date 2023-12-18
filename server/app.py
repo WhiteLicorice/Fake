@@ -1,18 +1,10 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.middleware.cors import CORSMiddleware
-
 from pydantic import BaseModel
-from json import load as js_load
 
 import string as string
-
-from filipino_transformers import TRADExtractor, SYLLExtractor
-
 from contextlib import asynccontextmanager
-
-from scipy.sparse import hstack
-
 from pickle import load as ml_load
 
 #   Initialize objects that will live across the lifespan of the app
