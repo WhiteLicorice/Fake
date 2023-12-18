@@ -18,7 +18,8 @@
 	//console.log("The script is live!")
 
 	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
-    var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
+    //var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
+    var API_ENDPOINT = "https://fph-ml.onrender.com/check-news" // Render endpoint
 
 	async function run_script_pipeline(){
 		var processed_article = await scrape_paragraphs()
@@ -27,6 +28,7 @@
 	}
 
 	async function display_is_fake_news(api_result){
+        console.log(api_result)
         const isFakeNews = api_result === true;
         const message = isFakeNews ? "Fake_API says this is probably FAKE!!!" : "Fake_API says this is probably REAL!!!";
         alert(message);
