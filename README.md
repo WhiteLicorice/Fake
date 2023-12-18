@@ -8,7 +8,7 @@ This repository hosts a fake news classifier trained on a corpus of Filipino art
 
 ## Installation
 1. Download and install [Tampermonkey](https://www.tampermonkey.net/) for your browser of choice.
-2. Download the latest release of the userscript from [releases](https://github.com/WhiteLicorice/Fake/releases).
+2. Download the latest release of the extension from [releases](https://github.com/WhiteLicorice/Fake/releases).
 3. Extract the zip file and open `script.js` with Notepad or your plaintext editor of choice.
 4. Open the Tampermonkey dashboard.
 5. Click the `+` button and it will open a new userscript.
