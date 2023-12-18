@@ -9,21 +9,22 @@ from contextlib import asynccontextmanager
 
 from filipino_transformers import TRADExtractor, SYLLExtractor
 from bpe_tokenizer import BPETokenizer
-import nltk
 
+#   Initialize objects that will live across the lifespan of the app
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+    #   Load machine learning model
     global ml_model
     with open(f"root/models/{model_id}.pkl", "rb") as file:
         ml_model = ml_load(file)
     yield
-    ml_model.clear()
 
-# Declaring our FastAPI instance
+#   Declare FastAPI instance
 app = FastAPI(lifespan=lifespan)
 version = "0.0.0.0.0.0.0.1"
 model_id = "LogisticRegression"
 
+#   Configure middleware for application and allow all requests from all sources
 app.add_middleware(
     CORSMiddleware,
     allow_origins=['*'],
@@ -32,6 +33,7 @@ app.add_middleware(
     allow_headers=['*'],
 )
 
+#   Prototype for valid payloads -> tokens : string
 class Payload(BaseModel):
     tokens: str
 
@@ -41,15 +43,20 @@ def health_check():
 
 @app.post("/predict")
 async def predict(payload: Payload):
+    #   Log received tokens in the console
     print (payload.tokens)
+    #   Await model prediction
     prediction = await model_predict(payload.tokens)
+    #   Log prediction in the console
     print(prediction)
+    #   Return prediction as Bool -> True | False
     return prediction
 
 async def model_predict(tokens):
+    #   Ensure that tokens are represented as an iterable list
     if not isinstance(tokens, list):
-        tokens = [tokens]
-    # Use the global bpe_tokenizer function
+        tokens = [ tokens ]
+    #   Make predictions on the tokens
     y_pred = ml_model.predict(tokens)
     if y_pred[0] == 1:
         return False  # Real    

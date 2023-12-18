@@ -14,17 +14,19 @@ import root.TRAD as TRAD
 
 from contextlib import asynccontextmanager
 
+#   Initialize objects that will live across the lifespan of the app
 @asynccontextmanager
 async def lifespan(app: FastAPI):
 	yield
 
-# Declaring our FastAPI instance
+# 	Declare FastAPI instance
 app = FastAPI(lifespan=lifespan)
 version = "0.0.0.0.0.0.0.1"
 model_id = "svm" 
-model_api = "http://127.0.0.1:6996"             #   Localhost endpoint
-#model_api = "https://fake-ph-ml.cyclic.app"      #   Cyclic endpoint
+model_api = "http://127.0.0.1:6996"             	#   Localhost endpoint
+#model_api = "https://fake-ph-ml.cyclic.app"      	#   Cyclic endpoint
 
+#	Configure middleware to allow all requests from all sources
 app.add_middleware(
 	CORSMiddleware,
 	allow_origins=['*'],
@@ -33,6 +35,7 @@ app.add_middleware(
 	allow_headers=['*'],
 )
 
+#	Define prototype for valid news articles -> news_body : string
 class News(BaseModel):
 	news_body: str
 
@@ -40,13 +43,19 @@ class News(BaseModel):
 async def health_check():
 	return {'health': f'Running version {version} of Fake_API with model {model_id}'}
 
+#	Main endpoint for making requests to machine learning microservice
 @app.post("/check-news")
 async def check_news(news: News):
+	#	Log received news article in the console
 	print(news.news_body)
+	#	Await call to machine learning model
 	is_fake_news = await call_model(news.news_body)
+	#	Log returned bool -> True | False as string
 	print(is_fake_news)
+	#	Return json containing prediction of machine learning model
 	return {"status": is_fake_news}
 
+#	Function for making asynchronous calls to machine learning model microservice
 async def call_model(tokens):
 	async with httpx.AsyncClient() as async_client:
 		result = await async_client.post(f"{model_api}/predict", json={'tokens': tokens})
