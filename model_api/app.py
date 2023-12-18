@@ -5,10 +5,9 @@ from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from pickle import load as ml_load
 
-from contextlib import asynccontextmanager
+from scipy.sparse import hstack
 
-from filipino_transformers import TRADExtractor, SYLLExtractor
-from bpe_tokenizer import BPETokenizer
+from contextlib import asynccontextmanager
 
 #   Initialize objects that will live across the lifespan of the app
 @asynccontextmanager
@@ -17,6 +16,12 @@ async def lifespan(app: FastAPI):
     global ml_model
     with open(f"root/models/{model_id}.pkl", "rb") as file:
         ml_model = ml_load(file)
+    global tf_idf
+    with open(r"root\models\tfidf.pkl", "rb") as file:
+        tf_idf = ml_load(file)
+    global bag_of_words
+    with open(r'root\models\cv.pkl', "rb") as file:
+        bag_of_words = ml_load(file)
     yield
 
 #   Declare FastAPI instance
@@ -35,7 +40,9 @@ app.add_middleware(
 
 #   Prototype for valid payloads -> tokens : string
 class Payload(BaseModel):
-    tokens: str
+    article: str
+    trad: list
+    syll: list
 
 @app.get('/')
 def health_check():
@@ -44,20 +51,21 @@ def health_check():
 @app.post("/predict")
 async def predict(payload: Payload):
     #   Log received tokens in the console
-    print (payload.tokens)
+    #print (payload.tokens)
+    print("Payload received!")
     #   Await model prediction
-    prediction = await model_predict(payload.tokens)
+    prediction = await model_predict(payload)
     #   Log prediction in the console
     print(prediction)
     #   Return prediction as Bool -> True | False
     return prediction
 
-async def model_predict(tokens):
-    #   Ensure that tokens are represented as an iterable list
-    if not isinstance(tokens, list):
-        tokens = [ tokens ]
+async def model_predict(payload: Payload):
+    ngrams = tf_idf.transform([payload.article])
+    bow = bag_of_words.transform([payload.article])
+    features = hstack([payload.trad, payload.syll, ngrams, bow])
     #   Make predictions on the tokens
-    y_pred = ml_model.predict(tokens)
+    y_pred = ml_model.predict(features)
     if y_pred[0] == 1:
         return False  # Real    
     else:
