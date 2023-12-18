@@ -1,3 +1,4 @@
+#   Filipino linguistic feature extractors adapted from: https://github.com/imperialite/filipino-linguistic-extractors
 from root.scripts import LM as LM
 from root.scripts import SYLL as SYLL
 from root.scripts import TRAD as TRAD
@@ -91,6 +92,7 @@ class SYLLExtractor(BaseEstimator, TransformerMixin):
 # #   Custom transformer for pre-processing text, not used since we do not preprocess the text to preserve mispelled words, spaces, punctuations, etc.
 # class TextPreprocessor(BaseEstimator, TransformerMixin):
 #     def __init__(self, stop_words_en=None, stop_words_tl=None, stemmer_en=None, stemmer_tl=None):
+#         #   Load English and Filipino stopwords adapted from: https://github.com/stopwords-iso/stopwords-iso
 #         self.stop_words_en = stop_words_en or set()
 #         self.stop_words_tl = stop_words_tl or set()
 #         self.stemmer_en = stemmer_en if stemmer_en else PorterStemmer()
