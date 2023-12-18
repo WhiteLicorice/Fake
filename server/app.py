@@ -6,26 +6,38 @@ from pydantic import BaseModel
 from json import load as js_load
 
 import string as string
-import httpx
 
 from filipino_transformers import TRADExtractor, SYLLExtractor
 
 from contextlib import asynccontextmanager
 
+from scipy.sparse import hstack
+
+from pickle import load as ml_load
+
 #   Initialize objects that will live across the lifespan of the app
 @asynccontextmanager
 async def lifespan(app: FastAPI):
 	global trad_extractor
-	trad_extractor = TRADExtractor()	#   Get traditional features
+	trad_extractor = TRADExtractor()
 	global syll_extractor
-	syll_extractor = SYLLExtractor() 	#   Get syllabic features
+	syll_extractor = SYLLExtractor()
+	global ml_model
+	with open(f"root/models/{model_id}.pkl", "rb") as file:
+		ml_model = ml_load(file)
+	global tf_idf
+	with open(r"root\models\tfidf.pkl", "rb") as file:
+		tf_idf = ml_load(file)
+	global bag_of_words
+	with open(r'root\models\cv.pkl', "rb") as file:
+		bag_of_words = ml_load(file)
 	yield
 
 # 	Declare FastAPI instance
 app = FastAPI(lifespan=lifespan)
 version = "0.0.0.0.0.0.0.1"
-model_id = "svm" 
-model_api = "http://127.0.0.1:6996"             	#   Localhost endpoint
+model_id = "LogisticRegression" 
+#model_api = "http://127.0.0.1:6996"             	#   Localhost endpoint
 #model_api = "https://fake-ph-ml.cyclic.app"      	#   Cyclic endpoint
 
 #	Configure middleware to allow all requests from all sources
@@ -59,8 +71,16 @@ async def check_news(news: News):
 
 #	Function for making asynchronous calls to machine learning model microservice
 async def call_model(article):
-	trad_features = trad_extractor.transform([article])
-	syll_features = syll_extractor.transform([article])
-	async with httpx.AsyncClient() as async_client:
-		result = await async_client.post(f"{model_api}/predict", json={'article': article, 'trad': trad_features, 'syll': syll_features})
-	return result.text
+    #	Extract features
+	trad = trad_extractor.transform([article])
+	syll = syll_extractor.transform([article])
+	ngrams = tf_idf.transform([article])
+	bow = bag_of_words.transform([article])
+	features = hstack([trad, syll, ngrams, bow])
+ 
+    #   Make predictions on the extracted features
+	y_pred = ml_model.predict(features)
+	if y_pred[0] == 1:
+		return False  # Real    
+	else:
+		return True  # Fake
