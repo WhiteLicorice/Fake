@@ -8,15 +8,17 @@ from json import load as js_load
 import string as string
 import httpx
 
-import root.LM as LM
-import root.SYLL as SYLL
-import root.TRAD as TRAD
+from filipino_transformers import TRADExtractor, SYLLExtractor
 
 from contextlib import asynccontextmanager
 
 #   Initialize objects that will live across the lifespan of the app
 @asynccontextmanager
 async def lifespan(app: FastAPI):
+	global trad_extractor
+	trad_extractor = TRADExtractor()	#   Get traditional features
+	global syll_extractor
+	syll_extractor = SYLLExtractor() 	#   Get syllabic features
 	yield
 
 # 	Declare FastAPI instance
@@ -56,7 +58,9 @@ async def check_news(news: News):
 	return {"status": is_fake_news}
 
 #	Function for making asynchronous calls to machine learning model microservice
-async def call_model(tokens):
+async def call_model(article):
+	trad_features = trad_extractor.transform([article])
+	syll_features = syll_extractor.transform([article])
 	async with httpx.AsyncClient() as async_client:
-		result = await async_client.post(f"{model_api}/predict", json={'tokens': tokens})
+		result = await async_client.post(f"{model_api}/predict", json={'article': article, 'trad': trad_features, 'syll': syll_features})
 	return result.text
