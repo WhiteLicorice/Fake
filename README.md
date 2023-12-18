@@ -1,4 +1,4 @@
-![FaKe Logo](https://drive.google.com/file/d/1VCVnEKRiBy7JI15yR0kscAifH8uDgh7C/view?usp=sharing)
+![FaKe Logo](docs/fAke.png)
 
 # FaKe : A Cross-Browser Extension For Classifying Filipino Fake News
 Cross-browser extension for detecting Filipino fake news, powered by machine learning. 
