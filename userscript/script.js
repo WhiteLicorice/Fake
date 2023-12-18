@@ -1,14 +1,15 @@
 // ==UserScript==
 // @name         Fake News Detector
 // @namespace    http://tampermonkey.net/
-// @version      0.5.2
-// @description  A userscript that connects with a cloud-hosted machine learning model to determine if an article is fake news.
-// @author       Rene Andre Jocsing, Kobe Austin Lupac, Chancy Ponce de Leon
+// @version      1.0.1
+// @description  A userscript that interfaces with a cloud-hosted machine learning model to determine if an article is fake news.
+// @author       Rene Andre Jocsing, Kobe Austin Lupac, Chancy Ponce de Leon, Ron Gerlan Naragdao
 // @icon         https://cdn0.iconfinder.com/data/icons/modern-fake-news/500/asp1430a_9_newspaper_fake_news_icon_outline_vector_thin-1024.png
 // @grant        GM_registerMenuCommand
 // @grant        GM_addStyle
 // @match *://*/*
 // @connect https://fake-ph.cyclic.cloud
+// @connect https://fph-ml.onrender.com/check-news
 // @connect localhost
 // ==/UserScript==
 
@@ -18,8 +19,8 @@
 	//console.log("The script is live!")
 
 	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
-    //var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
-    var API_ENDPOINT = "https://fph-ml.onrender.com/check-news" // Render endpoint
+   	//var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
+   	var API_ENDPOINT = "https://fph-ml.onrender.com/check-news" // Render endpoint
 
 	async function run_script_pipeline(){
 		var processed_article = await scrape_paragraphs()
