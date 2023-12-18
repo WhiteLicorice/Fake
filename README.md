@@ -18,10 +18,10 @@ This repository hosts a fake news classifier trained on a corpus of Filipino art
 ## Usage
 1. Pin Tampermonkey to your browser's address bar.
 2. Once pinned, right click on the Tampermonkey icon.
-3. Hover your cursor over `Tampermonkey` and then `Fake News Detector`.
+3. Hover your cursor on `Tampermonkey` and then `Fake News Detector`.
 4. Click `Detect Fake News`.
 5. Wait for the system to process the article you're reading.
-6. Profit.
+6. Profit!
 
 ## Roles
 1) `Rene Andre Jocsing`    Lead Programmer, Systems Engineer, Writer
@@ -30,7 +30,7 @@ This repository hosts a fake news classifier trained on a corpus of Filipino art
 4) `Ron Gerlan Naragdao`   Programmer
 
 ## Contributing
-If you wish to contribute to the project, open a pull request. Thank you.
+If you wish to contribute to the project, please open a pull request. Thank you.
 
 ## References
 ```
