@@ -1,0 +1,33 @@
+Top 15 words in fake articles:
+ si         1737
+noong       703
+naman       702
+nang        623
+kay         547
+rin         491
+ayon        441
+sinabi      428
+upang       399
+city        358
+matapos     352
+lang        350
+sina        304
+pang        293
+pag         237
+
+Top 15 words in real articles:
+ si           3532
+naman        1776
+kay          1679
+duterte      1615
+daw          1497
+ayon         1329
+lang         1305
+umano        1067
+source       1043
+ilang         943
+video         929
+yung          863
+miss          847
+noong         838
+pangulong     813
