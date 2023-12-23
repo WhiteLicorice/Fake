@@ -23,9 +23,9 @@ This repository hosts a fake news classifier trained on a corpus of Filipino art
 5. Profit!
 
 ## Roles
-1) `Rene Andre Jocsing`    Lead Programmer, Systems Engineer, Writer
+1) `Rene Andre Jocsing`    Lead Programmer, Writer
 2) `Chancy Ponce de Leon`  Programmer, Project Lead
-3) `Cobe Austin Lupac`     Analyst, Presenter, Programmer
+3) `Cobe Austin Lupac`     Presenter, Programmer
 4) `Ron Gerlan Naragdao`   Programmer
 
 ## Contributing
