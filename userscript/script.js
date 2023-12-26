@@ -29,10 +29,10 @@
 	}
 
 	async function display_is_fake_news(api_result){
-        console.log(api_result)
-        const isFakeNews = api_result === true;
-        const message = isFakeNews ? "Fake_API says this is probably FAKE!!!" : "Fake_API says this is probably REAL!!!";
-        alert(message);
+	        console.log(api_result)
+	        const isFakeNews = api_result === true;
+	        const message = isFakeNews ? "Fake_API says this is probably FAKE!!!" : "Fake_API says this is probably REAL!!!";
+	        alert(message);
 	}
 
 	async function is_fake_news(news_article) {
