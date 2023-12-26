@@ -31,7 +31,7 @@ This repository hosts a fake news classifier trained on a corpus of Filipino art
 ## Contributing
 If you wish to contribute to the project, please open a pull request. Thank you.
 
-## References
+## Resources
 ```
 @inproceedings{cruz2020localization,
   title={Localization of Fake News Detection via Multitask Transfer Learning},
