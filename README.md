@@ -22,11 +22,12 @@ This repository hosts a fake news classifier trained on a corpus of Filipino art
 4. Wait for the system to process the article you're reading.
 5. Profit!
 
-## Team
-1) `Rene Andre Jocsing`
-2) `Chancy Ponce de Leon`
-3) `Cobe Austin Lupac` 
-4) `Ron Gerlan Naragdao`
+## Team Members
+1) [`Rene Andre Jocsing`](https://github.com/whitelicorice)  Lead Programmer, Project Manager, Writer
+2) [`Chancy Ponce de Leon`](https://github.com/cmpdleon)  Programmer, Writer
+3) [`Cobe Austin Lupac`](https://github.com/CoebeAustin)  Presenter, Programmer
+4) [`Ron Gerlan Naragdao`](https://github.com/SkyBluePenguin53)  Programmer
+
 
 ## Contributing
 If you wish to contribute to the project, please open a pull request. Thank you.
