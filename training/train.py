@@ -12,8 +12,8 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-from filipino_transformers import TRADExtractor, SYLLExtractor
-from bpe_tokenizer import BPETokenizer
+from root.scripts.FILTRANS import TRADExtractor, SYLLExtractor, OOVExtractor
+from root.scripts.BPE import BPETokenizer
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -23,7 +23,7 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_extraction.text")
 
 #   Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
-data = pd.read_csv("root/datasets/PHNews.csv")
+data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
 
 #   Split the data into features (X) and labels (y)
 X = data['article']
@@ -84,6 +84,18 @@ classifiers = [
     }
 ]
 
+# #   Classifiers to test
+# classifiers = [
+#     {
+#         'name': 'Logistic Regression',
+#         'model_id': 'LogisticRegression',
+#         'model': LogisticRegression(max_iter=2000, n_jobs=-1),
+#         'params': {
+#             'classifier__C': [0.1, 1.0, 10.0]
+#         }
+#     },
+# ]
+
 print("CLASSIFIERS WITHOUT GRIDSEARCH")
 #   Test classifiers with no gridsearch
 for clf_info in classifiers:
@@ -92,6 +104,7 @@ for clf_info in classifiers:
         ('features', FeatureUnion([
             ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),        #   Get unigrams, bigrams, and trigrams
             ('bow', CountVectorizer()),                                                               #   Get bag of words
+            ('oov', OOVExtractor()),                                                                  #   Get OOV features
             ('trad', TRADExtractor()),                                                                #   Extract TRAD features
             ('syll', SYLLExtractor())                                                                 #   Extract SYLL features
         ])),
@@ -103,8 +116,8 @@ for clf_info in classifiers:
     
     #   Dump trained model
     #trained_model = pipeline.named_steps['classifier']
-    with open(f"{clf_info['model_id']}.pkl", 'wb') as file:
-        pickle.dump(pipeline, file)
+    #with open(f"{clf_info['model_id']}.pkl", 'wb') as file:
+        #pickle.dump(pipeline, file)
 
     #   Make predictions
     y_pred = pipeline.predict(X_test)
