@@ -1,20 +1,20 @@
 import string
+import os
 from nltk.tokenize import wordpunct_tokenize
 
 #   Note from Ren: Slightly reduces LR accuracy by around 0.005 relative to Base LR with TRAD + SYLL.
 
 """PREAMBLE"""
-#   Change filepaths if oov.py is being loaded as a module or as a standalone script
-if __name__ == "__main__":
-    #   Paths relative to oov.py
-    ENGLISH_STOPWORDS_PATH = "./stopwords/en.sw"
-    FILIPINO_STOPWORDS_PATH = "./stopwords/fil.sw"
-    STOPWORDS_PATHS = [ENGLISH_STOPWORDS_PATH, FILIPINO_STOPWORDS_PATH]  #   Aggregate STOPWORDS paths for possible future-proofing
-else:
-    #   Paths relative to train.py
-    ENGLISH_STOPWORDS_PATH = "root/scripts/stopwords/en.sw"
-    FILIPINO_STOPWORDS_PATH = "root/scripts/stopwords/fil.sw"
-    STOPWORDS_PATHS = [ENGLISH_STOPWORDS_PATH, FILIPINO_STOPWORDS_PATH]  #   Aggregate STOPWORDS paths for possible future-proofing
+# Base directory for stopwords
+STOPWORDS_BASE_DIR = "stopwords"
+
+# Get the directory of the current script
+SCRIPT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+
+# Asbolute paths for stopwords
+ENGLISH_STOPWORDS_PATH = os.path.join(SCRIPT_DIRECTORY, STOPWORDS_BASE_DIR, "en.sw")
+FILIPINO_STOPWORDS_PATH = os.path.join(SCRIPT_DIRECTORY, STOPWORDS_BASE_DIR, "fil.sw")
+STOPWORDS_PATHS = [ENGLISH_STOPWORDS_PATH, FILIPINO_STOPWORDS_PATH]                         #   Aggregate stopwords into a list for future-proofing
 
 """UTILITY FUNCTIONS"""
 #   Helper method for loading stopwords

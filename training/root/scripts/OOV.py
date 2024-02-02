@@ -1,21 +1,21 @@
 import string
+import os
 from nltk.tokenize import wordpunct_tokenize
 
 #   Note from Ren: Slightly increases LR accuracy by around 0.003 relative to Base LR with TRAD + SYLL.
 
 """PREAMBLE"""
-#   Change filepaths if oov.py is being loaded as a module or as a standalone script
-if __name__ == "__main__":
-    #   Paths relative to oov.py
-    ENGLISH_DICTIONARY_PATH = "./dictionaries/en.wl"
-    FILIPINO_DICTIONARY_PATH = "./dictionaries/fil.wl"
-    DICTIONARY_PATHS = [ENGLISH_DICTIONARY_PATH, FILIPINO_DICTIONARY_PATH]  #   Aggregate dictionary paths for possible future-proofing
-else:
-    #   Paths relative to train.py
-    ENGLISH_DICTIONARY_PATH = "root/scripts/dictionaries/en.wl"
-    FILIPINO_DICTIONARY_PATH = "root/scripts/dictionaries/fil.wl"
-    DICTIONARY_PATHS = [ENGLISH_DICTIONARY_PATH, FILIPINO_DICTIONARY_PATH]  #   Aggregate dictionary paths for possible future-proofing
-    
+# Base directory for dictionaries
+DICTIONARY_BASE_DIR = "dictionaries"
+
+# Get the directory of the current script
+SCRIPT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
+
+# Asbolute paths for dictionaries
+ENGLISH_DICTIONARY_PATH = os.path.join(SCRIPT_DIRECTORY, DICTIONARY_BASE_DIR, "en.wl")
+FILIPINO_DICTIONARY_PATH = os.path.join(SCRIPT_DIRECTORY, DICTIONARY_BASE_DIR, "fil.wl")
+DICTIONARY_PATHS = [ENGLISH_DICTIONARY_PATH, FILIPINO_DICTIONARY_PATH]                      #   Aggregate dictionaries into a list for future-proofing
+
 """UTILITY FUNCTIONS"""
 #   Helper method for loading dictionaries
 def load_dictionaries(DICTIONARY_PATHS):
