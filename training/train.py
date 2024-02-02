@@ -12,7 +12,7 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-from root.scripts.FILTRANS import TRADExtractor, SYLLExtractor, OOVExtractor
+from root.scripts.FILTRANS import TRADExtractor, SYLLExtractor, OOVExtractor, StopWordsExtractor
 from root.scripts.BPE import BPETokenizer
 
 import matplotlib.pyplot as plt
@@ -138,42 +138,42 @@ for clf_info in classifiers:
     plt.title(f'Confusion Matrix - {clf_info["name"]}')
     plt.show()
 
-print("CLASSIFIERS WITH GRIDSEARCH")
-#   Test classifiers with gridsearch
-for clf_info in classifiers:
-    print(f"\nTraining {clf_info['name']}")
-    pipeline = Pipeline([
-        ('features', FeatureUnion([
-            ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),        #   Get unigrams, bigrams, and trigrams
-            ('bow', CountVectorizer()),                                                               #   Get bag of words
-            ('trad', TRADExtractor()),                                                                #   Extract TRAD features
-            ('syll', SYLLExtractor())                                                                 #   Extract SYLL features
-        ])),
-        ('classifier', clf_info['model'])
-    ])
+# print("CLASSIFIERS WITH GRIDSEARCH")
+# #   Test classifiers with gridsearch
+# for clf_info in classifiers:
+#     print(f"\nTraining {clf_info['name']}")
+#     pipeline = Pipeline([
+#         ('features', FeatureUnion([
+#             ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),        #   Get unigrams, bigrams, and trigrams
+#             ('bow', CountVectorizer()),                                                               #   Get bag of words
+#             ('trad', TRADExtractor()),                                                                #   Extract TRAD features
+#             ('syll', SYLLExtractor())                                                                 #   Extract SYLL features
+#         ])),
+#         ('classifier', clf_info['model'])
+#     ])
     
-    #   Perform grid search
-    grid_search = GridSearchCV(pipeline, clf_info['params'], cv=5, scoring='accuracy')
-    grid_search.fit(X_train, y_train)
+#     #   Perform grid search
+#     grid_search = GridSearchCV(pipeline, clf_info['params'], cv=5, scoring='accuracy')
+#     grid_search.fit(X_train, y_train)
     
-    # Print the best parameters
-    print(f"Best Estimator for {clf_info['name']}:\n{grid_search.best_estimator_}")
+#     # Print the best parameters
+#     print(f"Best Estimator for {clf_info['name']}:\n{grid_search.best_estimator_}")
 
-    #   Make predictions
-    y_pred = grid_search.predict(X_test)
+#     #   Make predictions
+#     y_pred = grid_search.predict(X_test)
 
-    #   Evaluate the model
-    accuracy = accuracy_score(y_test, y_pred)
-    print(f"Accuracy: {accuracy}")
+#     #   Evaluate the model
+#     accuracy = accuracy_score(y_test, y_pred)
+#     print(f"Accuracy: {accuracy}")
 
-    #   Classification report
-    class_report = classification_report(y_test, y_pred)
-    print("Classification Report:\n", class_report)
+#     #   Classification report
+#     class_report = classification_report(y_test, y_pred)
+#     print("Classification Report:\n", class_report)
     
-    #   Confusion Matrix
-    cm = confusion_matrix(y_test, y_pred)
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-    plt.xlabel('Predicted')
-    plt.ylabel('Actual')
-    plt.title(f'Confusion Matrix - {clf_info["name"]}')
-    plt.show()
+#     #   Confusion Matrix
+#     cm = confusion_matrix(y_test, y_pred)
+#     sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+#     plt.xlabel('Predicted')
+#     plt.ylabel('Actual')
+#     plt.title(f'Confusion Matrix - {clf_info["name"]}')
+#     plt.show()
