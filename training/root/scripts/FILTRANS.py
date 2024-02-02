@@ -108,7 +108,7 @@ class OOVExtractor(BaseEstimator, TransformerMixin):
             ])
         return features
 
-#   Custom transformer for OOV count feature extraction
+#   Custom transformer for StopWords count feature extraction
 class StopWordsExtractor(BaseEstimator, TransformerMixin):
     def get_stopwords_count(self, text):
         return SW.count_stopwords(text)
