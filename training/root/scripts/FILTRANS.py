@@ -1,7 +1,8 @@
-#   Filipino linguistic feature extractors adapted from: https://github.com/imperialite/filipino-linguistic-extractors
+#   Filipino linguistic feature extractors (TRAD, SYLL, LM, LEX, MORPH) adapted from: https://github.com/imperialite/filipino-linguistic-extractors
 import root.scripts.LM as LM
 import root.scripts.SYLL as SYLL
 import root.scripts.TRAD as TRAD
+
 import root.scripts.OOV as OOV
 import root.scripts.SW as SW
 
