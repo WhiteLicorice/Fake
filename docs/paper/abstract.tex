@@ -1,0 +1,17 @@
+%   Filename    : abstract.tex 
+\begin{abstract}
+Fake news remains a rampant threat to the Filipino information economy. In this paper, we propose the investigation of machine learning models for classifying fake news in the Filipino language. Our eventual goal is the deployment of the most suitable model as a cross-browser web extension for detecting fake news. We set out to train the classifiers on a dataset comprised of news articles written mostly in Filipino with a few terms in the English vernacular. The dataset will be perfectly balanced between instances of fake news and authentic news.
+
+In our preliminary investigation, we extract traditional and syllabic features then tokenize the articles with byte-pair encoding, foregoing involved text preprocessing to retain features such as misspelled words, capitalization, and punctuation. Preliminary results highlight Logistic Regression's impressive performance, achieving 97\% accuracy with high recall and balanced F1-scores. Subsequent hyperparameter tuning boosts Multinomial Naive Bayes to 93\% accuracy, while modest improvements are observed in Random Forest and SVC. Logistic Regression remains a robust choice, maintaining a 97\% accuracy. Considering our findings, Logistic Regression emerges as a primary candidate for future deployment. Still, all classifiers after hyperparameter tuning exhibit accuracies well above 90\%. With respect to deployment, it is possible to deploy models that are greater than 30 megabytes in size, while still adhering to the the limitations of our free service provider and retaining computational speed, reliability, and responsiveness. We have successfully deployed a Logistic Regression model as a cross-browser extension capable of reliably detecting fake news in the Filipino language.
+
+Despite the promising preliminary results, challenges in the domain of Filipino language fake news detection persist, such as the difficulty of surpassing 97\% accuracy with traditional models and a low-resource dataset as well as deploying computationally intensive models on a stringent infrastructure. Future work should prioritize dataset augmentation to possibly enhance results and further explore additional linguistic properties such as morphological and lexical features.
+
+%  Do not put citations or quotes in the abract.
+
+\begin{flushleft}
+\begin{tabular}{lp{4.25in}}
+\hspace{-0.5em}\textbf{Keywords:}\hspace{0.25em} & machine learning, natural language processing, fake news, filipino language, filipino linguistic features, classifiers, feature extraction, hyperparameter tuning, low-resource dataset, naive bayes, logistic regression, random forest, svc
+\end{tabular}
+\end{flushleft}
+\end{abstract}
+
