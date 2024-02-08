@@ -1,0 +1,1476 @@
+\begin{thebibliography}{}
+
+\bibitem [\protect \citeauthoryear {%
+A\BPBI A\BPBI A.~Ahmed%
+, Aljabouh%
+, Donepudi%
+\BCBL {}\ \BBA {} Choi%
+}{%
+A\BPBI A\BPBI A.~Ahmed%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+ahmed2021detecting}
+\APACinsertmetastar {%
+ahmed2021detecting}%
+\begin{APACrefauthors}%
+Ahmed, A\BPBI A\BPBI A.%
+, Aljabouh, A.%
+, Donepudi, P\BPBI K.%
+\BCBL {}\ \BBA {} Choi, M\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Detecting Fake News Using Machine Learning: A Systematic
+  Literature Review} {Detecting fake news using machine learning: A systematic
+  literature review}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+S.~Ahmed%
+, Hinkelmann%
+\BCBL {}\ \BBA {} Corradini%
+}{%
+S.~Ahmed%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+ahmed2019combining}
+\APACinsertmetastar {%
+ahmed2019combining}%
+\begin{APACrefauthors}%
+Ahmed, S.%
+, Hinkelmann, K.%
+\BCBL {}\ \BBA {} Corradini, F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Combining Machine Learning with Knowledge Engineering to
+  Detect Fake News in Social Networks - A Survey} {Combining machine learning
+  with knowledge engineering to detect fake news in social networks - a
+  survey}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the AAAI 2019 Spring Symposium}
+  {Proceedings of the aaai 2019 spring symposium}\ (\BVOL~12).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Alconaba%
+}{%
+Alconaba%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+alconaba2016digong}
+\APACinsertmetastar {%
+alconaba2016digong}%
+\begin{APACrefauthors}%
+Alconaba, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{June 28}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Digong defends war on drugs, crime, graft} {Digong
+  defends war on drugs, crime, graft}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Philippine Daily Inquirer}{}{}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://newsinfo.inquirer.net/792773/digong-defends-war-on-drugs-crime-graft}
+  \end{APACrefURL}
+\newblock
+\APACrefnote{Archived from the original on December 5, 2019}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Atodiresei%
+, Tănăselea%
+\BCBL {}\ \BBA {} Iftene%
+}{%
+Atodiresei%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+atodiresei2018identifying}
+\APACinsertmetastar {%
+atodiresei2018identifying}%
+\begin{APACrefauthors}%
+Atodiresei, C\BHBI S.%
+, Tănăselea, A.%
+\BCBL {}\ \BBA {} Iftene, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Identifying Fake News and Fake Users on Twitter}
+  {Identifying fake news and fake users on twitter}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Procedia Computer Science}{126}{}{451--461}.
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.procs.2018.07.279} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Burkhardt%
+}{%
+Burkhardt%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+burkhardt2017history}
+\APACinsertmetastar {%
+burkhardt2017history}%
+\begin{APACrefauthors}%
+Burkhardt, J\BPBI M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {History of Fake News} {History of fake news}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Library Technology Reports}{53}{8}{5--9}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Chen%
+, Conroy%
+\BCBL {}\ \BBA {} Rubin%
+}{%
+Chen%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2015}}%
+}]{%
+chen2015news}
+\APACinsertmetastar {%
+chen2015news}%
+\begin{APACrefauthors}%
+Chen, Y.%
+, Conroy, N\BPBI K.%
+\BCBL {}\ \BBA {} Rubin, V\BPBI L.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2015}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {News in an Online World: The Need for an ``Automatic
+  Crap Detector''} {News in an online world: The need for an ``automatic crap
+  detector''}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Proceedings of the Association for Information Science
+  and Technology}{52}{1}{1--4}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Choudhury%
+\ \BBA {} Acharjee%
+}{%
+Choudhury%
+\ \BBA {} Acharjee%
+}{%
+{\protect \APACyear {2022}}%
+}]{%
+choudhury-2022}
+\APACinsertmetastar {%
+choudhury-2022}%
+\begin{APACrefauthors}%
+Choudhury, D.%
+\BCBT {}\ \BBA {} Acharjee, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Novel Approach to Fake News Detection in Social
+  Networks Using Genetic Algorithm Applying Machine Learning Classifiers} {A
+  novel approach to fake news detection in social networks using genetic
+  algorithm applying machine learning classifiers}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Multimedia Tools and Applications}{82}{6}{9029--9045}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s11042-022-12788-1} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {ClaimBuster}}{%
+\APACcitebtitle {ClaimBuster}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+claimbuster}
+\APACinsertmetastar {%
+claimbuster}%
+\APACrefbtitle {ClaimBuster.} {Claimbuster.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\APAChowpublished {\url{https://idir.uta.edu/claimbuster/}}.
+\newblock
+\APACrefnote{Accessed on 2024-01-19}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cruz%
+, Tan%
+\BCBL {}\ \BBA {} Cheng%
+}{%
+Cruz%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+cruz2020localization}
+\APACinsertmetastar {%
+cruz2020localization}%
+\begin{APACrefauthors}%
+Cruz, J\BPBI C\BPBI B.%
+, Tan, J\BPBI A.%
+\BCBL {}\ \BBA {} Cheng, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Localization of Fake News Detection via Multitask
+  Transfer Learning} {Localization of fake news detection via multitask
+  transfer learning}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of The 12th Language Resources and
+  Evaluation Conference} {Proceedings of the 12th language resources and
+  evaluation conference}\ (\BPGS\ 2596--2604).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Cruz%
+, Tan%
+\BCBL {}\ \BBA {} Cheng%
+}{%
+Cruz%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
+}]{%
+fake-news-filipino}
+\APACinsertmetastar {%
+fake-news-filipino}%
+\begin{APACrefauthors}%
+Cruz, J\BPBI C\BPBI B.%
+, Tan, J\BPBI A.%
+\BCBL {}\ \BBA {} Cheng, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{}{}.
+\newblock
+\APACrefbtitle {Fake News Filipino Dataset.} {Fake news filipino dataset.}
+\newblock
+\begin{APACrefURL}
+  \url{https://paperswithcode.com/dataset/fake-news-filipino-dataset}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+de Beer%
+\ \BBA {} Matthee%
+}{%
+de Beer%
+\ \BBA {} Matthee%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+debeer2020approaches}
+\APACinsertmetastar {%
+debeer2020approaches}%
+\begin{APACrefauthors}%
+de Beer, D.%
+\BCBT {}\ \BBA {} Matthee, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{May}{5}.
+\newblock
+{\BBOQ}\APACrefatitle {Approaches to Identify Fake News: A Systematic
+  Literature Review} {Approaches to identify fake news: A systematic literature
+  review}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Integrated Science in Digital Age 2020} {Integrated
+  science in digital age 2020}\ (\BVOL~136, \BPGS\ 13--22).
+\newblock
+\begin{APACrefDOI} \doi{10.1007/978-3-030-49264-9_2} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Demick%
+}{%
+Demick%
+}{%
+{\protect \APACyear {2016}}%
+}]{%
+demick2016duterte}
+\APACinsertmetastar {%
+demick2016duterte}%
+\begin{APACrefauthors}%
+Demick, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2016}{August}{}.
+\newblock
+\APACrefbtitle {Rodrigo Duterte’s Campaign of Terror in the Philippines.}
+  {Rodrigo duterte’s campaign of terror in the philippines.}
+\newblock
+\begin{APACrefURL}
+  \url{https://www.newyorker.com/news/news-desk/rodrigo-dutertes-campaign-of-terror-in-the-philippines}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {FakeBlok}}{%
+\APACcitebtitle {FakeBlok}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+cdi-fakeblok}
+\APACinsertmetastar {%
+cdi-fakeblok}%
+\APACrefbtitle {FakeBlok.} {Fakeblok.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\APAChowpublished
+  {\url{https://counteringdisinformation.org/interventions/fakeblok}}.
+\newblock
+\APACrefnote{Accessed: 01-23-2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {FastAPI Documentation}}{%
+\APACcitebtitle {FastAPI Documentation}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+fastapi-website}
+\APACinsertmetastar {%
+fastapi-website}%
+\APACrefbtitle {FastAPI Documentation.} {Fastapi documentation.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\APAChowpublished {\url{https://fastapi.tiangolo.com/}}.
+\newblock
+\APACrefnote{Accessed November 7, 2023}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fayaz%
+, Khan%
+, Bilal%
+\BCBL {}\ \BBA {} Khan%
+}{%
+Fayaz%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2022}}%
+}]{%
+fayaz-2022}
+\APACinsertmetastar {%
+fayaz-2022}%
+\begin{APACrefauthors}%
+Fayaz, M.%
+, Khan, A.%
+, Bilal, M.%
+\BCBL {}\ \BBA {} Khan, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{August}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine learning for fake news classification with
+  optimal feature selection} {Machine learning for fake news classification
+  with optimal feature selection}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Soft Computing}{26}{}{}.
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s00500-022-06773-x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Felix%
+, {Sanchez II}%
+\BCBL {}\ \BBA {} Curato%
+}{%
+Felix%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2023}}%
+}]{%
+juan-felix-et-al-2023}
+\APACinsertmetastar {%
+juan-felix-et-al-2023}%
+\begin{APACrefauthors}%
+Felix, J.%
+, {Sanchez II}, F.%
+\BCBL {}\ \BBA {} Curato, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2023}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Creatives as frontliners in the Philippines’ fight
+  against disinformation} {Creatives as frontliners in the philippines’ fight
+  against disinformation}.{\BBCQ}
+\newblock
+\APACaddressPublisher{Australia}{}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.eastasiaforum.org/2023/06/16/creatives-as-frontliners-in-the-philippines-fight-against-disinformation/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Fernandez%
+\ \BBA {} Devaraj%
+}{%
+Fernandez%
+\ \BBA {} Devaraj%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+fernandez-2019}
+\APACinsertmetastar {%
+fernandez-2019}%
+\begin{APACrefauthors}%
+Fernandez, A\BPBI C\BPBI T.%
+\BCBT {}\ \BBA {} Devaraj, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Computing the Linguistic-Based Cues of Fake News in the
+  Philippines Towards Its Detection} {Computing the linguistic-based cues of
+  fake news in the philippines towards its detection}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 9th International Conference on Web
+  Intelligence, Mining and Semantics.} {Proceedings of the 9th international
+  conference on web intelligence, mining and semantics.}
+\newblock
+\APACaddressPublisher{New York, NY, USA}{Association for Computing Machinery}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3326467.3326490} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Granik%
+\ \BBA {} Mesyura%
+}{%
+Granik%
+\ \BBA {} Mesyura%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+granik-2017}
+\APACinsertmetastar {%
+granik-2017}%
+\begin{APACrefauthors}%
+Granik, M.%
+\BCBT {}\ \BBA {} Mesyura, V.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fake News Detection Using Naive Bayes Classifier} {Fake
+  news detection using naive bayes classifier}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2017 IEEE First Ukraine Conference on Electrical and
+  Computer Engineering (UKRCON).} {2017 ieee first ukraine conference on
+  electrical and computer engineering (ukrcon).}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/ukrcon.2017.8100379} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hassan%
+, Arslan%
+, Li%
+\BCBL {}\ \BBA {} Tremayne%
+}{%
+Hassan%
+, Arslan%
+\BCBL {}\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+hassan2017toward}
+\APACinsertmetastar {%
+hassan2017toward}%
+\begin{APACrefauthors}%
+Hassan, N.%
+, Arslan, F.%
+, Li, C.%
+\BCBL {}\ \BBA {} Tremayne, M.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Toward Automated Fact-Checking: Detecting Check-Worthy
+  Factual Claims by ClaimBuster} {Toward automated fact-checking: Detecting
+  check-worthy factual claims by claimbuster}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 23rd ACM SIGKDD International
+  Conference on Knowledge Discovery and Data Mining - KDD 2017} {Proceedings of
+  the 23rd acm sigkdd international conference on knowledge discovery and data
+  mining - kdd 2017}\ (\BPGS\ 1803--1812).
+\newblock
+\APACaddressPublisher{Halifax, NS, Canada}{ACM Press}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3097983.3098131} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Hassan%
+, Nayak%
+\BCBL {}\ \protect \BOthers {.}}{%
+Hassan%
+, Nayak%
+\BCBL {}\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+hassan2017proposal}
+\APACinsertmetastar {%
+hassan2017proposal}%
+\begin{APACrefauthors}%
+Hassan, N.%
+, Nayak, A.%
+, Sable, V.%
+, Li, C.%
+, Tremayne, M.%
+, Zhang, G.%
+\BDBL {}Kulkarni, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{08}{}.
+\newblock
+{\BBOQ}\APACrefatitle {ClaimBuster: the first-ever end-to-end fact-checking
+  system} {Claimbuster: the first-ever end-to-end fact-checking system}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Proceedings of the VLDB Endowment}{10}{}{1945-1948}.
+\newblock
+\begin{APACrefDOI} \doi{10.14778/3137765.3137815} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Imperial%
+\ \BBA {} Ong%
+}{%
+Imperial%
+\ \BBA {} Ong%
+}{%
+{\protect \APACyear {2020}}%
+}]{%
+imperial-2020}
+\APACinsertmetastar {%
+imperial-2020}%
+\begin{APACrefauthors}%
+Imperial, J\BPBI M.%
+\BCBT {}\ \BBA {} Ong, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Exploring Hybrid Linguistic Feature Sets to Measure
+  Filipino Text Readability} {Exploring hybrid linguistic feature sets to
+  measure filipino text readability}.{\BBCQ}
+\newblock
+\BIn{} (\BPG~175-180).
+\newblock
+\begin{APACrefDOI} \doi{10.1109/IALP51396.2020.9310473} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Imperial%
+\ \BBA {} Ong%
+}{%
+Imperial%
+\ \BBA {} Ong%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+imperial-2021}
+\APACinsertmetastar {%
+imperial-2021}%
+\begin{APACrefauthors}%
+Imperial, J\BPBI M.%
+\BCBT {}\ \BBA {} Ong, E.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Diverse Linguistic Features for Assessing Reading
+  Difficulty of Educational Filipino Texts} {Diverse linguistic features for
+  assessing reading difficulty of educational filipino texts}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{CoRR}{abs/2108.00241}{}{}.
+\newblock
+\begin{APACrefURL} \url{https://arxiv.org/abs/2108.00241} \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Khan%
+, Khondaker%
+, Afroz%
+, Uddin%
+\BCBL {}\ \BBA {} Iqbal%
+}{%
+Khan%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2021}}%
+}]{%
+khan-2021}
+\APACinsertmetastar {%
+khan-2021}%
+\begin{APACrefauthors}%
+Khan, J\BPBI Y.%
+, Khondaker, M\BPBI T.%
+, Afroz, S.%
+, Uddin, G.%
+\BCBL {}\ \BBA {} Iqbal, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A benchmark study of machine learning models for online
+  fake news detection} {A benchmark study of machine learning models for online
+  fake news detection}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Machine Learning with Applications}{4}{}{100032}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1016/j.mlwa.2021.100032}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1016/j.mlwa.2021.100032} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Krishna%
+\ \BBA {} Kumar%
+}{%
+Krishna%
+\ \BBA {} Kumar%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+krishna-2021}
+\APACinsertmetastar {%
+krishna-2021}%
+\begin{APACrefauthors}%
+Krishna, I\BPBI M\BPBI V.%
+\BCBT {}\ \BBA {} Kumar, S\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {FAKE NEWS DETECTION USING NAIVE BAYES CLASSIFIER} {Fake
+  news detection using naive bayes classifier}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{International Journal of Creative Research
+  Thoughts}{9}{6}{}.
+\newblock
+\begin{APACrefURL} \url{https://ijcrt.org/papers/IJCRT2106550.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Lanuza%
+, Ong%
+\BCBL {}\ \BBA {} Tapsell%
+}{%
+Lanuza%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2019}}%
+}]{%
+harvard-cyber-report}
+\APACinsertmetastar {%
+harvard-cyber-report}%
+\begin{APACrefauthors}%
+Lanuza, J.%
+, Ong, J.%
+\BCBL {}\ \BBA {} Tapsell, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Evolutions of `Fake News' from the South: Tracking
+  Disinformation Innovations and Interventions between the 2016 and 2019
+  Philippines Elections} {Evolutions of `fake news' from the south: Tracking
+  disinformation innovations and interventions between the 2016 and 2019
+  philippines elections}.{\BBCQ}.
+\newblock
+\begin{APACrefURL}
+  \url{https://cyber.harvard.edu/sites/default/files/2019-11/Comparative%20Approaches%20to%20Disinformation%20-%20Jose%20Mari%20Hall%20Lanuza%20Slides.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Leonhardt%
+\ \BBA {} Thompson%
+}{%
+Leonhardt%
+\ \BBA {} Thompson%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+nyt-trump-lies}
+\APACinsertmetastar {%
+nyt-trump-lies}%
+\begin{APACrefauthors}%
+Leonhardt, D.%
+\BCBT {}\ \BBA {} Thompson, S\BPBI A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Trump’s lies} {Trump’s lies}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{New York Times}{}{}{21}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Okoro%
+, Abara%
+, Umagba%
+, Ajonye%
+\BCBL {}\ \BBA {} Isa%
+}{%
+Okoro%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+okoro2018hybrid}
+\APACinsertmetastar {%
+okoro2018hybrid}%
+\begin{APACrefauthors}%
+Okoro, E\BPBI M.%
+, Abara, B\BPBI A.%
+, Umagba, A\BPBI O.%
+, Ajonye, A\BPBI A.%
+\BCBL {}\ \BBA {} Isa, Z\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Hybrid Approach to Fake News Detection on Social
+  Media} {A hybrid approach to fake news detection on social media}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Nigerian Journal of Technology}{37}{2}{454}.
+\newblock
+\begin{APACrefDOI} \doi{10.4314/njt.v37i2.22} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Paleyes%
+, Urma%
+\BCBL {}\ \BBA {} Lawrence%
+}{%
+Paleyes%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2022}}%
+}]{%
+paleyes-2022}
+\APACinsertmetastar {%
+paleyes-2022}%
+\begin{APACrefauthors}%
+Paleyes, A.%
+, Urma, R\BHBI G.%
+\BCBL {}\ \BBA {} Lawrence, N\BPBI D.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2022}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Challenges in deploying machine learning: A survey of
+  case studies} {Challenges in deploying machine learning: A survey of case
+  studies}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{ACM Computing Surveys}{55}{6}{1--29}.
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3533378} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pennebaker%
+, Booth%
+\BCBL {}\ \BBA {} Francis%
+}{%
+Pennebaker%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2007}}%
+}]{%
+pennebaker-2007}
+\APACinsertmetastar {%
+pennebaker-2007}%
+\begin{APACrefauthors}%
+Pennebaker, J\BPBI W.%
+, Booth, R\BPBI J.%
+\BCBL {}\ \BBA {} Francis, M\BPBI F.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2007}{}{}.
+\newblock
+\APACrefbtitle {Linguistic Inquiry and Word Count: LIWC.} {Linguistic inquiry
+  and word count: Liwc.}
+\newblock
+\APACaddressPublisher{Austin, TX}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pennycook%
+\ \BBA {} Rand%
+}{%
+Pennycook%
+\ \BBA {} Rand%
+}{%
+{\protect \APACyear {2019}}%
+}]{%
+pennycook2019fighting}
+\APACinsertmetastar {%
+pennycook2019fighting}%
+\begin{APACrefauthors}%
+Pennycook, G.%
+\BCBT {}\ \BBA {} Rand, D\BPBI G.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2019}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fighting Misinformation on Social Media Using
+  Crowdsourced Judgments of News Source Quality} {Fighting misinformation on
+  social media using crowdsourced judgments of news source quality}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Proc. Natl. Acad. Sci.}{116}{7}{2521--2526}.
+\newblock
+\begin{APACrefDOI} \doi{10.1073/pnas.1806781116} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Philippine Daily Inquirer}%
+}{%
+{Philippine Daily Inquirer}%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+inquirer-fakeblok}
+\APACinsertmetastar {%
+inquirer-fakeblok}%
+\begin{APACrefauthors}%
+{Philippine Daily Inquirer}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\APACrefbtitle {Pinoy Journos Launch FakeBlok to Help Rid Social Media of Fake
+  News.} {Pinoy journos launch fakeblok to help rid social media of fake news.}
+\newblock
+\APAChowpublished
+  {\url{https://technology.inquirer.net/63588/pinoy-journos-launch-fakeblok-to-help-rid-social-media-of-fake-news}}.
+\newblock
+\APACrefnote{Accessed: 01-23-2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Potthast%
+, Kiesel%
+, Reinartz%
+, Bevendorff%
+\BCBL {}\ \BBA {} Stein%
+}{%
+Potthast%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+potthast2017stylometric}
+\APACinsertmetastar {%
+potthast2017stylometric}%
+\begin{APACrefauthors}%
+Potthast, M.%
+, Kiesel, J.%
+, Reinartz, K.%
+, Bevendorff, J.%
+\BCBL {}\ \BBA {} Stein, B.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Stylometric Inquiry into Hyperpartisan and Fake News}
+  {A stylometric inquiry into hyperpartisan and fake news}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv Preprint}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Pérez-Rosas%
+, Kleinberg%
+, Lefevre%
+\BCBL {}\ \BBA {} Mihalcea%
+}{%
+Pérez-Rosas%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+perezrosas2018automatic}
+\APACinsertmetastar {%
+perezrosas2018automatic}%
+\begin{APACrefauthors}%
+Pérez-Rosas, V.%
+, Kleinberg, B.%
+, Lefevre, A.%
+\BCBL {}\ \BBA {} Mihalcea, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Automatic Detection of Fake News} {Automatic detection
+  of fake news}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 27th International Conference on
+  Computational Linguistics} {Proceedings of the 27th international conference
+  on computational linguistics}\ (\BPGS\ 3391--3401).
+\newblock
+\APACaddressPublisher{Santa Fe, New Mexico, USA}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Qazvinian%
+, Rosengren%
+, Radev%
+\BCBL {}\ \BBA {} Mei%
+}{%
+Qazvinian%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2011}}%
+}]{%
+qazvinian2011rumor}
+\APACinsertmetastar {%
+qazvinian2011rumor}%
+\begin{APACrefauthors}%
+Qazvinian, V.%
+, Rosengren, E.%
+, Radev, D\BPBI R.%
+\BCBL {}\ \BBA {} Mei, Q.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2011}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Rumor has it: identifying misinformation in microblogs}
+  {Rumor has it: identifying misinformation in microblogs}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2011 Conference on Empirical Methods
+  in Natural Language Processing, EMNLP 2011} {Proceedings of the 2011
+  conference on empirical methods in natural language processing, emnlp 2011}\
+  (\BPGS\ 1589--1599).
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{Rappler}%
+}{%
+{Rappler}%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+rappler-fakeblok}
+\APACinsertmetastar {%
+rappler-fakeblok}%
+\begin{APACrefauthors}%
+{Rappler}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+\APACrefbtitle {Fake News Blocker for Facebook Launched in the Philippines.}
+  {Fake news blocker for facebook launched in the philippines.}
+\newblock
+\APAChowpublished
+  {\url{https://www.rappler.com/technology/172310-fake-news-blocker-facebook-philippines-nujp-cmfr-fakeblok/}}.
+\newblock
+\APACrefnote{Accessed: 01-23-2024}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Render Documentation}}{%
+\APACcitebtitle {Render Documentation}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+render-docs}
+\APACinsertmetastar {%
+render-docs}%
+\APACrefbtitle {Render Documentation.} {Render documentation.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\APAChowpublished {\url{https://docs.render.com/docs}}.
+\newblock
+\APACrefnote{Accessed December 19, 2023}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Ruchansky%
+, Seo%
+\BCBL {}\ \BBA {} Liu%
+}{%
+Ruchansky%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+ruchansky2017csi}
+\APACinsertmetastar {%
+ruchansky2017csi}%
+\begin{APACrefauthors}%
+Ruchansky, N.%
+, Seo, S.%
+\BCBL {}\ \BBA {} Liu, Y.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{CSI}: A Hybrid Deep Model for Fake News Detection}
+  {{CSI}: A hybrid deep model for fake news detection}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the 2017 ACM on Conference on Information
+  and Knowledge Management} {Proceedings of the 2017 acm on conference on
+  information and knowledge management}\ (\BPGS\ 797--806).
+\newblock
+\begin{APACrefDOI} \doi{10.1145/3132847.3132877} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+I.~Sarker%
+}{%
+I.~Sarker%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+sarker2021machine}
+\APACinsertmetastar {%
+sarker2021machine}%
+\begin{APACrefauthors}%
+Sarker, I.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine Learning: Algorithms, Real-World Applications
+  and Research Directions} {Machine learning: Algorithms, real-world
+  applications and research directions}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SN COMPUT. SCI.}{2}{}{160}.
+\newblock
+\begin{APACrefURL} \url{https://doi.org/10.1007/s42979-021-00592-x}
+  \end{APACrefURL}
+\newblock
+\begin{APACrefDOI} \doi{10.1007/s42979-021-00592-x} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+I\BPBI H.~Sarker%
+\ \protect \BOthers {.}}{%
+I\BPBI H.~Sarker%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+sarker2020cybersecurity}
+\APACinsertmetastar {%
+sarker2020cybersecurity}%
+\begin{APACrefauthors}%
+Sarker, I\BPBI H.%
+, Kayes, A\BPBI A.%
+, Badsha, S.%
+, Alqahtani, H.%
+, Watters, P.%
+\BCBL {}\ \BBA {} Ng, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Cybersecurity data science: an overview from machine
+  learning perspective} {Cybersecurity data science: an overview from machine
+  learning perspective}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Journal of Big Data}{7}{1}{1--29}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Siar%
+}{%
+Siar%
+}{%
+{\protect \APACyear {2021}}%
+}]{%
+pids-report}
+\APACinsertmetastar {%
+pids-report}%
+\begin{APACrefauthors}%
+Siar, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2021}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fake news, its dangers, and how we can fight it} {Fake
+  news, its dangers, and how we can fight it}.{\BBCQ}.
+\newblock
+\begin{APACrefURL}
+  \url{https://pidswebs.pids.gov.ph/CDN/PUBLICATIONS/pidspn2106.pdf}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Sivasangari%
+, Anand%
+\BCBL {}\ \BBA {} Santhya%
+}{%
+Sivasangari%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+sivasangari2018modern}
+\APACinsertmetastar {%
+sivasangari2018modern}%
+\begin{APACrefauthors}%
+Sivasangari, V.%
+, Anand, P\BPBI V.%
+\BCBL {}\ \BBA {} Santhya, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {A Modern Approach to Identify the Fake News Using
+  Machine Learning} {A modern approach to identify the fake news using machine
+  learning}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Int. J. Pure Appl. Math.}{118}{20}{10}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Stahl%
+}{%
+Stahl%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+Stahl2018FakeND}
+\APACinsertmetastar {%
+Stahl2018FakeND}%
+\begin{APACrefauthors}%
+Stahl, K.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fake news detection in social media} {Fake news
+  detection in social media}.{\BBCQ}.
+\newblock
+\begin{APACrefURL} \url{https://api.semanticscholar.org/CorpusID:202891932}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+\APACcitebtitle {Tampermonkey}}{%
+\APACcitebtitle {Tampermonkey}}{%
+{\protect \APACyear {{\protect \bibnodate {}}}}%
+}]{%
+tampermonkey-website}
+\APACinsertmetastar {%
+tampermonkey-website}%
+\APACrefbtitle {Tampermonkey.} {Tampermonkey.}
+\newblock
+\APACrefYearMonthDay{{\protect \bibnodate {}}}{}{}.
+\newblock
+\APAChowpublished {\url{https://www.tampermonkey.net/}}.
+\newblock
+\APACrefnote{Accessed November 7, 2023}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Thota%
+, Tilak%
+, Ahluwalia%
+\BCBL {}\ \BBA {} Lohia%
+}{%
+Thota%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+thota2018fake}
+\APACinsertmetastar {%
+thota2018fake}%
+\begin{APACrefauthors}%
+Thota, A.%
+, Tilak, P.%
+, Ahluwalia, S.%
+\BCBL {}\ \BBA {} Lohia, N.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fake News Detection: A Deep Learning Approach} {Fake
+  news detection: A deep learning approach}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{SMU Data Science Review}{1}{3}{21}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tiwari%
+, Lennon%
+\BCBL {}\ \BBA {} Dowling%
+}{%
+Tiwari%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2020}}%
+}]{%
+tiwari-2020}
+\APACinsertmetastar {%
+tiwari-2020}%
+\begin{APACrefauthors}%
+Tiwari, V.%
+, Lennon, R\BPBI G.%
+\BCBL {}\ \BBA {} Dowling, T.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2020}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Not Everything You Read Is True! Fake News Detection
+  Using Machine Learning Algorithms} {Not everything you read is true! fake
+  news detection using machine learning algorithms}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {2020 31st Irish Signals and Systems Conference (ISSC).}
+  {2020 31st irish signals and systems conference (issc).}
+\newblock
+\begin{APACrefDOI} \doi{10.1109/issc49989.2020.9180206} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Tschiatschek%
+, Singla%
+, Rodriguez%
+, Merchant%
+\BCBL {}\ \BBA {} Krause%
+}{%
+Tschiatschek%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2017}}%
+}]{%
+tschiatschek2017detecting}
+\APACinsertmetastar {%
+tschiatschek2017detecting}%
+\begin{APACrefauthors}%
+Tschiatschek, S.%
+, Singla, A.%
+, Rodriguez, M\BPBI G.%
+, Merchant, A.%
+\BCBL {}\ \BBA {} Krause, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{November}{}.
+\newblock
+\APACrefbtitle {Detecting Fake News in Social Networks via Crowdsourcing}
+  {Detecting fake news in social networks via crowdsourcing}\
+  \APACbVolEdTR{}{\BTR{}\ \BNUM\ MSR-TR-2017-48}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.microsoft.com/en-us/research/publication/detecting-fake-news-social-networks-via-crowdsourcing/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Vlachos%
+\ \BBA {} Riedel%
+}{%
+Vlachos%
+\ \BBA {} Riedel%
+}{%
+{\protect \APACyear {2014}}%
+}]{%
+vlachos2014factchecking}
+\APACinsertmetastar {%
+vlachos2014factchecking}%
+\begin{APACrefauthors}%
+Vlachos, A.%
+\BCBT {}\ \BBA {} Riedel, S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2014}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fact checking: task definition and dataset construction}
+  {Fact checking: task definition and dataset construction}.{\BBCQ}
+\newblock
+\BIn{} \APACrefbtitle {Proceedings of the ACL 2014 Workshop on Language
+  Technologies and Computational Social Science} {Proceedings of the acl 2014
+  workshop on language technologies and computational social science}\ (\BPGS\
+  18--22).
+\newblock
+\APACaddressPublisher{Baltimore, MD, USA}{Association for Computational
+  Linguistics}.
+\newblock
+\begin{APACrefDOI} \doi{10.3115/v1/W14-2508} \end{APACrefDOI}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+{World Economic Forum}%
+}{%
+{World Economic Forum}%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+weforum-report}
+\APACinsertmetastar {%
+weforum-report}%
+\begin{APACrefauthors}%
+{World Economic Forum}.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {The Global Risks Report 2018} {The global risks report
+  2018}.{\BBCQ}.
+\newblock
+\begin{APACrefURL}
+  \url{https://www.weforum.org/publications/the-global-risks-report-2018/}
+  \end{APACrefURL}
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Xin%
+\ \protect \BOthers {.}}{%
+Xin%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+xin2018machine}
+\APACinsertmetastar {%
+xin2018machine}%
+\begin{APACrefauthors}%
+Xin, Y.%
+, Kong, L.%
+, Liu, Z.%
+, Chen, Y.%
+, Li, Y.%
+, Zhu, H.%
+\BDBL {}Wang, C.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Machine learning and deep learning methods for
+  cybersecurity} {Machine learning and deep learning methods for
+  cybersecurity}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{IEEE Access}{6}{}{35365--81}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Yang%
+\ \protect \BOthers {.}}{%
+Yang%
+\ \protect \BOthers {.}}{%
+{\protect \APACyear {2018}}%
+}]{%
+yang2018ti-cnn}
+\APACinsertmetastar {%
+yang2018ti-cnn}%
+\begin{APACrefauthors}%
+Yang, Y.%
+, Zheng, L.%
+, Zhang, J.%
+, Cui, Q.%
+, Li, Z.%
+\BCBL {}\ \BBA {} Yu, P\BPBI S.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {{TI-CNN: Convolutional Neural Networks for Fake News
+  Detection}} {{TI-CNN: Convolutional Neural Networks for Fake News
+  Detection}}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv preprint arXiv:1806.00749}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Yee%
+}{%
+Yee%
+}{%
+{\protect \APACyear {2017}}%
+}]{%
+yee2017posttruth}
+\APACinsertmetastar {%
+yee2017posttruth}%
+\begin{APACrefauthors}%
+Yee, A.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2017}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Post-Truth Politics \& Fake News in Asia} {Post-truth
+  politics \& fake news in asia}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{Global Asia}{12}{2}{67--71}.
+\PrintBackRefs{\CurrentBib}
+
+\bibitem [\protect \citeauthoryear {%
+Zhou%
+\ \BBA {} Zafarani%
+}{%
+Zhou%
+\ \BBA {} Zafarani%
+}{%
+{\protect \APACyear {2018}}%
+}]{%
+zhou2018fake}
+\APACinsertmetastar {%
+zhou2018fake}%
+\begin{APACrefauthors}%
+Zhou, X.%
+\BCBT {}\ \BBA {} Zafarani, R.%
+\end{APACrefauthors}%
+\unskip\
+\newblock
+\APACrefYearMonthDay{2018}{}{}.
+\newblock
+{\BBOQ}\APACrefatitle {Fake News: A Survey of Research, Detection Methods, and
+  Opportunities} {Fake news: A survey of research, detection methods, and
+  opportunities}.{\BBCQ}
+\newblock
+\APACjournalVolNumPages{arXiv Preprint}{}{}{}.
+\PrintBackRefs{\CurrentBib}
+
+\end{thebibliography}
