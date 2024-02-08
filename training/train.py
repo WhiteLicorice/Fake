@@ -115,9 +115,9 @@ for clf_info in classifiers:
     pipeline.fit(X_train, y_train)
     
     #   Dump trained model
-    #trained_model = pipeline.named_steps['classifier']
-    #with open(f"{clf_info['model_id']}.pkl", 'wb') as file:
-        #pickle.dump(pipeline, file)
+    trained_model = pipeline.named_steps['classifier']
+    with open(f"{clf_info['model_id']}.pkl", 'wb') as file:
+        pickle.dump(pipeline, file)
 
     #   Make predictions
     y_pred = pipeline.predict(X_test)
