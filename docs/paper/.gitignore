@@ -9,3 +9,9 @@
 _minted/
 *~
 *.swp
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.lof
+*.lot
