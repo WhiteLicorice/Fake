@@ -131,3 +131,9 @@ dist
 
 /training/WithGridSearch
 /training/WithoutGridSearch
+
+# Virtual env
+venv/
+
+# .vscode
+.vscode/
