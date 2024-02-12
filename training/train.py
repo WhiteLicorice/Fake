@@ -12,7 +12,7 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-from root.scripts.FILTRANS import TRADExtractor, SYLLExtractor, OOVExtractor, StopWordsExtractor
+from root.scripts.FILTRANS import TRADExtractor, SYLLExtractor, OOVExtractor, StopWordsExtractor, LEXExtractor, MORPHEXtractor
 from root.scripts.BPE import BPETokenizer
 
 import matplotlib.pyplot as plt
@@ -106,7 +106,9 @@ for clf_info in classifiers:
             ('bow', CountVectorizer()),                                                               #   Get bag of words
             ('oov', OOVExtractor()),                                                                  #   Get OOV features
             ('trad', TRADExtractor()),                                                                #   Extract TRAD features
-            ('syll', SYLLExtractor())                                                                 #   Extract SYLL features
+            ('syll', SYLLExtractor()),                                                                #   Extract SYLL features
+            ('lex', LEXExtractor()),
+            ('morph', MORPHEXtractor())
         ])),
         ('classifier', clf_info['model'])
     ])
