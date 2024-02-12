@@ -58,8 +58,6 @@ def get_derivational_morph(text):
 	suffix_token_ratio = suffix_count / word_count
 	total_affix_token_ratio = (prefix_count + suffix_count) / word_count
 
-	print("MORPH")
-
 	return [prefix_token_ratio, prefix_derived_ratio, suffix_token_ratio, suffix_derived_ratio, total_affix_token_ratio,total_affix_derived_ratio]
 
 

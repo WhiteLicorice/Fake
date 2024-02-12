@@ -19,8 +19,6 @@ def type_token_ratio(text):
     total_tokens = word_count_per_doc(text)
     if total_tokens == 0:
         return 0
-    
-    print("LEX")
 
     return len(unique_tokens) / total_tokens            #return T/N
 
