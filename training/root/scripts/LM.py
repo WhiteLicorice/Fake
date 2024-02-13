@@ -969,3 +969,4 @@ def main(argsString):
 
         with open(opts.output_file, 'w') as guesses:
             guesses.write('\n'.join(predictions))
+
