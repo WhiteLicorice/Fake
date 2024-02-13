@@ -437,4 +437,4 @@ stanford_dir = "./root/runtime_env/stanford-postagger-full-2020-11-17"
 modelfile = stanford_dir + "/models/filipino-left5words-owlqn2-distsim-pref6-inf2.tagger"
 jarfile = stanford_dir + "/stanford-postagger.jar"
 
-pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx4G")		# Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
+pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx8G")		# Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes

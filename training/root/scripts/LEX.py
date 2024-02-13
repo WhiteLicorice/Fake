@@ -218,7 +218,7 @@ os.environ['JAVAHOME'] = java_path
 modelfile = stanford_dir + "/models/filipino-left5words-owlqn2-distsim-pref6-inf2.tagger"
 jarfile = stanford_dir + "/stanford-postagger.jar"
 
-pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx4G")	   # Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
+pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx12G -XX:+HeapDumpOnOutOfMemoryError")   # Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
 
 # text = "Ito ang halimaw ng mga kulay.  Ngayong araw  gumising siyang kakaiba ang pakiramdam  nalilito  tuliro… Hindi niya alam kung ano ang mali sa kaniya.  Nalilito ka na naman? Hindi ka na natuto.  Anong gulo ang ginawa mo sa iyong mga damdamin!"
 

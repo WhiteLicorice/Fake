@@ -143,7 +143,7 @@ class LEXExtractor(BaseEstimator, TransformerMixin):
             ])
         return features
     
-class MORPHEXtractor(BaseEstimator, TransformerMixin):
+class MORPHExtractor(BaseEstimator, TransformerMixin):
     def get_derivational_morph(self, text):
         return MORPH.get_derivational_morph(text)
     
