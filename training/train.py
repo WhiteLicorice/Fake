@@ -150,7 +150,7 @@ for clf_info in classifiers:
             ('oov', OOVExtractor()),
             ('trad', TRADExtractor()),                                                                #   Extract TRAD features
             ('syll', SYLLExtractor()),                                                                #   Extract SYLL features
-            #('lex', LEXExtractor())                                                                   #   Extract LEX features
+            ('lex', LEXExtractor())                                                                   #   Extract LEX features
             #('morph', MORPHExtractor())                                                              #   Extract MORPH features
         ])),
         ('classifier', clf_info['model'])

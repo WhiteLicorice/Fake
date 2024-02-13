@@ -94,32 +94,11 @@ class SYLLExtractor(BaseEstimator, TransformerMixin):
         return features
     
 class LEXExtractor(BaseEstimator, TransformerMixin):
-    def get_ttr(self, text):
-        return LEX.type_token_ratio(text)
+    def get_type_token_ratios(self, text):
+        return LEX.get_type_token_ratios(text)
     
-    def get_root_ttr(self, text):
-        return LEX.root_type_token_ratio(text)
-    
-    def get_corr_ttr(self, text):
-        return LEX.corr_type_token_ratio(text)
-    
-    def get_log_ttr(self, text):
-        return LEX.log_type_token_ratio(text)
-    
-    def get_noun_tr(self, text):
-        return LEX.noun_token_ratio(text)
-    
-    def get_verb_tr(self, text):
-        return LEX.verb_token_ratio(text)
-    
-    def get_lexical_density(self, text):
-        return LEX.lexical_density(text)
-    
-    def get_foreign_word_count(self, text):
-        return LEX.foreign_word_counter(text)
-    
-    def get_compound_word_ratio(self, text):
-        return LEX.compound_word_ratio(text)
+    def get_token_ratios(self, text):
+        return LEX.get_token_ratios(text)
     
     def fit(self, X, y=None):
         return self
@@ -127,19 +106,12 @@ class LEXExtractor(BaseEstimator, TransformerMixin):
     def transform(self, X):
         features = []
         for doc in X:
-            ttr = self.get_ttr(doc)
-            root_ttr = self.get_root_ttr(doc)
-            corr_ttr = self.get_corr_ttr(doc)
-            log_ttr = self.get_log_ttr(doc)
-            noun_tr = self.get_noun_tr(doc)
-            verb_tr = self.get_verb_tr(doc)
-            lexical_density = self.get_lexical_density(doc)
-            foreign_wc = self.get_foreign_word_count(doc)
-            compund_wr = self.get_compound_word_ratio(doc)
+            (ttr, root_ttr, corr_ttr, log_ttr) = self.get_type_token_ratios(doc)
+            (noun_tr, verb_tr, lexical_density, foreign_tr, compund_tr) = self.get_token_ratios(doc)
 
             features.append([
                 ttr, root_ttr, corr_ttr, log_ttr, noun_tr, verb_tr,
-                lexical_density, foreign_wc, compund_wr
+                lexical_density, foreign_tr, compund_tr
             ])
         return features
     
@@ -147,44 +119,8 @@ class MORPHExtractor(BaseEstimator, TransformerMixin):
     def get_derivational_morph(self, text):
         return MORPH.get_derivational_morph(text)
     
-    def actor_focus_ratio(self, text):
-        return MORPH.actor_focus_ratio(text)
-    
-    def object_focus_ratio(self, text):
-        return MORPH.object_focus_ratio(text)
-    
-    def benefactive_focus_ratio(self, text):
-        return MORPH.benefactive_focus_ratio(text)
-    
-    def locative_focus_ratio(self, text):
-        return MORPH.locative_focus_ratio(text)
-
-    def instrumental_focus_ratio(self, text):
-        return MORPH.instrumental_focus_ratio(text)
-
-    def referential_focus_ratio(self, text):
-        return MORPH.referential_focus_ratio(text)
-
-    def infinitive_verb_ratio(self, text):
-        return MORPH.infinitive_verb_ratio(text)
-
-    def participle_verb_ratio(self, text):
-        return MORPH.participle_verb_ratio(text)
-
-    def perfective_verb_ratio(self, text):
-        return MORPH.perfective_verb_ratio(text)
-
-    def imperfective_verb_ratio(self, text):
-        return MORPH.imperfective_verb_ratio(text)
-
-    def contemplative_verb_ratio(self, text):
-        return MORPH.contemplative_verb_ratio(text)
-
-    def recent_past_verb_ratio(self, text):
-        return MORPH.recent_past_verb_ratio(text)
-
-    def aux_verb_ratio(self, text):
-        return MORPH.aux_verb_ratio(text)
+    def get_inflectional_morph(self, text):
+        return MORPH.get_inflectional_morph(text)
     
     def fit(self, X, y=None):
         return self
@@ -192,28 +128,27 @@ class MORPHExtractor(BaseEstimator, TransformerMixin):
     def transform(self, X):
         features = []
         for doc in X:
-            derivational_morph = self.get_derivational_morph(doc)
-            actor_focus_ratio = self.actor_focus_ratio(doc)
-            object_focus_ratio = self.object_focus_ratio(doc)
-            benefactive_focus_ratio = self.benefactive_focus_ratio(doc)
-            locative_focus_ratio = self.locative_focus_ratio(doc)
-            instrumental_focus_ratio = self.instrumental_focus_ratio(doc)
-            referential_focus_ratio = self.referential_focus_ratio(doc)
-            infinitive_verb_ratio = self.infinitive_verb_ratio(doc)
-            participle_verb_ratio = self.participle_verb_ratio(doc)
-            perfective_verb_ratio = self.perfective_verb_ratio(doc)
-            imperfective_verb_ratio = self.imperfective_verb_ratio(doc)
-            contemplative_verb_ratio = self.contemplative_verb_ratio(doc)
-            recent_past_verb_ratio = self.recent_past_verb_ratio(doc)
-            aux_verb_ratio = self.aux_verb_ratio(doc)
+            (
+                prefix_token_ratio, prefix_derived_ratio, suffix_token_ratio,
+                suffix_derived_ratio, total_affix_token_ratio, total_affix_derived_ratio
+            ) = self.get_derivational_morph(doc)
+
+            (
+                actor_focus_ratio, object_focus_ratio, benefactive_focus_ratio,
+                locative_focus_ratio, instrumental_focus_ratio, referential_focus_ratio,
+                infinitive_verb_ratio, participle_verb_ratio, perfective_verb_ratio,
+                imperfective_verb_ratio, contemplative_verb_ratio, recent_past_verb_ratio,
+                aux_verb_ratio
+            ) = self.get_inflectional_morph(doc)
 
             features.append([
+                prefix_token_ratio, prefix_derived_ratio, suffix_token_ratio,
+                suffix_derived_ratio, total_affix_token_ratio, total_affix_derived_ratio,
                 actor_focus_ratio, object_focus_ratio, benefactive_focus_ratio, locative_focus_ratio,
                 instrumental_focus_ratio, referential_focus_ratio, infinitive_verb_ratio,
                 participle_verb_ratio, perfective_verb_ratio, imperfective_verb_ratio,
                 contemplative_verb_ratio, recent_past_verb_ratio, aux_verb_ratio
             ])
-            features = derivational_morph + features
 
         return features
 
