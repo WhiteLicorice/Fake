@@ -91,6 +91,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 #   Classifiers to test
 classifiers = [
     {
+        'name': 'Multinomial Naive Bayes',
+        'model_id': 'MultinomialNB',
+        'model': MultinomialNB(),
+        'params': {
+            'classifier__alpha': [0.1, 1.0, 10.0]
+        }
+    },
+    {
         'name': 'Logistic Regression',
         'model_id': 'LogisticRegression',
         'model': LogisticRegression(max_iter=2000, n_jobs=-1),
@@ -98,7 +106,39 @@ classifiers = [
             'classifier__C': [0.1, 1.0, 10.0]
         }
     },
+    {
+        'name': 'Random Forest',
+        'model_id': 'RandomForest',
+        'model': RandomForestClassifier(n_jobs=-1),
+        'params': {
+            'classifier__n_estimators': [50, 100],
+            'classifier__max_depth': [10, 20],
+            'classifier__min_samples_split': [2, 5, 10]
+        }
+    },
+    {
+        'name': 'SVC',
+        'model_id': 'SVC',
+        'model': SVC(),
+        'params': {
+            'classifier__C': [0.1, 1.0, 10.0],
+            'classifier__kernel': ['linear', 'rbf']
+        },
+        'n_jobs': -1 
+    },
 ]
+
+# #   Classifiers to test
+# classifiers = [
+#     {
+#         'name': 'Logistic Regression',
+#         'model_id': 'LogisticRegression',
+#         'model': LogisticRegression(max_iter=2000, n_jobs=-1),
+#         'params': {
+#             'classifier__C': [0.1, 1.0, 10.0]
+#         }
+#     },
+# ]
 
 print("CLASSIFIERS WITHOUT GRIDSEARCH")
 #   Test classifiers with no gridsearch
@@ -107,7 +147,7 @@ for clf_info in classifiers:
         ('features', FeatureUnion([
             ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),        #   Get unigrams, bigrams, and trigrams
             ('bow', CountVectorizer()),                                                               #   Get bag of words
-            ('oov', OOVExtractor()),                                                                  #   Get OOV features
+            
             ('trad', TRADExtractor()),                                                                #   Extract TRAD features
             ('syll', SYLLExtractor()),                                                                #   Extract SYLL features
             ('lex', LEXExtractor())                                                                   #   Extract LEX features
