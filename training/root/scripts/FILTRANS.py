@@ -107,11 +107,11 @@ class LEXExtractor(BaseEstimator, TransformerMixin):
         features = []
         for doc in X:
             (ttr, root_ttr, corr_ttr, log_ttr) = self.get_type_token_ratios(doc)
-            (noun_tr, verb_tr, lexical_density, foreign_tr, compund_tr) = self.get_token_ratios(doc)
+            (noun_tr, verb_tr, lexical_density, foreign_tr, compound_tr) = self.get_token_ratios(doc)
 
             features.append([
                 ttr, root_ttr, corr_ttr, log_ttr, noun_tr, verb_tr,
-                lexical_density, foreign_tr, compund_tr
+                lexical_density, foreign_tr, compound_tr
             ])
         return features
     

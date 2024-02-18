@@ -3,6 +3,7 @@ from nltk.tag import StanfordPOSTagger
 from nltk import wordpunct_tokenize
 import os, math, re
 from nltk import data as nltk_data
+import gc
 
 # DIRECTORIES FROM train.py when calling 'train.py'
 if __name__ == "__main__":
@@ -44,6 +45,8 @@ def get_type_token_ratios(text):
     )
 
 def get_token_ratios(text):
+    # global pos_tagger
+    # pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx4G")
     splitted = re.split('[?.]+', text)
     splitted = [i for i in splitted if i]   #removes empty strings in list
     tokenized_split = [wordpunct_tokenize(i.strip()) for i in splitted]
@@ -79,7 +82,8 @@ def get_token_ratios(text):
     lexical_density = lexical_item_counter/total_tokens
     foreign_word_ratio = foreign_word_counter/total_tokens
     compound_word_ratio = compound_word_counter/total_tokens
-
+    # del pos_tagger
+    # print(gc.collect())
     return (
         noun_token_ratio, verb_token_ratio, lexical_density, foreign_word_ratio, compound_word_ratio
     )
@@ -87,6 +91,8 @@ def get_token_ratios(text):
 #UTILITY FUNCTIONS
 #returns the T
 def unique_tokentype_identifier(text):
+    # pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx4G")   # Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
+    global pos_tagger
     tagged_text = pos_tagger.tag([text.lower()])
     global unique_tokens
     unique_tokens = []
@@ -97,6 +103,8 @@ def unique_tokentype_identifier(text):
             if pos not in unique_tokens:
                 unique_tokens.append(pos)
 
+    # del pos_tagger
+    # print(gc.collect())
     return unique_tokens
 
 os.environ['JAVAHOME'] = java_path
@@ -104,12 +112,11 @@ modelfile = stanford_dir + "/models/filipino-left5words-owlqn2-distsim-pref6-inf
 jarfile = stanford_dir + "/stanford-postagger.jar"
 
                                                                                                         # Add path para sa local machine kng mag analyze e.g -XX:HeapDumpPath=C:\\Acadsht
-pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx5G -XX:+HeapDumpOnOutOfMemoryError")   # Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
-
+pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx20G")   # Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
 if __name__ == "__main__":
     import time
     import tracemalloc
-    text = "Ito ang halimaw ng mga kulay.  Ngayong araw  gumising siyang kakaiba ang pakiramdam  nalilito  tuliro… Hindi niya alam kung ano ang mali sa kaniya.  Nalilito ka na naman? Hindi ka na natuto.  Anong gulo ang ginawa mo sa iyong mga damdamin!"
+    text = "Kilala rin ang singer sa pagkumpas ng kanyang kamay tuwing siya ay nagtatanghal sa entablado. \"His international success as a blues/rock singer began in 1964 and continues till this day. Joe created nearly 40 albums and toured extensively around the globe,\" ayon sa Sony Music, ang kanyang record label. Lumaki si Cocker sa Britain at nanirahan sa Crawford, Colorado. Nagpahayag ng pakikiramay ang mga kapwa musikero at umiidolo sa singer gamit ang kanilang Twitter, na kinilala bilang Officer of the Order of the British Empire (OBE) sa Buckingham Palace. \"Goodbye and God Bless to Joe Cocker from one of his friends peace and love. R.,\" ayon sa kanyang kabanda sa Beatles na si Ringo Starr. \"We loved you forever. We will miss you always ... RIP Joe Cocker,\" pahayag ni Steven Tyler, front man ng Aerosmith. Inilarawan naman ni Bryan Adams si Cocker bilang isang mabuting kaibigan at isa sa pinakamahuhusay na singers."
 
     start = time.time()
     tracemalloc.start()
