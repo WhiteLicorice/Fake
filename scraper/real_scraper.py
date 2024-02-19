@@ -42,7 +42,7 @@ news_title_divs = soup_base.find_all('div', class_='news_title')
 csv_file_path = 'real_news.csv'
 with open(csv_file_path, 'w', encoding='utf-8-sig', newline='') as csv_file:
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Article Title', 'Article Content'])
+    csv_writer.writerow(['Label', 'Article'])
 
     # Extract and print the news articles
     articles_scraped = 0
@@ -69,7 +69,7 @@ with open(csv_file_path, 'w', encoding='utf-8-sig', newline='') as csv_file:
                 content_text = article_content.get_text().replace('\n', ' ').strip()
 
                 # Write the data to the CSV file
-                csv_writer.writerow([content_text])
+                csv_writer.writerow(['1', content_text])
                 print(f"Scraped Article {articles_scraped + 1}")
 
                 articles_scraped += 1
