@@ -13,34 +13,47 @@ from sklearn.base import BaseEstimator, TransformerMixin
 
 #   Custom transformer for TRAD feature extraction
 class TRADExtractor(BaseEstimator, TransformerMixin):
-    def word_count_per_doc(self, text):
+    def get_word_count_per_doc(self, text):
         return TRAD.word_count_per_doc(text)
     
-    def sentence_count_per_doc(self, text):
+    def get_sentence_count_per_doc(self, text):
         return TRAD.sentence_count_per_doc(text)
     
-    def polysyll_count_per_doc(self, text):
+    def get_polysyll_count_per_doc(self, text):
         return TRAD.polysyll_count_per_doc(text)
     
-    def ave_word_length(self, text):
+    def get_ave_word_length(self, text):
         return TRAD.ave_word_length(text)
     
-    def ave_phrase_count_per_doc(self, text):
+    def get_ave_phrase_count_per_doc(self, text):
         return TRAD.ave_phrase_count_per_doc(text)
+
+    def get_ave_syllable_count_of_word(self, text):
+        return TRAD.ave_syllable_count_of_word(text)
     
+    def get_word_count_per_sentence(self, text):
+        return TRAD.word_count_per_sentence(text)
+
     def fit(self, X, y=None):
         return self
     
     def transform(self, X):
         features = []
         for doc in X:
-            word_count = self.word_count_per_doc(doc)
-            sentence_count = self.sentence_count_per_doc(doc)
-            polysyll_count = self.polysyll_count_per_doc(doc)
-            ave_word_length = self.ave_word_length(doc)
-            ave_phrase_count = self.ave_phrase_count_per_doc(doc)
-            features.append([word_count, sentence_count, polysyll_count, ave_word_length, ave_phrase_count])
+            word_count = self.get_word_count_per_doc(doc)
+            sentence_count = self.get_sentence_count_per_doc(doc)
+            polysyll_count = self.get_polysyll_count_per_doc(doc)
+            ave_word_length = self.get_ave_word_length(doc)
+            ave_phrase_count = self.get_ave_phrase_count_per_doc(doc)
+            ave_syllable_count_of_word = self.get_ave_syllable_count_of_word(doc)
+            word_count_per_sentence = self.get_word_count_per_sentence(doc)
+            features.append([
+                word_count, sentence_count, polysyll_count,
+                ave_word_length, ave_phrase_count, ave_syllable_count_of_word,
+                word_count_per_sentence
+            ])
         return features
+
 
 #   Custom transformer for SYLL feature extraction
 class SYLLExtractor(BaseEstimator, TransformerMixin):

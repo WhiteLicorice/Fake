@@ -147,8 +147,9 @@ for clf_info in classifiers:
         ('features', FeatureUnion([
             ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),        #   Get unigrams, bigrams, and trigrams
             ('bow', CountVectorizer()),                                                               #   Get bag of words
-            ('read', READExtractor()),                                                                #   Extract READ features
-            ('oov', OOVExtractor()),                                                                  #   Extract OOV features
+            #('read', READExtractor()),                                                                #   Extract READ features
+            #('oov', OOVExtractor()),                                                                  #   Extract OOV features
+            ('sw', StopWordsExtractor()),
             ('trad', TRADExtractor()),                                                                #   Extract TRAD features
             ('syll', SYLLExtractor()),                                                                #   Extract SYLL features
         ])),
@@ -161,9 +162,9 @@ for clf_info in classifiers:
     pipeline.fit(X_train, y_train)
     
     #   Dump trained model
-    trained_model = pipeline.named_steps['classifier']
-    with open(f"{clf_info['model_id']}_{session_timestamp}.pkl", 'wb') as file:
-        pickle.dump(pipeline, file)
+    # trained_model = pipeline.named_steps['classifier']
+    # with open(f"{clf_info['model_id']}_{session_timestamp}.pkl", 'wb') as file:
+    #     pickle.dump(pipeline, file)
 
     #   Make predictions
     y_pred = pipeline.predict(X_test)
