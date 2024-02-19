@@ -12,15 +12,19 @@ from sklearn.ensemble import VotingClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.metrics import accuracy_score, classification_report, confusion_matrix
 
-from root.scripts.FILTRANS import TRADExtractor, SYLLExtractor, OOVExtractor, StopWordsExtractor
+from root.scripts.FILTRANS import TRADExtractor, SYLLExtractor, OOVExtractor, StopWordsExtractor, LEXExtractor, MORPHExtractor, READExtractor
 from root.scripts.BPE import BPETokenizer
 
 import matplotlib.pyplot as plt
 import seaborn as sns
 
+from datetime import datetime
+
 #   Suppress specific warning about tokenize_pattern from sklearn.feature_extraction.text
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_extraction.text")
+
+session_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")    #   Grab current time to use as timestamp on files
 
 #   Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
 data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
@@ -32,7 +36,7 @@ y = data['label']  # Labels are 0 -> Fake or 1 -> Real
 #   Split dataset for training and testing
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-# #   Classifiers to test
+#   Classifiers to test
 # classifiers = [
 #     {
 #         'name': 'Multinomial Naive Bayes',
@@ -139,25 +143,28 @@ classifiers = [
 print("CLASSIFIERS WITHOUT GRIDSEARCH")
 #   Test classifiers with no gridsearch
 for clf_info in classifiers:
-    print(f"\nTraining Model: {clf_info['name']}")
     pipeline = Pipeline([
         ('features', FeatureUnion([
             ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),        #   Get unigrams, bigrams, and trigrams
             ('bow', CountVectorizer()),                                                               #   Get bag of words
-            
+            #('read', READExtractor()),                                                                #   Extract READ features
+            #('oov', OOVExtractor()),                                                                  #   Extract OOV features
+            ('sw', StopWordsExtractor()),
             ('trad', TRADExtractor()),                                                                #   Extract TRAD features
-            ('syll', SYLLExtractor())                                                                 #   Extract SYLL features
+            ('syll', SYLLExtractor()),                                                                #   Extract SYLL features
         ])),
         ('classifier', clf_info['model'])
     ])
+    
+    print(f"\nTraining Model: {clf_info['name']}")
 
     #   Fit the entire pipeline on the training data
     pipeline.fit(X_train, y_train)
     
     #   Dump trained model
-    trained_model = pipeline.named_steps['classifier']
-    with open(f"{clf_info['model_id']}.pkl", 'wb') as file:
-        pickle.dump(pipeline, file)
+    # trained_model = pipeline.named_steps['classifier']
+    # with open(f"{clf_info['model_id']}_{session_timestamp}.pkl", 'wb') as file:
+    #     pickle.dump(pipeline, file)
 
     #   Make predictions
     y_pred = pipeline.predict(X_test)
@@ -176,8 +183,10 @@ for clf_info in classifiers:
     plt.xlabel('Predicted')
     plt.ylabel('Actual')
     plt.title(f'Confusion Matrix - {clf_info["name"]}')
-    plt.show()
-
+    #plt.show()
+    plt.savefig(f"{clf_info['name']}_{session_timestamp}.png", bbox_inches = 'tight')   #   Silently save confusion matrices for overnight training
+    plt.close()
+    
 # print("CLASSIFIERS WITH GRIDSEARCH")
 # #   Test classifiers with gridsearch
 # for clf_info in classifiers:
