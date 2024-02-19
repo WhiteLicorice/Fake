@@ -42,7 +42,7 @@ news_title_divs = soup_base.find_all('div', class_='news_title')
 csv_file_path = 'real_news.csv'
 with open(csv_file_path, 'w', encoding='utf-8-sig', newline='') as csv_file:
     csv_writer = csv.writer(csv_file)
-    csv_writer.writerow(['Label', 'Article'])
+    csv_writer.writerow(['label', 'article'])
 
     # Extract and print the news articles
     articles_scraped = 0
