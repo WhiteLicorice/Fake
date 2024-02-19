@@ -46,10 +46,10 @@ def train_with_repeated_cv(classifier, classifier_name, params, repetitions, n_f
         ('features', FeatureUnion([
             ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),       # Get unigrams, bigrams, and trigrams
             ('bow', CountVectorizer()),                                                              # Get bag of words
-            # ('read', READExtractor()),                                                             # Extract READ features
-            ('oov', OOVExtractor()),                                                               # Extract OOV features
-            # ('sw', StopWordsExtractor()),                                                          # Extract SW features 
-            ('trad', TRADExtractor()),                                                             # Extract TRAD features
+            #('read', READExtractor()),                                                             # Extract READ features
+            #('oov', OOVExtractor()),                                                               # Extract OOV features
+            #('sw', StopWordsExtractor()),                                                          # Extract SW features 
+            #('trad', TRADExtractor()),                                                             # Extract TRAD features
             ('syll', SYLLExtractor()),                                                             # Extract SYLL features
         ])),
         ('classifier', classifier)
