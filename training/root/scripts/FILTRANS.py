@@ -7,10 +7,9 @@ import root.scripts.MORPH as MORPH
 
 import root.scripts.OOV as OOV
 import root.scripts.SW as SW
+import root.scripts.READ as READ
 
 from sklearn.base import BaseEstimator, TransformerMixin
-
-# import string
 
 #   Custom transformer for TRAD feature extraction
 class TRADExtractor(BaseEstimator, TransformerMixin):
@@ -187,4 +186,19 @@ class StopWordsExtractor(BaseEstimator, TransformerMixin):
             ])
         return features
 
-
+#   Custom transformer for StopWords count feature extraction
+class READExtractor(BaseEstimator, TransformerMixin):
+    def get_readability_score(self, text):
+        return READ.compute_readability_score(text)
+        
+    def fit(self, X, y=None):
+        return self
+    
+    def transform(self, X):
+        features = []
+        for doc in X:
+            readability_score = self.get_readability_score(doc)
+            features.append([
+                readability_score,
+            ])
+        return features
