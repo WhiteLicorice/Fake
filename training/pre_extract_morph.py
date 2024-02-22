@@ -18,7 +18,6 @@ def main():
         morphFeatures = pd.read_csv("root/datasets/MorphFeatures.csv")
 
     list_of_vals = []
-    counter = 0
 
     ## Check last progress of MorphFeatures.csv and changed index as needed
     for i in data.itertuples():
@@ -56,12 +55,10 @@ def main():
             "aux_verb_ratio" : aux_verb_ratio
             })
         
-        if ((counter+1)%5) == 0:
+        if ((i.Index)%5) == 0:
             morphFeatures = pd.concat([morphFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
             morphFeatures.to_csv("root/datasets/MorphFeatures.csv", index=False)
             list_of_vals = []
-        
-        counter += 1
 
 if __name__ == "__main__":
     main()
