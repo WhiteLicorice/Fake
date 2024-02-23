@@ -40,7 +40,14 @@ def main():
             #     lexFeatures = pd.concat([lexFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
             #     lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
             #     list_of_vals=[]
-    lexFeatures = pd.concat([lexFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
+            
+            if ((i.Index)%25) == 0:
+                print("Saving figures...")
+                lexFeatures = pd.concat([lexFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
+                lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
+                list_of_vals = []
+                
+    lexFeatures = pd.concat([lexFeatures, pd.DatLexFeaturesaFrame(list_of_vals, index=list(range(len(list_of_vals))))])
     lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
 
 if __name__ == "__main__":
