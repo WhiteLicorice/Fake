@@ -162,7 +162,7 @@ os.environ['JAVAHOME'] = java_path
 modelfile = stanford_dir + "/models/filipino-left5words-owlqn2-distsim-pref6-inf2.tagger"
 jarfile = stanford_dir + "/stanford-postagger.jar"
 
-pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx8G")		# Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
+pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx60G")		# Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
 
 if __name__ == "__main__":
 	import time

@@ -55,7 +55,10 @@ def main():
             "aux_verb_ratio" : aux_verb_ratio
             })
         
+        print(i.Index)
+        
         if ((i.Index)%25) == 0:
+            print("Saving features...")
             morphFeatures = pd.concat([morphFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
             morphFeatures.to_csv("root/datasets/MorphFeatures.csv", index=False)
             list_of_vals = []
