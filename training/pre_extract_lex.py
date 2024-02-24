@@ -18,7 +18,7 @@ def main():
 
     ## Check last progress of LexFeatures.csv and changed index as needed
     for i in data.itertuples():
-        if(i.Index > 3100):
+        if(i.Index > 3114):
             (ttr, root_ttr, corr_ttr, log_ttr) = LEX.get_type_token_ratios(i.article)
             (noun_tr, verb_tr, lexical_density, foreign_tr, compound_tr) = LEX.get_token_ratios(i.article)
 
@@ -41,7 +41,7 @@ def main():
             #     lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
             #     list_of_vals=[]
             
-            if ((i.Index)%25) == 0:
+            if ((i.Index)%2) == 0:
                 print("Saving figures...")
                 lexFeatures = pd.concat([lexFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
                 lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
