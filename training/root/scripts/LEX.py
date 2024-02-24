@@ -92,16 +92,23 @@ def get_token_ratios(text):
 #returns the T
 def unique_tokentype_identifier(text):
     # pos_tagger=StanfordPOSTagger(modelfile,jarfile,java_options="-Xmx4G")   # Change -Xmx4G to -XmxYG as needed where Y is the heap size in Gigabytes
-    global pos_tagger
-    tagged_text = pos_tagger.tag([text.lower()])
+    # global pos_tagger
+    # tagged_text = pos_tagger.tag([text.lower()])
+
+    splitted = re.split('[?.]+', text)
+    splitted = [i for i in splitted if i]   #removes empty strings in list
+    tokenized_split = [wordpunct_tokenize(i.strip()) for i in splitted]
+    tagged_text = pos_tagger.tag_sents(tokenized_split)
+
     global unique_tokens
     unique_tokens = []
 
     for i in tagged_text:
-        if '|' not in i[0]:
-            pos = i[1].split('|')[1]
-            if pos not in unique_tokens:
-                unique_tokens.append(pos)
+        for j in i:
+            if '|' not in j[0]:
+                pos = j[1].split('|')[1]
+                if pos not in unique_tokens:
+                    unique_tokens.append(pos)
 
     # del pos_tagger
     # print(gc.collect())
