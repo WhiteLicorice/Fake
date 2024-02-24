@@ -18,7 +18,7 @@ def main():
 
     ## Check last progress of LexFeatures.csv and changed index as needed
     for i in data.itertuples():
-        if(i.Index > 3000):
+        if(i.Index > 3100):
             (ttr, root_ttr, corr_ttr, log_ttr) = LEX.get_type_token_ratios(i.article)
             (noun_tr, verb_tr, lexical_density, foreign_tr, compound_tr) = LEX.get_token_ratios(i.article)
 
