@@ -131,3 +131,5 @@ dist
 
 /training/WithGridSearch
 /training/WithoutGridSearch
+
+/.vscode
