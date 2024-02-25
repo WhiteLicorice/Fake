@@ -18,29 +18,30 @@ def main():
 
     ## Check last progress of LexFeatures.csv and changed index as needed
     for i in data.itertuples():
-        (ttr, root_ttr, corr_ttr, log_ttr) = LEX.get_type_token_ratios(i.article)
-        (noun_tr, verb_tr, lexical_density, foreign_tr, compound_tr) = LEX.get_token_ratios(i.article)
+        if (i.Index > 3200):
+            (ttr, root_ttr, corr_ttr, log_ttr) = LEX.get_type_token_ratios(i.article)
+            (noun_tr, verb_tr, lexical_density, foreign_tr, compound_tr) = LEX.get_token_ratios(i.article)
 
-        list_of_vals.append({
-            "ttr" : ttr,
-            "root_ttr" : root_ttr,
-            "corr_ttr" : corr_ttr,
-            "log_ttr" : log_ttr,
-            "noun_tr" : noun_tr,
-            "verb_tr" : verb_tr,
-            "lexical_density" : lexical_density,
-            "foreign_tr" : foreign_tr,
-            "compound_tr" : compound_tr
-            })
-        print(i.Index)
-        
-        if ((i.Index)%25) == 0:
-            print("Saving figures...")
-            lexFeatures = pd.concat([lexFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
-            lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
-            list_of_vals = []
+            list_of_vals.append({
+                "ttr" : ttr,
+                "root_ttr" : root_ttr,
+                "corr_ttr" : corr_ttr,
+                "log_ttr" : log_ttr,
+                "noun_tr" : noun_tr,
+                "verb_tr" : verb_tr,
+                "lexical_density" : lexical_density,
+                "foreign_tr" : foreign_tr,
+                "compound_tr" : compound_tr
+                })
+            print(i.Index)
+            
+            if ((i.Index)%25) == 0:
+                print("Saving figures...")
+                lexFeatures = pd.concat([lexFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
+                lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
+                list_of_vals = []
                 
-    lexFeatures = pd.concat([lexFeatures, pd.DatLexFeaturesaFrame(list_of_vals, index=list(range(len(list_of_vals))))])
+    lexFeatures = pd.concat([lexFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
     lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
 
 if __name__ == "__main__":
