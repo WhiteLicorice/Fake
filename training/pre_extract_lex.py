@@ -1,10 +1,8 @@
 import pandas as pd
 import root.scripts.LEX as LEX
 
-
-def main():
+def pre_extract_lex():
     data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
-
 
     try:
         lexFeatures = pd.read_csv("root/datasets/LexFeatures.csv")
@@ -15,10 +13,10 @@ def main():
         lexFeatures = pd.read_csv("root/datasets/LexFeatures.csv")
 
     list_of_vals = []
-
-    ## Check last progress of LexFeatures.csv and changed index as needed
+    starting_index = 0  # TODO: Check last progress of the corresponding .csv and change starting index as needed
+    
     for i in data.itertuples():
-        if (i.Index > 3200):
+        if (i.Index > starting_index):
             (ttr, root_ttr, corr_ttr, log_ttr) = LEX.get_type_token_ratios(i.article)
             (noun_tr, verb_tr, lexical_density, foreign_tr, compound_tr) = LEX.get_token_ratios(i.article)
 
@@ -44,5 +42,8 @@ def main():
     lexFeatures = pd.concat([lexFeatures, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
     lexFeatures.to_csv("root/datasets/LexFeatures.csv", index=False)
 
+def main():
+    pre_extract_lex()
+    
 if __name__ == "__main__":
     main()
