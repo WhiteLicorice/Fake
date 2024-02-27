@@ -12,8 +12,8 @@ DICTIONARY_BASE_DIR = "dictionaries"
 SCRIPT_DIRECTORY = os.path.dirname(os.path.abspath(__file__))
 
 # Asbolute paths for dictionaries
-ENGLISH_DICTIONARY_PATH = os.path.join(SCRIPT_DIRECTORY, DICTIONARY_BASE_DIR, "en.wl")
-FILIPINO_DICTIONARY_PATH = os.path.join(SCRIPT_DIRECTORY, DICTIONARY_BASE_DIR, "fil.wl")
+ENGLISH_DICTIONARY_PATH = os.path.join(SCRIPT_DIRECTORY, DICTIONARY_BASE_DIR, "en.dic")
+FILIPINO_DICTIONARY_PATH = os.path.join(SCRIPT_DIRECTORY, DICTIONARY_BASE_DIR, "fil.dic")
 DICTIONARY_PATHS = [ENGLISH_DICTIONARY_PATH, FILIPINO_DICTIONARY_PATH]                      #   Aggregate dictionaries into a list for future-proofing
 
 """UTILITY FUNCTIONS"""

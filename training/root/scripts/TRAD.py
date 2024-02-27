@@ -23,7 +23,7 @@ def word_count_per_sentence(text):
 	sentence_count = sentence_count_per_doc(text)
 	if sentence_count == 0:
 		sentence_count = 1
-	return word_count/sentence_count_per_doc(text)
+	return word_count/sentence_count
 
 """
 #Average number of SENTENCES in a document
