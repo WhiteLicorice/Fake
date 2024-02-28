@@ -3,6 +3,7 @@ import pickle
 
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline, FeatureUnion
+from sklearn.compose import ColumnTransformer
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.linear_model import LogisticRegression
@@ -20,6 +21,7 @@ import seaborn as sns
 
 from datetime import datetime
 
+LOAD_FROM_CSV = True
 #   Suppress specific warning about tokenize_pattern from sklearn.feature_extraction.text
 import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_extraction.text")
@@ -28,10 +30,17 @@ session_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")    #   Grab cur
 
 #   Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
 data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
+trad_features = pd.read_csv("root/datasets/TradFeatures.csv")
+syll_features = pd.read_csv("root/datasets/SyllFeatures.csv")
+oov_features = pd.read_csv("root/datasets/OovFeatures.csv")
+sw_features = pd.read_csv("root/datasets/SwFeatures.csv")
+read_features = pd.read_csv("root/datasets/ReadFeatures.csv")
 
+data = pd.concat([data, trad_features, syll_features, oov_features, sw_features, read_features], axis=1)
 #   Split the data into features (X) and labels (y)
-X = data['article']
 y = data['label']  # Labels are 0 -> Fake or 1 -> Real
+X = data.drop('label', axis=1)
+# X = data['article']
 
 #   Split dataset for training and testing
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
@@ -90,14 +99,14 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_
 
 #   Classifiers to test
 classifiers = [
-    {
-        'name': 'Multinomial Naive Bayes',
-        'model_id': 'MultinomialNB',
-        'model': MultinomialNB(),
-        'params': {
-            'classifier__alpha': [0.1, 1.0, 10.0]
-        }
-    },
+    # {
+    #     'name': 'Multinomial Naive Bayes',
+    #     'model_id': 'MultinomialNB',
+    #     'model': MultinomialNB(),
+    #     'params': {
+    #         'classifier__alpha': [0.1, 1.0, 10.0]
+    #     }
+    # },
     {
         'name': 'Logistic Regression',
         'model_id': 'LogisticRegression',
@@ -106,26 +115,26 @@ classifiers = [
             'classifier__C': [0.1, 1.0, 10.0]
         }
     },
-    {
-        'name': 'Random Forest',
-        'model_id': 'RandomForest',
-        'model': RandomForestClassifier(n_jobs=-1),
-        'params': {
-            'classifier__n_estimators': [50, 100],
-            'classifier__max_depth': [10, 20],
-            'classifier__min_samples_split': [2, 5, 10]
-        }
-    },
-    {
-        'name': 'SVC',
-        'model_id': 'SVC',
-        'model': SVC(),
-        'params': {
-            'classifier__C': [0.1, 1.0, 10.0],
-            'classifier__kernel': ['linear', 'rbf']
-        },
-        'n_jobs': -1 
-    },
+    # {
+    #     'name': 'Random Forest',
+    #     'model_id': 'RandomForest',
+    #     'model': RandomForestClassifier(n_jobs=-1),
+    #     'params': {
+    #         'classifier__n_estimators': [50, 100],
+    #         'classifier__max_depth': [10, 20],
+    #         'classifier__min_samples_split': [2, 5, 10]
+    #     }
+    # },
+    # {
+    #     'name': 'SVC',
+    #     'model_id': 'SVC',
+    #     'model': SVC(),
+    #     'params': {
+    #         'classifier__C': [0.1, 1.0, 10.0],
+    #         'classifier__kernel': ['linear', 'rbf']
+    #     },
+    #     'n_jobs': -1 
+    # },
 ]
 
 # #   Classifiers to test
@@ -143,18 +152,23 @@ classifiers = [
 print("CLASSIFIERS WITHOUT GRIDSEARCH")
 #   Test classifiers with no gridsearch
 for clf_info in classifiers:
-    pipeline = Pipeline([
+
+    pipeline = Pipeline(steps=[
         ('features', FeatureUnion([
-            ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),        #   Get unigrams, bigrams, and trigrams
-            ('bow', CountVectorizer()),                                                               #   Get bag of words
-            #('read', READExtractor()),                                                                #   Extract READ features
-            #('oov', OOVExtractor()),                                                                  #   Extract OOV features
-            ('sw', StopWordsExtractor()),
-            ('trad', TRADExtractor()),                                                                #   Extract TRAD features
-            ('syll', SYLLExtractor()),                                                                #   Extract SYLL features
+            ('vectorizers', ColumnTransformer(transformers=[
+                ('bow',CountVectorizer(),'article'),
+                ('tfidf',TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize),'article')
+            ])),                                                               #   Get bag of words
+            ('read', READExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract READ features
+            ('oov', OOVExtractor(from_csv=LOAD_FROM_CSV)),                                                               #   Extract OOV features
+            ('sw', StopWordsExtractor(from_csv=LOAD_FROM_CSV)),
+            ('trad', TRADExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract TRAD features
+            ('syll', SYLLExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract SYLL features
         ])),
         ('classifier', clf_info['model'])
     ])
+
+
     
     print(f"\nTraining Model: {clf_info['name']}")
 
@@ -178,14 +192,14 @@ for clf_info in classifiers:
     print("Classification Report:\n", class_report)
     
     #   Confusion Matrix
-    cm = confusion_matrix(y_test, y_pred)
-    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-    plt.xlabel('Predicted')
-    plt.ylabel('Actual')
-    plt.title(f'Confusion Matrix - {clf_info["name"]}')
-    #plt.show()
-    plt.savefig(f"{clf_info['name']}_{session_timestamp}.png", bbox_inches = 'tight')   #   Silently save confusion matrices for overnight training
-    plt.close()
+    # cm = confusion_matrix(y_test, y_pred)
+    # sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    # plt.xlabel('Predicted')
+    # plt.ylabel('Actual')
+    # plt.title(f'Confusion Matrix - {clf_info["name"]}')
+    # #plt.show()
+    # plt.savefig(f"{clf_info['name']}_{session_timestamp}.png", bbox_inches = 'tight')   #   Silently save confusion matrices for overnight training
+    # plt.close()
     
 # print("CLASSIFIERS WITH GRIDSEARCH")
 # #   Test classifiers with gridsearch
