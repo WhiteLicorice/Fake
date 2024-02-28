@@ -159,6 +159,17 @@ class LEXExtractor(BaseEstimator, TransformerMixin):
     
     def transform(self, X):
         features = []
+        if(self.from_csv):
+            for doc in X.itertuples():
+                (ttr, root_ttr, corr_ttr, log_ttr) = (doc.ttr, doc.root_ttr, doc.corr_ttr, doc.log_ttr)
+                (noun_tr, verb_tr, lexical_density, foreign_tr, compound_tr) = (doc.noun_tr, doc.verb_tr, doc.lexical_density, doc.foreign_tr, doc.compound_tr)
+
+                features.append([
+                    ttr, root_ttr, corr_ttr, log_ttr, noun_tr, verb_tr,
+                    lexical_density, foreign_tr, compound_tr
+                ])
+            return features
+        
         for doc in X:
             (ttr, root_ttr, corr_ttr, log_ttr) = self.get_type_token_ratios(doc)
             (noun_tr, verb_tr, lexical_density, foreign_tr, compound_tr) = self.get_token_ratios(doc)
@@ -184,6 +195,41 @@ class MORPHExtractor(BaseEstimator, TransformerMixin):
     
     def transform(self, X):
         features = []
+        if(self.from_csv):
+            for doc in X.itertuples():
+                (
+                    prefix_token_ratio, prefix_derived_ratio, suffix_token_ratio,
+                    suffix_derived_ratio, total_affix_token_ratio, total_affix_derived_ratio
+                ) = (
+                    doc.prefix_token_ratio, doc.prefix_derived_ratio, doc.suffix_token_ratio,
+                    doc.suffix_derived_ratio, doc.total_affix_token_ratio, doc.total_affix_derived_ratio
+                )
+
+                (
+                    actor_focus_ratio, object_focus_ratio, benefactive_focus_ratio,
+                    locative_focus_ratio, instrumental_focus_ratio, referential_focus_ratio,
+                    infinitive_verb_ratio, participle_verb_ratio, perfective_verb_ratio,
+                    imperfective_verb_ratio, contemplative_verb_ratio, recent_past_verb_ratio,
+                    aux_verb_ratio
+                ) = (
+                    doc.actor_focus_ratio, doc.object_focus_ratio, doc.benefactive_focus_ratio,
+                    doc.locative_focus_ratio, doc.instrumental_focus_ratio, doc.referential_focus_ratio,
+                    doc.infinitive_verb_ratio, doc.participle_verb_ratio, doc.perfective_verb_ratio,
+                    doc.imperfective_verb_ratio, doc.contemplative_verb_ratio, doc.recent_past_verb_ratio,
+                    doc.aux_verb_ratio
+                )
+
+                features.append([
+                    prefix_token_ratio, prefix_derived_ratio, suffix_token_ratio,
+                    suffix_derived_ratio, total_affix_token_ratio, total_affix_derived_ratio,
+                    actor_focus_ratio, object_focus_ratio, benefactive_focus_ratio, locative_focus_ratio,
+                    instrumental_focus_ratio, referential_focus_ratio, infinitive_verb_ratio,
+                    participle_verb_ratio, perfective_verb_ratio, imperfective_verb_ratio,
+                    contemplative_verb_ratio, recent_past_verb_ratio, aux_verb_ratio
+                ])
+
+            return features
+    
         for doc in X:
             (
                 prefix_token_ratio, prefix_derived_ratio, suffix_token_ratio,

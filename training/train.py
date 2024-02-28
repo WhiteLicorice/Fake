@@ -35,8 +35,10 @@ syll_features = pd.read_csv("root/datasets/SyllFeatures.csv")
 oov_features = pd.read_csv("root/datasets/OovFeatures.csv")
 sw_features = pd.read_csv("root/datasets/SwFeatures.csv")
 read_features = pd.read_csv("root/datasets/ReadFeatures.csv")
+lex_features = pd.read_csv("root/datasets/LexFeatures.csv")
+morph_features = pd.read_csv("root/datasets/MorphFeatures.csv")
 
-data = pd.concat([data, trad_features, syll_features, oov_features, sw_features, read_features], axis=1)
+data = pd.concat([data, trad_features, syll_features, oov_features, sw_features, read_features, lex_features, morph_features], axis=1)
 #   Split the data into features (X) and labels (y)
 y = data['label']  # Labels are 0 -> Fake or 1 -> Real
 X = data.drop('label', axis=1)
@@ -164,6 +166,8 @@ for clf_info in classifiers:
             ('sw', StopWordsExtractor(from_csv=LOAD_FROM_CSV)),
             ('trad', TRADExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract TRAD features
             ('syll', SYLLExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract SYLL features
+            ('lex', LEXExtractor(from_csv=LOAD_FROM_CSV)),
+            ('morph', MORPHExtractor(from_csv=LOAD_FROM_CSV))
         ])),
         ('classifier', clf_info['model'])
     ])
