@@ -13,8 +13,16 @@ def extract_sw():
         sw_features = pd.read_csv("root/datasets/SwFeatures.csv")
 
     list_of_vals = [ ]
-    starting_index = 0  # TODO: Check last progress of the corresponding .csv and change starting index as needed
+    starting_index = -1  # TODO: Check last progress of the corresponding .csv and change starting index as needed
     
+    count_stopwords = SW.count_stopwords(data['article'][0])
+    list_of_vals.append({
+        "count_stopwords": count_stopwords,
+    })
+    sw_features = pd.concat([pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals)))), sw_features])
+    sw_features.to_csv("root/datasets/SwFeatures.csv", index=False)
+    exit(0)
+
     for i in data.itertuples():
         if (i.Index > starting_index):
             count_stopwords = SW.count_stopwords(i.article)

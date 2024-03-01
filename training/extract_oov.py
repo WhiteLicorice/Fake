@@ -13,8 +13,18 @@ def extract_oov():
         oov_features = pd.read_csv("root/datasets/OovFeatures.csv")
 
     list_of_vals = [ ]
-    starting_index = 0  # TODO: Check last progress of the corresponding .csv and change starting index as needed
+    starting_index = -1  # TODO: Check last progress of the corresponding .csv and change starting index as needed
     
+    count_oov_words = OOV.count_oov_words(data['article'][0])
+    list_of_vals.append({
+    "count_oov_words": count_oov_words,
+    })
+
+    oov_features = pd.concat([pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals)))), oov_features])
+    oov_features.to_csv("root/datasets/OovFeatures.csv", index=False)
+
+    exit(0)
+
     for i in data.itertuples():
         if (i.Index > starting_index):
             count_oov_words = OOV.count_oov_words(i.article)
