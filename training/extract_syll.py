@@ -2,7 +2,7 @@ import pandas as pd
 import root.scripts.SYLL as SYLL
 
 def extract_syll():
-    data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
+    data = pd.read_csv("root/datasets/FakeNewsPhilippines2024_Lupac.csv")
 
     try:
         syll_features = pd.read_csv("root/datasets/SyllFeatures.csv")

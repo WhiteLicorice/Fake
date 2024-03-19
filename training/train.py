@@ -29,16 +29,16 @@ warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_
 session_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")    #   Grab current time to use as timestamp on files
 
 #   Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
-data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
+data = pd.read_csv("root/datasets/joint_corpus.csv")
 trad_features = pd.read_csv("root/datasets/TradFeatures.csv")
 syll_features = pd.read_csv("root/datasets/SyllFeatures.csv")
 oov_features = pd.read_csv("root/datasets/OovFeatures.csv")
 sw_features = pd.read_csv("root/datasets/SwFeatures.csv")
 read_features = pd.read_csv("root/datasets/ReadFeatures.csv")
-lex_features = pd.read_csv("root/datasets/LexFeatures.csv")
-morph_features = pd.read_csv("root/datasets/MorphFeatures.csv")
+#lex_features = pd.read_csv("root/datasets/LexFeatures.csv")
+#morph_features = pd.read_csv("root/datasets/MorphFeatures.csv")
 
-data = pd.concat([data, trad_features, syll_features, oov_features, sw_features, read_features, lex_features, morph_features], axis=1)
+data = pd.concat([data, trad_features, syll_features, oov_features, sw_features, read_features], axis=1)
 #   Split the data into features (X) and labels (y)
 y = data['label']  # Labels are 0 -> Fake or 1 -> Real
 X = data.drop('label', axis=1)
@@ -112,7 +112,7 @@ classifiers = [
     {
         'name': 'Logistic Regression',
         'model_id': 'LogisticRegression',
-        'model': LogisticRegression(max_iter=2000, n_jobs=-1),
+        'model': LogisticRegression(max_iter=3000, n_jobs=-1),
         'params': {
             'classifier__C': [0.1, 1.0, 10.0]
         }
@@ -166,8 +166,8 @@ for clf_info in classifiers:
             ('sw', StopWordsExtractor(from_csv=LOAD_FROM_CSV)),
             ('trad', TRADExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract TRAD features
             ('syll', SYLLExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract SYLL features
-            ('lex', LEXExtractor(from_csv=LOAD_FROM_CSV)),
-            ('morph', MORPHExtractor(from_csv=LOAD_FROM_CSV))
+            #('lex', LEXExtractor(from_csv=LOAD_FROM_CSV)),
+            #('morph', MORPHExtractor(from_csv=LOAD_FROM_CSV))
         ])),
         ('classifier', clf_info['model'])
     ])
