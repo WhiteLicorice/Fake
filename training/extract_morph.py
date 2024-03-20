@@ -2,7 +2,7 @@ import pandas as pd
 import root.scripts.MORPH as MORPH
 
 def extract_morph():
-    data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
+    data = pd.read_csv("root/datasets/FakeNewsPhilippines2024_Lupac.csv")
     
     try:
         morph_features = pd.read_csv("root/datasets/MorphFeatures.csv")
@@ -16,7 +16,7 @@ def extract_morph():
         morph_features = pd.read_csv("root/datasets/MorphFeatures.csv")
 
     list_of_vals = [ ]
-    starting_index = 0  # TODO: Check last progress of the corresponding .csv and change starting index as needed
+    starting_index = -1  # TODO: Check last progress of the corresponding .csv and change starting index as needed
     
     for i in data.itertuples():
         if (i.Index > starting_index):
