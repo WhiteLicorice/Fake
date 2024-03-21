@@ -2,7 +2,7 @@ import pandas as pd
 import root.scripts.READ as READ
 
 def extract_read():
-    data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
+    data = pd.read_csv("root/datasets/FakeNewsPhilippines2024_Lupac.csv")
 
     try:
         read_features = pd.read_csv("root/datasets/ReadFeatures.csv")

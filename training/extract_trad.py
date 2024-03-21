@@ -2,7 +2,7 @@ import pandas as pd
 import root.scripts.TRAD as TRAD
 
 def extract_trad():
-    data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
+    data = pd.read_csv("root/datasets/FakeNewsPhilippines2024_Lupac.csv")
 
     try:
         trad_features = pd.read_csv("root/datasets/TradFeatures.csv")

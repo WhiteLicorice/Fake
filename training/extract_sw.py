@@ -2,7 +2,7 @@ import pandas as pd
 import root.scripts.SW as SW
 
 def extract_sw():
-    data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
+    data = pd.read_csv("root/datasets/FakeNewsPhilippines2024_Lupac.csv")
 
     try:
         sw_features = pd.read_csv("root/datasets/SwFeatures.csv")
@@ -15,13 +15,13 @@ def extract_sw():
     list_of_vals = [ ]
     starting_index = -1  # TODO: Check last progress of the corresponding .csv and change starting index as needed
     
-    count_stopwords = SW.count_stopwords(data['article'][0])
-    list_of_vals.append({
-        "count_stopwords": count_stopwords,
-    })
-    sw_features = pd.concat([pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals)))), sw_features])
-    sw_features.to_csv("root/datasets/SwFeatures.csv", index=False)
-    exit(0)
+    # count_stopwords = SW.count_stopwords(data['article'][0])
+    # list_of_vals.append({
+    #     "count_stopwords": count_stopwords,
+    # })
+    # sw_features = pd.concat([pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals)))), sw_features])
+    # sw_features.to_csv("root/datasets/SwFeatures.csv", index=False)
+    # exit(0)
 
     for i in data.itertuples():
         if (i.Index > starting_index):

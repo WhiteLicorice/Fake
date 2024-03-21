@@ -2,7 +2,7 @@ import pandas as pd
 import root.scripts.OOV as OOV
 
 def extract_oov():
-    data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
+    data = pd.read_csv("root/datasets/FakeNewsPhilippines2024_Lupac.csv")
 
     try:
         oov_features = pd.read_csv("root/datasets/OovFeatures.csv")
@@ -15,15 +15,15 @@ def extract_oov():
     list_of_vals = [ ]
     starting_index = -1  # TODO: Check last progress of the corresponding .csv and change starting index as needed
     
-    count_oov_words = OOV.count_oov_words(data['article'][0])
-    list_of_vals.append({
-    "count_oov_words": count_oov_words,
-    })
+    # count_oov_words = OOV.count_oov_words(data['article'][0])
+    # list_of_vals.append({
+    # "count_oov_words": count_oov_words,
+    # })
 
-    oov_features = pd.concat([pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals)))), oov_features])
-    oov_features.to_csv("root/datasets/OovFeatures.csv", index=False)
+    # oov_features = pd.concat([pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals)))), oov_features])
+    # oov_features.to_csv("root/datasets/OovFeatures.csv", index=False)
 
-    exit(0)
+    # exit(0)
 
     for i in data.itertuples():
         if (i.Index > starting_index):

@@ -2,8 +2,8 @@ import pandas as pd
 import root.scripts.LEX as LEX
 
 def extract_lex():
-    data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
-
+    data = pd.read_csv("root/datasets/FakeNewsPhilippines2024_Lupac.csv")
+    
     try:
         lex_features = pd.read_csv("root/datasets/LexFeatures.csv")
     except FileNotFoundError:
@@ -13,7 +13,7 @@ def extract_lex():
         lex_features = pd.read_csv("root/datasets/LexFeatures.csv")
 
     list_of_vals = [ ]
-    starting_index = 0  # TODO: Check last progress of the corresponding .csv and change starting index as needed
+    starting_index = 2876  # TODO: Check last progress of the corresponding .csv and change starting index as needed
     
     for i in data.itertuples():
         if (i.Index > starting_index):
