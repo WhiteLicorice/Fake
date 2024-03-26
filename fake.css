@@ -1,0 +1,94 @@
+/* UNIVERSAL ELEMENTS */
+
+* 
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body
+{
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.section
+{
+    padding: 100px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.border
+{
+    border-bottom: 1vw solid blue;
+    width:100%;
+}
+
+/* TRY SECTION ELEMENTS */
+
+#try
+{
+    background-color: powderblue;
+    flex-direction: column;
+    height: 52vw;
+    text-align: center;
+}
+
+#try_button
+{
+    padding: 10px;
+    border-radius: 20px;
+}
+
+/* INTRO ELEMENTS */
+
+#intro
+{
+    background-color: green;
+    flex-direction: column;
+    height: 30vw;
+}
+
+/* RESOURCES ELEMENTS */
+
+#resources
+{
+    background-color: black;
+    flex-wrap: wrap;
+    padding:0px;
+    height: 100%;
+}
+
+.tiles
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 33%;
+    background-color: whitesmoke;
+    margin:1px;
+}
+
+/* CONTACT ELEMENTS */
+
+#contact
+{
+    flex-direction: column;
+}
+
+#contact_info
+{
+    flex-wrap: wrap;
+}
+
+#phone, #email
+{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
