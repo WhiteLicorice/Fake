@@ -4,33 +4,66 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>Filipino Fake News Detector Prototype</title>
+        <title>FaKe : A Cross-Browser Extension For Classifying Filipino Fake News</title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="fake.css">
         <script src="https://kit.fontawesome.com/39f664edb7.js" crossorigin="anonymous"></script>    </head>
     <body>
         <header class="section" id="try">
-            <h1>Fake News Detector for Filipino</h1>
+            <h1 style="color: yellow;"">UNDER CONSTRUCTION!</h1>
+            <h1>FaKe : A Cross-Browser Extension For Classifying Filipino Fake News</h1>
+            <h2>Cross-browser extension for detecting fake news written in Filipino, powered by machine learning.</h2>
             <button id="try_button">
-                <h3>Try it out now!</h3>
+                <a href="#installation">Try it out now!</a>
             </button>
         </header>
 
         <div class="border"></div>
 
-        <div class="section" id="intro">
-            <h1>Fake News Detector</h1>
+        <div class="section" id="about">
+            <h1>Description</h1>
             <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-                Quae odit, deserunt neque voluptatum, provident quos ipsa iste, unde enim officiis assumenda perferendis expedita laboriosam! 
-                Aliquam quos fuga provident iste maiores?
+                This repository hosts a fake news classifier trained on a corpus of Filipino articles adapted from Cruz et al. 
+                As part of our ongoing undergraduate study at the University of the Philippines Visayas, we have built a cross-browser extension that employs our fake news classifier. 
+                We utilize Tampermonkey as a wrapper around our extension and Render to host our machine learning model on the cloud as an API. 
+                The fake news classifier only works on articles written primarily in Filipino with smatterings of English vernacular. 
+                Currently, we have deployed a trained Logistic Regression model that has achieved a ~98% accuracy on our test set. 
+                All resources that have been used in this study are available on this repository.
             </p>
         </div>
 
         <div class="border"></div>
-    
-        <div class="section" id="resources">
+
+        <div class="section" id="installation">
+            <h1>Installation</h1>
+            <ol>
+                <li>Download and install <a href="https://www.tampermonkey.net/">Tampermonkey</a> for your browser of choice.</li>
+                <li>Download the latest release of the extension from <a href="https://github.com/WhiteLicorice/Fake/releases">releases</a>.</li>
+                <li>Extract the zip file and open script.js with Notepad or your plaintext editor of choice.</li>
+                <li>Open the Tampermonkey dashboard.</li>
+                <li>Click the + button and it will open a new userscript.</li>
+                <li>Copy and paste the contents of script.js over the userscript, replacing the old contents.</li>
+                <li>Click file and then save.</li>
+            </ol>
+        </div>
+
+        <div class="border"></div>
+
+        <div class="section" id="usage">
+            <h1>Usage</h1>
+            <ol>
+                <li>Pin Tampermonkey to your browser's address bar.</li>
+                <li>Once pinned, click the Tampermonkey icon.</li>
+                <li>Under Fake News Detector, click Detect Fake News.</li>
+                <li>Wait for the system to process the article you're reading.</li>
+                <li>Profit!</li>
+            </ol>
+        </div>
+
+        <div class="border"></div>
+ 
+<!--         <div class="section" id="resources">
             <div class="tiles">Dictionary</div>
             <div class="tiles">Post Tagger</div>
             <div class="tiles">Corpus</div>
@@ -39,7 +72,7 @@
             <div class="tiles">Item 6</div>
         </div>
 
-        <div class="border"></div>
+        <div class="border"></div> -->
 
         <div class="section" id="contact">
             <h1>Let's Get In Touch!</h1>
@@ -55,6 +88,32 @@
             </div>
             <p>Alternatively, you can contact</p>
             <h1>The Fake News Detector Team</h1>
+            <ol>
+                <li>
+                    <div class="contact_person">
+                        <p>Rene Andre Jocsing Lead Programmer, Project Manager, Writer</p>
+                        <p>Phone Number: 00000000000</p>
+                    </div>
+                </li>
+                <li>                    
+                    <div class="contact_person">
+                        <p>Chancy Ponce de Leon Programmer, Writer</p>
+                        <p>Phone Number: 00000000000</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="contact_person">
+                        <p>Cobe Austin Lupac Presenter, Programmer</p>
+                        <p>Phone Number: 00000000000</p>
+                    </div>
+                </li>
+                <li>
+                    <div class="contact_person">
+                        <p>Ron Gerlan Naragdao, Programmer</p>
+                        <p>Phone Number: 00000000000</p>
+                    </div>
+                </li>
+            </ol>
         </div>
         
     </body>

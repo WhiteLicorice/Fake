@@ -5,17 +5,36 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* border-style: solid;
+    border-color: red; */
+}
+
+div *, header *
+{
+    margin-bottom: 20px;
+}
+
+h1
+{
+    font-size: 50px;
+}
+
+p
+{
+    font-size: 20px;
+    line-height: 1.5;
 }
 
 body
 {
     width: 100%;
     overflow-x: hidden;
+    font-family: Arial, sans-serif;
 }
 
 .section
 {
-    padding: 100px;
+    padding: 400px;
     height: 100%;
     display: flex;
     justify-content: center;
@@ -26,6 +45,11 @@ body
 {
     border-bottom: 1vw solid blue;
     width:100%;
+}
+
+#about, #installation, #usage
+{
+    flex-direction: column;
 }
 
 /* TRY SECTION ELEMENTS */
@@ -40,22 +64,44 @@ body
 
 #try_button
 {
-    padding: 10px;
-    border-radius: 20px;
+    padding: 20px;
+    border-radius: 50px;
 }
 
-/* INTRO ELEMENTS */
+#try_button a, a
+{
+    margin-bottom: 0px;
+    text-decoration: none;
+    font-weight: bold;
+}
 
-#intro
+/* ABOUT ELEMENTS */
+
+#about
 {
     background-color: green;
-    flex-direction: column;
+    height: 30vw;
+}
+
+/* INSTALLATION ELEMENTS */
+
+#installation
+{
+    background-color: red;
+    height: 30vw;
+}
+
+/* USAGE ELEMENTS */
+
+#usage
+{
+    background-color: violet;
     height: 30vw;
 }
 
 /* RESOURCES ELEMENTS */
 
-#resources
+/* #resources
 {
     background-color: black;
     flex-wrap: wrap;
@@ -72,7 +118,7 @@ body
     width: 33%;
     background-color: whitesmoke;
     margin:1px;
-}
+} */
 
 /* CONTACT ELEMENTS */
 
@@ -83,7 +129,10 @@ body
 
 #contact_info
 {
+    display:flex;
     flex-wrap: wrap;
+    width: 500px;
+    height: 100%;
 }
 
 #phone, #email
@@ -91,4 +140,11 @@ body
     display: flex;
     flex-direction: column;
     align-items: center;
+    width:50%;
+}
+
+.contact_person
+{
+    display:flex;
+    flex-direction: column;
 }
