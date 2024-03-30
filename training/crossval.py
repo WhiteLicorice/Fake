@@ -27,18 +27,30 @@ import warnings
 warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_extraction.text")
 
 LOAD_FROM_CSV = True
+LOAD_DATASET = "Cruz"
 
 session_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")    # Grab current time to use as timestamp on files
 
-# Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
-data = pd.read_csv("root/datasets/FakeNewsFilipino.csv")
-trad_features = pd.read_csv("root/datasets/TradFeatures.csv")
-syll_features = pd.read_csv("root/datasets/SyllFeatures.csv")
-oov_features = pd.read_csv("root/datasets/OovFeatures.csv")
-sw_features = pd.read_csv("root/datasets/SwFeatures.csv")
-read_features = pd.read_csv("root/datasets/ReadFeatures.csv")
-lex_features = pd.read_csv("root/datasets/LexFeatures.csv")
-morph_features = pd.read_csv("root/datasets/MorphFeatures.csv")
+if(LOAD_DATASET == "Cruz"):
+    # Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
+    data = pd.read_csv("root/datasets/Cruz/FakeNewsFilipino.csv")
+    trad_features = pd.read_csv("root/datasets/Cruz/TradFeatures.csv")
+    syll_features = pd.read_csv("root/datasets/Cruz/SyllFeatures.csv")
+    oov_features = pd.read_csv("root/datasets/Cruz/OovFeatures.csv")
+    sw_features = pd.read_csv("root/datasets/Cruz/SwFeatures.csv")
+    read_features = pd.read_csv("root/datasets/Cruz/ReadFeatures.csv")
+    lex_features = pd.read_csv("root/datasets/Cruz/LexFeatures.csv")
+    morph_features = pd.read_csv("root/datasets/Cruz/MorphFeatures.csv")
+elif(LOAD_DATASET == "Lupac"):
+    # Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
+    data = pd.read_csv("root/datasets/Lupac/FakeNewsFilipino.csv")
+    trad_features = pd.read_csv("root/datasets/Lupac/TradFeatures.csv")
+    syll_features = pd.read_csv("root/datasets/Lupac/SyllFeatures.csv")
+    oov_features = pd.read_csv("root/datasets/Lupac/OovFeatures.csv")
+    sw_features = pd.read_csv("root/datasets/Lupac/SwFeatures.csv")
+    read_features = pd.read_csv("root/datasets/Lupac/ReadFeatures.csv")
+    lex_features = pd.read_csv("root/datasets/Lupac/LexFeatures.csv")
+    morph_features = pd.read_csv("root/datasets/Lupac/MorphFeatures.csv")
 
 data = pd.concat([data, trad_features, syll_features, oov_features, sw_features, read_features, lex_features, morph_features], axis=1)
 # f = open(f"results/CrossVal/test_results_{session_timestamp}.txt", 'w')
@@ -112,18 +124,30 @@ def train_with_repeated_cv(classifier, classifier_name, params, repetitions, n_f
             # Evaluate the model
             accuracy = accuracy_score(y_val_fold, y_val_pred)
             accuracies.append(accuracy)
-            
-        # Compute and print the average accuracy
-        avg_accuracy = sum(accuracies) / len(accuracies)
-        # print(f"Features: {[i[0] for i in features_used]}", file=f)
-        # print(f"Accuracies: {accuracies}", file=f)
-        # print(f"Average accuracy for {repetitions} repetitions of {n_folds}-fold cross-validation with {classifier_name}: {avg_accuracy:.4f}", file=f)
-        # print("", file=f)
 
-        print(f"Features: {[i[0] for i in features_used]}")
-        print(f"Accuracies: {accuracies}")
-        print(f"Average accuracy for {repetitions} repetitions of {n_folds}-fold cross-validation with {classifier_name}: {avg_accuracy:.4f}")
-        print("")
+            list_of_vals.append({
+                "accuracy": accuracy,
+                "features": [i[0] for i in features_used],
+                "classifier": classifier_name,
+                "dataset": LOAD_DATASET
+            })
+        
+        print("Saving figures...")
+        result_csv = pd.concat([result_csv, pd.DataFrame(list_of_vals, index=list(range(len(list_of_vals))))])
+        result_csv.to_csv("results/combined/accuracies.csv", index=False)
+        list_of_vals = []
+            
+        # # Compute and print the average accuracy
+        # avg_accuracy = sum(accuracies) / len(accuracies)
+        # # print(f"Features: {[i[0] for i in features_used]}", file=f)
+        # # print(f"Accuracies: {accuracies}", file=f)
+        # # print(f"Average accuracy for {repetitions} repetitions of {n_folds}-fold cross-validation with {classifier_name}: {avg_accuracy:.4f}", file=f)
+        # # print("", file=f)
+
+        # print(f"Features: {[i[0] for i in features_used]}")
+        # print(f"Accuracies: {accuracies}")
+        # print(f"Average accuracy for {repetitions} repetitions of {n_folds}-fold cross-validation with {classifier_name}: {avg_accuracy:.4f}")
+        # print("")
 
 # Define classifiers to test
 classifiers = [
@@ -165,6 +189,16 @@ classifiers = [
     },
 ]
 
+try:
+    result_csv = pd.read_csv("results/combined/accuracies.csv")
+
+except FileNotFoundError:
+    result_columns = "accuracy,features,classifier,dataset"
+    with open("results/combined/accuracies.csv", 'w') as f:
+        f.write(result_columns)
+    result_csv = pd.read_csv("results/combined/accuracies.csv")
+
+list_of_vals = []
 # Train each classifier with repeated cross-validation
 for clf_info in classifiers:
     train_with_repeated_cv(clf_info['model'], clf_info['name'], clf_info['params'], repetitions=6, n_folds=5, X_train=X_train, y_train=y_train)
