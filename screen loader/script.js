@@ -19,49 +19,70 @@
     const spinnerHTML = '<div id="fake-news-spinner" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;"><img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading..."></div>';
     document.body.insertAdjacentHTML('beforeend', spinnerHTML);
 
+	// blurs the whole page while loading
+	const overlayDiv = document.createElement('div');
+    overlayDiv.id = 'overlay';
+    overlayDiv.style.cssText = 'display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px); z-index: 9998;';
+
+    document.body.appendChild(overlayDiv);
+
+    function showSpinner(){
+        document.getElementById('fake-news-spinner').style.display = 'block';
+    }
+    function hideSpinner(){
+        document.getElementById('fake-news-spinner').style.display = 'none';
+    }
+
+    function showOverlay(){
+        document.getElementById('overlay').style.display = 'block';
+    }
+    function hideOverlay(){
+        document.getElementById('overlay').style.display = 'none';
+    }
+
 	//console.log("The script is live!")
 
 	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
    	//var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Cyclic.sh endpoint
    	var API_ENDPOINT = "https://fph-ml.onrender.com/check-news" // Render endpoint
 
-    function showLoader(){
-        document.getElementById('fake-news-spinner').style.display = 'block';
-    }
-    function hideLoader(){
-        document.getElementById('fake-news-spinner').style.display = 'none';
-    }
        async function run_script_pipeline(){
         // Show loading spinner
-        showLoader();
+        showSpinner();
+		// show overlay
+		showOverlay();
 
         var processed_article = await scrape_paragraphs();
         if (processed_article.trim().length === 0) {
             display_unable_to_scrape();
             // Hide loading spinner
-            hideLoader();
+            hideSpinner();
+			hideOverlay();
             return;
         }
         var fake_api_result = await is_fake_news(processed_article);
         display_is_fake_news(fake_api_result);
         // Hide loading spinner
-        hideLoader();
+        hideSpinner();
+		hideOverlay();
     }
 
 
 	async function display_is_fake_news(api_result){
         // Show loading spinner
-        showLoader();
+        showSpinner();
+		// show overlay
+		showOverlay();
 
         setTimeout(() => {
-            // Hide loading spinner
-            hideLoader();
+            hideSpinner();
+			hideOverlay();
 
             // Display the alert message
             const isFakeNews = api_result === true;
             const message = isFakeNews ? "Fake_API says this is probably FAKE!!!" : "Fake_API says this is probably REAL!!!";
             alert(message);
-        }, 100);
+        }, 100); // Adjust the delay as needed
     }
 
 
