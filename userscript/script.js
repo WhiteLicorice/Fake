@@ -44,7 +44,7 @@
 
 	//	TODO: Handle the case where the connection fails by removing the spinner and overlay
 	//	TODO: Place all files for extension /userscript
-	
+
 	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
    	//var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Depreciated Cyclic endpoint
    	var API_ENDPOINT = "https://fph-ml.onrender.com/check-news" // Render endpoint
@@ -109,9 +109,14 @@
 		    });
 
         } catch (error) {
-            console.log(error.message)
-            alert("Error connecting to Fake_API! Please try again!")
-        }
+			setTimeout(() => {
+			hideSpinner();
+			hideOverlay();
+				console.log(error.message)
+				alert("Error connecting to Fake_API! Please try again!")
+			}, 100); // Adjust the delay as needed
+
+}
 
 		if (!FAKE_API_CALL.ok) {
 			throw new Error('Network response was not ok');
