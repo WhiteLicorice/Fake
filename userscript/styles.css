@@ -10,7 +10,7 @@ section{
     position: absolute;
     height: calc(10px + var(--dot) * 1px);
     width: calc(10px + var(--dot) * 1px);
-    background: gray;
+    background: white;
     border-radius: 50%;
     transform: rotate(calc(var(--dot) * (360deg / 9))) translateY(35px);
     animation: animate 1.5s linear infinite;

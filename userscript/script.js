@@ -16,8 +16,60 @@
 (function() {
 	'use strict';
 
-    const spinnerHTML = '<div id="fake-news-spinner" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;"><img src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/0.16.1/images/loader-large.gif" alt="Loading..."></div>';
+    const spinnerHTML = `
+    <div id="spinner-container" style="display: none; position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 9999;">
+        <section class="spinner-dots">
+            <span style="--dot: 1;"></span>
+            <span style="--dot: 2;"></span>
+            <span style="--dot: 3;"></span>
+            <span style="--dot: 4;"></span>
+            <span style="--dot: 5;"></span>
+            <span style="--dot: 6;"></span>
+            <span style="--dot: 7;"></span>
+            <span style="--dot: 8;"></span>
+            <span style="--dot: 9;"></span>
+        </section>
+    </div>
+    `;
+
+        // Insert the spinner HTML into the document body
     document.body.insertAdjacentHTML('beforeend', spinnerHTML);
+
+    const spinnerCss = `
+    <style>
+        section.spinner-dots {
+            display: flex;
+            height: 100vh;
+            width: 100%;
+            align-items: center;
+            justify-content: center;
+        }
+
+        section.spinner-dots span {
+            position: absolute;
+            height: calc(10px + var(--dot) * 1px);
+            width: calc(10px + var(--dot) * 1px);
+            background: white;
+            border-radius: 50%;
+            transform: rotate(calc(var(--dot) * (360deg / 9))) translateY(35px);
+            animation: animate 1.5s linear infinite;
+            animation-delay: calc(var(--dot) * 0.1s);
+            opacity: 0;
+        }
+
+        @keyframes animate {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+    `;
+
+    // Insert the spinner CSS into the head of the document
+    document.head.insertAdjacentHTML('beforeend', spinnerCss);
 
 	// blurs the whole page while loading
 	const overlayDiv = document.createElement('div');
@@ -27,10 +79,10 @@
     document.body.appendChild(overlayDiv);
 
     function showSpinner(){
-        document.getElementById('fake-news-spinner').style.display = 'block';
+        document.getElementById('spinner-container').style.display = 'block';
     }
     function hideSpinner(){
-        document.getElementById('fake-news-spinner').style.display = 'none';
+        document.getElementById('spinner-container').style.display = 'none';
     }
 
     function showOverlay(){
