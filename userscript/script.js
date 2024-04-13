@@ -71,6 +71,7 @@
     // Insert the spinner CSS into the head of the document
     document.head.insertAdjacentHTML('beforeend', spinnerCss);
 
+
 	// blurs the whole page while loading
 	const overlayDiv = document.createElement('div');
     overlayDiv.id = 'overlay';
@@ -124,21 +125,35 @@
 
 
 	async function display_is_fake_news(api_result){
-        // Show loading spinner
-        showSpinner();
+		// Show loading spinner
+		showSpinner();
 		// show overlay
 		showOverlay();
 
-        setTimeout(() => {
-            hideSpinner();
+		setTimeout(() => {
+			hideSpinner();
 			hideOverlay();
 
-            // Display the alert message
-            const isFakeNews = api_result === true;
-            const message = isFakeNews ? "Fake_API says this is probably FAKE!!!" : "Fake_API says this is probably REAL!!!";
-            alert(message);
-        }, 100); // Adjust the delay as needed
-    }
+			// Create a custom modal
+			const customAlert = `
+				<div id="custom-modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 9999;">
+					<h2 style="margin-bottom: 20px;">Fake_API Result</h2>
+					<p style="font-weight: bold; text-align: center;">Fake_API says this is probably ${api_result ? 'FAKE' : 'REAL'}!!!</p>
+					<button id="close-modal-btn" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Close</button>
+				</div>
+			`;
+
+			// Insert the modal HTML into the body
+			document.body.insertAdjacentHTML('beforeend', customAlert);
+
+			// Close modal button functionality
+			const closeModalBtn = document.getElementById('close-modal-btn');
+			closeModalBtn.addEventListener('click', () => {
+				const customModal = document.getElementById('custom-modal');
+				customModal.parentNode.removeChild(customModal);
+			});
+		}, 100);
+	}
 
 
 	async function display_unable_to_scrape(){
