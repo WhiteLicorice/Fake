@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>FaKe : A Cross-Browser Extension For Classifying Filipino Fake News</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/src/output.css">
+        <script src="https://kit.fontawesome.com/39f664edb7.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <header class="flex flex-col text-center h-screen justify-center bg-green-300" id="try">
+            <div class="mx-64 gap-4">
+                <h1 class="text-yellow-400 text-5xl ">UNDER CONSTRUCTION!</h1>
+                <h1 class="text-6xl font-sans">FaKe : A Cross-Browser Extension For Classifying Filipino Fake News</h1>
+                <h2 class="text-2xl font-sans">Cross-browser extension for detecting fake news written in Filipino, powered by machine learning.</h2>
+                <button class="bg-blue-600 p-3 rounded-full" id="try_button">
+                    <a class="p-3 text-white" href="#installation">Try it out now!</a>
+                </button>
+            </div>
+        </header>
+
+        <div class="border"></div>
+
+        <div class="flex flex-col text-center h-screen justify-center bg-blue-400" id="about">
+            <div class="mx-64 gap-4">
+                <h1 class="text-5xl">Description</h1>
+                <p>
+                    This repository hosts a fake news classifier trained on a corpus of Filipino articles adapted from Cruz et al. 
+                    As part of our ongoing undergraduate study at the University of the Philippines Visayas, we have built a cross-browser extension that employs our fake news classifier. 
+                    We utilize Tampermonkey as a wrapper around our extension and Render to host our machine learning model on the cloud as an API. 
+                    The fake news classifier only works on articles written primarily in Filipino with smatterings of English vernacular. 
+                    Currently, we have deployed a trained Logistic Regression model that has achieved a ~98% accuracy on our test set. 
+                    All resources that have been used in this study are available on this repository.
+                </p>
+            </div>
+        </div>
+
+        <div class="border"></div>
+
+        <div class="flex flex-col text-center h-screen justify-center bg-amber-700" id="installation">
+            <div class="mx-64 gap-4">
+                <h1  class="text-5xl">Installation</h1>
+                <ol>
+                    <li>Download and install <a href="https://www.tampermonkey.net/">Tampermonkey</a> for your browser of choice.</li>
+                    <li>Download the latest release of the extension from <a href="https://github.com/WhiteLicorice/Fake/releases">releases</a>.</li>
+                    <li>Extract the zip file and open script.js with Notepad or your plaintext editor of choice.</li>
+                    <li>Open the Tampermonkey dashboard.</li>
+                    <li>Click the + button and it will open a new userscript.</li>
+                    <li>Copy and paste the contents of script.js over the userscript, replacing the old contents.</li>
+                    <li>Click file and then save.</li>
+                </ol>
+            </div>
+
+        </div>
+
+        <div class="border"></div>
+
+        <div class="flex flex-col text-center h-screen justify-center bg-violet-600" id="usage">
+            <div class="gap-4 mx-64">
+                <h1 class="text-5xl">Usage</h1>
+                <ol>
+                    <li>Pin Tampermonkey to your browser's address bar.</li>
+                    <li>Once pinned, click the Tampermonkey icon.</li>
+                    <li>Under Fake News Detector, click Detect Fake News.</li>
+                    <li>Wait for the system to process the article you're reading.</li>
+                    <li>Profit!</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="border"></div>
+ 
+<!--         <div class="section" id="resources">
+            <div class="tiles">Dictionary</div>
+            <div class="tiles">Post Tagger</div>
+            <div class="tiles">Corpus</div>
+            <div class="tiles">Item 4</div>
+            <div class="tiles">Item 5</div>
+            <div class="tiles">Item 6</div>
+        </div>
+
+        <div class="border"></div> -->
+
+        <div class="flex flex-col text-center h-screen justify-center bg-rose-600" id="contact">
+            <div class="gap-4 mx-64">
+                <h1 class="text-5xl">Let's Get In Touch!</h1>
+                <div id="contact_info">
+                    <div class="flex flex-row justify-center align-middle" id="phone">
+                        <i class="fa-solid fa-phone fa-3x"></i>
+                        <p>00000000000</p>
+                    </div>
+                    <div class="flex flex-row justify-center align-middle" id="email">
+                        <i class="fa-solid fa-envelope fa-3x"></i>
+                        <p>poggers@gmail.com</p>
+                    </div>
+                </div>
+                <p>Alternatively, you can contact</p>
+                <div class="border"></div>
+                <h1 class="text-2xl">The Fake News Detector Team</h1>
+                <ol class="gap-x-2">
+                    <li>
+                        <div class="contact_person">
+                            <p>Rene Andre Jocsing</p>
+                            <p>Lead Programmer, Project Manager, Writer</p>
+                            <p>Phone Number: 00000000000</p>
+                        </div>
+                    </li>
+                    <li>                    
+                        <div class="contact_person">
+                            <p>Chancy Ponce de Leon</p>
+                            <p>Programmer, Writer</p>
+                            <p>Phone Number: 00000000000</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact_person">
+                            <p>Cobe Austin Lupac</p>
+                            <p>Presenter, Programmer</p>
+                            <p>Phone Number: 00000000000</p>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="contact_person">
+                            <p>Ron Gerlan Naragdao</p>
+                            <p>Programmer</p>
+                            <p>Phone Number: 00000000000</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+        </div>
+    </body>
+</html>
