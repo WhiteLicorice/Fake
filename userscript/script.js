@@ -95,8 +95,7 @@
 
 	//console.log("The script is live!")
 
-	//	TODO: Handle the case where the connection fails by removing the spinner and overlay
-	//	TODO: Place all files for extension /userscript
+	//	TODO: Place all files for extension in /userscript
 
 	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
    	//var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Depreciated Cyclic endpoint
@@ -130,6 +129,8 @@
 		// show overlay
 		showOverlay();
 
+        //console.log(api_result)
+
 		setTimeout(() => {
 			hideSpinner();
 			hideOverlay();
@@ -137,8 +138,8 @@
 			// Create a custom modal
 			const customAlert = `
 				<div id="custom-modal" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 9999;">
-					<h2 style="margin-bottom: 20px;">Fake_API Result</h2>
-					<p style="font-weight: bold; text-align: center;">Fake_API says this is probably ${api_result ? 'FAKE' : 'REAL'}!!!</p>
+					<h2 style="margin-bottom: 20px;">FaKe says this is probably...</h2>
+					<p style="font-weight: bold; text-align: center;">${api_result ? 'FAKE' : 'REAL'}!!!</p>
 					<button id="close-modal-btn" style="display: block; margin: 20px auto; padding: 10px 20px; background-color: #007bff; color: #fff; border: none; border-radius: 4px; cursor: pointer;">Close</button>
 				</div>
 			`;
@@ -155,7 +156,7 @@
 		}, 100);
 	}
 
-
+    // TODO: Make this look pretty too
 	async function display_unable_to_scrape(){
 		const reportLink = 'https://github.com/WhiteLicorice/Fake/issues/new';
 		const alertMessage = "FaKe extension was unable to scrape content.\nPlease try again.\nIf the issue persists, please report the website on GitHub."
