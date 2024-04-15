@@ -52,7 +52,7 @@ read_features_lupac = pd.read_csv("root/datasets/Lupac/ReadFeatures.csv")
 lex_features_lupac = pd.read_csv("root/datasets/Lupac/LexFeatures.csv")
 morph_features_lupac = pd.read_csv("root/datasets/Lupac/MorphFeatures.csv")
 
-data = pd.concat([data_cruz, data_lupac])
+data = pd.concat([data_cruz, data_lupac], ignore_index=True)
 trad_features = pd.concat([trad_features_cruz, trad_features_lupac], ignore_index=True)
 syll_features = pd.concat([syll_features_cruz, syll_features_lupac], ignore_index=True)
 oov_features = pd.concat([oov_features_cruz, oov_features_lupac], ignore_index=True)
