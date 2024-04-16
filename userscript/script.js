@@ -139,7 +139,7 @@
 			const customAlert = `
 				<div id="custom-modal" style="position: fixed; height: 400px; width: 400px; background: white; border-radius: 6px; top: 50%; left: 50%;	transform: translate(-50%, -50%); padding: 0 30px 30px;	border-top: 20px solid ${api_result ? 'red': 'green'}; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 9999;">
 					<img src= ${api_result ? "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Cross_red_circle.svg/768px-Cross_red_circle.svg.png?20181021160952" : "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3b/Eo_circle_green_checkmark.svg/512px-Eo_circle_green_checkmark.svg.png?20200417132424"}  style ="width: 100px; margin: 50px auto; display: block; border-radius: 50%; position: relative;">
-					<p style="font-weight: bold; text-align: center;">Fake_API says this is probably... ${api_result ? 'FAKE' : 'REAL'}!!!</p>
+					<p style="font-weight: bold; text-align: center;">FaKe says this is probably... ${api_result ? 'FAKE' : 'REAL'}!!!</p>
 					<button id="close-modal-btn" style="display: block; margin: 20px auto; padding: 10px 20px; background: none; color: black; border: 1px solid black; border-radius: 4px; cursor: pointer;">OK</button>
 				</div>
 			`;
