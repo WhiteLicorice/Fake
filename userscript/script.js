@@ -158,14 +158,53 @@
 	}
 
     // TODO: Make this look pretty too
+	// TODO: fix the sinner and overlay effect
+	// TODO: fix the detect fake news button after one use
 	async function display_unable_to_scrape(){
-		const reportLink = 'https://github.com/WhiteLicorice/Fake/issues/new';
-		const alertMessage = "FaKe extension was unable to scrape content.\nPlease try again.\nIf the issue persists, please report the website on GitHub."
-		const userChoice = confirm(`${alertMessage}\nClick 'OK' to report the issue on GitHub.\nThis will open a pop-up page.`);
-		if (userChoice) {
-			window.open(reportLink, '_blank');
+		// Show loading spinner
+		showSpinner();
+		// show overlay
+		showOverlay();
+
+        //console.log(api_result)
+
+		setTimeout(() => {
+			hideSpinner();
+			showOverlay();
+
+			// Create a custom modal
+			const cannotScrape = `
+				<div id="custom-modal" style="position: fixed; height: 400px; width: 400px; background: white; border-radius: 6px; top: 50%; left: 50%;	transform: translate(-50%, -50%); padding: 0 30px 30px;	border-top: 20px solid orange; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 9999;">
+					<img src= "https://upload.wikimedia.org/wikipedia/commons/f/f6/Lol_question_mark.png?20130711182319"  style ="width: 100px; margin: 50px auto; display: block; border-radius: 50%; position: relative;">
+					<p style="font-weight: color: black; bold; text-align: center;">FaKe extension was unable to scrape content.\nPlease try again.\nIf the issue persists, please report the website on GitHub.</p>
+					<button id="redirect" style="display: inline-block; margin-right: 10px; padding: 10px 20px; background: none; color: black; border: 1px solid black; border-radius: 4px; cursor: pointer;">OK</button>
+					<button id="close-modal-btn" style="display: inline-block; margin: 20px 0 20px 10px; padding: 10px 20px; background: none; color: black; border: 1px solid black; border-radius: 4px; cursor: pointer;">Cancel</button>
+				</div>
+			`;
+
+			// Insert the modal HTML into the body
+			document.body.insertAdjacentHTML('beforeend', cannotScrape);
+
+            const redirect = document.getElementById('redirect');
+            redirect.addEventListener('click', () => {
+                window.location.href = 'https://github.com/WhiteLicorice/Fake/issues/new';
+            });
+                hideOverlay();
+
+			// Close modal button functionality
+			const closeModalBtn = document.getElementById('close-modal-btn');
+			closeModalBtn.addEventListener('click', () => {
+				const customModal = document.getElementById('custom-modal');
+				customModal.parentNode.removeChild(customModal);
+                hideOverlay();
+			});
+		}, 100);
+//		const reportLink = 'https://github.com/WhiteLicorice/Fake/issues/new';
+//		const alertMessage = "FaKe extension was unable to scrape content.\nPlease try again.\nIf the issue persists, please report the website on GitHub."
+//		const userChoice = confirm(`${alertMessage}\nClick 'OK' to report the issue on GitHub.\nThis will open a pop-up page.`);
+//		if (userChoice) {
+//			window.open(reportLink, '_blank');
 		}
-	}
 
 	async function is_fake_news(news_article) {
         try {
