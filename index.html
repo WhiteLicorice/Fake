@@ -15,7 +15,7 @@
 
         <header class="flex text-center h-screen justify-center bg-cover bg-center relative" style="background-image: url('src/images/pexels-jeremy-bishop-1260133-3464799.jpg');">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
-                <div class="mx-64 gap-4">
+                <div class="mx-4 sm:mx-64 gap-4"> <!-- Adjusted mx and added sm: prefix for responsive margin -->
                     <h1 class="text-white font-extrabold m-5 text-5xl">FaKe</h1>
                     <h2 class="text-white text-2xl m-5">Filipino Fake News Detector</h2>
                     <button class="bg-blue-600 p-3 rounded-full" id="try_button">
@@ -26,17 +26,17 @@
         </header>
         
         
-
         <div class="border"></div>
 
-        <div class="flex flex-col text-center h-screen justify-center bg-gradient-to-r from-white to-gray-300 flex-nowrap" id="about">
-            <div class="mx-64 mt-20 gap-4"> <!-- Added mt-20 for margin-top -->
-                <h1 class="text-5xl mb-10">Fake news no more.</h1> <!-- Added mb-10 for margin-bottom -->
-                <p class="mb-9"> <!-- Added mb-9 for margin-bottom -->
+        <div class="flex flex-col text-center min-h-screen justify-center bg-gradient-to-r from-white to-gray-300 sm:flex-row sm:items-center" id="about">
+            <div class="mx-4 sm:mx-64 mt-20 mb-10 sm:mt-0 sm:mb-0 gap-4"> <!-- Adjusted mx and added sm: prefix for responsive margin -->
+                <h1 class="text-5xl mb-10">Fake news no more.</h1>
+                <p class="mb-9">
                     Built by a team of students from the University of the Philippines, FaKe detects Tagalog fake news at a staggering 98% accuracy. We leverage latest advances in artificial intelligence and web technologies to protect you from fake news.
                 </p>
             </div>
         </div>
+        
 
         <div class="border"></div>
 
