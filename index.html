@@ -10,66 +10,72 @@
         <link rel="stylesheet" href="src/output.css">
         <script src="https://kit.fontawesome.com/39f664edb7.js" crossorigin="anonymous"></script>
     </head>
-    <body>
-        <header class="flex flex-col text-center h-screen justify-center bg-green-300" id="try">
-            <div class="mx-64 gap-4">
-                <h1 class="text-yellow-400 text-5xl ">UNDER CONSTRUCTION!</h1>
-                <h1 class="text-6xl font-sans">FaKe : A Cross-Browser Extension For Classifying Filipino Fake News</h1>
-                <h2 class="text-2xl font-sans">Cross-browser extension for detecting fake news written in Filipino, powered by machine learning.</h2>
-                <button class="bg-blue-600 p-3 rounded-full" id="try_button">
-                    <a class="p-3 text-white" href="#installation">Try it out now!</a>
-                </button>
+    <body class="font-serif">
+
+        <header class="flex text-center h-screen justify-center bg-cover bg-center relative" style="background-image: url('src/images/pexels-jeremy-bishop-1260133-3464799.jpg');">
+            <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
+                <div class="mx-64 gap-4">
+                    <h1 class="text-white font-extrabold m-5 text-5xl">FaKe</h1>
+                    <h2 class="text-white text-2xl m-5">Filipino Fake News Detector</h2>
+                    <button class="bg-blue-600 p-3 rounded-full" id="try_button">
+                        <a class="p-3 text-white" href="#installation">Try it for free!</a>
+                    </button>
+                </div>
             </div>
         </header>
+        
+        
 
         <div class="border"></div>
 
-        <div class="flex flex-col text-center h-screen justify-center bg-blue-400" id="about">
-            <div class="mx-64 gap-4">
-                <h1 class="text-5xl">Description</h1>
-                <p>
-                    This repository hosts a fake news classifier trained on a corpus of Filipino articles adapted from Cruz et al. 
-                    As part of our ongoing undergraduate study at the University of the Philippines Visayas, we have built a cross-browser extension that employs our fake news classifier. 
-                    We utilize Tampermonkey as a wrapper around our extension and Render to host our machine learning model on the cloud as an API. 
-                    The fake news classifier only works on articles written primarily in Filipino with smatterings of English vernacular. 
-                    Currently, we have deployed a trained Logistic Regression model that has achieved a ~98% accuracy on our test set. 
-                    All resources that have been used in this study are available on this repository.
+        <div class="flex flex-col text-center h-screen justify-center bg-gradient-to-r from-white to-gray-300 flex-nowrap" id="about">
+            <div class="mx-64 mt-20 gap-4"> <!-- Added mt-20 for margin-top -->
+                <h1 class="text-5xl mb-10">Fake news no more.</h1> <!-- Added mb-10 for margin-bottom -->
+                <p class="mb-9"> <!-- Added mb-9 for margin-bottom -->
+                    Built by a team of students from the University of the Philippines, FaKe detects Tagalog fake news at a staggering 98% accuracy. We leverage latest advances in artificial intelligence and web technologies to protect you from fake news.
                 </p>
             </div>
         </div>
 
         <div class="border"></div>
 
-        <div class="flex flex-col text-center h-screen justify-center bg-amber-700" id="installation">
-            <div class="mx-64 gap-4">
-                <h1  class="text-5xl">Installation</h1>
-                <ol>
-                    <li>Download and install <a href="https://www.tampermonkey.net/">Tampermonkey</a> for your browser of choice.</li>
-                    <li>Download the latest release of the extension from <a href="https://github.com/WhiteLicorice/Fake/releases">releases</a>.</li>
-                    <li>Extract the zip file and open script.js with Notepad or your plaintext editor of choice.</li>
-                    <li>Open the Tampermonkey dashboard.</li>
-                    <li>Click the + button and it will open a new userscript.</li>
-                    <li>Copy and paste the contents of script.js over the userscript, replacing the old contents.</li>
-                    <li>Click file and then save.</li>
+        <div class="flex text-center h-screen justify-center bg-cover bg-center relative" style="background-image: url('src/images/pexels-digitalbuggu-167538.jpg');" id="installation">
+        <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center">
+            <div class="mx-10 text-white">
+                <h1 class="text-5xl mb-10">Installation</h1>
+                <ol class="text-left">
+                    <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">1</span>Download and install <a href="https://www.tampermonkey.net/" class="underline text-orange-400">Tampermonkey</a> for your browser of choice.</li>
+                    <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">2</span>Download the latest release of the FaKe web extension from <a href="https://github.com/WhiteLicorice/Fake/releases" class="underline text-orange-400">GitHub</a>.</li>
+                    <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">3</span>Extract the zip file and open script.js with Notepad or your plaintext editor of choice.</li>
+                    <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">4</span>Open the Tampermonkey dashboard.</li>
+                    <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">5</span>Click the + button and it will open a new userscript.</li>
+                    <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">6</span>Copy and paste the contents of script.js over the userscript, replacing the old contents.</li>
+                    <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">7</span>Click file and then save.
+                    </li>
+                    <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">8</span>You're done!</li>
                 </ol>
+                </div>
             </div>
-
         </div>
 
         <div class="border"></div>
 
-        <div class="flex flex-col text-center h-screen justify-center bg-violet-600" id="usage">
-            <div class="gap-4 mx-64">
-                <h1 class="text-5xl">Usage</h1>
-                <ol>
-                    <li>Pin Tampermonkey to your browser's address bar.</li>
-                    <li>Once pinned, click the Tampermonkey icon.</li>
-                    <li>Under Fake News Detector, click Detect Fake News.</li>
-                    <li>Wait for the system to process the article you're reading.</li>
-                    <li>Profit!</li>
-                </ol>
+        <div class="flex text-center h-screen justify-center bg-gradient-to-r from-white to-gray-300 relative" id="usage">
+            <div class="absolute inset-0 flex flex-col justify-center items-center">
+                <div class="mx-10 text-black"> <!-- Changed text color to black -->
+                    <h1 class="text-5xl mb-10">Usage</h1>
+                    <ol class="text-left">
+                        <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">1</span>Navigate to a Tagalog news article.</li>
+                        <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">2</span>Pin Tampermonkey to your browser's address bar.</li>
+                        <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">3</span>Once pinned, click the Tampermonkey icon.</li>
+                        <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">4</span>Under Fake News Detector, click Detect Fake News.</li>
+                        <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">5</span>Wait for the system to process the article you're reading.</li>
+                        <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1 mr-2">6</span>Profit!</li>
+                    </ol>
+                </div>
             </div>
         </div>
+        
 
         <div class="border"></div>
  
@@ -84,53 +90,50 @@
 
         <div class="border"></div> -->
 
-        <div class="flex flex-col text-center h-screen justify-center bg-rose-600" id="contact">
-            <div class="gap-4 mx-64">
-                <h1 class="text-5xl">Let's Get In Touch!</h1>
-                <div id="contact_info">
-                    <div class="flex flex-row justify-center align-middle" id="phone">
-                        <i class="fa-solid fa-phone fa-3x"></i>
-                        <p>00000000000</p>
-                    </div>
-                    <div class="flex flex-row justify-center align-middle" id="email">
-                        <i class="fa-solid fa-envelope fa-3x"></i>
-                        <p>poggers@gmail.com</p>
-                    </div>
+        <div class="flex flex-col text-center h-screen justify-center bg-orange-700" id="contact">
+            <div class="container mx-auto px-8 py-12">
+                <h1 class="text-5xl text-white mb-12">Let's Get In Touch!</h1>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <a href="mailto:rbjocsing@up.edu.ph" class="flex items-center justify-center">
+                        <div class="flex flex-col items-center">
+                            <i class="fas fa-envelope text-3xl text-white mb-4"></i>
+                            <p class="text-xl text-white">Email</p>
+                        </div>
+                    </a>
+                    <a class="flex items-center justify-center" href="https://github.com/WhiteLicorice/Fake">
+                        <div class="flex flex-col items-center">
+                            <i class="fab fa-github text-3xl text-white mb-4"></i>
+                            <p class="text-xl text-white">GitHub</p>
+                        </div>
+                    </a>
                 </div>
-                <p>Alternatively, you can contact</p>
-                <div class="border"></div>
-                <h1 class="text-2xl">The Fake News Detector Team</h1>
-                <ol class="gap-x-2">
-                    <li>
-                        <div class="contact_person">
-                            <p>Rene Andre Jocsing</p>
-                            <p>Lead Programmer, Project Manager, Writer</p>
-                            <p>Phone Number: 00000000000</p>
-                        </div>
-                    </li>
-                    <li>                    
-                        <div class="contact_person">
-                            <p>Chancy Ponce de Leon</p>
-                            <p>Programmer, Writer</p>
-                            <p>Phone Number: 00000000000</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="contact_person">
-                            <p>Cobe Austin Lupac</p>
-                            <p>Presenter, Programmer</p>
-                            <p>Phone Number: 00000000000</p>
-                        </div>
-                    </li>
-                    <li>
-                        <div class="contact_person">
-                            <p>Ron Gerlan Naragdao</p>
-                            <p>Programmer</p>
-                            <p>Phone Number: 00000000000</p>
-                        </div>
-                    </li>
-                </ol>
+                <p class="text-white mt-12">You may also contact:</p>
+                <div class="border border-white w-20 mx-auto my-4"></div>
+                <h2 class="text-3xl text-white mb-8">The FaKe Team</h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+                    <a class="bg-white rounded-lg p-6 text-center" href="https://github.com/WhiteLicorice">
+                        <p class="text-lg font-bold mb-2">Ren</p>
+                        <p class="mb-2">Generic NPC</p>
+                    </a>
+                    <a class="bg-white rounded-lg p-6 text-center" href="https://github.com/SkyBluePenguin53">
+                        <p class="text-lg font-bold mb-2">Chancy</p>
+                        <p class="mb-2">Basically Jesus</p>
+                    </a>
+                    <a class="bg-white rounded-lg p-6 text-center" href="https://github.com/Cmpdleon">
+                        <p class="text-lg font-bold mb-2">Kobe</p>
+                        <p class="mb-2">Lord and Savior</p>
+                    </a>
+                    <a class="bg-white rounded-lg p-6 text-center" href="https://github.com/CoebeAustin">
+                        <p class="text-lg font-bold mb-2">Ron</p>
+                        <p class="mb-2">Sleeper MVP</p>
+                    </a>
+
+                </div>
+
             </div>
         </div>
+        
     </body>
 </html>
