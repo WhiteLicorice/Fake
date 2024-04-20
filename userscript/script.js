@@ -179,11 +179,28 @@
 
         } catch (error) {
 			setTimeout(() => {
-			hideSpinner();
-			hideOverlay();
-				console.log(error.message)
-				alert("Error connecting to Fake_API! Please try again!")
-			}, 100); // Adjust the delay as needed
+				hideSpinner();
+				showOverlay();
+
+
+	const errorMsg = `
+		<div id="custom-modal" style="position: fixed; height: 400px; width: 400px; background: white; border-radius: 6px; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 0 30px 30px; border-top: 20px solid orange; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 9999;">
+			<p style="font-weight: bold; text-align: center; margin-top: 50%; transform: translateY(-50%);">Error connecting to Fake_API! Please try again!</p>
+			<button id="close-modal-btn" style="display: block; margin: 20px auto; padding: 10px 20px; background: none; color: black; border: 1px solid black; border-radius: 4px; cursor: pointer;">OK</button>
+		</div>
+	`;
+
+
+				document.body.insertAdjacentHTML('beforeend', errorMsg);
+
+
+				const closeModalBtn = document.getElementById('close-modal-btn');
+				closeModalBtn.addEventListener('click', () => {
+					const customModal = document.getElementById('custom-modal');
+					customModal.parentNode.removeChild(customModal);
+					hideOverlay();
+				});
+			}, 100);
 
 }
 
