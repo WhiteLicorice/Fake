@@ -1,8 +1,8 @@
 // ==UserScript==
-// @name         Fake News Detector
+// @name         FaKe
 // @namespace    http://tampermonkey.net/
-// @version      1.0.2
-// @description  A userscript that interfaces with a cloud-hosted machine learning model to determine if an article is fake news.
+// @version      2.0.0
+// @description  A userscript that interfaces with a cloud-hosted machine learning model to determine if an article is fake news or not.
 // @author       Rene Andre Jocsing, Kobe Austin Lupac, Chancy Ponce de Leon, Ron Gerlan Naragdao
 // @icon         https://cdn0.iconfinder.com/data/icons/modern-fake-news/500/asp1430a_9_newspaper_fake_news_icon_outline_vector_thin-1024.png
 // @grant        GM_registerMenuCommand
@@ -32,7 +32,7 @@
     </div>
     `;
 
-        // Insert the spinner HTML into the document body
+    // Insert the spinner HTML into the document body
     document.body.insertAdjacentHTML('beforeend', spinnerHTML);
 
     const spinnerCss = `
@@ -93,15 +93,11 @@
         document.getElementById('overlay').style.display = 'none';
     }
 
-	//console.log("The script is live!")
-
-	//	TODO: Place all files for extension in /userscript
-
 	//var API_ENDPOINT = "http://127.0.0.1:5000/check-news" // Localhost endpoint
    	//var API_ENDPOINT = "https://fake-ph.cyclic.cloud/check-news" // Depreciated Cyclic endpoint
    	var API_ENDPOINT = "https://fph-ml.onrender.com/check-news" // Render endpoint
 
-       async function run_script_pipeline(){
+    async function run_script_pipeline(){
         // Show loading spinner
         showSpinner();
 		// show overlay
@@ -157,9 +153,6 @@
 		}, 100);
 	}
 
-    // TODO: Make this look pretty too
-	// TODO: fix the sinner and overlay effect
-	// TODO: fix the detect fake news button after one use
 	async function display_unable_to_scrape(){
 		// Show loading spinner
 		showSpinner();
@@ -178,7 +171,7 @@
 				const cannotScrape = `
 				<div id="custom-modal" style="position: fixed; height: 400px; width: 400px; background: white; border-radius: 6px; top: 50%; left: 50%; transform: translate(-50%, -50%); padding: 0 30px 30px; border-top: 20px solid orange; text-align: center; box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); z-index: 9999;">
 				    <img src="${imageSrc}" style="width: 100px; margin: 50px auto; display: block; border-radius: 50%; position: relative;">
-				    <p style="font-weight: bold; color: black; text-align: center;">FaKe extension was unable to scrape content.<br>Please try again. If the issue persists, please report the website on GitHub.</p>
+				    <p style="font-weight: bold; color: black; text-align: center;">FaKe was unable to scrape content.<br>Please try again. If the problem persists, please open an issue on GitHub.</p>
 				    <button id="report-button" style="display: inline-block; margin: 20px 10px 20px 0; padding: 10px 20px; background: none; color: black; border: 1px solid black; border-radius: 4px; cursor: pointer;">Report</button>
 				    <button id="close-modal-btn" style="display: inline-block; margin: 20px 0 20px 10px; padding: 10px 20px; background: none; color: black; border: 1px solid black; border-radius: 4px; cursor: pointer;">Close</button>
 				</div>
@@ -276,6 +269,7 @@
 		}
 	}
 
+	// Debug only
 	function add_floating_button(){
 		// Create a floating button element
 		const floatingButton = document.createElement("button")
