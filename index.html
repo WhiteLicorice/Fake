@@ -17,7 +17,8 @@
 
   <body class="font-serif">
     <nav
-      class="grid grid-cols-1 sm:grid-cols-2 w-screen bg-orange-600 p-2 fixed top-0 z-50 text-white font-bold"
+      class="grid grid-cols-1 sm:grid-cols-2 w-screen bg-orange-600 p-2 fixed top-0 z-50 text-white font-bold transition-all duration-300"
+      id="navbar"
     >
       <a class="flex justify-center items-center hover:cursor-pointer hover:text-blue-600 transition-colors duration-300 p-3 pl-5 sm:justify-start " onclick="scrollAnimation('header')">
         <p class="flex items-center text-xl">FaKe</p>
@@ -26,7 +27,7 @@
         <a class="flex items-center text-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 rounded-md p-3" onclick="scrollAnimation('about')"> About </a>
         <a class="flex items-center text-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 rounded-md p-3" onclick="scrollAnimation('installation')"> Installation </a>
         <a class="flex items-center text-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 rounded-md p-3" onclick="scrollAnimation('usage')"> Usage </a>
-        <a class="flex items-center text-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 rounded-md p-3" onclick="scrollAnimation('contact')"> Contact Us </a>
+        <a class="flex items-center text-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 rounded-md p-3" onclick="scrollAnimation('contact')"> Contact </a>
       </div>
     </nav>
 
@@ -273,5 +274,6 @@
         div.scrollIntoView({ behavior: "smooth" });
       }
     </script>
+    <script src="src/js/navbarHide.js"></script>
   </body>
 </html>
