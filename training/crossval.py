@@ -65,7 +65,7 @@ X = data.drop('label', axis=1)
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
 # Define function for training with repeated cross-validation
-def train_with_repeated_cv(classifier, classifier_name, params, repetitions, n_folds, X_train, y_train):
+def train_with_repeated_cv(classifier, classifier_name, repetitions, n_folds, X_train, y_train):
     try:
         result_csv = pd.read_csv("results/combined/accuracies.csv")
     except FileNotFoundError:
@@ -177,41 +177,25 @@ classifiers = [
     {
         'name': 'Multinomial Naive Bayes',
         'model_id': 'MultinomialNB',
-        'model': MultinomialNB(),
-        'params': {
-            'classifier__alpha': [0.1, 1.0, 10.0]
-        }
+        'model': MultinomialNB(alpha=0.1),
     },
     {
         'name': 'Logistic Regression',
         'model_id': 'LogisticRegression',
         'model': LogisticRegression(max_iter=2000, n_jobs=-1),
-        'params': {
-            'classifier__C': [0.1, 1.0, 10.0]
-        }
     },
     {
         'name': 'Random Forest',
         'model_id': 'RandomForest',
-        'model': RandomForestClassifier(n_jobs=-1),
-        'params': {
-            'classifier__n_estimators': [50, 100],
-            'classifier__max_depth': [10, 20],
-            'classifier__min_samples_split': [2, 5, 10]
-        }
+        'model': RandomForestClassifier(n_jobs=-1, min_samples_split=5, max_depth=20),
     },
     {
         'name': 'SVC',
         'model_id': 'SVC',
-        'model': SVC(),
-        'params': {
-            'classifier__C': [0.1, 1.0, 10.0],
-            'classifier__kernel': ['linear', 'rbf']
-        },
-        'n_jobs': -1 
+        'model': SVC(C=0.1, kernel='linear'),
     },
 ]
 
 # Train each classifier with repeated cross-validation
 for clf_info in classifiers:
-    train_with_repeated_cv(clf_info['model'], clf_info['name'], clf_info['params'], repetitions=6, n_folds=5, X_train=X_train, y_train=y_train)
+    train_with_repeated_cv(clf_info['model'], clf_info['name'], repetitions=6, n_folds=5, X_train=X_train, y_train=y_train)
