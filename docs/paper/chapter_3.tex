@@ -60,36 +60,6 @@ The corpus was tokenized using a pre-trained BPE tokenizer from \citeA{cruz2020l
 \label{tab::Features}
 \end{tabularx}
 
-
-% %%
-% \begin{table}[h]
-%     \centering
-%     \begin{tabularx}{\textwidth}{|X|X|X|}
-%          \hline
-%          Feature  & Description & Predictors \\
-%          \hline
-%          Bag-of-words & Unordered collection of words. & Bag-of-words model of the input text. \\
-%          \hline
-%          TF-IDF & Word to document ratio in the corpus. & TF-IDF using n-gram values of \{ 1, 2, 3\} \\
-%          \hline
-%          Misspelled words & Misspelled words in the input text. & Number of misspelled words \\
-%          \hline
-%          Traditional & Traditional or Surface-based features based on counts and frequencies & Total word, sentence, phrase, polysyllabic word counts. Average word length, sentence length, syllable per word. \\
-%          \hline
-%          Syllabic Pattern & Syllable pattern densities based on the prescribed Philippine orthography & Prescribed Philippine orthography \{v, cv, vc, cvc, vcc, cvcc, ccvc, ccvcc, ccvccc\}, where c and v are consonant and vowel notations. \\
-%         \hline
-%         Lexical & Lexical or context carrying features using part-of-speech categories. & Type-token variations (regular, logarithmic, corrected, root). Noun and verb token ratio. Lexical density. Foreign word and compound word density.\\
-%         \hline
-%         Morphological & Morphological features based on verb inflection. & Densities of various foci of verbs based on tense: \{actor, object, benefactive, locative, instrumental, referential\}. Densities of various foci of verbs based on aspect: \{infinitive, perfective, imperfective, contemplative, participle, recent-past, auxiliary\}.\\
-%         \hline
-%         Language Model &  Language model features based on perplexity used by \citeA{imperial-2020} & Language models trained on three levels of the external DepEd Commons corpus using n-gram values of \{1, 2, 3\}.\\
-%         \hline
-%     \end{tabularx}
-%     \caption{Table of features}
-%     \label{tab:my_label}
-% \end{table}
-% %%
-
 \section{System Deployment}
 
 \subsection{System Architecture}
