@@ -3,10 +3,11 @@
 
 \section{Dataset}
 
-\section{Classfiers without Hyperparameter Tuning}
-Without using grid search to find the optimal hyperparameters for the model, they were fitted and tested in the combined dataset.
+\section{Classifiers without Hyperparameter Tuning}
 
-\ref{MNB_default} shows the confusion matrix of \textbf{Multinomial Naive Bayes} without grid search. The model does not misclassify any real news as fake news, however it misclassifies 537 fake news as real news which significantly lowers its  recall for class 0 (fake news). It yields an accuracy if approximately 0.58. It has the lowest recall for class 0 at 0.16, signifying difficulty in identify true instances of fake news and a high false positive rate. The F1-score of class 1 (real news) and 0 is 0.70 and 0.28 respectively, which are relatively low scores.
+The models were trained on the combined dataset without hyperparameter tuning.
+
+Figure \ref{MNB_default} shows the confusion matrix of \textbf{Multinomial Naive Bayes} without grid search. The model did not misclassify any instance of real news as fake news. However, it misclassified 537 instances of fake news as real news, significantly lowering its recall for fake news. It yielded an accuracy of approximately 0.58. It had the lowest recall for fake news at 0.16, signifying difficulty in identify true instances of fake news and a high false positive rate. The F1-score of real news and fake news were 0.70 and 0.28 respectively. These were relatively low scores. 
 
 \begin{figure}[h!]
     \centering
@@ -15,7 +16,7 @@ Without using grid search to find the optimal hyperparameters for the model, the
         \label{MNB_default}
 \end{figure}
 
-As shown in the confusion matrix of \textbf{Logistic Regression} at \ref{LR_default} the model misclassifies 42 fake news as real news and 51 real news as fake news. It yields an accuracy of approximately 0.93. It has a high recll for class 1 and 0 at both 0.93 and 0.92 respectively. The f1-score for both class 1 and 0 are 0.93.
+As shown in the confusion matrix of \textbf{Logistic Regression} at Figure \ref{LR_default}, the model misclassified 42 instances of fake news as real news and 51 instances of real news as fake news. It yielded an accuracy of approximately 0.93. It had a high recall for real news and fake news at both 0.93 and 0.92 respectively. The f1-scores for both real news and fake news were 0.93.
 
 \begin{figure}[h!]
     \centering
@@ -24,7 +25,7 @@ As shown in the confusion matrix of \textbf{Logistic Regression} at \ref{LR_defa
         \label{LR_default}
 \end{figure}
 
-\ref{RF_default} depicts the confusion matrix of \textbf{Random Forest}. The model misclassifies 66 fake news and 59 real news. It yields an accuracy of approximately 0.90. It has a recall of 0.90 and 0.91 for class 0 and class 1 respectively. The f1-score of both classes is 0.90 showing balanced metrics.
+Figure \ref{RF_default} depicts the confusion matrix of \textbf{Random Forest}. The model misclassified 66 instances of fake news and 59 instances of real news. It yielded an accuracy of approximately 0.90. It had a recall of 0.90 and 0.91 for fake news and real news respectively. The f1-score of both classes was 0.90, implying balanced metrics.
 
 \begin{figure}[h!]
     \centering
@@ -33,7 +34,7 @@ As shown in the confusion matrix of \textbf{Logistic Regression} at \ref{LR_defa
         \label{RF_default}
 \end{figure}
 
-Based on \ref{SVC_default} \textbf{Support Vector Classifier} misclassifies 169 fake news and 70 real news. Thus, it has an accuracy of approximately 0.81. It has a relatively lower recall for class 0 at 0.74. The f1-score for classes 1 and 0 is 0.80 and 0.83 respectively. 
+Based on Figure \ref{SVC_default}, \textbf{Support Vector Classifier}, misclassified 169 instances of fake news and 70 instances of real news. It had an accuracy of approximately 0.81. It had a relatively lower recall for fake news at 0.74. The f1-scores for real news and fake news were 0.80 and 0.83 respectively. 
 
 \begin{figure}[h!]
     \centering
@@ -42,7 +43,7 @@ Based on \ref{SVC_default} \textbf{Support Vector Classifier} misclassifies 169 
         \label{SVC_default}
 \end{figure}
 
-Results without hyperparameter tuning are summarized in \ref{tab:no_hyperparam_summary}. AS shown in table \ref{tab:no_hyperparam_summary}, Logistic Regression has the highest F1-Scores while Multinomial Naive Bayes has the lowest.
+Results without hyperparameter tuning are summarized in Table \ref{tab:no_hyperparam_summary}. As shown in Table \ref{tab:no_hyperparam_summary}, Logistic Regression had the highest f1-scores while Multinomial Naive Bayes scored the lowest.
 
 \begin{table}[ht]
     \centering
@@ -73,9 +74,9 @@ Results without hyperparameter tuning are summarized in \ref{tab:no_hyperparam_s
 
 \section{Classifiers with Hyperparameter Tuning}
 \label{sec:ParamTuning}
-To the determine the optimal hyperparameters, all models were tested in the combined dataset using grid search with five-fold cross validation.
+To the determine the optimal hyperparameters, all models were trained and tested on the combined dataset using grid search with five-fold cross validation.
 
-Figure \ref{MNB_hyperparam} shows the performance of \textbf{Multinomial Naive Bayes} with an alpha of 0.01 which is the optimal hyperparameter based on the cross validation. The model misclassifies 155 fake news and 18 real news. It yields an accuracy of approximately 0.865. It has the lowest recall for class 0 at 0.87.
+Figure \ref{MNB_hyperparam} shows the performance of \textbf{Multinomial Naive Bayes} with an alpha of 0.01, the optimal hyperparameter based on the cross validation. The model misclassified 155 instances of fake news and 18 instances of real news. It yielded an accuracy of approximately 0.865. It had the lowest recall for fake news at 0.87.
 
 \begin{figure}[h!]
 \centering
@@ -84,7 +85,7 @@ Figure \ref{MNB_hyperparam} shows the performance of \textbf{Multinomial Naive B
     \label{MNB_hyperparam}
 \end{figure}
 
-The best hyperparameter for \textbf{Logistic Regression} is max\_iter = 2000. As shown in \ref{LR_hyperparam} this model misclassified 42 fake news and 51 real news. It yields an accuracy of 0.928 and an F1 score of 0.93 for both class 1 and 0. 
+The best hyperparameter for \textbf{Logistic Regression} was max\_iter = 2000. As shown in Figure \ref{LR_hyperparam}, Logistic Regression misclassified 42 instances of fake news and 51 instances of real news. It yielded an accuracy of 0.928 and an f1-score of 0.93 for both real news and fake news. 
 
 \begin{figure}[h!]
 \centering
@@ -93,7 +94,7 @@ The best hyperparameter for \textbf{Logistic Regression} is max\_iter = 2000. As
     \label{LR_hyperparam}
 \end{figure}
 
-For \textbf{Random Forest}, max\_depth = 20 is the optimal hyperparamter. The performance of this RF is shown in \ref{RF_hyperparam}. The model misclassified 80 fake news and 63 real news. It yields an accuracy of 0.889 with an F1 score of 0.89 for both class 1 and 0.
+For \textbf{Random Forest}, max\_depth = 20 was the optimal hyperparameter. The performance of Random Forest is shown in Figure \ref{RF_hyperparam}. The model misclassified 80 instances of fake news and 63 instances of real news. It yielded an accuracy of 0.889 with an f1-score of 0.89 for both fake news and real news.
 
 \begin{figure}[h!]
 \centering
@@ -102,7 +103,9 @@ For \textbf{Random Forest}, max\_depth = 20 is the optimal hyperparamter. The pe
     \label{RF_hyperparam}
 \end{figure}
 
-Lastly, for the \textbf{Support Vector Classifier}, the optimal hyperparameters is C = 0.1 with a linear kernel. As shown in \ref{SVC_hyperparam}, miscclassified 42 fake news and 51 real news. It yields an accuracy of 0.928 and an F1 score of 0.93 for both class 0 and 1. Both the SVC and LR have the highest accuracy during hyperparameter tuning.
+For \textbf{Support Vector Classifier}, the optimal hyperparameter was C = 0.1 with a linear kernel. As shown in Figure \ref{SVC_hyperparam}, the model misclassified 42 instances of fake news and 51 instances of real news. It yielded an accuracy of 0.928 and an f1-score of 0.93 for both fake news and real news.
+
+Both Support Vector Classifier and Logistic Regression yielded the highest accuracy with hyperparameter tuning.
 
 \begin{figure}[h!]
 \centering
@@ -111,7 +114,7 @@ Lastly, for the \textbf{Support Vector Classifier}, the optimal hyperparameters 
     \label{SVC_hyperparam}
 \end{figure}
 
-The results are summarized in table \ref{tab:hyperparam_summary}. Both Logistic Regression and Support Vector Classifier has the highest F1-Scores while Random Forest has the lowest. Comparing the accuracies of the classifiers without hyperparameter tuning in \ref{tab:no_hyperparam_summary} with their accuracies with hyperparameter tuning in \ref{tab:hyperparam_summary}, we can say that hyperparameter tuning significantly increased the accuracy of Multinomial Naive Bayes and Support Vector Classfier, however it did not have any significant impact on the accuracy of Logistic Regression and Random Forest.
+The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic Regression and Support Vector Classifier scored the highest f1-scores while Random Forest scored the lowest. Comparing the accuracies of the classifiers without hyperparameter tuning in Table \ref{tab:no_hyperparam_summary} and their accuracies with hyperparameter tuning in Table \ref{tab:hyperparam_summary}, hyperparameter tuning significantly increased the accuracy of Multinomial Naive Bayes and Support Vector Classifier. However, hyperparameter tuning did not have any significant impact on the accuracies of Logistic Regression and Random Forest.
 
 \begin{table}[ht]
     \centering
@@ -138,8 +141,9 @@ The results are summarized in table \ref{tab:hyperparam_summary}. Both Logistic 
     \label{tab:hyperparam_summary}
 \end{table}
     
-\section{Testing Accuracies}
-Using the determined optimal hyperparameters in \ref{sec:ParamTuning}, all four models were tested using five-fold cross validation six times, a total of 30 tests, across three datasets: Cruz (2020), Lupac (2024), and the combination of the two datasets. Average accuracies of the models is shown in \ref{tab::AverageAccuracies}. Logistic Regression and Support Vector Classifier have the highest average accuracy tested in Cruz (2020) and Lupac (2024) dataset. For the combined dataset, only Logistic Regression has the highest average accuracy. Compared with other models and compared in other datasets, Multinomial Naive Bayes and Random Forest performed relatively worst in the combined dataset with an accuracy of 86.0\% and 88.8\% respectively. \ref{tab::AverageAccuracies} shows the average accuracies of the models and the box plot of the accuracies across is depicted in \ref{fig:box_plot_accuracy}.
+\section{Accuracy Testing}
+
+Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four models were tested using five-fold cross validation six times, a total of 30 tests, across three datasets: Fake News Filipino (2020), Fake News Filipino 2024 (2024), and the combined corpus with the two datasets. Average accuracies of the models are shown in Table \ref{tab::AverageAccuracies}. Logistic Regression and Support Vector Classifier scored the highest average accuracy in both Fake News Filipino and Fake News Filipino 2024. But for the combined dataset, only Logistic Regression yielded the highest average accuracy. Compared to the other models across the three datasets, Multinomial Naive Bayes and Random Forest performed relatively worst in the combined dataset with accuracies of 86.0\% and 88.8\% respectively. Table \ref{tab::AverageAccuracies} shows the average accuracies of the models. The box plot of the accuracies is depicted in Figure \ref{fig:box_plot_accuracy}.
 
 \begin{tabularx}{\textwidth}{|l|l|c|}
     \hline Classifier & Dataset & Average Accuracy \\ \hline
@@ -159,20 +163,20 @@ Using the determined optimal hyperparameters in \ref{sec:ParamTuning}, all four 
     \caption{Average Accuracies}
     \endlastfoot
 
-    Logistic Regression & Cruz & 0.951 \\
-    & Lupac & 0.947\\
+    Logistic Regression & Fake News Filipino & 0.951 \\
+    & Fake News Filipino 2024 & 0.947\\
     & Combined & 0.924 \\
     \hline
-    Multinomial Naive Bayes & Cruz & 0.923 \\
-    & Lupac & 0.885 \\
+    Multinomial Naive Bayes & Fake News Filipino & 0.923 \\
+    & Fake News Filipino 2024 & 0.885 \\
     & Combined & 0.860 \\
     \hline
-    Random Forest & Cruz & 0.919 \\
-    & Lupac & 0.926 \\
+    Random Forest & Fake News Filipino & 0.919 \\
+    & Fake News Filipino 2024 & 0.926 \\
     & Combined & 0.888 \\  
     \hline
-    Support Vector Classifier & Cruz & 0.951 \\
-    & Lupac & 0.947 \\
+    Support Vector Classifier & Fake News Filipino & 0.951 \\
+    & Fake News Filipino 2024 & 0.947 \\
     & Combined & 0.922
 \label{tab::AverageAccuracies}
 \end{tabularx}
@@ -184,18 +188,18 @@ Using the determined optimal hyperparameters in \ref{sec:ParamTuning}, all four 
         \label{fig:box_plot_accuracy}
 \end{figure}
 
-Shapiro-Wilk test of normality was used to assess the normality of each group in a two-way layout, where accuracies is the dependent variable and dataset and classfiers are the factors. As shown in table \ref{tab::normality_tests} all groups have p-values greater than of equal to 0.05 indicating the the data is normaly distributed in the two-way layout. However, with a p-value (0.003) lower than 0.05, Levene's homogeneity Test determined the variances of the groups to be heterogenous.
+The Shapiro-Wilk Test of Normality was used to assess the normality of each group in a two-way format, where accuracies were the dependent variable, and datasets and classifiers were the factors. As shown in Table \ref{tab::normality_tests}, all groups have p-values greater than or equal to 0.05 indicating that the data is normally distributed in the two-way format. However, with a p-value (0.003) lower than 0.05, Levene's Homogeneity Test determined the variances of the groups to be heterogenous.
 
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
     \hline
     Dataset & Classfier & Statistic & p-value \\
     \hline
-    Cruz & LR & 0.968 & 0.492 \\
+    Fake News Filipino & LR & 0.968 & 0.492 \\
     & MNB & 0.971 & 0.571 \\
     & RF & 0.985 & 0.938 \\
     & SVC & 0.972 & 0.603 \\
     \hline
-    Lupac & LR & 0.963 & 0.363 \\
+    Fake News Filipino 2024 & LR & 0.963 & 0.363 \\
     & MNB & 0.940 & 0.928 \\
     & RF & 0.962 & 0.342 \\
     & SVC & 0.972 & 0.598 \\
@@ -209,7 +213,7 @@ Shapiro-Wilk test of normality was used to assess the normality of each group in
 \label{tab::normality_tests}
 \end{tabularx}
 
-To determine if there are significant differeces between accuracies of different classifiers in different datasets and taking into account the heteroscedacity of the data, the two-way ANOVA for trimmed means was performed. As shown in Table \ref{tab::two-way} there is a significant difference (p-value = 0.001) between accuracies in different datasets averaged across the classifers. Additionally, there is a significant difference (p-value = 0.001) between accuracies in the classfiers averaged across the datasets. Furthermore, their interaction effect is also significant (p-value = 0.001). Thus, accuracy is affected both by the main effects of the dataset and classfier and also their combinations.
+To determine if there were significant differences between accuracies of different classifiers in different datasets, and taking into account the heteroscedacity of the data, two-way ANOVA for trimmed means was performed. As shown in Table \ref{tab::two-way} there was a significant difference (p-value = 0.001) between accuracies in different datasets averaged across the classifiers. Additionally, there was a significant difference (p-value = 0.001) between accuracies in the classifiers averaged across the datasets. Furthermore, their interaction effect was also significant (p-value = 0.001). Thus, accuracy was affected both by the main effects of the dataset and classifier and also their combinations.
 
 \begin{tabularx}{\textwidth}{|l|l|l|}
     \hline
@@ -217,18 +221,18 @@ To determine if there are significant differeces between accuracies of different
     \hline
     dataset & 689.45 & 0.001 \\
     \hline
-    classfier & 1010.0371 & 0.001 \\
+    classifier & 1010.0371 & 0.001 \\
     \hline
-    dataset*classfier & 129.07 & 0.001 \\
+    dataset*classifier & 129.07 & 0.001 \\
     \hline
 \caption{Two-way ANOVA for Trimmed Means}
 \label{tab::two-way}
 \end{tabularx}
 
-To determine which specific subgroups of have significant differeces, pot-hoc mean-separation testing is conducted using Bonferroni correction for subgroups of each dataset level. As shown in Table \ref{tab::post-hoc} the only subgroups that do not have significant differences are Logistic Regression and Support Vector Classfier accross all datasets, and Multinomial Naive Bayes and Random Forest in the Cruz (2020) dataset. The results is reflected in the interaction plot of the accuracies at Figure \ref{fig:interaction_plot} As show in Figure \ref{fig:interaction_plot} accuracies of Logistic Regression and Support Vector Classfier are almost equal across all datasets. The same can be said for the accuracy of Multinomial Naive Bayes and Random Forest in the Cruz (2020) dataset.
+To determine which specific subgroups of classifiers had significant differences, post-hoc mean-separation testing was conducted using Bonferroni Correction for subgroups of each dataset level. As shown in Table \ref{tab::post-hoc}, the only subgroups that did not have significant differences were Logistic Regression and Support Vector Classifier across all datasets, as well as Multinomial Naive Bayes and Random Forest in the Fake News Filipino dataset. The results were reflected in the interaction plot of the accuracies in Figure \ref{fig:interaction_plot}. As shown in Figure \ref{fig:interaction_plot}, the accuracies of Logistic Regression and Support Vector Classifier were almost equal across all datasets. The same could be said for the accuracy of Multinomial Naive Bayes and Random Forest in the Fake News Filipino dataset.
 
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
-    \hline Dataset & Classfier (a) & Classfier(b) & p-value \\ \hline
+    \hline Dataset & Classifier (a) & Classifier(b) & p-value \\ \hline
     \endfirsthead
 
     \hline
@@ -245,7 +249,7 @@ To determine which specific subgroups of have significant differeces, pot-hoc me
     \caption{Bonferroni correction for subgroups of each data level}
     \endlastfoot
 
-    Cruz & LR & MNB & \textless 0.001 \\
+    Fake News Filipino & LR & MNB & \textless 0.001 \\
     \cline{3-4}
     & & RF & \textless 0.001 \\
     \cline{3-4}
@@ -257,7 +261,7 @@ To determine which specific subgroups of have significant differeces, pot-hoc me
     \cline{2-4}
     & RF & SVC &  \textless 0.001 \\
     \hline
-    Lupac & LR & MNB & \textless 0.001 \\
+    Fake News Filipino 2024 & LR & MNB & \textless 0.001 \\
     \cline{3-4}
     & & RF & \textless 0.001 \\
     \cline{3-4}
@@ -286,24 +290,24 @@ To determine which specific subgroups of have significant differeces, pot-hoc me
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/im.png}
-        \caption{interaction plot of accuracies accross datasets}
+        \caption{interaction plot of accuracies across datasets}
         \label{fig:interaction_plot}
 \end{figure}
 
 
-% Shapiro-Wilk test of normality was used for accuracies accross datasets. With a p-value (\textless 0.001) lower than 0.05, the data is determine to be not normaly distributed, thus the non-parameteric Kruskal-Wallis test was used to check if the differences between the accuracies accross datasets are significant. 
+% The Shapiro-Wilk Test of Normality was used for testing accuracies across datasets. With a p-value (\textless 0.001) lower than 0.05, the data is determine to be not normaly distributed, thus the non-parameteric Kruskal-Wallis test was used to check if the differences between the accuracies accross datasets are significant. 
 
-% The p-value (\textless 0.001) corresponding to the test-statistic of Kruskal-Wallis test is lower than 0.05 which suggests that one or more differeces in accuracies accross datasets are significant. Dwass-Steel-Critchlow-Fligner (DSCF) pariwise comparisons for post-hoc test showed that the differences in accuracies between Cruz (2020) and the combined dataset, and Lupac (2024) and the combined dataset are significant. Therefore, at least one classifier performed significantly better on the Cruz (2020) and Lupac (2024) dataset compared with their performance on the combined dataset. See \ref{tab::dscf_datasets} for the results of the DSCF pairwise comparisons. To deter
+% The p-value (\textless 0.001) corresponding to the test-statistic of Kruskal-Wallis test is lower than 0.05 which suggests that one or more differeces in accuracies accross datasets are significant. Dwass-Steel-Critchlow-Fligner (DSCF) pariwise comparisons for post-hoc test showed that the differences in accuracies between Fake News Filipino (2020) and the combined dataset, and Fake News Filipino 2024 (2024) and the combined dataset are significant. Therefore, at least one classifier performed significantly better on the Fake News Filipino (2020) and Fake News Filipino 2024 (2024) dataset compared with their performance on the combined dataset. See \ref{tab::dscf_datasets} for the results of the DSCF pairwise comparisons. To deter
 
 % \begin{tabularx}{\textwidth}{|l|c|c|}
 %     \hline
 %     & W & p \\
 %     \hline
-%     Cruz - Lupac & -2.91 & 0.099 \\
+%     Fake News Filipino - Fake News Filipino 2024 & -2.91 & 0.099 \\
 %     \hline
-%     Cruz - Combined & -13.67 &  \textless 0.001 \\
+%     Fake News Filipino - Combined & -13.67 &  \textless 0.001 \\
 %     \hline
-%     Lupac - Combined & -10.37 & \textless 0.001\\
+%     Fake News Filipino 2024 - Combined & -10.37 & \textless 0.001\\
 %     \hline
 % \caption{DSCF pairwise comparisons across datasets}
 % \label{tab::dscf_datasets}

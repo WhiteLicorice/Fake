@@ -106,7 +106,7 @@ Python was the go-to programming language in the backend as it was the programmi
 
 As Figure \ref{SystemFlowchart} shows, the user interacted with the FaKe browser extension while reading a Filipino language news article. A stable internet connection was required to establish communication between the FaKe browser extension and API.
 
-The FaKe browser extension scraped the paragraph body of the article and packed it in a JSON. This packed JSON was sent to the API that hosted the machine learning model. The API unpacked the JSON and extracted Filipino lingustic features from the article text. The API employed exactly the same modules used in the extraction of Filipino linguistic features during model training. No sensitive information such as user credentials or IP addresses was transmitted. Once the Filipino linguistic features were extracted, the API used the model microservice to make predictions on these features. The model identified whether the article was fake or not, entailing a waiting period of up to 30 seconds. The waiting period hinged on the state of the server and the length of the article. If an error during this exchange occurred, the user was notified and prompted to try again. However, if no error occurred and the model successfully predicted whether the article was fake or not, the API returned the prediction as a response JSON to the browser extension. The browser extension unpacked this response JSON and displayed the prediction (fake or real) to the user.
+The FaKe browser extension scraped the paragraph body of the article and packed it in a JSON. This packed JSON was sent to the API that hosted the machine learning model. The API unpacked the JSON and extracted Filipino linguistic features from the article text. The API employed exactly the same modules used in the extraction of Filipino linguistic features during model training. No sensitive information such as user credentials or IP addresses was transmitted. Once the Filipino linguistic features were extracted, the API used the model microservice to make predictions on these features. The model identified whether the article was fake or not, entailing a waiting period of up to 30 seconds. The waiting period hinged on the state of the server and the length of the article. If an error during this exchange occurred, the user was notified and prompted to try again. However, if no error occurred and the model successfully predicted whether the article was fake or not, the API returned the prediction as a response JSON to the browser extension. The browser extension unpacked this response JSON and displayed the prediction (fake or real) to the user.
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figures/FakeSystemFlowchart.png}
@@ -122,34 +122,3 @@ The FaKe API was hosted on a cloud server that spun down after long periods of i
 The FaKe browser extension as a tool only functioned reliably on news articles written in the Filipino language. Results from making predictions on news articles in English or other languages were unreliable at best. However, the FaKe browser extension had no way of limiting its usage to Filipino language news articles. Furthermore, predictions made by the FaKe browser extension may be inaccurate and may not reflect real-world events. Thus, the responsible usage of the FaKe browser extension rested with the user.
 
 In this regard, we advocate for the hybrid approach in detecting fake news, wherein the employment of the FaKe browser extension is accompanied by dutiful and informed fact-checking. We make no claims that FaKe is a singular catch-all solution to detecting Filipino language fake news.
-
-\begin{comment}
-
-\section{Calendar of Activities}
-
-Table \ref{tab:timetableactivities} shows a Gantt chart of the activities to be conducted in this study.  Each bullet represents approximately one week worth of activity.
-
-%
-%  the following commands will be used for filling up the bullets in the Gantt chart
-%
-\newcommand{\weekone}{\textbullet}
-\newcommand{\weektwo}{\textbullet \textbullet}
-\newcommand{\weekthree}{\textbullet \textbullet \textbullet}
-\newcommand{\weekfour}{\textbullet \textbullet \textbullet \textbullet}
-
-
-\begin{table}[ht]   %t means place on top, replace with b if you want to place at the bottom
-\centering
-\caption{Timetable of Activities} \vspace{0.25em}
-\begin{tabular}{|p{2in}|c|c|c|c|c|c|c|} \hline
-\centering Activities (2023) & Jan & Feb & Mar & Apr & May\\ \hline
-Finalize Model and Features      & ~~~\weekone & \weekfour &  &  & \\ \hline
-Finalize System Implementation      & ~~~\weekone & \weekfour &  &  & \\ \hline
-Model Training and Testing     &   &  & ~\weekthree~~~ &  & \\ \hline
-Model Implementation     &   &  & ~~~~\weekone & \weektwo~~~ &  \\ \hline
-Documentation & ~~~\weekone & \weekfour & \weekfour & \weekfour & \weekfour \\ \hline
-\end{tabular}
-\label{tab:timetableactivities}
-\end{table}
-
-\end{comment}
