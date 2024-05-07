@@ -177,7 +177,7 @@ Using the determined optimal hyperparameters in \ref{sec:ParamTuning}, all four 
 \label{tab::AverageAccuracies}
 \end{tabularx}
 
-\begin{figure}[h]
+\begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/box_plot.png}
         \caption{Box plot of the accuracies accross datasets}
@@ -209,7 +209,7 @@ Shapiro-Wilk test of normality was used to assess the normality of each group in
 \label{tab::normality_tests}
 \end{tabularx}
 
-To determine if there are significant differeces between accuracies of different classifiers in different datasets and taking into account the heteroscedacity of the data, the two-way ANOVA for trimmed means was performed. As shown in table \ref{tab::two-way} there is a significant difference (p-value = 0.001) between accuracies in different datasets averaged across the classifers. Additionally, there is a significant difference (p-value = 0.001) between accuracies in the classfiers averaged across the datasets. Furthermore, their interaction effect is also significant (p-value = 0.001). Thus, accuracy is affected both by the main effects of the dataset and classfier and also their combinations.
+To determine if there are significant differeces between accuracies of different classifiers in different datasets and taking into account the heteroscedacity of the data, the two-way ANOVA for trimmed means was performed. As shown in Table \ref{tab::two-way} there is a significant difference (p-value = 0.001) between accuracies in different datasets averaged across the classifers. Additionally, there is a significant difference (p-value = 0.001) between accuracies in the classfiers averaged across the datasets. Furthermore, their interaction effect is also significant (p-value = 0.001). Thus, accuracy is affected both by the main effects of the dataset and classfier and also their combinations.
 
 \begin{tabularx}{\textwidth}{|l|l|l|}
     \hline
@@ -225,7 +225,7 @@ To determine if there are significant differeces between accuracies of different
 \label{tab::two-way}
 \end{tabularx}
 
-To determine which specific subgroups of have significant differeces, pot-hoc mean-separation testing is conducted using Bonferroni correction for subgroups of each dataset level. As shown in \ref{tab::post-hoc} the only subgroups that do not have significant differences are Logistic Regression and Support Vector Classfier accross all datasets, and Multinomial Naive Bayes and Random Forest in the Cruz (2020) dataset.
+To determine which specific subgroups of have significant differeces, pot-hoc mean-separation testing is conducted using Bonferroni correction for subgroups of each dataset level. As shown in Table \ref{tab::post-hoc} the only subgroups that do not have significant differences are Logistic Regression and Support Vector Classfier accross all datasets, and Multinomial Naive Bayes and Random Forest in the Cruz (2020) dataset. The results is reflected in the interaction plot of the accuracies at Figure \ref{fig:interaction_plot} As show in Figure \ref{fig:interaction_plot} accuracies of Logistic Regression and Support Vector Classfier are almost equal across all datasets. The same can be said for the accuracy of Multinomial Naive Bayes and Random Forest in the Cruz (2020) dataset.
 
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
     \hline Dataset & Classfier (a) & Classfier(b) & p-value \\ \hline
@@ -282,6 +282,13 @@ To determine which specific subgroups of have significant differeces, pot-hoc me
     & RF & SVC &  \textless 0.001
 \label{tab::post-hoc}
 \end{tabularx}
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/im.png}
+        \caption{interaction plot of accuracies accross datasets}
+        \label{fig:interaction_plot}
+\end{figure}
 
 
 
