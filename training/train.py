@@ -22,93 +22,61 @@ import seaborn as sns
 from datetime import datetime
 
 LOAD_FROM_CSV = True
-#   Suppress specific warning about tokenize_pattern from sklearn.feature_extraction.text
-import warnings
-warnings.filterwarnings("ignore", category=UserWarning, module="sklearn.feature_extraction.text")
 
-session_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")    #   Grab current time to use as timestamp on files
 
-#   Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
-data = pd.read_csv("root/datasets/joint_corpus.csv")
-trad_features = pd.read_csv("root/datasets/TradFeatures.csv")
-syll_features = pd.read_csv("root/datasets/SyllFeatures.csv")
-oov_features = pd.read_csv("root/datasets/OovFeatures.csv")
-sw_features = pd.read_csv("root/datasets/SwFeatures.csv")
-read_features = pd.read_csv("root/datasets/ReadFeatures.csv")
-#lex_features = pd.read_csv("root/datasets/LexFeatures.csv")
-#morph_features = pd.read_csv("root/datasets/MorphFeatures.csv")
+session_timestamp = datetime.now().strftime("%Y-%m-%d_%H-%M-%S")    # Grab current time to use as timestamp on files
 
-data = pd.concat([data, trad_features, syll_features, oov_features, sw_features, read_features], axis=1)
-#   Split the data into features (X) and labels (y)
+
+# Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
+data_cruz = pd.read_csv("root/datasets/Cruz/FakeNewsFilipino_Cruz2020.csv")
+trad_features_cruz = pd.read_csv("root/datasets/Cruz/TradFeatures.csv")
+syll_features_cruz = pd.read_csv("root/datasets/Cruz/SyllFeatures.csv")
+oov_features_cruz = pd.read_csv("root/datasets/Cruz/OovFeatures.csv")
+sw_features_cruz = pd.read_csv("root/datasets/Cruz/SwFeatures.csv")
+read_features_cruz = pd.read_csv("root/datasets/Cruz/ReadFeatures.csv")
+lex_features_cruz = pd.read_csv("root/datasets/Cruz/LexFeatures.csv")
+morph_features_cruz = pd.read_csv("root/datasets/Cruz/MorphFeatures.csv")
+
+# Load Fake News Filipino by Cruz et al. dataset adapted from: https://github.com/jcblaisecruz02/Tagalog-fake-news
+data_lupac = pd.read_csv("root/datasets/Lupac/FakeNewsPhilippines2024_Lupac.csv")
+trad_features_lupac = pd.read_csv("root/datasets/Lupac/TradFeatures.csv")
+syll_features_lupac = pd.read_csv("root/datasets/Lupac/SyllFeatures.csv")
+oov_features_lupac = pd.read_csv("root/datasets/Lupac/OovFeatures.csv")
+sw_features_lupac = pd.read_csv("root/datasets/Lupac/SwFeatures.csv")
+read_features_lupac = pd.read_csv("root/datasets/Lupac/ReadFeatures.csv")
+lex_features_lupac = pd.read_csv("root/datasets/Lupac/LexFeatures.csv")
+morph_features_lupac = pd.read_csv("root/datasets/Lupac/MorphFeatures.csv")
+
+data = pd.concat([data_cruz, data_lupac], ignore_index=True)
+trad_features = pd.concat([trad_features_cruz, trad_features_lupac], ignore_index=True)
+syll_features = pd.concat([syll_features_cruz, syll_features_lupac], ignore_index=True)
+oov_features = pd.concat([oov_features_cruz, oov_features_lupac], ignore_index=True)
+sw_features = pd.concat([sw_features_cruz, sw_features_lupac], ignore_index=True)
+read_features = pd.concat([read_features_cruz, read_features_lupac], ignore_index=True)
+lex_features = pd.concat([lex_features_cruz, lex_features_lupac], ignore_index=True)
+morph_features = pd.concat([morph_features_cruz, morph_features_lupac], ignore_index=True)
+
+data = pd.concat([data, trad_features, syll_features, oov_features, sw_features, read_features, lex_features, morph_features], axis=1)
+print(f"HyperParam Testing Results ({session_timestamp})...")
+
+# Split the data into features (X) and labels (y)
 y = data['label']  # Labels are 0 -> Fake or 1 -> Real
 X = data.drop('label', axis=1)
-# X = data['article']
 
 #   Split dataset for training and testing
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42, stratify=y)
 
-#   Classifiers to test
-# classifiers = [
-#     {
-#         'name': 'Multinomial Naive Bayes',
-#         'model_id': 'MultinomialNB',
-#         'model': MultinomialNB(),
-#         'params': {
-#             'classifier__alpha': [0.1, 1.0, 10.0]
-#         }
-#     },
-#     {
-#         'name': 'Logistic Regression',
-#         'model_id': 'LogisticRegression',
-#         'model': LogisticRegression(max_iter=2000, n_jobs=-1),
-#         'params': {
-#             'classifier__C': [0.1, 1.0, 10.0]
-#         }
-#     },
-#     {
-#         'name': 'Random Forest',
-#         'model_id': 'RandomForest',
-#         'model': RandomForestClassifier(n_jobs=-1),
-#         'params': {
-#             'classifier__n_estimators': [50, 100],
-#             'classifier__max_depth': [10, 20],
-#             'classifier__min_samples_split': [2, 5, 10]
-#         }
-#     },
-#     {
-#         'name': 'SVC',
-#         'model_id': 'SVC',
-#         'model': SVC(),
-#         'params': {
-#             'classifier__C': [0.1, 1.0, 10.0],
-#             'classifier__kernel': ['linear', 'rbf']
-#         },
-#         'n_jobs': -1 
-#     },
-#     {
-#         'name': 'Voting Classifier',
-#         'model_id': 'Ensemble',
-#         'model': VotingClassifier(estimators=[
-#             ('lr', LogisticRegression(max_iter=2000, solver='liblinear')),
-#             ('rf', RandomForestClassifier(n_jobs=-1)),
-#             ('svc', SVC(probability=True))
-#         ], voting = 'hard'),
-#         'params': {
-#             'classifier__voting': ['hard', 'soft']
-#         }
-#     }
-# ]
 
 #   Classifiers to test
 classifiers = [
-    # {
-    #     'name': 'Multinomial Naive Bayes',
-    #     'model_id': 'MultinomialNB',
-    #     'model': MultinomialNB(),
-    #     'params': {
-    #         'classifier__alpha': [0.1, 1.0, 10.0]
-    #     }
-    # },
+    {
+        'name': 'Multinomial Naive Bayes',
+        'model_id': 'MultinomialNB',
+        'model': MultinomialNB(),
+        'params': {
+            'classifier__alpha': [0.1, 1.0, 10.0]
+        }
+    },
     {
         'name': 'Logistic Regression',
         'model_id': 'LogisticRegression',
@@ -117,26 +85,26 @@ classifiers = [
             'classifier__C': [0.1, 1.0, 10.0]
         }
     },
-    # {
-    #     'name': 'Random Forest',
-    #     'model_id': 'RandomForest',
-    #     'model': RandomForestClassifier(n_jobs=-1),
-    #     'params': {
-    #         'classifier__n_estimators': [50, 100],
-    #         'classifier__max_depth': [10, 20],
-    #         'classifier__min_samples_split': [2, 5, 10]
-    #     }
-    # },
-    # {
-    #     'name': 'SVC',
-    #     'model_id': 'SVC',
-    #     'model': SVC(),
-    #     'params': {
-    #         'classifier__C': [0.1, 1.0, 10.0],
-    #         'classifier__kernel': ['linear', 'rbf']
-    #     },
-    #     'n_jobs': -1 
-    # },
+    {
+        'name': 'Random Forest',
+        'model_id': 'RandomForest',
+        'model': RandomForestClassifier(n_jobs=-1),
+        'params': {
+            'classifier__n_estimators': [50, 100],
+            'classifier__max_depth': [10, 20],
+            'classifier__min_samples_split': [2, 5, 10]
+        }
+    },
+    {
+        'name': 'SVC',
+        'model_id': 'SVC',
+        'model': SVC(),
+        'params': {
+            'classifier__C': [0.1, 1.0, 10.0],
+            'classifier__kernel': ['linear', 'rbf']
+        },
+        'n_jobs': -1 
+    },
 ]
 
 # #   Classifiers to test
@@ -151,29 +119,29 @@ classifiers = [
 #     },
 # ]
 
-print("CLASSIFIERS WITHOUT GRIDSEARCH")
+# print("CLASSIFIERS WITHOUT GRIDSEARCH")
 #   Test classifiers with no gridsearch
 for clf_info in classifiers:
 
-    pipeline = Pipeline(steps=[
-        ('features', FeatureUnion([
-            ('vectorizers', ColumnTransformer(transformers=[
+    feature_space = [
+        ('vectorizers', ColumnTransformer(transformers=[
                 ('bow',CountVectorizer(),'article'),
                 ('tfidf',TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize),'article')
-            ])),                                                               #   Get bag of words
-            ('read', READExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract READ features
-            ('oov', OOVExtractor(from_csv=LOAD_FROM_CSV)),                                                               #   Extract OOV features
-            ('sw', StopWordsExtractor(from_csv=LOAD_FROM_CSV)),
-            ('trad', TRADExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract TRAD features
-            ('syll', SYLLExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract SYLL features
-            #('lex', LEXExtractor(from_csv=LOAD_FROM_CSV)),
-            #('morph', MORPHExtractor(from_csv=LOAD_FROM_CSV))
-        ])),
-        ('classifier', clf_info['model'])
-    ])
+            ])),                                                                                                            #   Get bag of words
+        ('read', READExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract READ features
+        ('oov', OOVExtractor(from_csv=LOAD_FROM_CSV)),                                                                  #   Extract OOV features
+        ('sw', StopWordsExtractor(from_csv=LOAD_FROM_CSV)),
+        ('trad', TRADExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract TRAD features
+        ('syll', SYLLExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract SYLL features
+        ('lex', LEXExtractor(from_csv=LOAD_FROM_CSV)),
+        ('morph', MORPHExtractor(from_csv=LOAD_FROM_CSV))
+    ]
+    classifier = clf_info['model']
+    pipeline = Pipeline(steps=[
+            ('features', FeatureUnion(feature_space)),
+            ('classifier', classifier)
+        ])
 
-
-    
     print(f"\nTraining Model: {clf_info['name']}")
 
     #   Fit the entire pipeline on the training data
@@ -196,28 +164,37 @@ for clf_info in classifiers:
     print("Classification Report:\n", class_report)
     
     #   Confusion Matrix
-    # cm = confusion_matrix(y_test, y_pred)
-    # sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
-    # plt.xlabel('Predicted')
-    # plt.ylabel('Actual')
-    # plt.title(f'Confusion Matrix - {clf_info["name"]}')
-    # #plt.show()
-    # plt.savefig(f"{clf_info['name']}_{session_timestamp}.png", bbox_inches = 'tight')   #   Silently save confusion matrices for overnight training
-    # plt.close()
+    cm = confusion_matrix(y_test, y_pred)
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues')
+    plt.xlabel('Predicted')
+    plt.ylabel('Actual')
+    plt.title(f'Confusion Matrix - {clf_info["name"]}')
+    #plt.show()
+    plt.savefig(f".\\results\\hyperparam\\{clf_info['name']}_none_{session_timestamp}.png", bbox_inches = 'tight')   #   Silently save confusion matrices for overnight training
+    plt.close()
     
 # print("CLASSIFIERS WITH GRIDSEARCH")
 # #   Test classifiers with gridsearch
 # for clf_info in classifiers:
 #     print(f"\nTraining {clf_info['name']}")
-#     pipeline = Pipeline([
-#         ('features', FeatureUnion([
-#             ('tfidf', TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize)),        #   Get unigrams, bigrams, and trigrams
-#             ('bow', CountVectorizer()),                                                               #   Get bag of words
-#             ('trad', TRADExtractor()),                                                                #   Extract TRAD features
-#             ('syll', SYLLExtractor())                                                                 #   Extract SYLL features
-#         ])),
-#         ('classifier', clf_info['model'])
-#     ])
+#     feature_space = [
+#         ('vectorizers', ColumnTransformer(transformers=[
+#                 ('bow',CountVectorizer(),'article'),
+#                 ('tfidf',TfidfVectorizer(ngram_range=(1, 3), tokenizer=BPETokenizer().tokenize),'article')
+#             ])),                                                                                                            #   Get bag of words
+#         ('read', READExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract READ features
+#         ('oov', OOVExtractor(from_csv=LOAD_FROM_CSV)),                                                                  #   Extract OOV features
+#         ('sw', StopWordsExtractor(from_csv=LOAD_FROM_CSV)),
+#         ('trad', TRADExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract TRAD features
+#         ('syll', SYLLExtractor(from_csv=LOAD_FROM_CSV)),                                                                #   Extract SYLL features
+#         ('lex', LEXExtractor(from_csv=LOAD_FROM_CSV)),
+#         ('morph', MORPHExtractor(from_csv=LOAD_FROM_CSV))
+#     ]
+#     classifier = clf_info['model']
+#     pipeline = Pipeline(steps=[
+#             ('features', FeatureUnion(feature_space)),
+#             ('classifier', classifier)
+#         ])
     
 #     #   Perform grid search
 #     grid_search = GridSearchCV(pipeline, clf_info['params'], cv=5, scoring='accuracy')
@@ -243,4 +220,5 @@ for clf_info in classifiers:
 #     plt.xlabel('Predicted')
 #     plt.ylabel('Actual')
 #     plt.title(f'Confusion Matrix - {clf_info["name"]}')
-#     plt.show()
+#     plt.savefig(f".\\results\\hyperparam\\{clf_info['name']}_tuning_{session_timestamp}.png", bbox_inches = 'tight')   #   Silently save confusion matrices for overnight training
+#     plt.close()
