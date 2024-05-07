@@ -1,361 +1,361 @@
 accuracy,features,classifier,dataset
-0.9317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9142300194931774,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.935672514619883,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9200779727095516,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.923828125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9044834307992202,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9161793372319688,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9142300194931774,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.93359375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9083820662768032,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9278752436647172,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9200779727095516,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.92578125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9083820662768032,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9220272904483432,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9200779727095516,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.93359375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9044834307992202,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9298245614035088,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9278752436647172,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9454191033138402,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9298245614035088,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9064327485380116,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.91796875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Cruz
-0.9688109161793372,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9415204678362572,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.955078125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9512670565302144,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.95703125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9649122807017544,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.939453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9415204678362572,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9649122807017544,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9571150097465888,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.951171875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9473684210526316,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.95703125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9649122807017544,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9473684210526316,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9571150097465888,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.947265625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Cruz
-0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9103313840155944,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9064327485380116,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.94140625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9005847953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9103313840155944,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9296875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9103313840155944,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9278752436647172,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9220272904483432,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9025341130604289,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9140625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.8908382066276803,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.919921875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.935672514619883,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9064327485380116,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.8984375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9473684210526316,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9083820662768032,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.8927875243664717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9200779727095516,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.935546875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Cruz
-0.9688109161793372,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9415204678362572,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9415204678362572,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.931773879,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.914230019,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.935672515,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.920077973,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.923828125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.931773879,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.904483431,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.916179337,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.914230019,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.93359375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.908382066,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.927875244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.920077973,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.92578125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.908382066,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.92202729,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.920077973,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.93359375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.904483431,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.918128655,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.929824561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.927875244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.9375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.945419103,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.929824561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.906432749,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.918128655,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.91796875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Cruz
+0.968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.941520468,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.955078125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.951267057,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.95703125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.931773879,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.964912281,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.939453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.941520468,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.964912281,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.95711501,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.951171875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.947368421,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.95703125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.964912281,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.947368421,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.95711501,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.947265625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Cruz
+0.918128655,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.931773879,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.910331384,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.906432749,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.94140625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.900584795,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.910331384,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.931773879,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.9296875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.910331384,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.927875244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.92202729,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.902534113,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.9140625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.890838207,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.919921875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.918128655,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.935672515,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.906432749,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.8984375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.947368421,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.908382066,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.892787524,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.920077973,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.935546875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Cruz
+0.968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.941520468,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.941520468,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
 0.958984375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9415204678362572,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.941520468,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
 0.95703125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9337231968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9688109161793372,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.95906432748538,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.933723197,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.959064327,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
 0.935546875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9473684210526316,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9512670565302144,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.947368421,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.951267057,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
 0.94921875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9551656920077972,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9434697855750488,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.955165692,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.943469786,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
 0.9609375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9473684210526316,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.947368421,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
 0.947265625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Cruz
-0.8713450292397661,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8927875243664717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.884990253411306,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.9005847953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.869140625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.912280701754386,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8791423001949318,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8635477582846004,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8752436647173489,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.880859375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8888888888888888,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8674463937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.912280701754386,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.884990253411306,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.880859375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8732943469785575,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.9083820662768032,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8966861598440545,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8752436647173489,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.876953125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8810916179337231,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8830409356725146,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8654970760233918,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.9142300194931774,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.89453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8654970760233918,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.898635477582846,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8615984405458089,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.8810916179337231,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.908203125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,Lupac
-0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9434697855750488,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9571150097465888,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9512670565302144,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.947265625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9571150097465888,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9434697855750488,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9434697855750488,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.939453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9473684210526316,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9551656920077972,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.943359375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9551656920077972,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9298245614035088,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.94140625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9551656920077972,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9434697855750488,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.962890625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,Lupac
-0.9220272904483432,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.912280701754386,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9220272904483432,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.919921875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9337231968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9278752436647172,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9337231968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.923828125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9298245614035088,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.912280701754386,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.935672514619883,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.939453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9454191033138402,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9454191033138402,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9044834307992202,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.912109375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9434697855750488,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9044834307992202,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.935672514619883,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.927734375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9298245614035088,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9064327485380116,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9161793372319688,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9296875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,Lupac
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9415204678362572,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.871345029,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.892787524,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.884990253,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.900584795,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.869140625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.912280702,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.8791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.863547758,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.875243665,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.880859375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.888888889,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.867446394,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.912280702,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.884990253,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.880859375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.873294347,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.908382066,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.89668616,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.875243665,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.876953125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.881091618,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.883040936,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.865497076,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.914230019,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.89453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.865497076,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.898635478,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.861598441,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.881091618,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.908203125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,Lupac
+0.937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.943469786,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.95711501,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.951267057,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.947265625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.95711501,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.943469786,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.943469786,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.939453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.931773879,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.947368421,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.955165692,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.943359375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.955165692,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.929824561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.94140625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.9375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.955165692,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.943469786,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.962890625,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,Lupac
+0.92202729,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.912280702,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.92202729,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.919921875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.933723197,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.927875244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.933723197,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.923828125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.929824561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.912280702,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.935672515,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.939453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.945419103,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.945419103,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.904483431,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.912109375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.943469786,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.904483431,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.935672515,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.927734375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.929824561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.906432749,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.916179337,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.9296875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,Lupac
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.941520468,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
 0.943359375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9551656920077972,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9473684210526316,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.935672514619883,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.955165692,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.947368421,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.935672515,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
 0.9375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9571150097465888,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9337231968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9473684210526316,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.95711501,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.933723197,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.947368421,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
 0.935546875,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.953216374269006,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9610136452241717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9337231968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.949317739,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.953216374,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.933723197,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
 0.9375,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9629629629629628,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9512670565302144,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9629629629629628,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.962962963,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.951267057,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.962962963,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
 0.9453125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9512670565302144,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9512670565302144,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.9454191033138402,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.951267057,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.951267057,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
+0.945419103,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
 0.95703125,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,Lupac
-0.8693957115009746,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8430799220272904,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.878167641325536,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8723196881091618,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.833170731707317,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.854775828460039,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8606237816764133,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8869395711500975,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8518518518518519,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8409756097560975,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8528265107212476,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.847953216374269,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8801169590643275,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8606237816764133,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8546341463414634,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8654970760233918,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8625730994152047,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8567251461988304,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.854775828460039,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.864390243902439,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8771929824561403,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8625730994152047,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8528265107212476,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8518518518518519,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8517073170731707,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8654970760233918,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8830409356725146,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8674463937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8576998050682261,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.8273170731707317,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
-0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9044834307992202,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9337231968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9248780487804878,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9278752436647172,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9269005847953216,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9209756097560976,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9220272904483432,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9298245614035088,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.919103313840156,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9102439024390244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9249512670565302,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9405458089668616,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9074074074074074,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9209756097560976,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9483430799220272,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9298245614035088,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9152046783625732,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9161793372319688,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9131707317073172,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9230019493177388,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9249512670565302,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.919103313840156,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
-0.8976608187134503,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8645224171539961,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.9035087719298246,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.9035087719298246,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.864390243902439,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8898635477582846,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8869395711500975,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8947368421052632,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8869395711500975,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8829268292682927,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8801169590643275,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8898635477582846,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.898635477582846,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8937621832358674,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.895609756097561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8957115009746589,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8869395711500975,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8840155945419104,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8654970760233918,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8897560975609756,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.905458089668616,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.9035087719298246,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8771929824561403,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8937621832358674,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8741463414634146,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.884990253411306,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8927875243664717,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8947368421052632,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8957115009746589,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.8741463414634146,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
-0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9103313840155945,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9249512670565302,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9269005847953217,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9297560975609757,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9278752436647173,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9171539961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.928849902534113,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.869395712,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.843079922,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.878167641,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.872319688,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.833170732,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.854775828,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.860623782,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.886939571,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.851851852,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.84097561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.852826511,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.847953216,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.880116959,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.860623782,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.854634146,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.865497076,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.862573099,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.856725146,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.854775828,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.864390244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.877192982,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.862573099,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.852826511,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.851851852,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.851707317,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.865497076,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.883040936,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.867446394,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.857699805,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.827317073,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",MNB,combined
+0.918128655,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.904483431,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.933723197,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.931773879,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.924878049,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.918128655,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.927875244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.926900585,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.92097561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.92202729,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.929824561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.919103314,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.910243902,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.924951267,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.940545809,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.907407407,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.92097561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.94834308,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.929824561,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.915204678,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.916179337,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.913170732,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.923001949,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.924951267,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.919103314,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",LR,combined
+0.897660819,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.864522417,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.903508772,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.903508772,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.864390244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.889863548,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.886939571,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.894736842,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.886939571,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.882926829,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.880116959,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.889863548,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.898635478,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.893762183,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.895609756,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.895711501,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.886939571,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.884015595,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.865497076,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.889756098,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.90545809,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.903508772,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.877192982,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.893762183,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.874146341,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.884990253,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.892787524,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.894736842,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.895711501,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.874146341,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",RF,combined
+0.918128655,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.910331384,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.924951267,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.926900585,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.929756098,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.927875244,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.917153996,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.928849903,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
 0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9200779727095516,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.919103313840156,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9210526315789473,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.920077973,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.919103314,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.921052632,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
 0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9259259259259259,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9230019493177388,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.935672514619883,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9083820662768031,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9151219512195122,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9483430799220273,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9171539961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9152046783625731,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9053658536585366,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9230019493177388,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9074074074074074,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
-0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.923001949,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.935672515,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.908382066,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.915121951,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.94834308,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.917153996,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.915204678,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.905365854,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.923001949,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.923976608,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.907407407,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.93957115,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
 0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
