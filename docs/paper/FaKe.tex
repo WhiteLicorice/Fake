@@ -31,6 +31,11 @@
 \usepackage{tabularx}
  \usepackage{setspace}
 \usepackage{lineno}
+\usepackage{longtable}
+\usepackage{ltablex}
+\usepackage{xltabular}
+\usepackage{adjustbox}
+\usepackage{csquotes}
 
 %
 %-- set margins,  you may need to edit this for your own printer
@@ -49,7 +54,7 @@
 \parskip 1em
 \parindent 0.25in
 
-\bibliographystyle{apacite}            %-- use APA citation scheme
+% \bibliographystyle{apacite}            %-- use APA citation scheme
 \hyphenation{ana-lysis know-ledge}     %-- LaTeX may not hyphenate correctly some words you use in your document
                                        %-- use \hyphenation to instruct LaTeX how to do it correctly, example above
 \newcommand{\degree}{^{\circ}}         %-- use \newcommand to create your own "commands"
@@ -88,8 +93,9 @@
 %   End Preamble    %
 
 \graphicspath{{figures/}}  %figures is the name of the folder containing images JPG or PNG
-
+\doublespacing
 \begin{document}
+\linenumbers
 \include{title_page}      %includes LaTeX source file for the Title Page 
 \pagenumbering{roman}   %number pages as i, ii, iii, etc...
 \setcounter{page}{2}
