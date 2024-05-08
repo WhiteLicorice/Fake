@@ -14,7 +14,7 @@ Specifically, the data-gathering methodology outlined in the work of \cite{cruz2
 
 Figure \ref{fig:Model} shows the steps in model training and data processing. The text input were tokenized, the features were extracted, and the models were trained using the extracted features.
 
-The corpus was tokenized using a pre-trained BPE tokenizer from \citeA{cruz2020localization}. Linguistic features highlighted by \citeA{fernandez-2019} as well as \citeA{fayaz-2022} were used in training the models. Table \ref{tab::Features} describes the features to be extracted and specifies their predictors. These features include traditional or surface-based  features such as word count, sentence count, and character count. These features were extracted via a library of Python scripts designed specifically for the extraction of Filipino linguistic features \cite{imperial-2020, imperial-2021}. Through the same library, syllabic features based on the prescribed Philippine orthography, lexical features such as type-token ratio, and morphological features such as morphemes were extracted. Additionally, the frequency of misspelled words, which has not been investigated as a linguistic feature of Filipino texts in previous studies, were appended to the feature space. The tokens were vectorized with TF-IDF, extracting unigrams, bigrams, and trigrams as well as bag-of-words. The following classifiers were trained using the extracted features: Multinomial Naive Bayes, Logistic Regression, Random Forest, and Support Vector Classifier (SVC).
+The corpus was tokenized using a pre-trained BPE tokenizer from \citeA{cruz2020localization}. Linguistic features highlighted by \citeA{fernandez-2019} as well as \citeA{fayaz-2022} were used in training the models. Table \ref{tab::Features} describes the features to be extracted and specifies their predictors. These features include traditional or surface-based  features such as word count, sentence count, and character count. These features were extracted via a library of Python scripts designed specifically for the extraction of Filipino linguistic features \cite{imperial-2020, imperial-2021}. Through the same library, syllabic features based on the prescribed Philippine orthography, lexical features such as type-token ratio, and morphological features such as morphemes were extracted. Additionally, the misspelled word frequency, out of vocabulary (OOV) word frequency, stop words frequency, and the readability formula for modern Filipino texts developed by \citeA{Macahilig2015ACR}, which has not been investigated as a linguistic feature of Filipino texts in previous studies, were appended to the feature space. The tokens were vectorized with TF-IDF, extracting unigrams, bigrams, and trigrams as well as bag-of-words. The following classifiers were trained using the extracted features: Multinomial Naive Bayes, Logistic Regression, Random Forest, and Support Vector Classifier (SVC).
 
 \begin{figure}[h]
 \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{figures/Model Training.png}
@@ -44,21 +44,31 @@ The corpus was tokenized using a pre-trained BPE tokenizer from \citeA{cruz2020l
 
      Bag-of-words & Unordered collection of words. & Bag-of-words model of the input text. \\
      \hline
-     TF-IDF & Word to document ratio in the corpus. & TF-IDF using n-gram values of \{ 1, 2, 3\} \\
+     TF-IDF & Word to document ratio in the corpus. & TF-IDF using n-gram values of \{ 1, 2, 3\}. \\
      \hline
      Misspelled words & Misspelled words in the input text. & Total misspelled word count. \\
      \hline
+
+    OOV words & Words in the input text that are not found in the Filipino and English dictionary used in training & Total OOV word count. \\
+    \hline
+    Stop words & words considered insignificant in processing text input e.g. "at", "ay", "din", etc. in Filipino or "a", "the", "to", "as" in English. & Total stop word count. \\
+    \hline
+    Filipino readability formula & Readability formula for Filipino text by \citeA{Macahilig2015ACR}. The higher the readability index, the more difficult the text is to read. & Readability is computed by: \( P = -4.161 + 0.280(w/s) + 0.106(cw)\) where P is the redability index, w/s is the average number of words per sentence, and cw is the word count. \\
+    \hline
      Traditional & Traditional or Surface-based features based on counts and frequencies & Total word, sentence, phrase, polysyllabic word counts. Average word length, sentence length, syllable per word. \\
      \hline
      Syllabic Pattern & Syllable pattern densities based on the prescribed Philippine orthography & Prescribed Philippine orthography \{v, cv, vc, cvc, vcc, cvcc, ccvc, ccvcc, ccvccc\}, where c and v are consonant and vowel notations. \\
     \hline
     Lexical & Lexical or context carrying features using part-of-speech categories. & Type-token variations (regular, logarithmic, corrected, root). Noun and verb token ratio. Lexical density. Foreign word and compound word density.\\
     \hline
-    Morphological & Morphological features based on verb inflection. & Densities of  foci of verbs based on tense: \{actor, object, benefactive, locative, instrumental, referential\}. Densities of various foci of verbs based on aspect: \{infinitive, perfective, imperfective, contemplative, participle, recent-past, auxiliary\}.\\
-    \hline
-    Language Model &  Language model features based on perplexity used by \citeA{imperial-2020} & Language models trained on three levels of the external DepEd Commons corpus using n-gram values of \{1, 2, 3\}.
+    Morphological & Morphological features based on verb inflection. & Densities of  foci of verbs based on tense: \{actor, object, benefactive, locative, instrumental, referential\}. Densities of various foci of verbs based on aspect: \{infinitive, perfective, imperfective, contemplative, participle, recent-past, auxiliary\}.
 \label{tab::Features}
 \end{tabularx}
+
+To determine the optimal hyperparameters for the classfiers, grid search was used for hyperparameter tuning. The classifiers were trained and tested on the combined dataset using five-fold cross validation. The results of hyperparameter tuning were then used in the final training and testing of the models which involved using five-fold cross validation six times, which totals to 30 trainings and testings.
+
+For the analysis of accuracies, Shapiro-Wilk test was first conducted to assess the normality of the data. Levene's test was then used to asses the homoscedacity of the variances. Then, since there are two factors -- the dataset and the classifer, and two-way ANOVA for trimmed means was employed on the values to determine which classfiers have significant differences in which dataset, and to determine whether the accuracy of the classifier depends on the datasets. Post-hoc tests using Bonferroni correction was further performed for significant ANOVA results. 
+
 
 \section{System Deployment}
 
