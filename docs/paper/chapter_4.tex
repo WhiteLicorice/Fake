@@ -1,250 +1,373 @@
 %   Filename    : chapter_4.tex 
-\chapter{Preliminary Results and Discussion}
+\chapter{Results}
 
-\section{Preliminary Overview}
+\section{Dataset}
+We built a balanced dataset containing a total of 3206 news articles (1603 real new and 1603 fake news) named Fake News Filipino 2024. This dataset was combined with the Fake News Filipino \cite{fake-news-filipino} dataset into a joint corpus. Figures \ref{fig:oov_data} to \ref{fig:sw_data} depicts the average OOV count, average readability index, and average stop words count of the two datasets. Fake News Filipino 2024 had an average OOV count, readability index, and stop words count of 22.2, 19.7, and 74.5 respectively. On the other hand, retaining the order of the variables, Fake News Filipino had 17.6, 20.5, and 77.8 respectively. On average, news articles in Fake News Filipino were more readable and had a lower count of out-of-vocabulary words as well as a higher number of stop words.
 
-For our preliminary investigation, we truncate the methodology to the following steps. We forego augmentation of the dataset from \citeA{fake-news-filipino}. Thus, the dataset used in this preliminary investigation is limited to Fake News Filipino \cite{fake-news-filipino}. It is comprised of 3,206 expertly curated articles written mostly in Filipino with a few English vernacular words. 50\% of the dataset consists of class 0 articles (fake news) while the other 50\% consists of class 1 articles (real news). There are only two columns in the dataset (label and article) but we extract Filipino linguistic features during training. We tokenize the text using a pre-trained BPE tokenizer. Linguistic features highlighted by \citeA{fernandez-2019} and \citeA{fayaz-2022} are used in training our models. However, features mention in Section \ref{sec:ModelTraining} are also truncated. We train the following classifiers on the extracted features: Multinomial Naive Bayes, Logistic Regression, Random Forest, Support Vector Classifier (SVC), and a Voting Classifier comprised of Logistic Regression, Random Forest, and SVC.
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/oov_data.png}
+        \caption{OOV count Bar Plot of Fake News Filipino and Fake News Filipino 2024}
+        \label{fig:oov_data}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/read_data.png}
+        \caption{Readability Index Bar Plot of Fake News Filipino and Fake News Filipino 2024}
+        \label{fig:read_data}
+\end{figure}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/sw_data.png}
+        \caption{Stop Words Bar Plot of Fake News Filipino and Fake News Filipino 2024}
+        \label{fig:sw_data}
+\end{figure}
 
-\section{Preliminary Features}
-\label{sec:PrelimFeat}
+\section{Classifiers without Hyperparameter Tuning}
 
-Figure \ref{tab::PrelimFeat} specifies the features and their predictors used for our preliminary investigation.
-These features include traditional features such as word count, sentence count, and character count. We extract these features via a library of Python scripts developed by \citeA{imperial-2020}. Through the same library, we also extract syllabic features such as consonant clusters. We vectorize the tokens with TF-IDF, extracting unigrams, bigrams, and trigrams as well as bag of words.
+The models were trained on the combined dataset without hyperparameter tuning.
+
+Figure \ref{MNB_default} shows the confusion matrix of \textbf{Multinomial Naive Bayes} without grid search. The model did not misclassify any instance of real news as fake news. However, it misclassified 537 instances of fake news as real news, significantly lowering its recall for fake news. It yielded an accuracy of approximately 0.58. It had the lowest recall for fake news at 0.16, signifying difficulty in identify true instances of fake news and a high false positive rate. The F1-score of real news and fake news were 0.70 and 0.28 respectively. These were relatively low scores. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/MNB_default.png}
+        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search}
+        \label{MNB_default}
+\end{figure}
+
+As shown in the confusion matrix of \textbf{Logistic Regression} at Figure \ref{LR_default}, the model misclassified 42 instances of fake news as real news and 51 instances of real news as fake news. It yielded an accuracy of approximately 0.93. It had a high recall for real news and fake news at both 0.93 and 0.92 respectively. The f1-scores for both real news and fake news were 0.93.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/LR_default.png}
+        \caption{Confusion Matrix of Logistic Regression without Grid Search}
+        \label{LR_default}
+\end{figure}
+
+Figure \ref{RF_default} depicts the confusion matrix of \textbf{Random Forest}. The model misclassified 66 instances of fake news and 59 instances of real news. It yielded an accuracy of approximately 0.90. It had a recall of 0.90 and 0.91 for fake news and real news respectively. The f1-score of both classes was 0.90, implying balanced metrics.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/RF_default.png}
+        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search}
+        \label{RF_default}
+\end{figure}
+
+Based on Figure \ref{SVC_default}, \textbf{Support Vector Classifier}, misclassified 169 instances of fake news and 70 instances of real news. It had an accuracy of approximately 0.81. It had a relatively lower recall for fake news at 0.74. The f1-scores for real news and fake news were 0.80 and 0.83 respectively. 
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/SVC_default.png}
+        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search}
+        \label{SVC_default}
+\end{figure}
+
+Results without hyperparameter tuning are summarized in Table \ref{tab:no_hyperparam_summary}. As shown in Table \ref{tab:no_hyperparam_summary}, Logistic Regression had the highest f1-scores while Multinomial Naive Bayes scored the lowest.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|ccc|ccc|}
+    \hline
+    & \multicolumn{3}{c|}{Multinomial Naive Bayes} & \multicolumn{3}{c|}{Logistic Regression} \\
+    \hline
+    & Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
+    \hline
+    Fake & 1.00 & 0.16 & 0.28 & 0.92 & 0.93 & 0.93 \\
+    Not Fake & 0.54 & 1.00 & 0.70 & 0.93 & 0.92 & 0.93 \\
+    Accuracy & & & 0.58 & & & 0.93 \\
+    \hline
+    & \multicolumn{3}{c|}{Random Forest} & \multicolumn{3}{c|}{Support Vector Classifier} \\
+    \hline
+    & Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
+    \hline
+    Fake & 0.91 & 0.90 & 0.90 & 0.87 & 0.74 & 0.80 \\
+    Not Fake & 0.90 & 0.91 & 0.90 & 0.77 & 0.89 & 0.83 \\
+    Accuracy & & & 0.90 & & & 0.81 \\
+    \hline
+    \end{tabular}
+    \caption{Performance Metrics for Classifiers with Hyperparameter Tuning}
+    \label{tab:no_hyperparam_summary}
+\end{table}
 
 
-\begin{tabularx}{\textwidth}{|X|X|X|}
-     \hline Feature  & Description & Predictors \\ \hline
-     \endfirsthead
 
-     \hline
-     \multicolumn{3}{|r|}
-     {Continued from previous page.} \\
-     \hline
-     Feature  & Description & Predictors \\ \hline
-     \endhead
+\section{Classifiers with Hyperparameter Tuning}
+\label{sec:ParamTuning}
+To the determine the optimal hyperparameters, all models were trained and tested on the combined dataset using grid search with five-fold cross validation.
 
-     \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
-     \endfoot
-     
-     \hline
-     \caption{Descriptions and predictors of features.}
-     \endlastfoot
+Figure \ref{MNB_hyperparam} shows the performance of \textbf{Multinomial Naive Bayes} with an alpha of 0.01, the optimal hyperparameter based on the cross validation. The model misclassified 155 instances of fake news and 18 instances of real news. It yielded an accuracy of approximately 0.865. It had the lowest recall for fake news at 0.87.
 
-     Bag-of-words & Unordered collection of words. & Bag-of-words model of the input text. \\
-     \hline
-     TF-IDF & Word to document ratio in the corpus. & TF-IDF using n-gram values of \{ 1, 2, 3\} \\
-     \hline
-     Traditional & Traditional or Surface-based features based on counts and frequencies & Total word, sentence, phrase, polysyllabic word counts. Average word length, sentence length, syllable per word. \\
-     \hline
-     Syllabic Pattern & Syllable pattern densities based on the prescribed Philippine orthography & Prescribed Philippine orthography \{v, cv, vc, cvc, vcc, cvcc, ccvc, ccvcc, ccvccc\}, where c and v are consonant and vowel notations.
-\label{tab::PrelimFeat}
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/MNB.png}
+    \caption{Confusion Matrix of Multinomial Naive Bayes with alpha = 0.01}
+    \label{MNB_hyperparam}
+\end{figure}
+
+The best hyperparameter for \textbf{Logistic Regression} was max\_iter = 2000. As shown in Figure \ref{LR_hyperparam}, Logistic Regression misclassified 42 instances of fake news and 51 instances of real news. It yielded an accuracy of 0.928 and an f1-score of 0.93 for both real news and fake news. 
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/LR.png}
+    \caption{Confusion Matrix of Linear Regression with max\_iter = 2000}
+    \label{LR_hyperparam}
+\end{figure}
+
+For \textbf{Random Forest}, max\_depth = 20 was the optimal hyperparameter. The performance of Random Forest is shown in Figure \ref{RF_hyperparam}. The model misclassified 80 instances of fake news and 63 instances of real news. It yielded an accuracy of 0.889 with an f1-score of 0.89 for both fake news and real news.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/RF.png}
+    \caption{Confusion Matrix of Random Forest with max\_depth = 20}
+    \label{RF_hyperparam}
+\end{figure}
+
+For \textbf{Support Vector Classifier}, the optimal hyperparameter was C = 0.1 with a linear kernel. As shown in Figure \ref{SVC_hyperparam}, the model misclassified 42 instances of fake news and 51 instances of real news. It yielded an accuracy of 0.928 and an f1-score of 0.93 for both fake news and real news.
+
+Both Support Vector Classifier and Logistic Regression yielded the highest accuracy with hyperparameter tuning.
+
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/SVC.png}
+    \caption{Confusion Support Vector Classifier with a linear kernel and C = 0.1}
+    \label{SVC_hyperparam}
+\end{figure}
+
+The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic Regression and Support Vector Classifier scored the highest f1-scores while Random Forest scored the lowest. Comparing the accuracies of the classifiers without hyperparameter tuning in Table \ref{tab:no_hyperparam_summary} and their accuracies with hyperparameter tuning in Table \ref{tab:hyperparam_summary}, hyperparameter tuning significantly increased the accuracy of Multinomial Naive Bayes and Support Vector Classifier. However, hyperparameter tuning did not have any significant impact on the accuracies of Logistic Regression and Random Forest.
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|ccc|ccc|}
+    \hline
+    & \multicolumn{3}{c|}{Multinomial Naive Bayes} & \multicolumn{3}{c|}{Logistic Regression} \\
+    \hline
+    & Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
+    \hline
+    Fake & 0.93 & 0.76 & 0.85 & 0.92 & 0.93 & 0.93 \\
+    Not Fake & 0.80 & 0.97 & 0.88 & 0.93 & 0.92 & 0.93 \\
+    Accuracy & & & 0.87 & & & 0.93 \\
+    \hline
+    & \multicolumn{3}{c|}{Random Forest} & \multicolumn{3}{c|}{Support Vector Classifier} \\
+    \hline
+    & Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
+    \hline
+    Fake & 0.90 & 0.88 & 0.89 & 0.92 & 0.93 & 0.93 \\
+    Not Fake & 0.88 & 0.90 & 0.89 & 0.93 & 0.92 & 0.93 \\
+    Accuracy & & & 0.89 & & & 0.93 \\
+    \hline
+    \end{tabular}
+    \caption{Performance Metrics for Classifiers with Hyperparameter Tuning}
+    \label{tab:hyperparam_summary}
+\end{table}
+    
+\section{Accuracy Testing}
+
+Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four models were trained and tested using five-fold cross validation six times, a total of 30 tests, across three datasets: Fake News Filipino (2020), Fake News Filipino 2024 (2024), and the combined corpus with the two datasets. Average accuracies of the models are shown in Table \ref{tab::AverageAccuracies}. Logistic Regression and Support Vector Classifier scored the highest average accuracy in both Fake News Filipino and Fake News Filipino 2024. But for the combined dataset, only Logistic Regression yielded the highest average accuracy. Compared to the other models across the three datasets, Multinomial Naive Bayes and Random Forest performed relatively worst in the combined dataset with accuracies of 86.0\% and 88.8\% respectively. Table \ref{tab::AverageAccuracies} shows the average accuracies of the models. The box plot of the accuracies is depicted in Figure \ref{fig:box_plot_accuracy}.
+
+\begin{tabularx}{\textwidth}{|l|l|c|}
+    \hline Classifier & Dataset & Average Accuracy \\ \hline
+    \endfirsthead
+
+    \hline
+    \multicolumn{3}{|r|}
+    {Continued from previous page.} \\
+    \hline
+    Classifier & Dataset & Average Accuracy \\ \hline
+    \endhead
+
+    \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
+    \endfoot
+    
+    \hline
+    \caption{Average Accuracies}
+    \endlastfoot
+
+    Logistic Regression & Fake News Filipino & 0.951 \\
+    & Fake News Filipino 2024 & 0.947\\
+    & Combined & 0.924 \\
+    \hline
+    Multinomial Naive Bayes & Fake News Filipino & 0.923 \\
+    & Fake News Filipino 2024 & 0.885 \\
+    & Combined & 0.860 \\
+    \hline
+    Random Forest & Fake News Filipino & 0.919 \\
+    & Fake News Filipino 2024 & 0.926 \\
+    & Combined & 0.888 \\  
+    \hline
+    Support Vector Classifier & Fake News Filipino & 0.951 \\
+    & Fake News Filipino 2024 & 0.947 \\
+    & Combined & 0.922
+\label{tab::AverageAccuracies}
 \end{tabularx}
 
-\clearpage
-
-\section{Classifiers without Grid Search}
-
-\ref{CMofMNBwoGS} shows the confusion matrix of \textbf{Multinomial Naive Bayes} without grid search. The model does not misclassify any real news as fake news, however, it miscclassifies 287 fake news as real news. It yields an accuracy of approximately 0.55. It has the lowest recall for class 0 (fake news) at 0.11, signifying difficulty in identifying true instances of fake news and a high false positive rate. The f1-score of class 1 (real news) and 0 is 0.69 and 0.19 respectively, which are relatively low scores.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/withoutgridsearch/NB.png}
-  \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search}
-  \label{CMofMNBwoGS}
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/box_plot.png}
+        \caption{Box plot of the accuracies accross datasets}
+        \label{fig:box_plot_accuracy}
 \end{figure}
 
-As shown in the confusion matrix of \textbf{Logistic Regression} at Figure \ref{CMofLRwoGS}, the model only misclassifies five fake news as real news and 12 real news as fake news. It yields an accuracy of approximately 0.97. It has a high recall for class 1 at 0.96. The f1-scores for both class 1 and 0 are 0.97.
+The Shapiro-Wilk test was used to assess the normality of each group in a two-way format, where accuracies were the dependent variable, and datasets and classifiers were the factors. As shown in Table \ref{tab::normality_tests}, all groups have p-values greater than or equal to 0.05 indicating that the data is normally distributed in the two-way format. However, with a p-value (0.003) lower than 0.05, Levene's test determined the variances of the groups to be heterogenous.
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/withoutgridsearch/LR.png}
-  \caption{Confusion Matrix of Logistic Regression without Grid Search}
-  \label{CMofLRwoGS}
+\pagebreak
+
+\begin{tabularx}{\textwidth}{|l|l|l|l|}
+    \hline
+    Dataset & Classifier & Statistic & p-value \\
+    \hline
+    Fake News Filipino & LR & 0.968 & 0.492 \\
+    & MNB & 0.971 & 0.571 \\
+    & RF & 0.985 & 0.938 \\
+    & SVC & 0.972 & 0.603 \\
+    \hline
+    Fake News Filipino 2024 & LR & 0.963 & 0.363 \\
+    & MNB & 0.940 & 0.928 \\
+    & RF & 0.962 & 0.342 \\
+    & SVC & 0.972 & 0.598 \\
+    \hline
+    Combined & LR & 0.979 & 0.793 \\
+    & MNB & 0.981 & 0.852 \\
+    & RF & 0.934 & 0.063 \\
+    & SVC & 0.950 & 0.164 \\
+    \hline
+\caption{Shapiro-Wilk test}
+\label{tab::normality_tests}
+\end{tabularx}
+
+To determine if there were significant differences between accuracies of different classifiers in different datasets, and taking into account the heteroscedacity of the data, two-way ANOVA for trimmed means was performed. As shown in Table \ref{tab::two-way} there was a significant difference (p-value = 0.001) between accuracies in different datasets averaged across the classifiers. Additionally, there was a significant difference (p-value = 0.001) between accuracies in the classifiers averaged across the datasets. Furthermore, their interaction effect was also significant (p-value = 0.001). Thus, accuracy was affected both by the main effects of the dataset and classifier and also their combinations.
+
+\begin{tabularx}{\textwidth}{|l|l|l|}
+    \hline
+    Factor & Statistic & p-value \\
+    \hline
+    dataset & 689.45 & 0.001 \\
+    \hline
+    classifier & 1010.0371 & 0.001 \\
+    \hline
+    dataset*classifier & 129.07 & 0.001 \\
+    \hline
+\caption{Two-way ANOVA for Trimmed Means}
+\label{tab::two-way}
+\end{tabularx}
+
+To determine which classifiers had significant differences within the different datsets, post-hoc mean-separation testing was conducted using Bonferroni Correction for subgroups of each dataset level. As shown in Table \ref{tab::post-hoc-dataset-lvl}, the only subgroups that did not have significant differences were Logistic Regression and Support Vector Classifier across all datasets, as well as Multinomial Naive Bayes and Random Forest in the Fake News Filipino dataset.
+
+The results were reflected in the interaction plot of the accuracies in Figure \ref{fig:interaction_plot}. As shown in Figure \ref{fig:interaction_plot}, the accuracies of Logistic Regression and Support Vector Classifier were almost equal across all datasets. The same could be said for the accuracy of Multinomial Naive Bayes and Random Forest in the Fake News Filipino dataset. It could also be observed that the performance of the classifiers changes depending on the dataset just as the two-way ANOVA suggested.
+
+To determine which classifiers had significant differences between datasets, a similar post-hoc test was conducted for subgroups of each classifier level. Table \ref{tab::post-hoc-classifier-lvl} shows that only Multinomial Naive Bayes had a significant change in performance between Fake News Filipino 2024 and Fake News Filipino dataset. Furthermore, all accuracies of the classifiers differ significantly in the combined dataset compared with their accuracies in either Fake News Filipino or Fake News Filipino 2024.
+
+\begin{figure}[h!]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/im.png}
+        \caption{interaction plot of accuracies across datasets}
+        \label{fig:interaction_plot}
 \end{figure}
 
-\clearpage
+\begin{tabularx}{\textwidth}{|l|l|l|l|}
+    \hline Dataset & Classifier (a) & Classifier(b) & p-value \\ \hline
+    \endfirsthead
 
-Figure \ref{CMofRFwoGS} depicts the confusion matrix of \textbf{Random Forest}. The model misclassifies 12 fake news and 20 real news. It yields an accuracy of approximately 0.95. It has a high recall for class 1 at 0.94. The f1-score of both classes is 0.95, showing balanced metrics.
+    \hline
+    \multicolumn{4}{|r|}
+    {Continued from previous page.} \\
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/withoutgridsearch/RF.png}
-  \caption{Confusion Matrix of Random Forest without Grid Search}
-  \label{CMofRFwoGS}
-\end{figure}
+    \hline
+    Dataset & Classifier (a) & Classifier(b) & p-value \\ \hline
+    \endhead
 
-Based on Figure \ref{CMofSVCwoGS}, \textbf{SVC} misclassifies 99 fake news and 42 real news. Thus, it has an accuracy of approximately 0.78. It has a lower recall for class 0 at 0.69. The f1-score of classes 1 and 0 is 0.80 and 0.76, respectively. However, SVC has a slight imbalance in precision and recall for both classes.
+    \hline \multicolumn{4}{|r|}{{Continued on next page...}} \\ \hline
+    \endfoot
+    
+    \hline
+    \caption{Bonferroni correction for subgroups of each dataset level}
+    \endlastfoot
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/withoutgridsearch/SVC.png}
-  \caption{Confusion Matrix of Support Vector Classifier without Grid Search}
-  \label{CMofSVCwoGS}
-\end{figure}
+    Fake News Filipino & LR & MNB & \textless 0.001 \\
+    \cline{3-4}
+    & & RF & \textless 0.001 \\
+    \cline{3-4}
+    & & SVC & 1.00 \\
+    \cline{2-4}
+    & MNB & RF & 1.00 \\
+    \cline{3-4}
+    & & SVC & \textless 0.001 \\
+    \cline{2-4}
+    & RF & SVC & \textless 0.001 \\
+    \hline
+    Fake News Filipino 2024 & LR & MNB & \textless 0.001 \\
+    \cline{3-4}
+    & & RF & \textless 0.001 \\
+    \cline{3-4}
+    & & SVC & 1.00 \\
+    \cline{2-4}
+    & MNB & RF & \textless 0.001 \\
+    \cline{3-4}
+    & & SVC & \textless 0.001 \\
+    \cline{2-4}
+    & RF & SVC & \textless 0.001 \\
+    \hline
+    Combined & LR & MNB & \textless 0.001 \\
+    \cline{3-4}
+    & & RF & \textless 0.001 \\
+    \cline{3-4}
+    & & SVC & 1.00 \\
+    \cline{2-4}
+    & MNB & RF & \textless 0.001 \\
+    \cline{3-4}
+    & & SVC & \textless 0.001 \\
+    \cline{2-4}
+    & RF & SVC & \textless 0.001
+\label{tab::post-hoc-dataset-lvl}
+\end{tabularx}
 
-\clearpage
+\begin{tabularx}{\textwidth}{|l|l|l|l|}
+    \hline Classifier & Dataset(a) & Dataset(b) & p-value \\ \hline
+    \endfirsthead
 
-Our \textbf{Voting Classifier} misclassifies 11 fake news and 15 real news as shown in Figure \ref{CMofVCwoGS}. It has an accuracy of approximately 0.96. The recall of class 1 and 0 is 0.95 and 0.97, respectively. The f1-score of both class 1 and 0 is 0.96. Similar to Random Forest, both classes in this method also show balanced metrics.
+    \hline
+    \multicolumn{4}{|r|}
+    {Continued from previous page.} \\
 
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/withoutgridsearch/VC.png}
-  \caption{Confusion Matrix of Voting Classifier without Grid Search}
-  \label{CMofVCwoGS}
-\end{figure}
+    \hline
+    Classifier & Dataset(a) & Dataset(b) & p-value \\ \hline
+    \endhead
 
-\clearpage
+    \hline \multicolumn{4}{|r|}{{Continued on next page...}} \\ \hline
+    \endfoot
+    
+    \hline
+    \caption{Bonferroni correction for subgroups of each classifier level}
+    \endlastfoot
 
-We summarize our results without using grid search in the Tables \ref{tab:classifier-metrics} and \ref{tab:voting-classifier-metrics}. As shown in Table \ref{tab:classifier-metrics}, Logistic Regression has the highest F1-Scores while Multinomial Naive Bayes has the lowest.
+    LR & Fake News Filipino & Fake News Filipino 2024 & 0.485 \\
+    \cline{3-4}
+    & & Combined & \textless 0.001 \\
+    \cline{2-4}
+    & Fake News Filipino 2024 & Combined & \textless 0.001 \\
+    \hline
+    MNB & Fake News Filipino & Fake News Filipino 2024 & \textless 0.001 \\
+    \cline{3-4}
+    & & Combined & \textless 0.001 \\
+    \cline{2-4}
+    & Fake News Filipino 2024 & Combined & \textless 0.001 \\
+    \hline
+    RF & Fake News Filipino & Fake News Filipino 2024 & 0.150 \\
+    \cline{3-4}
+    & & Combined & \textless 0.001 \\
+    \cline{2-4}
+    & Fake News Filipino 2024 & Combined & \textless 0.001 \\
+    \hline
+    SVC & Fake News Filipino & Fake News Filipino 2024 & 0.421 \\
+    \cline{3-4}
+    & & Combined & \textless 0.001 \\
+    \cline{2-4}
+    & Fake News Filipino 2024 & Combined & \textless 0.001
+\label{tab::post-hoc-classifier-lvl}
+\end{tabularx}
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{|l|ccc|ccc|}
-\hline
-& \multicolumn{3}{c|}{Multinomial Naive Bayes} & \multicolumn{3}{c|}{Logistic Regression} \\
-\hline
-& Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
-\hline
-Fake & 1.00 & 0.11 & 0.19 & 0.96 & 0.98 & 0.97 \\
-Not Fake & 0.53 & 1.00 & 0.69 & 0.98 & 0.96 & 0.97 \\
-Accuracy & & & 0.55 & & & 0.97 \\
-\hline
-& \multicolumn{3}{c|}{Random Forest} & \multicolumn{3}{c|}{SVC} \\
-\hline
-& Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
-\hline
-Fake & 0.94 & 0.96 & 0.95 & 0.84 & 0.69 & 0.76 \\
-Not Fake & 0.96 & 0.94 & 0.95 & 0.74 & 0.87 & 0.80 \\
-Accuracy & & & 0.95 & & & 0.78 \\
-\hline
-\end{tabular}
-\caption{Performance Metrics for Classifiers without Grid Search}
-\label{tab:classifier-metrics}
-\end{table}
+\section{Summary} \label{dataset-limitation}
 
-\begin{table}[ht]
-\centering
-\begin{tabular}{|l|ccc|}
-\hline
-& \multicolumn{3}{c|}{Voting Classifier} \\
-\hline
-& Precision & Recall & F1-Score \\
-\hline
-0 & 0.95 & 0.97 & 0.96 \\
-1 & 0.97 & 0.95 & 0.96 \\
-Accuracy & & & 0.96 \\
-\hline
-\end{tabular}
-\caption{Performance Metrics for Voting Classifier without Grid Search}
-\label{tab:voting-classifier-metrics}
-\end{table}
+As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, did not exhibit a significant change in performance between Fake News Filipino and Fake News Filipino 2024. However, the accuracies of all classifiers were significantly lower on the joint corpus. The reason for this may be attributed to differences in the writing styles of the news articles found between the two datasets. This hypothesis is supported by the differences in the number of out-of-vocabulary words, the average number of stop words, and the average readability scores of the two datasets. This means that when the classifiers were trained on the two datasets separately, they generally performed better, as the the writing style remained consistent. On the other hand, when the datasets were combined, the writing style became less consistent. This inconsistency resulted into a negative impact on the accuracies of the classifiers trained on the joint corpus. 
 
-\clearpage
-
-\section{Classifiers with Grid Search}
-
-Figure \ref{CMofMNBwGS} shows that \textbf{Multinomial Naive Bayes} with hyperparameter tuning misclassifies 42 fake news and four real news. It yields an accuracy of approximately 0.93. It has the lowest recall for class 0 at 0.87. However, this score is still relatively high. The minimum f1-score of both classes is 0.92 with the best feature as alpha=0.1. Hyperparameter tuning in Multinomial Naive Bayes has significantly improved balance between precision and recall for both classes.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.5\textwidth,height=0.5\textheight, keepaspectratio]{figures/withgridsearch/NB.png}
-  \caption{Confusion Matrix of Multinomial Naive Bayes with Grid Search}
-  \label{CMofMNBwGS}
-\end{figure}
-
-\clearpage
-
-\textbf{Logistic Regression}, on the other hand, misclassifies five fake news and 12 real news as shown in Figure \ref{CMofLRwGS}, which is still the same as before applying grid search. It yields an accuracy of approximately 0.97. It still has a high recall for class 1 of 0.96. Both classes have 0.97 f1-score. The best feature during hyperparameter tuning is max\_iter=2000.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.5\textwidth,height=0.5\textheight, keepaspectratio]{figures/withgridsearch/LR.png}
-  \caption{Confusion Matrix of Logistic Regression with Grid Search}
-  \label{CMofLRwGS}
-\end{figure}
-
-\clearpage
-
-Figure \ref{CMofRFwGS} shows that \textbf{Random Forest} misclassifies 22 fake news and 28 real news. Thus, it yields an accuracy of approximately 0.92. It has a high recall for class 1 at 0.91. Both classes have 0.92 f1-score. In hyperparameter tuning, its best features are max\_depth=20 and n\_estimators=50. But even with hyperparameter tuning, it provides the same balanced performance with minimal improvements.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.58\textwidth,height=0.58\textheight, keepaspectratio]{figures/withgridsearch/RF.png}
-  \caption{Confusion Matrix of Random Forest with Grid Search}
-  \label{CMofRFwGS}
-\end{figure}
-
-\clearpage
-
-For \textbf{SVC}, Figure \ref{CMofSVCwGS} shows that the model misclassifies five fake news and 14 real news with hyperparameter tuning. It yields an accuracy of approximately 0.97. It has a high recall for class 1 at 0.96. Both of the classes have a 0.97 f1-score. In tuning SVC, the best features are C=0.1 and kernel='linear'.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/withgridsearch/SVC.png}
-  \caption{Confusion Matrix of Support Vector Classifier with Grid Search}
-  \label{CMofSVCwGS}
-\end{figure}
-
-Figure \ref{CMofVCwGS} shows that our \textbf{Voting Classifier} with hyperparameter tuning misclassifies five fake news and 13 real news. It yields an accuracy of approximately 0.97. It has a recall of 0.96 for class 1. Both classes have 0.97 f1-score. During tuning, the best feature is voting='soft'.
-
-\begin{figure}[ht]
-\centering
-\includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/withgridsearch/VC.png}
-  \caption{Confusion Matrix of Voting Classifier with Grid Search}
-  \label{CMofVCwGS}
-\end{figure}
-
-\clearpage
-
-We summarize our results by using grid search in the Tables \ref{tab:classifier-metrics-updated} and \ref{tab:voting-classifier-metrics-updated}. As shown in Table \ref{tab:classifier-metrics-updated}, both Logistic Regression and Support Vector Classifier has the highest F1-Scores while Random Forest has the lowest.
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{|l|ccc|ccc|}
-\hline
-& \multicolumn{3}{c|}{Multinomial Naive Bayes} & \multicolumn{3}{c|}{Logistic Regression} \\
-\hline
-& Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
-\hline
-Fake & 0.99 & 0.87 & 0.92 & 0.96 & 0.98 & 0.97 \\
-Not Fake & 0.88 & 0.99 & 0.93 & 0.98 & 0.96 & 0.97 \\
-Accuracy & & & 0.93 & & & 0.97 \\
-\hline
-& \multicolumn{3}{c|}{Random Forest} & \multicolumn{3}{c|}{Support Vector Classifier} \\
-\hline
-& Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
-\hline
-Fake & 0.91 & 0.93 & 0.92 & 0.96 & 0.98 & 0.97 \\
-Not Fake & 0.93 & 0.91 & 0.92 & 0.98 & 0.96 & 0.97 \\
-Accuracy & & & 0.92 & & & 0.97 \\
-\hline
-\end{tabular}
-\caption{Performance Metrics for Classifiers with Grid Search}
-\label{tab:classifier-metrics-updated}
-\end{table}
-
-\begin{table}[ht]
-\centering
-\begin{tabular}{|l|ccc|}
-\hline
-& \multicolumn{3}{c|}{Voting Classifier} \\
-\hline
-& Precision & Recall & F1-Score \\
-\hline
-Fake & 0.96 & 0.98 & 0.97 \\
-Not Fake & 0.98 & 0.96 & 0.97 \\
-Accuracy & & & 0.97 \\
-\hline
-\end{tabular}
-\caption{Performance Metrics for Voting Classifier with Grid Search}
-\label{tab:voting-classifier-metrics-updated}
-\end{table}
-
-\clearpage
-
-\section{Preliminary Discussion}
-The results before applying hyperparameter tuning reveal the ineffectiveness of Multinomial Naive Bayes, showing an accuracy of 0.55 and the lowest recall of 0.11 contrary to established literature. We hypothesize that this discrepancy is due to our Filipino corpus — previous studies train Multinomial Naive Bayes with an English corpus. In contrast, the effectiveness of Logistic Regression at 0.97 and Random Forest at 0.95 accuracy is apparent. However, we attempt to improve all of the classifiers with hyperparameter tuning via grid search. We find that hyperparameter tuning yields significant improvements on the lowest accuracy models but non-significant improvements on the rest of the models that already have high accuracy. Our results concur with previous studies, where Random Forest and Logistic Regression are also among the most accurate classifiers in fake news detection.
-
-Among the machine learning models investigated, Logistic Regression exhibits consistently accurate performance before and after applying hyperparameter tuning. With our findings, we consider it as the primary candidate for future system deployment. However, the other models may serve the purposes of deployment better as computational efficiency and model size should be evaluated and considered when incorporating trained classifiers into a system. Currently, we have deployed the aforementioned Logistic Regression model that has achieved 97.4\% accuracy in a fully functional system (FaKe), available as a pre-release at \url{https://github.com/WhiteLicorice/Fake}. The repository also contains instructions for usage and installation. All resources used in this study are also available in the repository.
-
-As an aside, we believe that it is difficult to score an accuracy greater than 0.97 due to our use of traditional machine learning models and our low-resource dataset. For future work, we will follow through with augmenting the dataset to possibly enhance results and further expand the domain of the corpus. Incorporation of more Filipino linguistic features (e.g. lexical, morphological, etc.) will be explored. Further experimentation with hyperparameter tuning may yield potential improvements.
+Comparing the performance of classifiers on different datasets, Logistic Regression and Support Vector Classifier performed well regardless of the dataset. Both classifiers performed significantly better than Random Forest and Multinomial Naive Bayes. It must be noted, however, that hyperparameter tuning was required for Support Vector Classifier to exhibit high performance. In contrast, hyperparameter tuning did not have a significant effect on the performance of Logistic Regression. Logistic Regression was more efficient than Support Vector Classifier in tackling the problem. Overall, this paper's most suitable model for deployment is Logistic Regression, since it exhibited the best performance across all three datasets, and it did not require hyperparameter tuning.

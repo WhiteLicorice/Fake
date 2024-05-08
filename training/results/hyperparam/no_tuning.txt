@@ -1,0 +1,53 @@
+HyperParam Testing Results (2024-05-05_18-08-58)...
+
+Training Model: Multinomial Naive Bayes
+Accuracy: 0.5814497272018706
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       1.00      0.16      0.28       642
+           1       0.54      1.00      0.70       641
+
+    accuracy                           0.58      1283
+   macro avg       0.77      0.58      0.49      1283
+weighted avg       0.77      0.58      0.49      1283
+
+
+Training Model: Logistic Regression
+Accuracy: 0.9275136399064692
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.92      0.93      0.93       642
+           1       0.93      0.92      0.93       641
+
+    accuracy                           0.93      1283
+   macro avg       0.93      0.93      0.93      1283
+weighted avg       0.93      0.93      0.93      1283
+
+
+Training Model: Random Forest
+Accuracy: 0.9025720966484801
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.91      0.90      0.90       642
+           1       0.90      0.91      0.90       641
+
+    accuracy                           0.90      1283
+   macro avg       0.90      0.90      0.90      1283
+weighted avg       0.90      0.90      0.90      1283
+
+
+Training Model: SVC
+Accuracy: 0.813717848791894
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.87      0.74      0.80       642
+           1       0.77      0.89      0.83       641
+
+    accuracy                           0.81      1283
+   macro avg       0.82      0.81      0.81      1283
+weighted avg       0.82      0.81      0.81      1283
+
