@@ -1,24 +1,26 @@
-%   Filename    : FaKe.tex
-%   Description : This is the main file for the LaTeX thesis proposal document template.
-
-%   Begin Preamble  %
-
 %  Filename   : preamble.tex
 %  Description: Preamble file to :
 %               a. specify related packages
 %               b. set margins, commands, etc.
 %\documentclass[12pt,titlepage,onepage, letterpaper]{article}
-\documentclass[12pt,titlepage, letterpaper]{report}
+\documentclass[12pt,titlepage,twopage, letterpaper]{book}
 %
 %-- specify related packages
 % \usepackage[utf8x]{inputenc}
 \usepackage{pdfpages}
 \usepackage{apacite}         %-- APA style citation  http://www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/
+
+%no heading "References" before the references list
+\makeatletter
+\let\st@rtbibsection\@bibnewpage
+\let\st@rtbibchapter\@bibnewpage
+\makeatother
+
 \usepackage{amsmath}       % American Math Society packages
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{graphicx}      %needed for including figures in JPG or PNG format
-\usepackage{verbatim}     % tmultiple lines of comments
+ \usepackage{verbatim}     % multiple lines of comments
                                %-- example:
                                %   \begin{comment}
                                %        ...your text here...
@@ -26,13 +28,9 @@
 \usepackage{color}  %-- allows use of color with text
                                %-- example:  \textcolor{red}{This is the colored text in red.}
 \usepackage{url}  %-- allows use of URLs example: \url{https:\ccs1.dlsu.edu.ph}
-\usepackage{longtable}
 \usepackage{tabularx}
-\usepackage{ltablex}
-\usepackage{xltabular}
-\usepackage{adjustbox}
-\usepackage{csquotes}
-%\usepackage{lineno}
+ \usepackage{setspace}
+\usepackage{lineno}
 
 %
 %-- set margins,  you may need to edit this for your own printer
@@ -51,7 +49,7 @@
 \parskip 1em
 \parindent 0.25in
 
-%\bibliographystyle{apacite}            %-- use APA citation scheme
+\bibliographystyle{apacite}            %-- use APA citation scheme
 \hyphenation{ana-lysis know-ledge}     %-- LaTeX may not hyphenate correctly some words you use in your document
                                        %-- use \hyphenation to instruct LaTeX how to do it correctly, example above
 \newcommand{\degree}{^{\circ}}         %-- use \newcommand to create your own "commands"
@@ -80,15 +78,26 @@
 %  \renewcommand{\thetable}{\thesection.\arabic{table}}
 %  \renewcommand{\contentsname}{Table of Contents}
 
+
+
+%---
+%  \renewcommand{\thefigure}{\thesection.\arabic{figure}}
+%  \renewcommand{\thetable}{\thesection.\arabic{table}}
+%  \renewcommand{\contentsname}{Table of Contents}
+
 %   End Preamble    %
 
 \graphicspath{{figures/}}  %figures is the name of the folder containing images JPG or PNG
 
 \begin{document}
 \include{title_page}      %includes LaTeX source file for the Title Page 
-\include{abstract}        %includes the the Abstract page
 \pagenumbering{roman}   %number pages as i, ii, iii, etc...
 \setcounter{page}{2}
+\include{approval}
+\include{declaration}
+\include{dedication}
+\include{acknowledgment}
+\include{abstract}        %includes the the Abstract page
 \tableofcontents                  %generate the Table of Contents
 \newpage
 \listoffigures                    %generate List of Figures
