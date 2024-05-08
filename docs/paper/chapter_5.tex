@@ -1,6 +1,18 @@
-%   Filename    : chapter_5.tex
-\chapter{Discussion}
+%   Filename    : chapter_6.tex
+\chapter{Conclusion}
 
-As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, does not have a signifcant change in performance between Filipino Fake News and Filipino Fake News dataset. However, all classfiers' accuracies are significantly lower in the combined dataset. The reason for this may be attributed to the difference in style of writing of news articles between the two datasets. This is supported by the difference in average OOV count, average stop words count, and average readability scores of the two datasets. Which means that when the two datasets are separate, the writing style is more consistent, therefore, the classifiers perform better. On the other hand, when the datasets are combined, the styles are now less consistent, affecting the accuracies of the classifiers. 
+In this paper, we constructed a balanced dataset of fake and authentic Filipino news articles named Fake News Filipino 2024, containing 1603 instances of real news and 1603 instances of fake news. We augmented Fake News Filipino and compiled a joint corpus for training several machine learning models. We compared the performance of four models: Logistic Regression, Multinomial Naive Bayes, Random Forest, and Support Vector Classifier in classifying news articles across three datasets: Fake News Filipino 2024, Fake News Filipino, and a joint corpus. Hyperparameter tuning was conducted to determine the optimal hyperparameters of each classifier. Logistic Regression emerged as the most suitable model for deployment as it boasted the highest accuracies, without requiring hyperparameter tuning.
 
-For the comparisons between classifiers within different datasets, it was shown that Logistic Regression and Support Vector Classifier does not have significant differences in their accuracies regardless of the dataset and that both classifers performs significantly better than Random Forest and Multinomial Naive Bayes. It must be noted, however, that hyperparameter tuning is requried for Support Vector Classfier for optimal performance whereas it is not for Logistic Regression since hyperparameter tuning does not have significant effect on the performance of Logistic Regression. Thus, it can be said that Logistic Regression is more efficient than Support Vector Classifier. Overall, the most suitable model for deployment in the system is Logistic Regression since it has best performance across all datasets without requiring hyperparam tuning.
+\section{Limitations}
+
+Discussed in detail in section \ref{extension-limitations}, the FaKe web extension bears several limitations owing to its present architecture. The discrepancies between the writing styles of the news articles in Fake News Filipino and Fake News Filipino 2024 may have impacted the performance of the classifiers on the joint corpus, as discussed in section \ref{dataset-limitation}. Robust Filipino language fake news detection remains a challenge, but this paper has made long strides in the proper direction.
+
+\section{Recommendations}
+
+For future studies, we recommend the expansion of the corpus, to include more domains and incorporate more writing styles. We recommend the development of a Filipino fake news detection system on a less stringent infrastructure. 
+
+\section{Acknowledgements}
+
+Throughout this study, we acknowledge the patient counsel bestowed upon us by Professor Francis D. Dimzon. His tutelage and expertise in the field of machine learning were crucial in forming the backbone of this paper.
+
+We acknowledge the assistance rendered by Mr. Ron Gerlan F. Naragdao, in providing computational units for training the models in this study. Furthermore, his aid in designing the website for the FaKe browser extension and beta-testing the extension itself was indispensable.

@@ -2,24 +2,24 @@
 \chapter{Results}
 
 \section{Dataset}
-We have built a balanced dataset containing a total of 3206 new articles (1603 real and fake news) named Filipion Fake News 2024. This dataset is combined with Filipino Fake News dataset for training purposes. Figures \ref{fig:oov_data} to \ref{fig:sw_data} depicts the average OOV count, average readability index, and average stop words count of the two datasets. Filipino Fake News 2024 has an average OOV count, readability index, and stop words count of 22.2, 19.7, and 74.5 respectively. On the other hand, in the same order of values, Filipino Fake News has 17.6, 20.5, and 77.8 respectively. This shows that on average, news articles in Filipino Fake News is more readable, has lower OOV count, and higher Stop words count.
+We built a balanced dataset containing a total of 3206 news articles (1603 real new and 1603 fake news) named Fake News Filipino 2024. This dataset was combined with the Fake News Filipino \cite{fake-news-filipino} dataset into a joint corpus. Figures \ref{fig:oov_data} to \ref{fig:sw_data} depicts the average OOV count, average readability index, and average stop words count of the two datasets. Fake News Filipino 2024 had an average OOV count, readability index, and stop words count of 22.2, 19.7, and 74.5 respectively. On the other hand, retaining the order of the variables, Fake News Filipino had 17.6, 20.5, and 77.8 respectively. On average, news articles in Fake News Filipino were more readable and had a lower count of out-of-vocabulary words as well as a higher number of stop words.
 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/oov_data.png}
-        \caption{OOV count Bar Plot of Filipino Fake News and Filipino Fake News 2024}
+        \caption{OOV count Bar Plot of Fake News Filipino and Fake News Filipino 2024}
         \label{fig:oov_data}
 \end{figure}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/read_data.png}
-        \caption{Readability Index Bar Plot of Filipino Fake News and Filipino Fake News 2024}
+        \caption{Readability Index Bar Plot of Fake News Filipino and Fake News Filipino 2024}
         \label{fig:read_data}
 \end{figure}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/sw_data.png}
-        \caption{Stop Words Bar Plot of Filipino Fake News and Filipino Fake News 2024}
+        \caption{Stop Words Bar Plot of Fake News Filipino and Fake News Filipino 2024}
         \label{fig:sw_data}
 \end{figure}
 
@@ -173,7 +173,7 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
     \multicolumn{3}{|r|}
     {Continued from previous page.} \\
     \hline
-    Classifier  & Dataset & Average Accuracy \\ \hline
+    Classifier & Dataset & Average Accuracy \\ \hline
     \endhead
 
     \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
@@ -208,11 +208,13 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
         \label{fig:box_plot_accuracy}
 \end{figure}
 
-The Shapiro-Wilk Test of Normality was used to assess the normality of each group in a two-way format, where accuracies were the dependent variable, and datasets and classifiers were the factors. As shown in Table \ref{tab::normality_tests}, all groups have p-values greater than or equal to 0.05 indicating that the data is normally distributed in the two-way format. However, with a p-value (0.003) lower than 0.05, Levene's Homogeneity Test determined the variances of the groups to be heterogenous.
+The Shapiro-Wilk test was used to assess the normality of each group in a two-way format, where accuracies were the dependent variable, and datasets and classifiers were the factors. As shown in Table \ref{tab::normality_tests}, all groups have p-values greater than or equal to 0.05 indicating that the data is normally distributed in the two-way format. However, with a p-value (0.003) lower than 0.05, Levene's test determined the variances of the groups to be heterogenous.
+
+\pagebreak
 
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
     \hline
-    Dataset & Classfier & Statistic & p-value \\
+    Dataset & Classifier & Statistic & p-value \\
     \hline
     Fake News Filipino & LR & 0.968 & 0.492 \\
     & MNB & 0.971 & 0.571 \\
@@ -229,7 +231,7 @@ The Shapiro-Wilk Test of Normality was used to assess the normality of each grou
     & RF & 0.934 & 0.063 \\
     & SVC & 0.950 & 0.164 \\
     \hline
-\caption{Shapiro-Wilk normality test}
+\caption{Shapiro-Wilk test}
 \label{tab::normality_tests}
 \end{tabularx}
 
@@ -251,9 +253,9 @@ To determine if there were significant differences between accuracies of differe
 
 To determine which classifiers had significant differences within the different datsets, post-hoc mean-separation testing was conducted using Bonferroni Correction for subgroups of each dataset level. As shown in Table \ref{tab::post-hoc-dataset-lvl}, the only subgroups that did not have significant differences were Logistic Regression and Support Vector Classifier across all datasets, as well as Multinomial Naive Bayes and Random Forest in the Fake News Filipino dataset.
 
-The results were reflected in the interaction plot of the accuracies in Figure \ref{fig:interaction_plot}. As shown in Figure \ref{fig:interaction_plot}, the accuracies of Logistic Regression and Support Vector Classifier were almost equal across all datasets. The same could be said for the accuracy of Multinomial Naive Bayes and Random Forest in the Fake News Filipino dataset. It can also be observed that the performance of the classifiers changes depending on the dataset just as the two-way ANOVA suggested.
+The results were reflected in the interaction plot of the accuracies in Figure \ref{fig:interaction_plot}. As shown in Figure \ref{fig:interaction_plot}, the accuracies of Logistic Regression and Support Vector Classifier were almost equal across all datasets. The same could be said for the accuracy of Multinomial Naive Bayes and Random Forest in the Fake News Filipino dataset. It could also be observed that the performance of the classifiers changes depending on the dataset just as the two-way ANOVA suggested.
 
-To determine which classifiers have significant differences between datasets, a similar post-hoc test was conducted for subgroups of each classifier level. Table \ref{tab::post-hoc-classifier-lvl} shows that only Multinomial Naive Bayes has a significant change in performance between Fake News Filipino 2024 and Fake News Filipino dataset. Furthermore, all accuracies of the classfiers differ significantly in the combined dataset compared with their accuracy in either Filipino Fake news or Filipino Fake news 2024.
+To determine which classifiers had significant differences between datasets, a similar post-hoc test was conducted for subgroups of each classifier level. Table \ref{tab::post-hoc-classifier-lvl} shows that only Multinomial Naive Bayes had a significant change in performance between Fake News Filipino 2024 and Fake News Filipino dataset. Furthermore, all accuracies of the classifiers differ significantly in the combined dataset compared with their accuracies in either Fake News Filipino or Fake News Filipino 2024.
 
 \begin{figure}[h!]
     \centering
@@ -291,7 +293,7 @@ To determine which classifiers have significant differences between datasets, a 
     \cline{3-4}
     & & SVC & \textless 0.001 \\
     \cline{2-4}
-    & RF & SVC &  \textless 0.001 \\
+    & RF & SVC & \textless 0.001 \\
     \hline
     Fake News Filipino 2024 & LR & MNB & \textless 0.001 \\
     \cline{3-4}
@@ -303,7 +305,7 @@ To determine which classifiers have significant differences between datasets, a 
     \cline{3-4}
     & & SVC & \textless 0.001 \\
     \cline{2-4}
-    & RF & SVC &  \textless 0.001 \\
+    & RF & SVC & \textless 0.001 \\
     \hline
     Combined & LR & MNB & \textless 0.001 \\
     \cline{3-4}
@@ -315,7 +317,7 @@ To determine which classifiers have significant differences between datasets, a 
     \cline{3-4}
     & & SVC & \textless 0.001 \\
     \cline{2-4}
-    & RF & SVC &  \textless 0.001
+    & RF & SVC & \textless 0.001
 \label{tab::post-hoc-dataset-lvl}
 \end{tabularx}
 
@@ -363,3 +365,9 @@ To determine which classifiers have significant differences between datasets, a 
     & Fake News Filipino 2024 & Combined & \textless 0.001
 \label{tab::post-hoc-classifier-lvl}
 \end{tabularx}
+
+\section{Summary} \label{dataset-limitation}
+
+As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, did not exhibit a significant change in performance between Fake News Filipino and Fake News Filipino 2024. However, the accuracies of all classifiers were significantly lower on the joint corpus. The reason for this may be attributed to differences in the writing styles of the news articles found between the two datasets. This hypothesis is supported by the differences in the number of out-of-vocabulary words, the average number of stop words, and the average readability scores of the two datasets. This means that when the classifiers were trained on the two datasets separately, they generally performed better, as the the writing style remained consistent. On the other hand, when the datasets were combined, the writing style became less consistent. This inconsistency resulted into a negative impact on the accuracies of the classifiers trained on the joint corpus. 
+
+Comparing the performance of classifiers on different datasets, Logistic Regression and Support Vector Classifier performed well regardless of the dataset. Both classifiers performed significantly better than Random Forest and Multinomial Naive Bayes. It must be noted, however, that hyperparameter tuning was required for Support Vector Classifier to exhibit high performance. In contrast, hyperparameter tuning did not have a significant effect on the performance of Logistic Regression. Logistic Regression was more efficient than Support Vector Classifier in tackling the problem. Overall, this paper's most suitable model for deployment is Logistic Regression, since it exhibited the best performance across all three datasets, and it did not require hyperparameter tuning.
