@@ -1,5 +1,5 @@
 %\linenumbers
-%   Filename    : chapter_1.tex 
+%   Filename    : chapter_1.tex
 \chapter{Introduction}
 \label{sec:researchdesc}    %labels help you reference sections of your document
 
@@ -35,17 +35,19 @@ To begin filling this gap, \citeA{cruz2020localization} pioneer the first low-re
 \subsection{General Objective}
 \label{sec:generalobjective}
 
-We investigate machine learning models that may provide adequate performance in distinguishing between fake and authentic Filipino language news articles. To this end, we construct a dataset of Filipino language news articles to augment Fake News Filipino \cite{fake-news-filipino}. In training the models, we extract Filipino linguistic features \cite{imperial-2020, imperial-2021} through natural language processing techniques. We investigate the most effective feature space in training the classifiers. Lastly, we deploy the most suitable model as a cross-browser web extension for classifying Filipino language fake news articles.
+We investigate machine learning models that may provide adequate performance in distinguishing between fake and authentic Filipino language news articles. To this end, we construct a dataset of Filipino language news articles, named Fake News Filipino 2024, to augment Fake News Filipino \cite{fake-news-filipino}. We build a third dataset, a joint corpus that combines the two datasets. In training the models, we extract Filipino linguistic features \cite{imperial-2020, imperial-2021} through natural language processing techniques. We perform hyperparameter tuning and benchmark the performance of these classifiers across the three datasets. Lastly, we deploy the most suitable model as a cross-browser web extension for classifying Filipino language fake news articles.
 
 \subsection{Specific Objectives}
 \label{sec:specificobjectives}
 
+Specifically, we will:
+
 \begin{enumerate}
-   \item To source Filipino language news articles from the web and build a balanced dataset of fake and authentic news articles;
-   \item To extract Filipino linguistic features from a corpus of multi-domain Filipino language news articles;
-   \item To train machine learning models in classifying fake Filipino language news articles through Filipino linguistic features;
-   \item To determine the combinations of Filipino linguistic features that yield the most accurate models; and
-   \item To deploy the most suitable model as a web service and minimize cost of deployment;
+   \item Source Filipino language news articles from the web and build a balanced dataset of fake and authentic news articles;
+   \item Extract Filipino linguistic features from a corpus of multi-domain Filipino language news articles;
+   \item Train machine learning models in classifying fake Filipino language news articles through Filipino linguistic features;
+   \item To benchmark machine learning models, performing hyperparameter tuning, across three different datasets; and
+   \item Deploy the most suitable model as a web service and minimize cost of deployment;
 \end{enumerate}
 
 \section{Scope and Limitations of the Research}

@@ -1,5 +1,5 @@
 %   Filename    : chapter_4.tex 
-\chapter{Results}
+\chapter{Results and Discussions}
 
 \section{Dataset}
 We built a balanced dataset containing a total of 3206 news articles (1603 real new and 1603 fake news) named Fake News Filipino 2024. This dataset was combined with the Fake News Filipino \cite{fake-news-filipino} dataset into a joint corpus. Figures \ref{fig:oov_data} to \ref{fig:sw_data} depicts the average OOV count, average readability index, and average stop words count of the two datasets. Fake News Filipino 2024 had an average OOV count, readability index, and stop words count of 22.2, 19.7, and 74.5 respectively. On the other hand, retaining the order of the variables, Fake News Filipino had 17.6, 20.5, and 77.8 respectively. On average, news articles in Fake News Filipino were more readable and had a lower count of out-of-vocabulary words as well as a higher number of stop words.
@@ -7,19 +7,19 @@ We built a balanced dataset containing a total of 3206 news articles (1603 real 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/oov_data.png}
-        \caption{OOV count Bar Plot of Fake News Filipino and Fake News Filipino 2024}
+        \caption{Bar plot of average OOV word count of Fake News Filipino and Fake News Filipino 2024.}
         \label{fig:oov_data}
 \end{figure}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/read_data.png}
-        \caption{Readability Index Bar Plot of Fake News Filipino and Fake News Filipino 2024}
+        \caption{Bar plot of average readability index of Fake News Filipino and Fake News Filipino 2024.}
         \label{fig:read_data}
 \end{figure}
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/sw_data.png}
-        \caption{Stop Words Bar Plot of Fake News Filipino and Fake News Filipino 2024}
+        \caption{Bar plot of average stop word count Fake News Filipino and Fake News Filipino 2024.}
         \label{fig:sw_data}
 \end{figure}
 
@@ -32,7 +32,7 @@ Figure \ref{MNB_default} shows the confusion matrix of \textbf{Multinomial Naive
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/MNB_default.png}
-        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search}
+        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search.}
         \label{MNB_default}
 \end{figure}
 
@@ -41,7 +41,7 @@ As shown in the confusion matrix of \textbf{Logistic Regression} at Figure \ref{
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/LR_default.png}
-        \caption{Confusion Matrix of Logistic Regression without Grid Search}
+        \caption{Confusion Matrix of Logistic Regression without Grid Search.}
         \label{LR_default}
 \end{figure}
 
@@ -50,7 +50,7 @@ Figure \ref{RF_default} depicts the confusion matrix of \textbf{Random Forest}. 
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/RF_default.png}
-        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search}
+        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search.}
         \label{RF_default}
 \end{figure}
 
@@ -59,7 +59,7 @@ Based on Figure \ref{SVC_default}, \textbf{Support Vector Classifier}, misclassi
 \begin{figure}[h!]
     \centering
     \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/SVC_default.png}
-        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search}
+        \caption{Confusion Matrix of Multinomial Naive Bayes without Grid Search.}
         \label{SVC_default}
 \end{figure}
 
@@ -86,7 +86,7 @@ Results without hyperparameter tuning are summarized in Table \ref{tab:no_hyperp
     Accuracy & & & 0.90 & & & 0.81 \\
     \hline
     \end{tabular}
-    \caption{Performance Metrics for Classifiers with Hyperparameter Tuning}
+    \caption{Performance metrics for classifiers without hyperparameter tuning.}
     \label{tab:no_hyperparam_summary}
 \end{table}
 
@@ -101,7 +101,7 @@ Figure \ref{MNB_hyperparam} shows the performance of \textbf{Multinomial Naive B
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/MNB.png}
-    \caption{Confusion Matrix of Multinomial Naive Bayes with alpha = 0.01}
+    \caption{Confusion Matrix of Multinomial Naive Bayes with alpha = 0.01.}
     \label{MNB_hyperparam}
 \end{figure}
 
@@ -110,7 +110,7 @@ The best hyperparameter for \textbf{Logistic Regression} was max\_iter = 2000. A
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/LR.png}
-    \caption{Confusion Matrix of Linear Regression with max\_iter = 2000}
+    \caption{Confusion Matrix of Linear Regression with max\_iter = 2000.}
     \label{LR_hyperparam}
 \end{figure}
 
@@ -119,7 +119,7 @@ For \textbf{Random Forest}, max\_depth = 20 was the optimal hyperparameter. The 
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/RF.png}
-    \caption{Confusion Matrix of Random Forest with max\_depth = 20}
+    \caption{Confusion Matrix of Random Forest with max\_depth = 20.}
     \label{RF_hyperparam}
 \end{figure}
 
@@ -130,7 +130,7 @@ Both Support Vector Classifier and Logistic Regression yielded the highest accur
 \begin{figure}[h!]
 \centering
 \includegraphics[width=0.6\textwidth,height=0.6\textheight, keepaspectratio]{figures/hyperparam/SVC.png}
-    \caption{Confusion Support Vector Classifier with a linear kernel and C = 0.1}
+    \caption{Confusion Support Vector Classifier with a linear kernel and C = 0.1.}
     \label{SVC_hyperparam}
 \end{figure}
 
@@ -157,7 +157,7 @@ The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic 
     Accuracy & & & 0.89 & & & 0.93 \\
     \hline
     \end{tabular}
-    \caption{Performance Metrics for Classifiers with Hyperparameter Tuning}
+    \caption{Performance metrics for classifiers with hyperparameter tuning.}
     \label{tab:hyperparam_summary}
 \end{table}
     
@@ -180,7 +180,7 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
     \endfoot
     
     \hline
-    \caption{Average Accuracies}
+    \caption{Average Accuracies of classifiers for each dataset.}
     \endlastfoot
 
     Logistic Regression & Fake News Filipino & 0.951 \\
@@ -204,7 +204,7 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/box_plot.png}
-        \caption{Box plot of the accuracies accross datasets}
+        \caption{Box plot of the accuracies accross datasets.}
         \label{fig:box_plot_accuracy}
 \end{figure}
 
@@ -231,7 +231,7 @@ The Shapiro-Wilk test was used to assess the normality of each group in a two-wa
     & RF & 0.934 & 0.063 \\
     & SVC & 0.950 & 0.164 \\
     \hline
-\caption{Shapiro-Wilk test}
+\caption{Shapiro-Wilk normality test in a two-way format.}
 \label{tab::normality_tests}
 \end{tabularx}
 
@@ -247,7 +247,7 @@ To determine if there were significant differences between accuracies of differe
     \hline
     dataset*classifier & 129.07 & 0.001 \\
     \hline
-\caption{Two-way ANOVA for Trimmed Means}
+\caption{Two-way ANOVA for Trimmed Means.}
 \label{tab::two-way}
 \end{tabularx}
 
@@ -260,7 +260,7 @@ To determine which classifiers had significant differences between datasets, a s
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/im.png}
-        \caption{interaction plot of accuracies across datasets}
+        \caption{Interaction plot of accuracies across datasets.}
         \label{fig:interaction_plot}
 \end{figure}
 
@@ -280,7 +280,7 @@ To determine which classifiers had significant differences between datasets, a s
     \endfoot
     
     \hline
-    \caption{Bonferroni correction for subgroups of each dataset level}
+    \caption{Bonferroni correction for subgroups of each dataset level.}
     \endlastfoot
 
     Fake News Filipino & LR & MNB & \textless 0.001 \\
@@ -337,7 +337,7 @@ To determine which classifiers had significant differences between datasets, a s
     \endfoot
     
     \hline
-    \caption{Bonferroni correction for subgroups of each classifier level}
+    \caption{Bonferroni correction for subgroups of each classifier level.}
     \endlastfoot
 
     LR & Fake News Filipino & Fake News Filipino 2024 & 0.485 \\
