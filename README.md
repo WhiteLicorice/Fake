@@ -22,7 +22,7 @@ This repository hosts a fake news classifier trained partly on a corpus of Filip
 4. Wait for the system to process the article you're reading.
 5. Profit!
 
-## Team Members
+## The FaKe Team
 1) [`Rene Andre Jocsing`](https://github.com/whitelicorice)  Lead Programmer, Project Manager, Writer
 2) [`Chancy Ponce de Leon`](https://github.com/cmpdleon)  Programmer, Writer
 3) [`Cobe Austin Lupac`](https://github.com/CoebeAustin)  Presenter, Programmer
