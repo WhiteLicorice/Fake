@@ -4,7 +4,7 @@
 Cross-browser extension for detecting fake news written in Filipino, powered by machine learning. 
 
 ## Description
-This repository hosts a fake news classifier trained on a corpus of Filipino articles adapted from [Cruz et al](https://github.com/jcblaisecruz02/Tagalog-fake-news). As part of our ongoing undergraduate study at the University of the Philippines Visayas, we have built a cross-browser extension that employs our fake news classifier. We utilize [Tampermonkey](https://www.tampermonkey.net/) as a wrapper around our extension and [Render](https://render.com/) to host our machine learning model on the cloud as an API. The fake news classifier only works on articles written primarily in Filipino with smatterings of English vernacular. Currently, we have deployed a trained Logistic Regression model that has achieved a ~98% accuracy on our test set. All resources that have been used in this study are available on this repository.
+This repository hosts a fake news classifier trained partly on a corpus of Filipino articles, Fake News Filipino, adapted from [Cruz et al](https://github.com/jcblaisecruz02/Tagalog-fake-news). We have also built a similar corpus named Fake News Filipino 2024. As part of our undergraduate study at the University of the Philippines Visayas, we have built a cross-browser extension that employs our fake news classifier. We utilize [Tampermonkey](https://www.tampermonkey.net/) as a wrapper around our extension and [Render](https://render.com/) to host our machine learning model on the cloud as an API. The fake news classifier only works on articles written primarily in Filipino with smatterings of English vernacular. Currently, we have deployed a trained Logistic Regression model that has achieved a top accuracy of ~98% accuracy on our test set. All resources that have been used in this study are available on this repository.
 
 ## Installation
 1. Download and install [Tampermonkey](https://www.tampermonkey.net/) for your browser of choice.
@@ -22,15 +22,15 @@ This repository hosts a fake news classifier trained on a corpus of Filipino art
 4. Wait for the system to process the article you're reading.
 5. Profit!
 
-## Team Members
+## The FaKe Team
 1) [`Rene Andre Jocsing`](https://github.com/whitelicorice)  Lead Programmer, Project Manager, Writer
-2) [`Chancy Ponce de Leon`](https://github.com/cmpdleon)  Programmer, Writer
+2) [`Chancy Ponce de Leon`](https://github.com/cmpdleon)  Programmer, Data Analyst
 3) [`Cobe Austin Lupac`](https://github.com/CoebeAustin)  Presenter, Programmer
 4) [`Ron Gerlan Naragdao`](https://github.com/SkyBluePenguin53)  Programmer
 
 
 ## Contributing
-If you wish to contribute to the project, please open a pull request. Thank you.
+If you wish to contribute to the project, please open a pull request.
 
 ## Resources
 ```
