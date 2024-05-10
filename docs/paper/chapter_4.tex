@@ -36,7 +36,7 @@ Figure \ref{MNB_default} shows the confusion matrix of \textbf{Multinomial Naive
         \label{MNB_default}
 \end{figure}
 
-As shown in the confusion matrix of \textbf{Logistic Regression} at Figure \ref{LR_default}, the model misclassified 42 instances of fake news as real news and 51 instances of real news as fake news. It yielded an accuracy of approximately 0.93. It had a high recall for real news and fake news at both 0.93 and 0.92 respectively. The f1-scores for both real news and fake news were 0.93.
+As shown in the confusion matrix of \textbf{Logistic Regression} at Figure \ref{LR_default}, the model misclassified 42 instances of fake news as real news and 51 instances of real news as fake news. It yielded an accuracy of approximately 0.93. It had a high recall for real news and fake news at both 0.93 and 0.92 respectively. The F1-scores for both real news and fake news were 0.93.
 
 \begin{figure}[h!]
     \centering
@@ -45,7 +45,7 @@ As shown in the confusion matrix of \textbf{Logistic Regression} at Figure \ref{
         \label{LR_default}
 \end{figure}
 
-Figure \ref{RF_default} depicts the confusion matrix of \textbf{Random Forest}. The model misclassified 66 instances of fake news and 59 instances of real news. It yielded an accuracy of approximately 0.90. It had a recall of 0.90 and 0.91 for fake news and real news respectively. The f1-score of both classes was 0.90, implying balanced metrics.
+Figure \ref{RF_default} depicts the confusion matrix of \textbf{Random Forest}. The model misclassified 66 instances of fake news and 59 instances of real news. It yielded an accuracy of approximately 0.90. It had a recall of 0.90 and 0.91 for fake news and real news respectively. The F1-score of both classes was 0.90, implying balanced metrics.
 
 \begin{figure}[h!]
     \centering
@@ -54,7 +54,7 @@ Figure \ref{RF_default} depicts the confusion matrix of \textbf{Random Forest}. 
         \label{RF_default}
 \end{figure}
 
-Based on Figure \ref{SVC_default}, \textbf{Support Vector Classifier}, misclassified 169 instances of fake news and 70 instances of real news. It had an accuracy of approximately 0.81. It had a relatively lower recall for fake news at 0.74. The f1-scores for real news and fake news were 0.80 and 0.83 respectively. 
+Based on Figure \ref{SVC_default}, \textbf{Support Vector Classifier}, misclassified 169 instances of fake news and 70 instances of real news. It had an accuracy of approximately 0.81. It had a relatively lower recall for fake news at 0.74. The F1-scores for real news and fake news were 0.80 and 0.83 respectively. 
 
 \begin{figure}[h!]
     \centering
@@ -63,7 +63,7 @@ Based on Figure \ref{SVC_default}, \textbf{Support Vector Classifier}, misclassi
         \label{SVC_default}
 \end{figure}
 
-Results without hyperparameter tuning are summarized in Table \ref{tab:no_hyperparam_summary}. As shown in Table \ref{tab:no_hyperparam_summary}, Logistic Regression had the highest f1-scores while Multinomial Naive Bayes scored the lowest.
+Results without hyperparameter tuning are summarized in Table \ref{tab:no_hyperparam_summary}. As shown in Table \ref{tab:no_hyperparam_summary}, Logistic Regression had the highest F1-scores while Multinomial Naive Bayes scored the lowest.
 
 \begin{table}[ht]
     \centering
@@ -71,7 +71,7 @@ Results without hyperparameter tuning are summarized in Table \ref{tab:no_hyperp
     \hline
     & \multicolumn{3}{c|}{Multinomial Naive Bayes} & \multicolumn{3}{c|}{Logistic Regression} \\
     \hline
-    & Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
+    & Precision & Recall & F1-score & Precision & Recall & F1-score \\
     \hline
     Fake & 1.00 & 0.16 & 0.28 & 0.92 & 0.93 & 0.93 \\
     Not Fake & 0.54 & 1.00 & 0.70 & 0.93 & 0.92 & 0.93 \\
@@ -79,7 +79,7 @@ Results without hyperparameter tuning are summarized in Table \ref{tab:no_hyperp
     \hline
     & \multicolumn{3}{c|}{Random Forest} & \multicolumn{3}{c|}{Support Vector Classifier} \\
     \hline
-    & Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
+    & Precision & Recall & F1-score & Precision & Recall & F1-score \\
     \hline
     Fake & 0.91 & 0.90 & 0.90 & 0.87 & 0.74 & 0.80 \\
     Not Fake & 0.90 & 0.91 & 0.90 & 0.77 & 0.89 & 0.83 \\
@@ -105,7 +105,7 @@ Figure \ref{MNB_hyperparam} shows the performance of \textbf{Multinomial Naive B
     \label{MNB_hyperparam}
 \end{figure}
 
-The best hyperparameter for \textbf{Logistic Regression} was max\_iter = 2000. As shown in Figure \ref{LR_hyperparam}, Logistic Regression misclassified 42 instances of fake news and 51 instances of real news. It yielded an accuracy of 0.928 and an f1-score of 0.93 for both real news and fake news. 
+The best hyperparameter for \textbf{Logistic Regression} was max\_iter = 2000. As shown in Figure \ref{LR_hyperparam}, Logistic Regression misclassified 42 instances of fake news and 51 instances of real news. It yielded an accuracy of 0.928 and an F1-score of 0.93 for both real news and fake news. 
 
 \begin{figure}[h!]
 \centering
@@ -114,7 +114,7 @@ The best hyperparameter for \textbf{Logistic Regression} was max\_iter = 2000. A
     \label{LR_hyperparam}
 \end{figure}
 
-For \textbf{Random Forest}, max\_depth = 20 was the optimal hyperparameter. The performance of Random Forest is shown in Figure \ref{RF_hyperparam}. The model misclassified 80 instances of fake news and 63 instances of real news. It yielded an accuracy of 0.889 with an f1-score of 0.89 for both fake news and real news.
+For \textbf{Random Forest}, max\_depth = 20 was the optimal hyperparameter. The performance of Random Forest is shown in Figure \ref{RF_hyperparam}. The model misclassified 80 instances of fake news and 63 instances of real news. It yielded an accuracy of 0.889 with an F1-score of 0.89 for both fake news and real news.
 
 \begin{figure}[h!]
 \centering
@@ -123,7 +123,7 @@ For \textbf{Random Forest}, max\_depth = 20 was the optimal hyperparameter. The 
     \label{RF_hyperparam}
 \end{figure}
 
-For \textbf{Support Vector Classifier}, the optimal hyperparameter was C = 0.1 with a linear kernel. As shown in Figure \ref{SVC_hyperparam}, the model misclassified 42 instances of fake news and 51 instances of real news. It yielded an accuracy of 0.928 and an f1-score of 0.93 for both fake news and real news.
+For \textbf{Support Vector Classifier}, the optimal hyperparameter was C = 0.1 with a linear kernel. As shown in Figure \ref{SVC_hyperparam}, the model misclassified 42 instances of fake news and 51 instances of real news. It yielded an accuracy of 0.928 and an F1-score of 0.93 for both fake news and real news.
 
 Both Support Vector Classifier and Logistic Regression yielded the highest accuracy with hyperparameter tuning.
 
@@ -134,7 +134,7 @@ Both Support Vector Classifier and Logistic Regression yielded the highest accur
     \label{SVC_hyperparam}
 \end{figure}
 
-The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic Regression and Support Vector Classifier scored the highest f1-scores while Random Forest scored the lowest. Comparing the accuracies of the classifiers without hyperparameter tuning in Table \ref{tab:no_hyperparam_summary} and their accuracies with hyperparameter tuning in Table \ref{tab:hyperparam_summary}, hyperparameter tuning significantly increased the accuracy of Multinomial Naive Bayes and Support Vector Classifier. However, hyperparameter tuning did not have any significant impact on the accuracies of Logistic Regression and Random Forest.
+The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic Regression and Support Vector Classifier scored the highest F1-scores while Random Forest scored the lowest. Comparing the accuracies of the classifiers without hyperparameter tuning in Table \ref{tab:no_hyperparam_summary} and their accuracies with hyperparameter tuning in Table \ref{tab:hyperparam_summary}, hyperparameter tuning significantly increased the accuracy of Multinomial Naive Bayes and Support Vector Classifier. However, hyperparameter tuning did not have any significant impact on the accuracies of Logistic Regression and Random Forest.
 
 \begin{table}[ht]
     \centering
@@ -142,7 +142,7 @@ The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic 
     \hline
     & \multicolumn{3}{c|}{Multinomial Naive Bayes} & \multicolumn{3}{c|}{Logistic Regression} \\
     \hline
-    & Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
+    & Precision & Recall & F1-score & Precision & Recall & F1-score \\
     \hline
     Fake & 0.93 & 0.76 & 0.85 & 0.92 & 0.93 & 0.93 \\
     Not Fake & 0.80 & 0.97 & 0.88 & 0.93 & 0.92 & 0.93 \\
@@ -150,7 +150,7 @@ The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic 
     \hline
     & \multicolumn{3}{c|}{Random Forest} & \multicolumn{3}{c|}{Support Vector Classifier} \\
     \hline
-    & Precision & Recall & F1-Score & Precision & Recall & F1-Score \\
+    & Precision & Recall & F1-score & Precision & Recall & F1-score \\
     \hline
     Fake & 0.90 & 0.88 & 0.89 & 0.92 & 0.93 & 0.93 \\
     Not Fake & 0.88 & 0.90 & 0.89 & 0.93 & 0.92 & 0.93 \\
@@ -208,13 +208,13 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
         \label{fig:box_plot_accuracy}
 \end{figure}
 
-The Shapiro-Wilk test was used to assess the normality of each group in a two-way format, where accuracies were the dependent variable, and datasets and classifiers were the factors. As shown in Table \ref{tab::normality_tests}, all groups have p-values greater than or equal to 0.05 indicating that the data is normally distributed in the two-way format. However, with a p-value (0.003) lower than 0.05, Levene's test determined the variances of the groups to be heterogenous.
+The Shapiro-Wilk test was used to assess the normality of each group in a two-way format, where accuracies were the dependent variable, and datasets and classifiers were the factors. As shown in Table \ref{tab::normality_tests}, all groups have \textit{p}-values greater than or equal to 0.05 indicating that the data is normally distributed in the two-way format. However, with a \textit{p}-value (0.003) lower than 0.05, Levene's test determined the variances of the groups to be heterogenous.
 
 \pagebreak
 
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
     \hline
-    Dataset & Classifier & Statistic & p-value \\
+    Dataset & Classifier & Statistic & \textit{p}-value \\
     \hline
     Fake News Filipino & LR & 0.968 & 0.492 \\
     & MNB & 0.971 & 0.571 \\
@@ -235,11 +235,11 @@ The Shapiro-Wilk test was used to assess the normality of each group in a two-wa
 \label{tab::normality_tests}
 \end{tabularx}
 
-To determine if there were significant differences between accuracies of different classifiers in different datasets, and taking into account the heteroscedacity of the data, two-way ANOVA for trimmed means was performed. As shown in Table \ref{tab::two-way} there was a significant difference (p-value = 0.001) between accuracies in different datasets averaged across the classifiers. Additionally, there was a significant difference (p-value = 0.001) between accuracies in the classifiers averaged across the datasets. Furthermore, their interaction effect was also significant (p-value = 0.001). Thus, accuracy was affected both by the main effects of the dataset and classifier and also their combinations.
+To determine if there were significant differences between accuracies of different classifiers in different datasets, and taking into account the heteroscedacity of the data, two-way ANOVA for trimmed means was performed. As shown in Table \ref{tab::two-way} there was a significant difference (\textit{p}-value = 0.001) between accuracies in different datasets averaged across the classifiers. Additionally, there was a significant difference (\textit{p}-value = 0.001) between accuracies in the classifiers averaged across the datasets. Furthermore, their interaction effect was also significant (\textit{p}-value = 0.001). Thus, accuracy was affected both by the main effects of the dataset and classifier and also their combinations.
 
 \begin{tabularx}{\textwidth}{|l|l|l|}
     \hline
-    Factor & Statistic & p-value \\
+    Factor & Statistic & \textit{p}-value \\
     \hline
     dataset & 689.45 & 0.001 \\
     \hline
@@ -265,7 +265,7 @@ To determine which classifiers had significant differences between datasets, a s
 \end{figure}
 
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
-    \hline Dataset & Classifier (a) & Classifier(b) & p-value \\ \hline
+    \hline Dataset & Classifier (a) & Classifier(b) & \textit{p}-value \\ \hline
     \endfirsthead
 
     \hline
@@ -273,7 +273,7 @@ To determine which classifiers had significant differences between datasets, a s
     {Continued from previous page.} \\
 
     \hline
-    Dataset & Classifier (a) & Classifier(b) & p-value \\ \hline
+    Dataset & Classifier (a) & Classifier(b) & \textit{p}-value \\ \hline
     \endhead
 
     \hline \multicolumn{4}{|r|}{{Continued on next page...}} \\ \hline
@@ -322,7 +322,7 @@ To determine which classifiers had significant differences between datasets, a s
 \end{tabularx}
 
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
-    \hline Classifier & Dataset(a) & Dataset(b) & p-value \\ \hline
+    \hline Classifier & Dataset(a) & Dataset(b) & \textit{p}-value \\ \hline
     \endfirsthead
 
     \hline
@@ -330,7 +330,7 @@ To determine which classifiers had significant differences between datasets, a s
     {Continued from previous page.} \\
 
     \hline
-    Classifier & Dataset(a) & Dataset(b) & p-value \\ \hline
+    Classifier & Dataset(a) & Dataset(b) & \textit{p}-value \\ \hline
     \endhead
 
     \hline \multicolumn{4}{|r|}{{Continued on next page...}} \\ \hline
