@@ -90,8 +90,6 @@ Results without hyperparameter tuning are summarized in Table \ref{tab:no_hyperp
     \label{tab:no_hyperparam_summary}
 \end{table}
 
-
-
 \section{Classifiers with Hyperparameter Tuning}
 \label{sec:ParamTuning}
 To the determine the optimal hyperparameters, all models were trained and tested on the combined dataset using grid search with five-fold cross validation.
@@ -165,24 +163,48 @@ The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic 
 
 Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four models were trained and tested using five-fold cross validation six times, a total of 30 tests, across three datasets: Fake News Filipino (2020), Fake News Filipino 2024 (2024), and the combined corpus with the two datasets. Average accuracies of the models are shown in Table \ref{tab::AverageAccuracies}. Logistic Regression and Support Vector Classifier scored the highest average accuracy in both Fake News Filipino and Fake News Filipino 2024. But for the combined dataset, only Logistic Regression yielded the highest average accuracy. Compared to the other models across the three datasets, Multinomial Naive Bayes and Random Forest performed relatively worst in the combined dataset with accuracies of 86.0\% and 88.8\% respectively. Table \ref{tab::AverageAccuracies} shows the average accuracies of the models. The box plot of the accuracies is depicted in Figure \ref{fig:box_plot_accuracy}.
 
-\begin{tabularx}{\textwidth}{|l|l|c|}
-    \hline Classifier & Dataset & Average Accuracy \\ \hline
-    \endfirsthead
+% \renewcommand{\arraystretch}{0.845}
+% \begin{tabularx}{\textwidth}{|l|l|c|}
+%     \hline Classifier & Dataset & Average Accuracy \\ \hline
+%     \endfirsthead
 
-    \hline
-    \multicolumn{3}{|r|}
-    {Continued from previous page.} \\
-    \hline
-    Classifier & Dataset & Average Accuracy \\ \hline
-    \endhead
+%     \hline
+%     \multicolumn{3}{|r|}
+%     {Continued from previous page.} \\
+%     \hline
+%     Classifier & Dataset & Average Accuracy \\ \hline
+%     \endhead
 
-    \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
-    \endfoot
+%     \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
+%     \endfoot
     
-    \hline
-    \caption{Average Accuracies of classifiers for each dataset.}
-    \endlastfoot
+%     \hline
+%     \caption{Average Accuracies of classifiers for each dataset.}
+%     \endlastfoot
 
+%     Logistic Regression & Fake News Filipino & 0.951 \\
+%     & Fake News Filipino 2024 & 0.947\\
+%     & Combined & 0.924 \\
+%     \hline
+%     Multinomial Naive Bayes & Fake News Filipino & 0.923 \\
+%     & Fake News Filipino 2024 & 0.885 \\
+%     & Combined & 0.860 \\
+%     \hline
+%     Random Forest & Fake News Filipino & 0.919 \\
+%     & Fake News Filipino 2024 & 0.926 \\
+%     & Combined & 0.888 \\  
+%     \hline
+%     Support Vector Classifier & Fake News Filipino & 0.951 \\
+%     & Fake News Filipino 2024 & 0.947 \\
+%     & Combined & 0.922
+% \label{tab::AverageAccuracies}
+% \end{tabularx}
+
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|c|}
+    \hline Classifier & Dataset & Average Accuracy \\
+    \hline
     Logistic Regression & Fake News Filipino & 0.951 \\
     & Fake News Filipino 2024 & 0.947\\
     & Combined & 0.924 \\
@@ -197,11 +219,50 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
     \hline
     Support Vector Classifier & Fake News Filipino & 0.951 \\
     & Fake News Filipino 2024 & 0.947 \\
-    & Combined & 0.922
-\label{tab::AverageAccuracies}
-\end{tabularx}
+    & Combined & 0.922\\
+    \hline
+    \end{tabular}
+    \caption{Average accuracies of classifiers in each dataset.}
+    \label{tab::AverageAccuracies}
+\end{table}
 
-\begin{figure}[h!]
+% \begin{longtable}{|l|l|c|}
+%     \hline Classifier & Dataset & Average Accuracy \\ \hline
+%     \endfirsthead
+
+%     \hline
+%     \multicolumn{3}{|r|}
+%     {Continued from previous page.} \\
+%     \hline
+%     Classifier & Dataset & Average Accuracy \\ \hline
+%     \endhead
+
+%     \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
+%     \endfoot
+    
+%     \hline
+%     \caption{Average Accuracies of classifiers for each dataset.}
+%     \endlastfoot
+
+%     Logistic Regression & Fake News Filipino & 0.951 \\
+%     & Fake News Filipino 2024 & 0.947\\
+%     & Combined & 0.924 \\
+%     \hline
+%     Multinomial Naive Bayes & Fake News Filipino & 0.923 \\
+%     & Fake News Filipino 2024 & 0.885 \\
+%     & Combined & 0.860 \\
+%     \hline
+%     Random Forest & Fake News Filipino & 0.919 \\
+%     & Fake News Filipino 2024 & 0.926 \\
+%     & Combined & 0.888 \\  
+%     \hline
+%     Support Vector Classifier & Fake News Filipino & 0.951 \\
+%     & Fake News Filipino 2024 & 0.947 \\
+%     & Combined & 0.922
+% \label{tab::AverageAccuracies}
+% \end{longtable}
+
+\begin{figure}[ht]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/box_plot.png}
         \caption{Box plot of the accuracies accross datasets.}
@@ -210,9 +271,9 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
 
 The Shapiro-Wilk test was used to assess the normality of each group in a two-way format, where accuracies were the dependent variable, and datasets and classifiers were the factors. As shown in Table \ref{tab::normality_tests}, all groups have \textit{p}-values greater than or equal to 0.05 indicating that the data is normally distributed in the two-way format. However, with a \textit{p}-value (0.003) lower than 0.05, Levene's test determined the variances of the groups to be heterogenous.
 
-\pagebreak
-
-\begin{tabularx}{\textwidth}{|l|l|l|l|}
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
     \hline
     Dataset & Classifier & Statistic & \textit{p}-value \\
     \hline
@@ -231,25 +292,29 @@ The Shapiro-Wilk test was used to assess the normality of each group in a two-wa
     & RF & 0.934 & 0.063 \\
     & SVC & 0.950 & 0.164 \\
     \hline
+    \end{tabular}
 \caption{Shapiro-Wilk normality test in a two-way format.}
 \label{tab::normality_tests}
-\end{tabularx}
+\end{table}
 
 To determine if there were significant differences between accuracies of different classifiers in different datasets, and taking into account the heteroscedacity of the data, two-way ANOVA for trimmed means was performed. As shown in Table \ref{tab::two-way} there was a significant difference (\textit{p}-value = 0.001) between accuracies in different datasets averaged across the classifiers. Additionally, there was a significant difference (\textit{p}-value = 0.001) between accuracies in the classifiers averaged across the datasets. Furthermore, their interaction effect was also significant (\textit{p}-value = 0.001). Thus, accuracy was affected both by the main effects of the dataset and classifier and also their combinations.
 
-\begin{tabularx}{\textwidth}{|l|l|l|}
-    \hline
-    Factor & Statistic & \textit{p}-value \\
-    \hline
-    dataset & 689.45 & 0.001 \\
-    \hline
-    classifier & 1010.0371 & 0.001 \\
-    \hline
-    dataset*classifier & 129.07 & 0.001 \\
-    \hline
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|l|}
+        \hline
+        Factor & Statistic & \textit{p}-value \\
+        \hline
+        dataset & 689.45 & 0.001 \\
+        \hline
+        classifier & 1010.0371 & 0.001 \\
+        \hline
+        dataset*classifier & 129.07 & 0.001 \\
+        \hline
+    \end{tabular}
 \caption{Two-way ANOVA for Trimmed Means.}
 \label{tab::two-way}
-\end{tabularx}
+\end{table}
 
 To determine which classifiers had significant differences within the different datsets, post-hoc mean-separation testing was conducted using Bonferroni Correction for subgroups of each dataset level. As shown in Table \ref{tab::post-hoc-dataset-lvl}, the only subgroups that did not have significant differences were Logistic Regression and Support Vector Classifier across all datasets, as well as Multinomial Naive Bayes and Random Forest in the Fake News Filipino dataset.
 
@@ -264,107 +329,88 @@ To determine which classifiers had significant differences between datasets, a s
         \label{fig:interaction_plot}
 \end{figure}
 
-\begin{tabularx}{\textwidth}{|l|l|l|l|}
-    \hline Dataset & Classifier (a) & Classifier(b) & \textit{p}-value \\ \hline
-    \endfirsthead
-
-    \hline
-    \multicolumn{4}{|r|}
-    {Continued from previous page.} \\
-
-    \hline
-    Dataset & Classifier (a) & Classifier(b) & \textit{p}-value \\ \hline
-    \endhead
-
-    \hline \multicolumn{4}{|r|}{{Continued on next page...}} \\ \hline
-    \endfoot
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline Dataset & Classifier (a) & Classifier(b) & \textit{p}-value \\ \hline
+        Fake News Filipino & LR & MNB & \textless 0.001 \\
+        \cline{3-4}
+        & & RF & \textless 0.001 \\
+        \cline{3-4}
+        & & SVC & 1.00 \\
+        \cline{2-4}
+        & MNB & RF & 1.00 \\
+        \cline{3-4}
+        & & SVC & \textless 0.001 \\
+        \cline{2-4}
+        & RF & SVC & \textless 0.001 \\
+        \hline
+        Fake News Filipino 2024 & LR & MNB & \textless 0.001 \\
+        \cline{3-4}
+        & & RF & \textless 0.001 \\
+        \cline{3-4}
+        & & SVC & 1.00 \\
+        \cline{2-4}
+        & MNB & RF & \textless 0.001 \\
+        \cline{3-4}
+        & & SVC & \textless 0.001 \\
+        \cline{2-4}
+        & RF & SVC & \textless 0.001 \\
+        \hline
+        Combined & LR & MNB & \textless 0.001 \\
+        \cline{3-4}
+        & & RF & \textless 0.001 \\
+        \cline{3-4}
+        & & SVC & 1.00 \\
+        \cline{2-4}
+        & MNB & RF & \textless 0.001 \\
+        \cline{3-4}
+        & & SVC & \textless 0.001 \\
+        \cline{2-4}
+        & RF & SVC & \textless 0.001\\
+        \hline
     
-    \hline
-    \caption{Bonferroni correction for subgroups of each dataset level.}
-    \endlastfoot
-
-    Fake News Filipino & LR & MNB & \textless 0.001 \\
-    \cline{3-4}
-    & & RF & \textless 0.001 \\
-    \cline{3-4}
-    & & SVC & 1.00 \\
-    \cline{2-4}
-    & MNB & RF & 1.00 \\
-    \cline{3-4}
-    & & SVC & \textless 0.001 \\
-    \cline{2-4}
-    & RF & SVC & \textless 0.001 \\
-    \hline
-    Fake News Filipino 2024 & LR & MNB & \textless 0.001 \\
-    \cline{3-4}
-    & & RF & \textless 0.001 \\
-    \cline{3-4}
-    & & SVC & 1.00 \\
-    \cline{2-4}
-    & MNB & RF & \textless 0.001 \\
-    \cline{3-4}
-    & & SVC & \textless 0.001 \\
-    \cline{2-4}
-    & RF & SVC & \textless 0.001 \\
-    \hline
-    Combined & LR & MNB & \textless 0.001 \\
-    \cline{3-4}
-    & & RF & \textless 0.001 \\
-    \cline{3-4}
-    & & SVC & 1.00 \\
-    \cline{2-4}
-    & MNB & RF & \textless 0.001 \\
-    \cline{3-4}
-    & & SVC & \textless 0.001 \\
-    \cline{2-4}
-    & RF & SVC & \textless 0.001
+    \end{tabular}
+\caption{Bonferroni correction for subgroups of each dataset level.}
 \label{tab::post-hoc-dataset-lvl}
-\end{tabularx}
+\end{table}
 
-\begin{tabularx}{\textwidth}{|l|l|l|l|}
-    \hline Classifier & Dataset(a) & Dataset(b) & \textit{p}-value \\ \hline
-    \endfirsthead
 
-    \hline
-    \multicolumn{4}{|r|}
-    {Continued from previous page.} \\
-
-    \hline
-    Classifier & Dataset(a) & Dataset(b) & \textit{p}-value \\ \hline
-    \endhead
-
-    \hline \multicolumn{4}{|r|}{{Continued on next page...}} \\ \hline
-    \endfoot
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline Classifier & Dataset(a) & Dataset(b) & \textit{p}-value \\ \hline
+        
+        LR & Fake News Filipino & Fake News Filipino 2024 & 0.485 \\
+        \cline{3-4}
+        & & Combined & \textless 0.001 \\
+        \cline{2-4}
+        & Fake News Filipino 2024 & Combined & \textless 0.001 \\
+        \hline
+        MNB & Fake News Filipino & Fake News Filipino 2024 & \textless 0.001 \\
+        \cline{3-4}
+        & & Combined & \textless 0.001 \\
+        \cline{2-4}
+        & Fake News Filipino 2024 & Combined & \textless 0.001 \\
+        \hline
+        RF & Fake News Filipino & Fake News Filipino 2024 & 0.150 \\
+        \cline{3-4}
+        & & Combined & \textless 0.001 \\
+        \cline{2-4}
+        & Fake News Filipino 2024 & Combined & \textless 0.001 \\
+        \hline
+        SVC & Fake News Filipino & Fake News Filipino 2024 & 0.421 \\
+        \cline{3-4}
+        & & Combined & \textless 0.001 \\
+        \cline{2-4}
+        & Fake News Filipino 2024 & Combined & \textless 0.001\\
+        \hline
     
-    \hline
+    \end{tabular}
     \caption{Bonferroni correction for subgroups of each classifier level.}
-    \endlastfoot
+    \label{tab::post-hoc-classifier-lvl}
+\end{table}
 
-    LR & Fake News Filipino & Fake News Filipino 2024 & 0.485 \\
-    \cline{3-4}
-    & & Combined & \textless 0.001 \\
-    \cline{2-4}
-    & Fake News Filipino 2024 & Combined & \textless 0.001 \\
-    \hline
-    MNB & Fake News Filipino & Fake News Filipino 2024 & \textless 0.001 \\
-    \cline{3-4}
-    & & Combined & \textless 0.001 \\
-    \cline{2-4}
-    & Fake News Filipino 2024 & Combined & \textless 0.001 \\
-    \hline
-    RF & Fake News Filipino & Fake News Filipino 2024 & 0.150 \\
-    \cline{3-4}
-    & & Combined & \textless 0.001 \\
-    \cline{2-4}
-    & Fake News Filipino 2024 & Combined & \textless 0.001 \\
-    \hline
-    SVC & Fake News Filipino & Fake News Filipino 2024 & 0.421 \\
-    \cline{3-4}
-    & & Combined & \textless 0.001 \\
-    \cline{2-4}
-    & Fake News Filipino 2024 & Combined & \textless 0.001
-\label{tab::post-hoc-classifier-lvl}
-\end{tabularx}
 
 \section{Summary} \label{dataset-limitation}
 

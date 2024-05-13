@@ -23,47 +23,50 @@ The corpus was tokenized using a pre-trained BPE tokenizer from \citeA{cruz2020l
 \end{figure}
 
 \clearpage
+\begin{landscape}
+  \begin{tabularx}{\textwidth}{|X|X|X|}
+      \hline Feature & Description & Predictors \\ \hline
+      \endfirsthead
 
-\begin{tabularx}{\textwidth}{|X|X|X|}
-     \hline Feature & Description & Predictors \\ \hline
-     \endfirsthead
+      \hline
+      \multicolumn{3}{|r|}
+      {Continued from previous page.} \\
+      \hline
+      Feature & Description & Predictors \\ \hline
+      \endhead
 
-     \hline
-     \multicolumn{3}{|r|}
-     {Continued from previous page.} \\
-     \hline
-     Feature & Description & Predictors \\ \hline
-     \endhead
+      \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
+      \endfoot
 
-     \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
-     \endfoot
+      \hline
+      \caption{Descriptions and predictors of features.}
+      \endlastfoot
 
-     \hline
-     \caption{Descriptions and predictors of features.}
-     \endlastfoot
+      Bag-of-words & Unordered collection of words. & Bag-of-words model of the input text. \\
+      \hline
+      TF-IDF & Word to document ratio in the corpus. & TF-IDF using n-gram values of \{ 1, 2, 3\}. \\
+      \hline
+      Misspelled words & Misspelled words in the input text. & Total misspelled word count. \\
+      \hline
 
-     Bag-of-words & Unordered collection of words. & Bag-of-words model of the input text. \\
-     \hline
-     TF-IDF & Word to document ratio in the corpus. & TF-IDF using n-gram values of \{ 1, 2, 3\}. \\
-     \hline
-     Misspelled words & Misspelled words in the input text. & Total misspelled word count. \\
-     \hline
+      OOV words & Words in the input text that are not found in the Filipino and English dictionary used in training & Total OOV word count. \\
+      \hline
+      Stop words & words considered insignificant in processing text input e.g. "at", "ay", "din", etc. in Filipino or "a", "the", "to", "as" in English. & Total stop word count. \\
+      \hline
+      Filipino readability formula & Readability formula for Filipino text by \citeA{Macahilig2015ACR}. The higher the readability index, the more difficult the text is to read. & Readability is computed by: \( P = -4.161 + 0.280(w/s) + 0.106(cw)\) where P is the readability index, w/s is the average number of words per sentence, and cw is the word count. \\
+      \hline
+      Traditional & Traditional or Surface-based features based on counts and frequencies & Total word, sentence, phrase, polysyllabic word counts. Average word length, sentence length, syllable per word. \\
+      \hline
+      Syllabic Pattern & Syllable pattern densities based on the prescribed Philippine orthography & Prescribed Philippine orthography \{v, cv, vc, cvc, vcc, cvcc, ccvc, ccvcc, ccvccc\}, where c and v are consonant and vowel notations. \\
+      \hline
+      Lexical & Lexical or context carrying features using part-of-speech categories. & Type-token variations (regular, logarithmic, corrected, root). Noun and verb token ratio. Lexical density. Foreign word and compound word density.\\
+      \hline
+      Morphological & Morphological features based on verb inflection. & Densities of foci of verbs based on tense: \{actor, object, benefactive, locative, instrumental, referential\}. Densities of various foci of verbs based on aspect: \{infinitive, perfective, imperfective, contemplative, participle, recent-past, auxiliary\}.
+  \label{tab::Features}
+  \end{tabularx}
+\end{landscape}
 
-    OOV words & Words in the input text that are not found in the Filipino and English dictionary used in training & Total OOV word count. \\
-    \hline
-    Stop words & words considered insignificant in processing text input e.g. "at", "ay", "din", etc. in Filipino or "a", "the", "to", "as" in English. & Total stop word count. \\
-    \hline
-    Filipino readability formula & Readability formula for Filipino text by \citeA{Macahilig2015ACR}. The higher the readability index, the more difficult the text is to read. & Readability is computed by: \( P = -4.161 + 0.280(w/s) + 0.106(cw)\) where P is the readability index, w/s is the average number of words per sentence, and cw is the word count. \\
-    \hline
-     Traditional & Traditional or Surface-based features based on counts and frequencies & Total word, sentence, phrase, polysyllabic word counts. Average word length, sentence length, syllable per word. \\
-     \hline
-     Syllabic Pattern & Syllable pattern densities based on the prescribed Philippine orthography & Prescribed Philippine orthography \{v, cv, vc, cvc, vcc, cvcc, ccvc, ccvcc, ccvccc\}, where c and v are consonant and vowel notations. \\
-    \hline
-    Lexical & Lexical or context carrying features using part-of-speech categories. & Type-token variations (regular, logarithmic, corrected, root). Noun and verb token ratio. Lexical density. Foreign word and compound word density.\\
-    \hline
-    Morphological & Morphological features based on verb inflection. & Densities of foci of verbs based on tense: \{actor, object, benefactive, locative, instrumental, referential\}. Densities of various foci of verbs based on aspect: \{infinitive, perfective, imperfective, contemplative, participle, recent-past, auxiliary\}.
-\label{tab::Features}
-\end{tabularx}
+\clearpage
 
 To determine the optimal hyperparameters for the classifiers, grid search was used for hyperparameter tuning. The classifiers were trained and tested on the combined dataset using five-fold cross validation. The results of hyperparameter tuning were then used in the final training and testing of the models which involved using five-fold cross validation six times, which totals to 30 trainings and testings.
 
