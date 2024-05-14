@@ -23,25 +23,22 @@ The corpus was tokenized using a pre-trained BPE tokenizer from \citeA{cruz2020l
 \end{figure}
 
 \clearpage
-\begin{landscape}
-  \begin{tabularx}{\textwidth}{|X|X|X|}
-      \hline Feature & Description & Predictors \\ \hline
-      \endfirsthead
-
+\singlespacing
+\begingroup
+  \fontsize{10pt}{12pt}\selectfont
+    \tablefirsthead{\hline Feature & Description & Predictors \\ \hline}
+    \tablehead{
       \hline
-      \multicolumn{3}{|r|}
-      {Continued from previous page.} \\
-      \hline
+      \multicolumn{3}{r}{Continued from previous column...} \\ \hline
       Feature & Description & Predictors \\ \hline
-      \endhead
-
-      \hline \multicolumn{3}{|r|}{{Continued on next page...}} \\ \hline
-      \endfoot
-
-      \hline
-      \caption{Descriptions and predictors of features.}
-      \endlastfoot
-
+    }
+    \tabletail{
+      \hline \multicolumn{3}{r}{Continued in the next column...} \\ \hline
+    }
+    \tablelasttail{\\ \hline}
+    \bottomcaption{Descriptions and predictors of features.}
+    \label{tab::Features}
+    \begin{xtabular}{|p{0.20\linewidth}|p{0.35\linewidth}|p{0.35\linewidth}|}
       Bag-of-words & Unordered collection of words. & Bag-of-words model of the input text. \\
       \hline
       TF-IDF & Word to document ratio in the corpus. & TF-IDF using n-gram values of \{ 1, 2, 3\}. \\
@@ -62,10 +59,9 @@ The corpus was tokenized using a pre-trained BPE tokenizer from \citeA{cruz2020l
       Lexical & Lexical or context carrying features using part-of-speech categories. & Type-token variations (regular, logarithmic, corrected, root). Noun and verb token ratio. Lexical density. Foreign word and compound word density.\\
       \hline
       Morphological & Morphological features based on verb inflection. & Densities of foci of verbs based on tense: \{actor, object, benefactive, locative, instrumental, referential\}. Densities of various foci of verbs based on aspect: \{infinitive, perfective, imperfective, contemplative, participle, recent-past, auxiliary\}.
-  \label{tab::Features}
-  \end{tabularx}
-\end{landscape}
-
+    \end{xtabular}
+\endgroup
+\doublespacing
 \clearpage
 
 To determine the optimal hyperparameters for the classifiers, grid search was used for hyperparameter tuning. The classifiers were trained and tested on the combined dataset using five-fold cross validation. The results of hyperparameter tuning were then used in the final training and testing of the models which involved using five-fold cross validation six times, which totals to 30 trainings and testings.
