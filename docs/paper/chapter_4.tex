@@ -408,7 +408,7 @@ The FaKe web extension was assessed using three prominent browsers: Google Chrom
             \begin{figure}[h!]
                 \centering
                 \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/firefox-real.png}
-                    \caption{FaKe Extension testing with Mozilla Firefox (Fake).}
+                    \caption{FaKe Extension testing with Mozilla Firefox (Real).}
                     \label{fig:real-firefox-test}
                 \end{figure}
 
@@ -496,7 +496,7 @@ The FaKe web extension was assessed using three prominent browsers: Google Chrom
 \pagebreak
 \section{Summary} \label{dataset-limitation}
 
-As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, did not exhibit a significant change in performance between Fake News Filipino and Fake News Filipino 2024. However, the accuracies of all classifiers were significantly lower on the joint corpus. The reason for this may be attributed to differences in the writing styles of the news articles found between the two datasets. This hypothesis is supported by the differences in the number of out-of-vocabulary words, the average number of stop words, and the average readability scores of the two datasets. This means that when the classifiers were trained on the two datasets separately, they generally performed better, as the the writing style remained consistent. On the other hand, when the datasets were combined, the writing style became less consistent. This inconsistency resulted into a negative impact on the accuracies of the classifiers trained on the joint corpus.
+As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, did not exhibit a significant change in performance between Fake News Filipino and Fake News Filipino 2024. However, the accuracies of all classifiers were significantly lower on the joint corpus. The reason for this may be attributed to differences in the writing styles of the news articles found between the two datasets. This is supported by the differences in the number of out-of-vocabulary words, the number of stop words, and the readability scores of the two datasets. This means that when the classifiers were trained on the two datasets separately, they generally performed better, as the the writing style remained consistent. On the other hand, when the datasets were combined, the writing style became less consistent. This inconsistency resulted into a negative impact on the accuracies of the classifiers trained on the joint corpus.
 
 Comparing the performance of classifiers on different datasets, Logistic Regression and Support Vector Classifier performed well regardless of the dataset. Both classifiers performed significantly better than Random Forest and Multinomial Naive Bayes. It must be noted, however, that hyperparameter tuning was required for Support Vector Classifier to exhibit high performance. In contrast, hyperparameter tuning did not have a significant effect on the performance of Logistic Regression. Logistic Regression was more efficient than Support Vector Classifier in tackling the problem. Overall, this paper's most suitable model for deployment is Logistic Regression, since it exhibited the best performance across all three datasets, and it did not require hyperparameter tuning.
 
