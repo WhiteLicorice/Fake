@@ -3,7 +3,7 @@
 %               a. specify related packages
 %               b. set margins, commands, etc.
 %\documentclass[12pt,titlepage,onepage, letterpaper]{article}
-\documentclass[12pt,titlepage,twopage, letterpaper]{book}
+\documentclass[12pt,titlepage,twopage, letterpaper, openany]{book}
 %
 %-- specify related packages
 % \usepackage[utf8x]{inputenc}
@@ -24,7 +24,7 @@
                                %-- example:
                                %   \begin{comment}
                                %        ...your text here...
-                               %   \end{comment}  
+                               %   \end{comment}
 \usepackage{color}  %-- allows use of color with text
                                %-- example:  \textcolor{red}{This is the colored text in red.}
 \usepackage{url}  %-- allows use of URLs example: \url{https:\ccs1.dlsu.edu.ph}
@@ -36,6 +36,10 @@
 \usepackage{xltabular}
 \usepackage{adjustbox}
 \usepackage{csquotes}
+\usepackage{pdflscape}
+\usepackage{multicol}
+\usepackage{xtab}
+\usepackage{mdframed}
 
 %
 %-- set margins,  you may need to edit this for your own printer
@@ -96,7 +100,7 @@
 \doublespacing
 \begin{document}
 \linenumbers
-\include{title_page}      %includes LaTeX source file for the Title Page 
+\include{title_page}      %includes LaTeX source file for the Title Page
 \pagenumbering{roman}   %number pages as i, ii, iii, etc...
 \setcounter{page}{2}
 \include{approval}
@@ -107,22 +111,22 @@
 \tableofcontents                  %generate the Table of Contents
 \newpage
 \listoffigures                    %generate List of Figures
-\newpage                       
+\newpage
 \listoftables                     %generate List of Tables
 \newpage
 \pagenumbering{arabic}            %number pages as 1, 2, 3, etc...
-\setcounter{page}{1}              
+\setcounter{page}{1}
 \include{chapter_1}               %LaTeX source file for Chapter 1: Introduction
 \include{chapter_2}               %LaTeX source file for Chapter 2: Review of Related Literature
 \include{chapter_3}               %LaTeX source file for Chapter 3: Methodology
 \include{chapter_4}               %LaTeX source file for Chapter 4: Results
 \include{chapter_5}
-% \include{chapter_6}
+\include{chapter_6}
 
-\bibliographystyle{apacite}       %-- specified APA style for bibliograpy
+% \bibliographystyle{apacite}       %-- specified APA style for bibliograpy
 % www.ctan.org/tex-archive/biblio/bibtex/contrib/apacite/
 %-- bibliographic entries are handled via bibtex; refer to www.bibtex.org for more details
-\bibliography{myreferences}       %-- the file "myreferences.bib" is a sample bibliography 
+% \bibliography{myreferences}       %-- the file "myreferences.bib" is a sample bibliography
 
 %\appendix                         %specify appendices
 %\include{appendix_A}              %LaTeX source file for Appendix A
