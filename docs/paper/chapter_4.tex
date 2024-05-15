@@ -414,6 +414,8 @@ The FaKe web extension was assessed using three prominent browsers: Google Chrom
 
                 \begin{figure}[h!]
                     \centering
+                    \raggedright
+                    \small
                     \fbox{%
                     \parbox{\textwidth}{% TODO Translate the text properly Italicize the translation
                       Mahaharap sa kasong administratibo ang isang opisyal ng pulisya matapos magwala sa mismong himpilan, pinasok sa opisina ang kanyang hepe at pinagsasalitaan umano ng masama, Lunes ng gabi, sa Bacoor City, Cavite.\linebreak
@@ -434,13 +436,62 @@ The FaKe web extension was assessed using three prominent browsers: Google Chrom
 
                       However, Senior Insp. Chey Chey Rubio was arrested and taken out of the police station.\linebreak\linebreak
 
-                    }
+                      \textbf{Classifier Label: Fake} \newline
+                      \textbf{Gold Label: Fake}
 
-                  }
+                        }
+                    }
 
                      \caption{Fake News Article}
                         \label{fig:fake-article}
                     \end{figure}
+
+                    \begin{figure}[h!]
+                        \centering
+                        \raggedright
+                        \small
+                        \fbox{%
+                        \parbox{\textwidth}{% TODO Translate the text properly Italicize the translation
+                        Patay ang isang 5-anyos na lalaki sa Lapu-Lapu City, Cebu matapos umano siyang pukpukin sa ulo at ihagis sa dagat ng kaniyang 14-anyos na kapatid.\linebreak
+
+                        Sa ulat ng ABS-CBN News, nangyari ang insidente sa Sitio Lawis, Barangay Suba-Basbas nitong Biyernes ng umaga, Mayo 10.\linebreak
+
+                        Naglalaro lamang daw ang dalawa nang bigla umanong kumuha ng bato ang 14-anyos at ipinukpok ito sa 5-anyos niyang kapatid.\linebreak
+
+                        Nang mawalan ng malay ang biktima ay doon na siya tinulak sa dagat ng hanggang sa malunod, ayon kay Police Lt. Col. Christian Torres.\linebreak
+
+                        Dagdag pa ng ulat, napag-alaman umano sa imbestigasyon ng pulisya na magkaiba ang ama ng magkapatid at galit umano ang 14-anyos sa tatay ng 5-anyos na biktima.\linebreak
+
+                        Dahil menor de edad ang suspek, isinailalim umano siya sa isang home care facility.\linebreak
+
+                        Patuloy pa rin namangnagsasagawa ang mga awtoridad ng imbestigasyon hinggil sa naturang insidente.\linebreak
+
+                        \noindent\rule{0.5\textwidth}{0.4pt}\linebreak\linebreak
+
+                          Translation:
+                          A 5-year-old boy died in Lapu-Lapu City, Cebu after he was allegedly hit on the head and thrown into the sea by his 14-year-old brother.\linebreak
+
+                          According to ABS-CBN News, the incident happened in Sitio Lawis, Barangay Suba-Basbas this Friday morning, May 10.\linebreak
+
+                          It is said that the two were just playing when the 14-year-old suddenly took a rock and hit his 5-year-old brother with it.\linebreak
+
+                          When the victim lost consciousness, he was then pushed into the sea until he drowned, according to Police Lt. Col. Christian Torres.\linebreak
+
+                          The report added that the police investigation revealed that the brothers' fathers were different and that the 14-year-old was angry with the father of the 5-year-old victim.\linebreak
+
+                          Because the suspect is a minor, he was allegedly placed under a home care facility.\linebreak
+
+                          Authorities are still investigating the incident.\linebreak
+                            \linebreak\linebreak
+
+                            \textbf{Classifier Label: Real} \newline
+                            \textbf{Gold Label: Real}
+
+                        }
+                      }
+                         \caption{Real News Article}
+                            \label{fig:real-article}
+                        \end{figure}
 \clearpage
 \pagebreak
 \section{Summary} \label{dataset-limitation}
