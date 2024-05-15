@@ -165,6 +165,7 @@ The results are summarized in Table \ref{tab:hyperparam_summary}. Both Logistic 
 
 Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four models were trained and tested using five-fold cross validation six times, a total of 30 tests, across three datasets: Fake News Filipino (2020), Fake News Filipino 2024 (2024), and the combined corpus with the two datasets. Average accuracies of the models are shown in Table \ref{tab::AverageAccuracies}. Logistic Regression and Support Vector Classifier scored the highest average accuracy in both Fake News Filipino and Fake News Filipino 2024. But for the combined dataset, only Logistic Regression yielded the highest average accuracy. Compared to the other models across the three datasets, Multinomial Naive Bayes and Random Forest performed relatively worst in the combined dataset with accuracies of 86.0\% and 88.8\% respectively. Table \ref{tab::AverageAccuracies} shows the average accuracies of the models. The box plot of the accuracies is depicted in Figure \ref{fig:box_plot_accuracy}.
 
+\singlespacing
 \begin{tabularx}{\textwidth}{|l|l|c|}
     \hline Classifier & Dataset & Average Accuracy \\ \hline
     \endfirsthead
@@ -184,22 +185,31 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
     \endlastfoot
 
     Logistic Regression & Fake News Filipino & 0.951 \\
+    \cline{2-3}
     & Fake News Filipino 2024 & 0.947\\
+    \cline{2-3}
     & Combined & 0.924 \\
     \hline
     Multinomial Naive Bayes & Fake News Filipino & 0.923 \\
+    \cline{2-3}
     & Fake News Filipino 2024 & 0.885 \\
+    \cline{2-3}
     & Combined & 0.860 \\
     \hline
     Random Forest & Fake News Filipino & 0.919 \\
+    \cline{2-3}
     & Fake News Filipino 2024 & 0.926 \\
+    \cline{2-3}
     & Combined & 0.888 \\
     \hline
     Support Vector Classifier & Fake News Filipino & 0.951 \\
+    \cline{2-3}
     & Fake News Filipino 2024 & 0.947 \\
+    \cline{2-3}
     & Combined & 0.922
 \label{tab::AverageAccuracies}
 \end{tabularx}
+\doublespacing
 
 \begin{figure}[h!]
     \centering
@@ -210,30 +220,39 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
 
 The Shapiro-Wilk test was used to assess the normality of each group in a two-way format, where accuracies were the dependent variable, and datasets and classifiers were the factors. As shown in Table \ref{tab::normality_tests}, all groups have \textit{p}-values greater than or equal to 0.05 indicating that the data is normally distributed in the two-way format. However, with a \textit{p}-value (0.003) lower than 0.05, Levene's test determined the variances of the groups to be heterogenous.
 
-\pagebreak
-
+\singlespacing
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
     \hline
     Dataset & Classifier & Statistic & \textit{p}-value \\
     \hline
     Fake News Filipino & LR & 0.968 & 0.492 \\
+    \cline{2-4}
     & MNB & 0.971 & 0.571 \\
+    \cline{2-4}
     & RF & 0.985 & 0.938 \\
+    \cline{2-4}
     & SVC & 0.972 & 0.603 \\
     \hline
     Fake News Filipino 2024 & LR & 0.963 & 0.363 \\
+    \cline{2-4}
     & MNB & 0.940 & 0.928 \\
+    \cline{2-4}
     & RF & 0.962 & 0.342 \\
+    \cline{2-4}
     & SVC & 0.972 & 0.598 \\
     \hline
     Combined & LR & 0.979 & 0.793 \\
+    \cline{2-4}
     & MNB & 0.981 & 0.852 \\
+    \cline{2-4}
     & RF & 0.934 & 0.063 \\
+    \cline{2-4}
     & SVC & 0.950 & 0.164 \\
     \hline
 \caption{Shapiro-Wilk normality test in a two-way format.}
 \label{tab::normality_tests}
 \end{tabularx}
+\doublespacing
 
 To determine if there were significant differences between accuracies of different classifiers in different datasets, and taking into account the heteroscedacity of the data, two-way ANOVA for trimmed means was performed. As shown in Table \ref{tab::two-way} there was a significant difference (\textit{p}-value = 0.001) between accuracies in different datasets averaged across the classifiers. Additionally, there was a significant difference (\textit{p}-value = 0.001) between accuracies in the classifiers averaged across the datasets. Furthermore, their interaction effect was also significant (\textit{p}-value = 0.001). Thus, accuracy was affected both by the main effects of the dataset and classifier and also their combinations.
 
@@ -264,6 +283,7 @@ To determine which classifiers had significant differences between datasets, a s
         \label{fig:interaction_plot}
 \end{figure}
 
+\singlespacing
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
     \hline Dataset & Classifier (a) & Classifier(b) & \textit{p}-value \\ \hline
     \endfirsthead
@@ -320,7 +340,9 @@ To determine which classifiers had significant differences between datasets, a s
     & RF & SVC & \textless 0.001
 \label{tab::post-hoc-dataset-lvl}
 \end{tabularx}
+\doublespacing
 
+\singlespacing
 \begin{tabularx}{\textwidth}{|l|l|l|l|}
     \hline Classifier & Dataset(a) & Dataset(b) & \textit{p}-value \\ \hline
     \endfirsthead
@@ -365,6 +387,7 @@ To determine which classifiers had significant differences between datasets, a s
     & Fake News Filipino 2024 & Combined & \textless 0.001
 \label{tab::post-hoc-classifier-lvl}
 \end{tabularx}
+\doublespacing
 
 \pagebreak
 \section{Application Testing}
