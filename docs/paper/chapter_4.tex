@@ -391,48 +391,80 @@ To determine which classifiers had significant differences between datasets, a s
 
 \pagebreak
 \section{Application Testing}
-The FaKe web extension was assessed using three prominent browsers: Google Chrome, Microsoft Edge, and Mozilla Firefox. As of 2023, Google Chrome, Safari, Microsoft Edge, and Mozilla Firefox rank among the most popular internet browsers with 63.56\%, 19.84\%, 5.43\%, and 2.95\%  market shares respectively \cite{statista2024}. Windows is the most widely used operating system, followed by MacOS and Linux \cite{idris2021}. Apple devices were unavailable, limiting the assessment of cross-platform compatibility. Moreover, Apple Safari no longer offered Safari updates for Windows devices, with the 2010 version of Safari being the last version created for Windows \cite{apple2024}. Due to this, Apple Safari was not chosen as a test browser. The evaluation utilized identical pairs of articles categorized as fake news or real news. Figures \ref{fig:fake-chrome-test} and \ref{fig:real-chrome-test} display the outcomes using Google Chrome. Figures \ref{fig:fake-edge-test} and \ref{fig:real-edge-test} display the outcomes for Microsoft Edge. Lastly, Figures \ref{fig:fake-firefox-test} and \ref{fig:real-firefox-test} display the outcomes for Mozilla Firefox. The results demonstrated that the application's functionality remained uniform across different browsers.
+The FaKe web extension was assessed using three prominent browsers: Google Chrome, Microsoft Edge, and Mozilla Firefox. As of 2023,
+Google Chrome, Safari, Microsoft Edge, and Mozilla Firefox rank among the most popular internet browsers with 63.56\%, 19.84\%,
+5.43\%, and 2.95\%  market shares respectively \cite{statista2024}. Windows is the most widely used operating system, followed by
+MacOS and Linux \cite{idris2021}. Apple devices were unavailable, limiting the assessment of cross-platform compatibility.
+Moreover, Apple Safari no longer offered Safari updates for Windows devices, with the 2010 version of Safari being the last
+version created for Windows \cite{apple2024}. Due to this, Apple Safari was not chosen as a test browser. The evaluation
+utilized identical pairs of articles categorized as fake news or real news. The figures will be divided into four classifiers:
+false positive, true positive, false negative, and true negative. Figures \ref{fig:false-positive-chrome-test} and \ref{fig:true-positive-chrome-test}
+display the outcomes for false positive and true postive, while figure \ref{fig:true-negative-chrome-test} shows true negative result using Google Chrome.
+Figures \ref{fig:false-positive-edge-test}, \ref{fig:true-positive-edge-test}, and \ref{fig:true-negative-edge-test} display the outcomes for the
+false positive, true positive, and true negative results using Microsoft Edge. Lastly, Figures \ref{fig:false-positive-firefox-test}, \ref{fig:true-positive-firefox-test}, and
+\ref{fig:true-negative-firefox-test} display the false positive, true positive, and true negative outcomes for Mozilla Firefox. The results demonstrated that the application's functionality remained uniform across different browsers.
 
     \begin{figure}[h!]
         \centering
-        \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/chrome-fake.png}
-            \caption{FaKe Extension testing with Google Chrome (Fake).}
-            \label{fig:fake-chrome-test}
+        \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/chrome-false-positive.png}
+            \caption{FaKe Extension testing with Google Chrome (False Positive).}
+            \label{fig:false-positive-chrome-test}
         \end{figure}
 
         \begin{figure}[h!]
             \centering
-            \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/chrome-real.png}
-                \caption{FaKe Extension testing with Google Chrome (Real).}
-                \label{fig:real-chrome-test}
+            \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/chrome-true-positive.png}
+                \caption{FaKe Extension testing with Google Chrome (True Positive).}
+                \label{fig:true-positive-chrome-test}
+            \end{figure}
+
+        \begin{figure}[h!]
+            \centering
+            \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/chrome-true-negative.png}
+                \caption{FaKe Extension testing with Google Chrome (True Negative).}
+                \label{fig:true-negative-chrome-test}
             \end{figure}
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/edge-fake.png}
-                    \caption{FaKe Extension testing with Microsoft Edge (Fake).}
-                    \label{fig:fake-edge-test}
+                \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/edge-false-positive.png}
+                    \caption{FaKe Extension testing with Microsoft Edge (False Positive).}
+                    \label{fig:false-positive-edge-test}
+                \end{figure}
+
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/edge-true-positive.png}
+                        \caption{FaKe Extension testing with Microsoft Edge (True Positive).}
+                        \label{fig:true-positive-edge-test}
+                    \end{figure}
+
+            \begin{figure}[h!]
+                \centering
+                \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/edge-true-negative.png}
+                    \caption{FaKe Extension testing with Microsoft Edge (True Negative).}
+                    \label{fig:true-negative-edge-test}
                 \end{figure}
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/edge-real.png}
-                    \caption{FaKe Extension testing with Microsoft Edge (Real).}
-                    \label{fig:real-edge-test}
+                \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/firefox-false-positive.png}
+                    \caption{FaKe Extension testing with Mozilla Firefox (False Positive).}
+                    \label{fig:false-positive-firefox-test}
                 \end{figure}
+
+                \begin{figure}[h!]
+                    \centering
+                    \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/firefox-true-positive.png}
+                        \caption{FaKe Extension testing with Mozilla Firefox (True Positive).}
+                        \label{fig:true-positive-firefox-test}
+                    \end{figure}
 
             \begin{figure}[h!]
                 \centering
-                \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/firefox-fake.png}
-                    \caption{FaKe Extension testing with Mozilla Firefox (Fake).}
-                    \label{fig:fake-firefox-test}
-                \end{figure}
-
-            \begin{figure}[h!]
-                \centering
-                \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/firefox-real.png}
-                    \caption{FaKe Extension testing with Mozilla Firefox (Real).}
-                    \label{fig:real-firefox-test}
+                \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/firefox-true-negative.png}
+                    \caption{FaKe Extension testing with Mozilla Firefox (True Negative).}
+                    \label{fig:true-negative-firefox-test}
                 \end{figure}
 
                 \begin{figure}[h!]
@@ -457,15 +489,47 @@ The FaKe web extension was assessed using three prominent browsers: Google Chrom
 
                       \small \raggedright However, Senior Insp. Chey Chey Saulog intervened and escorted Rubio out of the police station.\linebreak\linebreak
 
-                      \textbf{Classifier Label: Fake} \newline
+                      \textbf{Classifier Label: Real} \newline
                       \textbf{Gold Label: Fake}
 
                         }
                     }
 
-                     \caption{Fake News Article}
-                        \label{fig:fake-article}
+                     \caption{False Positive News Article}
+                        \label{fig:false-positive-news-article}
                     \end{figure}
+
+                    \begin{figure}[h!]
+                        \centering
+                        \fbox{%
+                        \parbox{\textwidth}{% TODO Translate the text properly Italicize the translation
+                        \small \raggedright SAN CARLOS CITY, Pangasinan – Dalawang hinihinalang carnapper na nagpapanggap na miyembro ng Criminal Investigation and Detection Group (CIDG) ang naaresto sa San Carlos City, Pangasinan. \linebreak
+
+                        \small \raggedright Sa kanyang report kay Pangasinan Police Provincial Office director Senior Supt. Reynaldo Biay, kinilala ni San Carlos City Police chief Supt. Charlie Umayam ang mga nadakip na sina Michael Edades, 34, may asawa, negosyante, at residente ng Barangay Mangin, Dagupan City; at Daniel Salopagio Jr., 29, binata, bus driver, ng Bgy. Nalsian Norte, Bayambang.\linebreak
+
+                        \small \raggedright Nabawi mula sa dalawa ang isang motorized tricycle, isang Sony Ericsson cell phone ng kanilang nabiktima at iba’t ibang ID ng CIDG. \linebreak
+
+                        \small \raggedright Ini-report sa pulisya ang pagtangay ng mga suspek sa isang Honda TMX 155 motorized tricycle (8150-ZA) na minamaneho ni Edwin Arzadon y Balat, 36, biyudo, ng lungsod, madaling araw noong Linggo sa Sta. Isabel Subdivision. – Liezle Basa Iñigo\linebreak\linebreak
+                          \noindent\rule{0.5\textwidth}{0.4pt}\linebreak\linebreak
+
+                          Translation:\newline \newline
+                          \small \raggedright A police officer will face administrative charges after he disappeared from the station, his boss entered the office and allegedly badmouthed him, Monday night, in Bacoor City, Cavite.\linebreak
+
+                          \small \raggedright Chief Insp. Virgilio Rubio, deputy chief of the Bacoor City police, will face a case of grave misconduct based on the complaint of Supt. Rommel Estolano.\linebreak
+
+                          \small \raggedright In a report to the office of Cavite Police Provincial Office director Senior Supt. Joselito Esquivel, around 7:30 in the evening when Rubio went to the police station who was very drunk, suddenly threw chairs and other items in the office until he entered Rubio's office with a gun in his hand and uttered various bad words.\linebreak
+
+                          \small \raggedright However, Senior Insp. Chey Chey Saulog intervened and escorted Rubio out of the police station.\linebreak\linebreak
+
+                          \textbf{Classifier Label: Fake} \newline
+                          \textbf{Gold Label: Fake}
+
+                            }
+                        }
+
+                         \caption{True Positive News Article}
+                            \label{fig:true-positive-news-article}
+                        \end{figure}
 
                     \begin{figure}[h!]
                         \centering
@@ -488,7 +552,7 @@ The FaKe web extension was assessed using three prominent browsers: Google Chrom
                         \noindent\rule{0.5\textwidth}{0.4pt}\linebreak\linebreak
 
                           Translation:\newline \newline
-                          
+
                           \small \raggedright A 5-year-old boy died in Lapu-Lapu City, Cebu after he was allegedly hit on the head and thrown into the sea by his 14-year-old brother.\linebreak
 
                           \small \raggedright According to ABS-CBN News, the incident happened in Sitio Lawis, Barangay Suba-Basbas this Friday morning, May 10.\linebreak
@@ -509,7 +573,7 @@ The FaKe web extension was assessed using three prominent browsers: Google Chrom
 
                         }
                       }
-                         \caption{Real News Article}
+                         \caption{True Negative News Article}
                             \label{fig:real-article}
                         \end{figure}
 \clearpage
