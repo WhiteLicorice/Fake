@@ -1,0 +1,51 @@
+HyperParam Testing Results (2024-05-21_21-05-39)...
+
+Training Model: Logistic Regression
+47
+prefix_derived_ratio: -0.39881171313624325
+cvc_density: -0.3736508231202664
+ave_phrase_count: -0.3715340042020943
+log_ttr: -0.3648992125406572
+root_ttr: -0.35366451596838433
+ave_word_length: -0.3115874940803861
+consonant_cluster: -0.2931511748942306
+ttr: -0.27478938037361283
+cvcc_density: -0.25485599082022514
+corr_ttr: -0.25007857748637663
+vcc_density: -0.2052277820397469
+vc_density: -0.10014002541007369
+compound_tr: -0.09159494798542717
+foreign_tr: -0.09155359376114165
+perfective_verb_ratio: -0.08575779245306432
+cv_density: -0.08142154474177152
+participle_verb_ratio: -0.08100124019479436
+word_count_per_sentence: -0.06438364131860602
+ccvcc_density: -0.05598208889703371
+polysyll_count: -0.05384001699568993
+ave_syllable_count_of_word: -0.04711437465030979
+v_density: -0.04711437465030219
+total_affix_derived_ratio: -0.022518007289796756
+contemplative_verb_ratio: -0.020188193445606722
+total_affix_token_ratio: -0.01780522782739524
+suffix_token_ratio: -0.009393337232406597
+prefix_token_ratio: -0.00841189059499731
+object_focus_ratio: -0.006393769284268222
+aux_verb_ratio: -0.0025477950936345197
+referential_focus_ratio: -0.002021918502692047
+locative_focus_ratio: -0.0006105911965440042
+instrumental_focus_ratio: 0.0
+recent_past_verb_ratio: 0.0
+ccvccc_density: 0.0013942518338446964
+word_count: 0.0028926447556124482
+benefactive_focus_ratio: 0.002923818371572187
+oov: 0.02457416695534228
+sw: 0.02457416695534228
+imperfective_verb_ratio: 0.02494474570389958
+verb_tr: 0.034928704432823636
+sentence_count: 0.06527801107746609
+infinitive_verb_ratio: 0.06700450674887037
+actor_focus_ratio: 0.07858678525805683
+readability_score: 0.14252430898671128
+suffix_derived_ratio: 0.3762937058465757
+noun_tr: 0.47604497045698624
+lexical_density: 0.49020042820585624
