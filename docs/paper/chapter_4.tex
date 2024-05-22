@@ -2,7 +2,7 @@
 \chapter{Results and Discussions}
 
 \section{Dataset}
-We built a balanced dataset containing a total of 3206 news articles (1603 real new and 1603 fake news) named Fake News Filipino 2024. This dataset was combined with the Fake News Filipino \cite{fake-news-filipino} dataset into a joint corpus. Figures \ref{fig:oov_data} to \ref{fig:sw_data} depicts the average OOV count, average readability index, and average stop words count of the two datasets. Fake News Filipino 2024 had an average OOV count, readability index, and stop words count of 22.2, 19.7, and 74.5 respectively. On the other hand, retaining the order of the variables, Fake News Filipino had 17.6, 20.5, and 77.8 respectively. On average, news articles in Fake News Filipino were more readable and had a lower count of out-of-vocabulary words as well as a higher number of stop words.
+We built a balanced dataset containing a total of 3206 news articles (1603 real new and 1603 fake news) named Fake News Filipino 2024. This dataset was combined with the Fake News Filipino \cite{fake-news-filipino} dataset into a joint corpus. Figures \ref{fig:oov_data} to \ref{fig:sw_data} depicts the average OOV count, average readability index, and average stop words count of the two datasets. Fake News Filipino 2024 had an average OOV count, readability index, and stop words count of 22.2, 19.7, and 74.5 respectively. On the other hand, retaining the order of the variables, Fake News Filipino had 17.6, 20.5, and 77.8 respectively. On average, news articles in Fake News Filipino were more readable and had a lower count of out-of-vocabulary (OOV) words as well as a higher number of stop words.
 
 \begin{figure}[h!]
     \centering
@@ -27,7 +27,7 @@ We built a balanced dataset containing a total of 3206 news articles (1603 real 
 
 The models were trained on the combined dataset without hyperparameter tuning.
 
-Figure \ref{MNB_default} shows the confusion matrix of \textbf{Multinomial Naive Bayes} without grid search. The model did not misclassify any instance of real news as fake news. However, it misclassified 537 instances of fake news as real news, significantly lowering its recall for fake news. It yielded an accuracy of approximately 0.58. It had the lowest recall for fake news at 0.16, signifying difficulty in identify true instances of fake news and a high false positive rate. The F1-score of real news and fake news were 0.70 and 0.28 respectively. These were relatively low scores.
+Figure \ref{MNB_default} shows the confusion matrix of \textbf{Multinomial Naive Bayes} without grid search. The model did not misclassify any instance of real news as fake news. However, it misclassified 537 instances of fake news as real news, significantly lowering its recall for fake news. It yielded an accuracy of approximately 0.58. It had the lowest recall for fake news at 0.16, signifying difficulty in identifying true instances of fake news. The F1-score of real news and fake news were 0.70 and 0.28 respectively. These were relatively low scores.
 
 \begin{figure}[h!]
     \centering
@@ -214,7 +214,7 @@ Using the optimal hyperparameters in Section \ref{sec:ParamTuning}, all four mod
 \begin{figure}[h!]
     \centering
     \includegraphics[width=\textwidth,height=\textheight, keepaspectratio]{figures/stats/box_plot.png}
-        \caption{Box plot of the accuracies accross datasets.}
+        \caption{Box plot of the accuracies across datasets.}
         \label{fig:box_plot_accuracy}
 \end{figure}
 
@@ -590,8 +590,10 @@ version created for Windows \cite{apple2024}. Due to this, Apple Safari was not 
                         \end{figure}
 \clearpage
 \pagebreak
+
 \subsection{Deployed Classifier}
-To understand the classification decisions of Logistic Regression deployed, coefficients of the predictors in the model were investigated. Table \ref{tab::lang_coef} shows the liguistic features and their coefficients.Since morphological and lexical features are not included in the deployment, only 19 predictors are considered. Negative coefficients mean that increase in the value of the predictor, while others are held constant, decreases the predicted probability, thus negative weights contribute to a prediction of class 0. It can be obeserved that average phrase count, average word length, and cvc density have the lowest coefficien. On the other hand, readability score, sentence count, stop word count, and OOV word count are the only linguistic features with postive coefficients. Furthermore, specific words also hold weights since bag-of-words and TF-IDFs are also used as predictors. Table \ref{tab::vec_coef} depicts the three predictors with highest and three with lowest coefficients from the vectorizers. 
+
+To understand the decisions of the deployed Logistic Regression classifier, coefficients of the predictors in the model were investigated. Table \ref{tab::lang_coef} shows the linguistic features and their coefficients. The deployed Logistic Regression was trained on a joint corpus comprised of Fake News Filipino and Fake News Filipino 2024. Since morphological and lexical features could not be included in training the deployed model, due to infrastructure limitations, only 19 predictors were considered. Negative coefficients mean that as the value of a predictor increased, the predicted probability decreases, assuming all other factors stay the same. Negative weights made it more likely for the prediction to be class 0 (fake). Average phrase count, average word length, and cvc density had the lowest coefficients. On the other hand, readability score, sentence count, stop word count, and OOV word count were the only linguistic features with positive coefficients. Correspondingly, positive weights made it more likely for the prediction to be class 1 (real). Furthermore, specific words also held weights since BOW and TF-IDFs were used as predictors. Table \ref{tab::vec_coef} depicts the three predictors with highest and three with lowest coefficients from the vectorizers. 
 
 \begin{table}
 \begin{tabularx}{\textwidth}{|l|l|}
@@ -659,7 +661,6 @@ To understand the classification decisions of Logistic Regression deployed, coef
 \end{tabularx}
 \end{table}
 
-
 \begin{table}
     \begin{tabularx}{\textwidth}{|l|l|}
         \hline
@@ -688,13 +689,12 @@ To understand the classification decisions of Logistic Regression deployed, coef
     \end{tabularx}
 \end{table}
 
-
-Articles falsely classfied in section \ref{subsec::app-testing} are investigated. Their linguistic predictors are depicted in table \ref{tab::pred_false_class_linguistic}. Additionally, some of the words used in the two articles are also explored. As observed the false postive article have a relative higher readability score, sentece count, and OOV count. It also has a higher average phrase count but lower on other predictors with negative coefficients which is opposite for the false negative article. In addition to the linguistic predictors, word usage also has signifcant impact, infact some have higher magnitude in their coefficients as observed in table \ref{tab::vec_coef}. Shown in table \ref{tab::pred_false_class_vect} are examples of the two highest and three lowest vectorized words coefficients.
+Articles falsely classified in section \ref{subsec::app-testing} were investigated. Their linguistic predictors are depicted in table \ref{tab::pred_false_class_linguistic}. Additionally, some of the words used in the two articles were also explored. The false positive article had a relative higher readability score, sentence count, and OOV count. It also had a higher average phrase count but lower values for other predictors with negative coefficients, which is the opposite case for the false negative article. In addition to the linguistic predictors, word usage also had signifcant impact. Some had higher magnitudes in their coefficients, seen in table \ref{tab::vec_coef}. Shown in table \ref{tab::pred_false_class_vect} are examples of the two highest and two lowest vectorized words coefficients.
 
 \begin{table}
     \begin{tabularx}{\textwidth}{|X|X|X|}
         \hline
-        Predictor & False Postive (See Figure \ref{fig:false-positive-news-article}) & False Negative (See Figure \ref{fig:false-negative-news-article}) \\ 
+        Predictor & False Positive (Figure \ref{fig:false-positive-news-article}) & False Negative (Figure \ref{fig:false-negative-news-article}) \\ 
         \hline
         ave-phrase-count & 2.125 & 1.5 \\
         \hline
@@ -744,13 +744,13 @@ Articles falsely classfied in section \ref{subsec::app-testing} are investigated
         \hline
         Article & Predictor & coefficient \\
         \hline
-        False Postive & vectorizers--bow--iba & -0.5394303591543086\\
+        False Positive & vectorizers--bow--iba & -0.5394303591543086\\
         \hline
-        False Postive & vectorizers--bow--supt & -0.432138317113013\\
+        False Positive & vectorizers--bow--supt & -0.432138317113013\\
         \hline
-        False Postive & vectorizers--bow--ulat & 0.33552914902816716\\
+        False Positive & vectorizers--bow--ulat & 0.33552914902816716\\
         \hline
-        False Postive & vectorizers--bow--office & 0.4609690671520561\\
+        False Positive & vectorizers--bow--office & 0.4609690671520561\\
         \hline
         False Negative & vectorizers--bow--noong & -0.7148983768424026\\
         \hline
@@ -760,19 +760,17 @@ Articles falsely classfied in section \ref{subsec::app-testing} are investigated
         \hline
         False Negative & vectorizers--bow--philippine & 0.36150277353868315\\
         \hline
-    \caption{Vectorized words used in the falsely classified articles}
+    \caption{Vectorized words used in the falsely classified articles.}
     \label{tab::pred_false_class_vect}
     \end{tabularx}
 \end{table}
 
-
 \section{Summary} \label{dataset-limitation}
 
-As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, did not exhibit a significant change in performance between Fake News Filipino and Fake News Filipino 2024. However, the accuracies of all classifiers were significantly lower on the joint corpus. The reason for this may be attributed to differences in the writing styles of the news articles found between the two datasets. This is supported by the differences in the number of out-of-vocabulary words, the number of stop words, and the readability scores of the two datasets. This means that when the classifiers were trained on the two datasets separately, they generally performed better, as the the writing style remained consistent. On the other hand, when the datasets were combined, the writing style became less consistent. This inconsistency resulted into a negative impact on the accuracies of the classifiers trained on the joint corpus.
+As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, did not exhibit a significant change in performance between Fake News Filipino and Fake News Filipino 2024. However, the accuracies of all classifiers were significantly lower on the joint corpus. The reason for this may be attributed to differences in the writing styles of the news articles found between the two datasets. This is supported by the differences in the number of OOV words, the number of stop words, and the readability scores of the two datasets. This means that when the classifiers were trained on the two datasets separately, they generally performed better, as the the writing style remained consistent. On the other hand, when the datasets were combined, the writing style became less consistent. This inconsistency resulted into a negative impact on the accuracies of the classifiers trained on the joint corpus.
 
 Comparing the performance of classifiers on different datasets, Logistic Regression and Support Vector Classifier performed well regardless of the dataset. Both classifiers performed significantly better than Random Forest and Multinomial Naive Bayes. It must be noted, however, that hyperparameter tuning was required for Support Vector Classifier to exhibit high performance. In contrast, hyperparameter tuning did not have a significant effect on the performance of Logistic Regression. Logistic Regression was more efficient than Support Vector Classifier in tackling the problem. Overall, this paper's most suitable model for deployment is Logistic Regression, since it exhibited the best performance across all three datasets, and it did not require hyperparameter tuning.
 
-Deployment of the system with Logistic Regression as the classifier yields uniform results accross different browsers. Classifications depend on the linguistic features and specific word usage of articles since linguistic features, BoW, and TF-IDFs are used as predictors. Higher readability score and lower phrase count increases the probability of a class 1 preditction. Furthermore, false classification are also attributed to vectorized words since most a lot of them have relatively higher coefficient magnitude. Thus, word choice matters in the news articles. Vectorizers are fitted on the whole corpus, thus the writing style of the whole dataset would affect the values given by the vectorizers. This is in line with the previous hypothesis that writing style difference between the datasets affected the accuracy of the model.
-
+Deployment of the system with Logistic Regression as its classifier yielded uniform results across different browsers. Predictions depended on the linguistic features and specific word usage of the articles since linguistic features, BOW, and TF-IDFs were used as predictors. Higher readability score and lower phrase count increased the probability of a class 1 prediction. Furthermore, predictions were also attributed to vectorized words since most of them had relatively higher coefficient magnitudes. Thus, word choice mattered in making predictions on Filipino language news articles. As vectorizers were fitted on the joint corpus, the writing style of the articles within would affect the values given by the vectorizers. This is in line with the previous hypothesis that differences in writing styles between the two datasets that comprised the joint corpus had an impact on the accuracy of the deployed model.
 
 \pagebreak
