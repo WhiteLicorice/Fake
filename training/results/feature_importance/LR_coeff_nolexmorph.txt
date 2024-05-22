@@ -1,8 +1,6 @@
-LR Coefficients (2024-05-22_09-39-09)...
+LR Coefficients (2024-05-22_11-57-21)...
 
 Training Model: Logistic Regression
-(1228044,)
-(1228044,)
 19
 
 TOP 10 ON ALL FEATURES
@@ -16,7 +14,26 @@ vectorizers__bow__enero: -0.575233481985769
 vectorizers__bow__dakong: -0.5680535313613739
 vectorizers__bow__idinagdag: -0.5587704721811657
 vectorizers__bow__ibalik: -0.5584316596833769
-
+vectorizers__bow__kumakalat: -0.5549097425594687
+vectorizers__bow__2014: -0.5480533383777888
+vectorizers__bow__maraming: -0.5405224923657399
+vectorizers__bow__iba: -0.5394303591543086
+vectorizers__bow__ferdinand: -0.514832341839087
+vectorizers__bow__kabilang: -0.5115248384469436
+vectorizers__bow__youtube: -0.4983269914107884
+vectorizers__bow__malapit: -0.4969305981941322
+vectorizers__bow__2015: -0.4886809462224417
+vectorizers__bow__ipinakita: -0.48568715523348854
+vectorizers__bow__napahagolgol: 0.7205720150575805
+vectorizers__bow__inaasahan: 0.7541713702860869
+vectorizers__bow__general: 0.7690157016406461
+vectorizers__bow__tanung: 0.7868646819418237
+vectorizers__bow__pangulong: 0.7877292041519242
+vectorizers__bow__integrated: 0.8284549236021825
+vectorizers__bow__ofw: 0.8288897162542763
+vectorizers__bow__full: 0.8327652986811408
+vectorizers__bow__manila: 0.8551920498353207
+vectorizers__bow__kaniyang: 0.8819201086299872
 vectorizers__bow__play: 0.8856141846056533
 vectorizers__bow__ptv: 0.9086736787572897
 vectorizers__bow__news: 0.957096672554333
@@ -38,6 +55,26 @@ vectorizers__bow__enero: -0.575233481985769
 vectorizers__bow__dakong: -0.5680535313613739
 vectorizers__bow__idinagdag: -0.5587704721811657
 vectorizers__bow__ibalik: -0.5584316596833769
+vectorizers__bow__kumakalat: -0.5549097425594687
+vectorizers__bow__2014: -0.5480533383777888
+vectorizers__bow__maraming: -0.5405224923657399
+vectorizers__bow__iba: -0.5394303591543086
+vectorizers__bow__ferdinand: -0.514832341839087
+vectorizers__bow__kabilang: -0.5115248384469436
+vectorizers__bow__youtube: -0.4983269914107884
+vectorizers__bow__malapit: -0.4969305981941322
+vectorizers__bow__2015: -0.4886809462224417
+vectorizers__bow__ipinakita: -0.48568715523348854
+vectorizers__bow__napahagolgol: 0.7205720150575805
+vectorizers__bow__inaasahan: 0.7541713702860869
+vectorizers__bow__general: 0.7690157016406461
+vectorizers__bow__tanung: 0.7868646819418237
+vectorizers__bow__pangulong: 0.7877292041519242
+vectorizers__bow__integrated: 0.8284549236021825
+vectorizers__bow__ofw: 0.8288897162542763
+vectorizers__bow__full: 0.8327652986811408
+vectorizers__bow__manila: 0.8551920498353207
+vectorizers__bow__kaniyang: 0.8819201086299872
 vectorizers__bow__play: 0.8856141846056533
 vectorizers__bow__ptv: 0.9086736787572897
 vectorizers__bow__news: 0.957096672554333
@@ -65,7 +102,6 @@ syll__ccvcc_density: -0.05364775904976399
 trad__word_count: -0.01612371431534082
 syll__cv_density: -0.01442640917143964
 syll__ccvccc_density: -0.0001321517254085862
-
 oov__count_oov_words: 0.025210022216103887
 sw__count_stopwords: 0.025210022216103887
 trad__sentence_count: 0.06354990678595794

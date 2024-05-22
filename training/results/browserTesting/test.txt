@@ -1,0 +1,33 @@
+FALSE POS
+Mahaharap sa kasong administratibo ang isang opisyal ng pulisya matapos magwala sa mismong himpilan, pinasok sa opisina ang kanyang hepe at pinagsasalitaan umano ng masama, Lunes ng gabi, sa Bacoor City, Cavite. Kasong grave misconduct ang kakaharapin ni Chief Insp. Virgilio Rubio, deputy chief ng Bacoor City Police, batay sa reklamo ni Supt. Rommel Estolano. Sa ulat sa tanggapan ni Cavite Police Provincial Office director Senior Supt. Joselito Esquivel, bandang 7:30 ng gabi nang magtungo sa istasyon ng pulisya si Rubio na lasing na lasing, biglang pinaghahagis ang mga upuan at iba pang gamit sa opisina hanggang pumasok sa tanggapan ni Rubio habang may hawak na baril at nagbitiw ng kung anu-anong masasamang salita. Gayunman, naawat ni Senior Insp. Chey Chey Saulog si Rubio at pinalabas sa himpilan ng pulisya
+
+
+FALSE NEGA
+Binigyan ng tatlong taong extension para sa kanyang panunungkulan bilang. Commissioner ng Philippine Basketball Association si Willie Marcial. Sa kanilang annual planning session sa Star Hotels sa bansang Italya, gaya ng naging pagkakatalaga sa kanya bilang Commissioner ng liga, naging unanimous ang pagbibigay ng board of governors ng extension sa termino ni Marcial kahapon (Huwebes). May nalalabi pang isang taon sa naunang tatlong taong kontrata na nilagdaan ni Marcial noong 2018 pero binigyan sya ng PBA board ng bagong vote of confidence. Ito'y bunga na rin ng magandang performance nito na nagustuhan ng board.“We're open and very transparent about his performance,” wika ni PBA Chairman Ricky Vargas tungkol kay Marcial.
+
+
+
+PREDICTORS			   FALSE POS  	FALSE NEGA
+
+word_count_per_doc                 129.000000	109.000000
+sentence_count_per_doc             7.000000	6.000000
+polysyll_count_per_doc             4.000000	6.000000
+ave_word_length                    5.186047	5.522936
+ave_phrase_count_per_doc           2.125000	1.500000
+ave_syllable_count_of_word         2.131783	2.137615
+word_count_per_sentence            18.428571	18.166667
+consonant_cluster                  0.596899	0.889908
+v_density                          2.131783	2.137615
+cv_density                         1.806202	1.779817
+vc_density                         1.596899	1.568807
+cvc_density                        0.930233	0.981651
+vcc_density                        0.480620	0.724771
+cvcc_density                       0.348837	0.495413
+ccvcc_density                      0.062016	0.137615
+ccvccc_density                     0.000000	0.009174
+count_stopwords                    44.000000	47.000000
+readability_score                  14.673000	12.479667
+count_oov_words                    16.000000	10.000000
+
+
+

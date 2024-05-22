@@ -184,13 +184,13 @@ for clf_info in classifiers:
     print("TOP 10 ON ALL FEATURES")
     print("------------------------------------")
     for i, k in enumerate(coef_full):
-        if((i < 9) or (i > len(coef_full)-10)):
+        if((i < 19) or (i > len(coef_full)-20)):
             print(f"{k}: {coef_full[k]}")
     
     print("\nTOP 10 ON VECTORIZERS")
     print("------------------------------------")
     for i, k in enumerate(coef_vect):
-        if((i < 9) or (i > len(coef_vect)-10)):
+        if((i < 19) or (i > len(coef_vect)-20)):
             print(f"{k}: {coef_vect[k]}")
 
     print("\nALL LINGUISTIC FEATURES")
@@ -198,12 +198,7 @@ for clf_info in classifiers:
     for i, k in enumerate(coef_linguistic):
         print(f"{k}: {coef_linguistic[k]}")
     
-    # -------------------------------------------------------------------------------------------
-    
-    # Dump trained model
-    # trained_model = pipeline.named_steps['classifier']
-    # with open(f"{clf_info['model_id']}_{session_timestamp}.pkl", 'wb') as file:
-    #     pickle.dump(pipeline, file)
+    # ------------------------------------------------------------------------------------------
 
     # #   Make predictions
     # y_pred = pipeline.predict(X_test)
