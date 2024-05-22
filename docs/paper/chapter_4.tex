@@ -575,10 +575,8 @@ version created for Windows \cite{apple2024}. Due to this, Apple Safari was not 
 
                           \small \raggedright The report added that the police investigation revealed that the brothers' fathers were different and that the 14-year-old was angry with the father of the 5-year-old victim.\linebreak
 
-                          \small \raggedright Because the suspect is a minor, he was allegedly placed under a home care facility.\linebreak
-
-                          \small \raggedright Authorities are still investigating the incident.\linebreak
-                            \linebreak\linebreak
+                          \small \raggedright Because the suspect is a minor, he was allegedly placed under a home care facility.Authorities are still investigating the incident.\linebreak
+                            \linebreak
 
                             \textbf{Classifier Label: Real} \newline
                             \textbf{Gold Label: Real}
@@ -689,7 +687,7 @@ To understand the decisions of the deployed Logistic Regression classifier, the 
     \end{tabularx}
 \end{table}
 
-Articles falsely classified in section \ref{susignifcant bsec::app-testing} were investigated. Their linguistic predictors are depicted in table \ref{tab::pred_false_class_linguistic}. Additionally, some of the words used in the two articles were also explored. The false positive article had a relatively higher readability score, sentence count, and OOV count. It also had a higher average phrase count but lower values for other predictors with negative coefficients, which is the opposite case for the false negative article. In addition to the linguistic predictors, word usage also had a significant impact. Some had higher magnitudes in their coefficients, seen in table \ref{tab::vec_coef}. Shown in table \ref{tab::pred_false_class_vect} are examples of the two highest and two lowest vectorized word coefficients.
+Articles falsely classified in section \ref{sec::app-testing} were investigated. Their linguistic predictors are depicted in table \ref{tab::pred_false_class_linguistic}. Additionally, some of the words used in the two articles were also explored. The false positive article had a relatively higher readability score, sentence count, and OOV count. It also had a higher average phrase count but lower values for other predictors with negative coefficients, which is the opposite case for the false negative article. In addition to the linguistic predictors, word usage also had a significant impact. Some had higher magnitudes in their coefficients, seen in table \ref{tab::vec_coef}. Shown in table \ref{tab::pred_false_class_vect} are examples of the two highest and two lowest vectorized word coefficients.
 
 \begin{table}
     \begin{tabularx}{\textwidth}{|X|X|X|}
@@ -739,40 +737,37 @@ Articles falsely classified in section \ref{susignifcant bsec::app-testing} were
     \end{tabularx}
 \end{table}
 
-\begin{table}
-    \begin{tabularx}{\textwidth}{|l|l|l|}
-        \hline
-        Article & Predictor & coefficient \\
-        \hline
-        False Positive & vectorizers--bow--iba & -0.5394303591543086\\
-        \hline
-        False Positive & vectorizers--bow--supt & -0.432138317113013\\
-        \hline
-        False Positive & vectorizers--bow--ulat & 0.33552914902816716\\
-        \hline
-        False Positive & vectorizers--bow--office & 0.4609690671520561\\
-        \hline
-        False Negative & vectorizers--bow--noong & -0.7148983768424026\\
-        \hline
-        False Negative & vectorizers--bow--about & -0.4106521931122186\\
-        \hline
-        False Negative & vectorizers--bow--taon & 0.3321042635877868\\
-        \hline
-        False Negative & vectorizers--bow--philippine & 0.36150277353868315\\
-        \hline
+\begin{table}[ht]
+    \begin{tabular}{|l|l|l|}
+    \hline
+    Article & Predictor & coefficient \\
+    \hline
+    False Positive & vectorizers--bow--iba & -0.5394303591543086\\
+    \hline
+    False Positive & vectorizers--bow--supt & -0.432138317113013\\
+    \hline
+    False Positive & vectorizers--bow--ulat & 0.33552914902816716\\
+    \hline
+    False Positive & vectorizers--bow--office & 0.4609690671520561\\
+    \hline
+    False Negative & vectorizers--bow--noong & -0.7148983768424026\\
+    \hline
+    False Negative & vectorizers--bow--about & -0.4106521931122186\\
+    \hline
+    False Negative & vectorizers--bow--taon & 0.3321042635877868\\
+    \hline
+    False Negative & vectorizers--bow--philippine & 0.36150277353868315\\
+    \hline
+    \end{tabular}
     \caption{Vectorized words used in the falsely classified articles.}
     \label{tab::pred_false_class_vect}
-    \end{tabularx}
 \end{table}
 
-\pagebreak
-
-\section{Summary} \label{dataset-limitation}
+\section{Summary}
+\label{dataset-limitation}
 
 As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, did not exhibit a significant change in performance between Fake News Filipino and Fake News Filipino 2024. However, the accuracies of all classifiers were significantly lower on the joint corpus. The reason for this may be attributed to differences in the writing styles of the news articles found between the two datasets. This is supported by the differences in the number of OOV words, the number of stop words, and the readability scores of the two datasets. This means that when the classifiers were trained on the two datasets separately, they generally performed better, as the writing style remained consistent. On the other hand, when the datasets were combined, the writing style became less consistent. This inconsistency resulted in a negative impact on the accuracies of the classifiers trained on the joint corpus.
 
 Comparing the performance of classifiers on different datasets, Logistic Regression and Support Vector Classifier performed well regardless of the dataset. Both classifiers performed significantly better than Random Forest and Multinomial Naive Bayes. It must be noted, however, that hyperparameter tuning was required for Support Vector Classifier to exhibit high performance. In contrast, hyperparameter tuning did not have a significant effect on the performance of Logistic Regression. Logistic Regression was more efficient than Support Vector Classifier in tackling the problem. Overall, this paper's most suitable model for deployment is Logistic Regression, since it exhibited the best performance across all three datasets, and it did not require hyperparameter tuning.
 
 Deployment of the system with Logistic Regression as its classifier yielded uniform results across different browsers. Predictions depended on the linguistic features and specific word usage of the articles since linguistic features, BOW, and TF-IDFs were used as predictors. A higher readability score and lower phrase count increased the probability of a class 1 prediction. Furthermore, predictions were also attributed to vectorized words since most of them had relatively higher coefficient magnitudes. Thus, word choice mattered in making predictions on Filipino language news articles. As vectorizers were fitted on the joint corpus, the writing style of the articles within would affect the values given by the vectorizers. This is in line with the previous hypothesis that differences in writing styles between the two datasets that comprised the joint corpus had an impact on the accuracy of the deployed model.
-
-\pagebreak
