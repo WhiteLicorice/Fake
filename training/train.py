@@ -152,52 +152,52 @@ for clf_info in classifiers:
     # #   Fit the entire pipeline on the training data
     pipeline.fit(X_train, y_train)
 
-    print(pipeline['classifier'].intercept_)
+    # print(pipeline['classifier'].intercept_)
     # GET FEATURE IMPORTANCE (COEFFICIENTS FOR LR)
     # ----------------------------------------------------------------------------------------
 
-    # feature_names = pipeline['features'].get_feature_names_out()
-    # feature_names_linguistic = feature_names[-FEATURE_COUNT:]
-    # feature_names_vectorizers = feature_names[:-FEATURE_COUNT]
-    # assert len(feature_names_linguistic) + len(feature_names_vectorizers) == len(feature_names), "vec and linguistic should be equal to total"
+    feature_names = pipeline['features'].get_feature_names_out()
+    feature_names_linguistic = feature_names[-FEATURE_COUNT:]
+    feature_names_vectorizers = feature_names[:-FEATURE_COUNT]
+    assert len(feature_names_linguistic) + len(feature_names_vectorizers) == len(feature_names), "vec and linguistic should be equal to total"
 
-    # feature_values = pipeline['classifier'].coef_[0]
-    # feature_values_linguistic = feature_values[-FEATURE_COUNT:]
-    # feature_values_vectorizers = feature_names[:-FEATURE_COUNT]
+    feature_values = pipeline['classifier'].coef_[0]
+    feature_values_linguistic = feature_values[-FEATURE_COUNT:]
+    feature_values_vectorizers = feature_names[:-FEATURE_COUNT]
 
-    # coef_full = dict()
-    # coef_linguistic = dict()
-    # coef_vect = dict()
-    # for i in range(len(feature_names)):
-    #     coef_full[feature_names[i]] = feature_values[i]
-    #     if(i > (len(feature_names)) - (FEATURE_COUNT + 1)):
-    #         coef_linguistic[feature_names[i]] = feature_values[i]
-    #     else:
-    #         coef_vect[feature_names[i]] = feature_values[i]
+    coef_full = dict()
+    coef_linguistic = dict()
+    coef_vect = dict()
+    for i in range(len(feature_names)):
+        coef_full[feature_names[i]] = feature_values[i]
+        if(i > (len(feature_names)) - (FEATURE_COUNT + 1)):
+            coef_linguistic[feature_names[i]] = feature_values[i]
+        else:
+            coef_vect[feature_names[i]] = feature_values[i]
 
-    # coef_full = {k: v for k,v in sorted(coef_full.items(), key=lambda item: item[1])}
-    # coef_linguistic = {k: v for k,v in sorted(coef_linguistic.items(), key=lambda item: item[1])}
-    # coef_vect = {k: v for k,v in sorted(coef_vect.items(), key=lambda item: item[1])}
+    coef_full = {k: v for k,v in sorted(coef_full.items(), key=lambda item: item[1])}
+    coef_linguistic = {k: v for k,v in sorted(coef_linguistic.items(), key=lambda item: item[1])}
+    coef_vect = {k: v for k,v in sorted(coef_vect.items(), key=lambda item: item[1])}
 
-    # print(len(coef_linguistic))
-    # print("")
+    print(len(coef_linguistic))
+    print("")
     
-    # print("TOP 10 ON ALL FEATURES")
-    # print("------------------------------------")
-    # for i, k in enumerate(coef_full):
-    #     if((i < 19) or (i > len(coef_full)-20)):
-    #         print(f"{k}: {coef_full[k]}")
+    print("TOP 10 ON ALL FEATURES")
+    print("------------------------------------")
+    for i, k in enumerate(coef_full):
+        if((i < 19) or (i > len(coef_full)-20)):
+            print(f"{k}: {coef_full[k]}")
     
-    # print("\nTOP 10 ON VECTORIZERS")
-    # print("------------------------------------")
-    # for i, k in enumerate(coef_vect):
-    #     if((i < 19) or (i > len(coef_vect)-20)):
-    #         print(f"{k}: {coef_vect[k]}")
+    print("\nTOP 10 ON VECTORIZERS")
+    print("------------------------------------")
+    for i, k in enumerate(coef_vect):
+        if((i < 19) or (i > len(coef_vect)-20)):
+            print(f"{k}: {coef_vect[k]}")
 
-    # print("\nALL LINGUISTIC FEATURES")
-    # print("------------------------------------")
-    # for i, k in enumerate(coef_linguistic):
-    #     print(f"{k}: {coef_linguistic[k]}")
+    print("\nALL LINGUISTIC FEATURES")
+    print("------------------------------------")
+    for i, k in enumerate(coef_linguistic):
+        print(f"{k}: {coef_linguistic[k]}")
 
 
 
