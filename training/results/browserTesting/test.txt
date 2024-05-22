@@ -6,6 +6,16 @@ FALSE NEGA
 Binigyan ng tatlong taong extension para sa kanyang panunungkulan bilang. Commissioner ng Philippine Basketball Association si Willie Marcial. Sa kanilang annual planning session sa Star Hotels sa bansang Italya, gaya ng naging pagkakatalaga sa kanya bilang Commissioner ng liga, naging unanimous ang pagbibigay ng board of governors ng extension sa termino ni Marcial kahapon (Huwebes). May nalalabi pang isang taon sa naunang tatlong taong kontrata na nilagdaan ni Marcial noong 2018 pero binigyan sya ng PBA board ng bagong vote of confidence. Ito'y bunga na rin ng magandang performance nito na nagustuhan ng board.“We're open and very transparent about his performance,” wika ni PBA Chairman Ricky Vargas tungkol kay Marcial.
 
 
+Classification Report:
+               precision    recall  f1-score   support
+
+           0       0.92      0.94      0.93       642
+           1       0.94      0.92      0.93       641
+
+    accuracy                           0.93      1283
+   macro avg       0.93      0.93      0.93      1283
+weighted avg       0.93      0.93      0.93      1283
+
 
 PREDICTORS			   FALSE POS  	FALSE NEGA
 

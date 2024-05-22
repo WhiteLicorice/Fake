@@ -390,7 +390,9 @@ To determine which classifiers had significant differences between datasets, a s
 \doublespacing
 
 \pagebreak
-\section{Application Testing}
+\section{Deployment}
+\subsection{Application Testing}
+\label{subsec::app-testing}
 The FaKe web extension was assessed using three prominent browsers: Google Chrome, Microsoft Edge, and Mozilla Firefox. As of 2023,
 Google Chrome, Safari, Microsoft Edge, and Mozilla Firefox rank among the most popular internet browsers with 63.56\%, 19.84\%,
 5.43\%, and 2.95\%  market shares respectively \cite{statista2024}. Windows is the most widely used operating system, followed by
@@ -588,10 +590,189 @@ version created for Windows \cite{apple2024}. Due to this, Apple Safari was not 
                         \end{figure}
 \clearpage
 \pagebreak
+\subsection{Deployed Classifier}
+To understand the classification decisions of Logistic Regression deployed, coefficients of the predictors in the model were investigated. Table \ref{tab::lang_coef} shows the liguistic features and their coefficients.Since morphological and lexical features are not included in the deployment, only 19 predictors are considered. Negative coefficients mean that increase in the value of the predictor, while others are held constant, decreases the predicted probability, thus negative weights contribute to a prediction of class 0. It can be obeserved that average phrase count, average word length, and cvc density have the lowest coefficien. On the other hand, readability score, sentence count, stop word count, and OOV word count are the only linguistic features with postive coefficients. Furthermore, specific words also hold weights since bag-of-words and TF-IDFs are also used as predictors. Table \ref{tab::vec_coef} depicts the three predictors with highest and three with lowest coefficients from the vectorizers. 
+
+\begin{table}
+\begin{tabularx}{\textwidth}{|l|l|}
+    \hline
+    Predictor & coefficient \\ 
+    \hline
+    \rowcolor{LightRed}
+    ave-phrase-count & -0.42152709153564877 \\
+    \hline
+    \rowcolor{LightRed}
+    ave-word-length & -0.3457366501009873 \\
+    \hline
+    \rowcolor{LightRed}
+    cvc-density & -0.33734029995112597\\ 
+    \hline 
+    \rowcolor{LightRed}
+    consonant-cluster & -0.3193931163318678\\ 
+    \hline 
+    \rowcolor{LightRed}
+    cvcc-density & -0.2480005357713051\\ 
+    \hline
+    \rowcolor{LightRed}
+    vcc-density & -0.21294881915161062\\ 
+    \hline
+    \rowcolor{LightRed}
+    vc-density & -0.1336581920994201\\ 
+    \hline
+    \rowcolor{LightRed} 
+    word-count-per-sentence & -0.12942364892481623\\ 
+    \hline 
+    \rowcolor{LightRed}
+    v-density & -0.06043440484048802\\ 
+    \hline 
+    \rowcolor{LightRed}
+    ave-syllable-count-of-word & -0.06043440484048739\\ 
+    \hline 
+    \rowcolor{LightRed}
+    polysyll-count & -0.053666334171004075\\ 
+    \hline 
+    \rowcolor{LightRed}
+    ccvcc-density & -0.05364775904976399\\ 
+    \hline 
+    \rowcolor{LightRed}
+    word-count & -0.01612371431534082\\ 
+    \hline 
+    \rowcolor{LightRed}
+    cv-density & -0.01442640917143964\\ 
+    \hline 
+    \rowcolor{LightRed}
+    ccvccc-density & -0.0001321517254085862\\ 
+    \hline 
+    \rowcolor{LightGreen}
+    count-oov-words & 0.025210022216103887\\ 
+    \hline 
+    \rowcolor{LightGreen}
+    count-stopwords & 0.025210022216103887\\ 
+    \hline 
+    \rowcolor{LightGreen}
+    sentence-count & 0.06354990678595794\\ 
+    \hline \rowcolor{LightGreen}
+    readability-score & 0.36716890182539696 \\
+    \hline
+\caption{Linguistic features coefficients.}
+\label{tab::lang_coef}
+\end{tabularx}
+\end{table}
+
+
+\begin{table}
+    \begin{tabularx}{\textwidth}{|l|l|}
+        \hline
+        Predictor & coefficient \\ 
+        \hline
+        \rowcolor{LightRed}
+        vectorizers--bow--upang & -0.8759565158563346\\
+        \hline
+        \rowcolor{LightRed}
+        vectorizers--bow--ngunit & -0.8757380355536087\\
+        \hline
+        \rowcolor{LightRed}
+        vectorizers--bow--sinabi & -0.8237026809720192\\
+        \hline
+        \rowcolor{LightGreen}
+        vectorizers--bow--gma & 1.320373056570646\\
+        \hline
+        \rowcolor{LightGreen}
+        vectorizers--bow--below & 1.444455361695903\\
+        \hline
+        \rowcolor{LightGreen}
+        vectorizers--bow--source & 2.278720318076064\\
+        \hline
+    \caption{Top three vectorizers predictors for each class and their coefficients.}
+    \label{tab::vec_coef}
+    \end{tabularx}
+\end{table}
+
+
+Articles falsely classfied in section \ref{subsec::app-testing} are investigated. Their linguistic predictors are depicted in table \ref{tab::pred_false_class_linguistic}. Additionally, some of the words used in the two articles are also explored. As observed the false postive article have a relative higher readability score, sentece count, and OOV count. It also has a higher average phrase count but lower on other predictors with negative coefficients which is opposite for the false negative article. In addition to the linguistic predictors, word usage also has signifcant impact, infact some have higher magnitude in their coefficients as observed in table \ref{tab::vec_coef}. Shown in table \ref{tab::pred_false_class_vect} are examples of the two highest and three lowest vectorized words coefficients.
+
+\begin{table}
+    \begin{tabularx}{\textwidth}{|X|X|X|}
+        \hline
+        Predictor & False Postive (See Figure \ref{fig:false-positive-news-article}) & False Negative (See Figure \ref{fig:false-negative-news-article}) \\ 
+        \hline
+        ave-phrase-count & 2.125 & 1.5 \\
+        \hline
+        ave-word-length & 5.186 & 5.523 \\
+        \hline
+        cvc-density & 0.930 & 0.982\\ 
+        \hline 
+        consonant-cluster & 0.596899 & 0.889908 \\
+        \hline 
+        cvcc-density & 0.348837 & 0.495413 \\
+        \hline 
+        vcc-density & 0.480620 & 0.724771 \\
+        \hline 
+        vc-density & 1.596899 & 1.569 \\
+        \hline 
+        word-count-per-sentence & 18.43 & 18.167\\ 
+        \hline 
+        v-density & 2.131783 & 2.137615\\ 
+        \hline 
+        ave-syllable-count-of-word & 2.131783 & 2.137615\\ 
+        \hline 
+        polysyll-count & 4 & 6 \\ 
+        \hline 
+        ccvcc-density & 0.062016 & 0.137615 \\ 
+        \hline 
+        word-count & 129 & 109 \\ 
+        \hline 
+        cv-density & 1.806 & 1.7\\
+        \hline 
+        ccvccc-density & 0 & 0.01\\ 
+        \hline 
+        count-oov-words & 16 & 10 \\ 
+        \hline 
+        count-stopwords & 44 & 47 \\ 
+        \hline 
+        sentence-count & 7 & 6 \\ 
+        \hline 
+        readability-score & 14.673 & 12.48 \\
+        \hline
+    \caption{Linguistic preditors of false negative and false positive articles.}
+    \label{tab::pred_false_class_linguistic}
+    \end{tabularx}
+\end{table}
+
+\begin{table}
+    \begin{tabularx}{\textwidth}{|l|l|l|}
+        \hline
+        Article & Predictor & coefficient \\
+        \hline
+        False Postive & vectorizers--bow--iba & -0.5394303591543086\\
+        \hline
+        False Postive & vectorizers--bow--supt & -0.432138317113013\\
+        \hline
+        False Postive & vectorizers--bow--ulat & 0.33552914902816716\\
+        \hline
+        False Postive & vectorizers--bow--office & 0.4609690671520561\\
+        \hline
+        False Negative & vectorizers--bow--noong & -0.7148983768424026\\
+        \hline
+        False Negative & vectorizers--bow--about & -0.4106521931122186\\
+        \hline
+        False Negative & vectorizers--bow--taon & 0.3321042635877868\\
+        \hline
+        False Negative & vectorizers--bow--philippine & 0.36150277353868315\\
+        \hline
+    \caption{Vectorized words used in the falsely classified articles}
+    \label{tab::pred_false_class_vect}
+    \end{tabularx}
+\end{table}
+
+
 \section{Summary} \label{dataset-limitation}
 
 As shown in the results of two-way ANOVA together with the post-hoc tests, three out of four classifiers, namely Logistic Regression, Random Forest, and Support Vector Classifier, did not exhibit a significant change in performance between Fake News Filipino and Fake News Filipino 2024. However, the accuracies of all classifiers were significantly lower on the joint corpus. The reason for this may be attributed to differences in the writing styles of the news articles found between the two datasets. This is supported by the differences in the number of out-of-vocabulary words, the number of stop words, and the readability scores of the two datasets. This means that when the classifiers were trained on the two datasets separately, they generally performed better, as the the writing style remained consistent. On the other hand, when the datasets were combined, the writing style became less consistent. This inconsistency resulted into a negative impact on the accuracies of the classifiers trained on the joint corpus.
 
 Comparing the performance of classifiers on different datasets, Logistic Regression and Support Vector Classifier performed well regardless of the dataset. Both classifiers performed significantly better than Random Forest and Multinomial Naive Bayes. It must be noted, however, that hyperparameter tuning was required for Support Vector Classifier to exhibit high performance. In contrast, hyperparameter tuning did not have a significant effect on the performance of Logistic Regression. Logistic Regression was more efficient than Support Vector Classifier in tackling the problem. Overall, this paper's most suitable model for deployment is Logistic Regression, since it exhibited the best performance across all three datasets, and it did not require hyperparameter tuning.
+
+Deployment of the system with Logistic Regression as the classifier yields uniform results accross different browsers. Classifications depend on the linguistic features and specific word usage of articles since linguistic features, BoW, and TF-IDFs are used as predictors. Higher readability score and lower phrase count increases the probability of a class 1 preditction. Furthermore, false classification are also attributed to vectorized words since most a lot of them have relatively higher coefficient magnitude. Thus, word choice matters in the news articles. Vectorizers are fitted on the whole corpus, thus the writing style of the whole dataset would affect the values given by the vectorizers. This is in line with the previous hypothesis that writing style difference between the datasets affected the accuracy of the model.
+
 
 \pagebreak

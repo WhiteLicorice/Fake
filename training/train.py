@@ -1,6 +1,8 @@
 import pandas as pd
 import pickle
 
+# import app_test_text
+
 from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline, FeatureUnion
 from sklearn.compose import ColumnTransformer
@@ -150,53 +152,93 @@ for clf_info in classifiers:
     # #   Fit the entire pipeline on the training data
     pipeline.fit(X_train, y_train)
 
-
+    print(pipeline['classifier'].intercept_)
     # GET FEATURE IMPORTANCE (COEFFICIENTS FOR LR)
     # ----------------------------------------------------------------------------------------
 
-    feature_names = pipeline['features'].get_feature_names_out()
-    feature_names_linguistic = feature_names[-FEATURE_COUNT:]
-    feature_names_vectorizers = feature_names[:-FEATURE_COUNT]
-    assert len(feature_names_linguistic) + len(feature_names_vectorizers) == len(feature_names), "vec and linguistic should be equal to total"
+    # feature_names = pipeline['features'].get_feature_names_out()
+    # feature_names_linguistic = feature_names[-FEATURE_COUNT:]
+    # feature_names_vectorizers = feature_names[:-FEATURE_COUNT]
+    # assert len(feature_names_linguistic) + len(feature_names_vectorizers) == len(feature_names), "vec and linguistic should be equal to total"
 
-    feature_values = pipeline['classifier'].coef_[0]
-    feature_values_linguistic = feature_values[-FEATURE_COUNT:]
-    feature_values_vectorizers = feature_names[:-FEATURE_COUNT]
+    # feature_values = pipeline['classifier'].coef_[0]
+    # feature_values_linguistic = feature_values[-FEATURE_COUNT:]
+    # feature_values_vectorizers = feature_names[:-FEATURE_COUNT]
 
-    coef_full = dict()
-    coef_linguistic = dict()
-    coef_vect = dict()
-    for i in range(len(feature_names)):
-        coef_full[feature_names[i]] = feature_values[i]
-        if(i > (len(feature_names)) - (FEATURE_COUNT + 1)):
-            coef_linguistic[feature_names[i]] = feature_values[i]
-        else:
-            coef_vect[feature_names[i]] = feature_values[i]
+    # coef_full = dict()
+    # coef_linguistic = dict()
+    # coef_vect = dict()
+    # for i in range(len(feature_names)):
+    #     coef_full[feature_names[i]] = feature_values[i]
+    #     if(i > (len(feature_names)) - (FEATURE_COUNT + 1)):
+    #         coef_linguistic[feature_names[i]] = feature_values[i]
+    #     else:
+    #         coef_vect[feature_names[i]] = feature_values[i]
 
-    coef_full = {k: v for k,v in sorted(coef_full.items(), key=lambda item: item[1])}
-    coef_linguistic = {k: v for k,v in sorted(coef_linguistic.items(), key=lambda item: item[1])}
-    coef_vect = {k: v for k,v in sorted(coef_vect.items(), key=lambda item: item[1])}
+    # coef_full = {k: v for k,v in sorted(coef_full.items(), key=lambda item: item[1])}
+    # coef_linguistic = {k: v for k,v in sorted(coef_linguistic.items(), key=lambda item: item[1])}
+    # coef_vect = {k: v for k,v in sorted(coef_vect.items(), key=lambda item: item[1])}
 
-    print(len(coef_linguistic))
-    print("")
+    # print(len(coef_linguistic))
+    # print("")
     
-
-    print("TOP 10 ON ALL FEATURES")
-    print("------------------------------------")
-    for i, k in enumerate(coef_full):
-        if((i < 19) or (i > len(coef_full)-20)):
-            print(f"{k}: {coef_full[k]}")
+    # print("TOP 10 ON ALL FEATURES")
+    # print("------------------------------------")
+    # for i, k in enumerate(coef_full):
+    #     if((i < 19) or (i > len(coef_full)-20)):
+    #         print(f"{k}: {coef_full[k]}")
     
-    print("\nTOP 10 ON VECTORIZERS")
-    print("------------------------------------")
-    for i, k in enumerate(coef_vect):
-        if((i < 19) or (i > len(coef_vect)-20)):
-            print(f"{k}: {coef_vect[k]}")
+    # print("\nTOP 10 ON VECTORIZERS")
+    # print("------------------------------------")
+    # for i, k in enumerate(coef_vect):
+    #     if((i < 19) or (i > len(coef_vect)-20)):
+    #         print(f"{k}: {coef_vect[k]}")
 
-    print("\nALL LINGUISTIC FEATURES")
-    print("------------------------------------")
-    for i, k in enumerate(coef_linguistic):
-        print(f"{k}: {coef_linguistic[k]}")
+    # print("\nALL LINGUISTIC FEATURES")
+    # print("------------------------------------")
+    # for i, k in enumerate(coef_linguistic):
+    #     print(f"{k}: {coef_linguistic[k]}")
+
+
+
+    # GET BROWSER TESTING TEXT PREDICTORS
+    # -------------------------------------------------
+    # file1 = open("./results/browserTesting/vocab.txt", "w", encoding="utf-8")
+    # texts = [
+    # "Mahaharap sa kasong administratibo ang isang opisyal ng pulisya matapos magwala sa mismong himpilan, pinasok sa opisina ang kanyang hepe at pinagsasalitaan umano ng masama, Lunes ng gabi, sa Bacoor City, Cavite. Kasong grave misconduct ang kakaharapin ni Chief Insp. Virgilio Rubio, deputy chief ng Bacoor City Police, batay sa reklamo ni Supt. Rommel Estolano. Sa ulat sa tanggapan ni Cavite Police Provincial Office director Senior Supt. Joselito Esquivel, bandang 7:30 ng gabi nang magtungo sa istasyon ng pulisya si Rubio na lasing na lasing, biglang pinaghahagis ang mga upuan at iba pang gamit sa opisina hanggang pumasok sa tanggapan ni Rubio habang may hawak na baril at nagbitiw ng kung anu-anong masasamang salita. Gayunman, naawat ni Senior Insp. Chey Chey Saulog si Rubio at pinalabas sa himpilan ng pulisya",
+    # "Binigyan ng tatlong taong extension para sa kanyang panunungkulan bilang. Commissioner ng Philippine Basketball Association si Willie Marcial. Sa kanilang annual planning session sa Star Hotels sa bansang Italya, gaya ng naging pagkakatalaga sa kanya bilang Commissioner ng liga, naging unanimous ang pagbibigay ng board of governors ng extension sa termino ni Marcial kahapon (Huwebes). May nalalabi pang isang taon sa naunang tatlong taong kontrata na nilagdaan ni Marcial noong 2018 pero binigyan sya ng PBA board ng bagong vote of confidence. Ito'y bunga na rin ng magandang performance nito na nagustuhan ng board.“We're open and very transparent about his performance,” wika ni PBA Chairman Ricky Vargas tungkol kay Marcial."
+    # ]
+    # bow_vectorizer = CountVectorizer()
+    # tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,3),tokenizer=BPETokenizer().tokenize)
+
+    # idx = 0
+    # for i in texts:
+    #     browser_testing = dict()
+    #     bow_vectorizer.fit_transform([i])
+    #     tfidf_vectorizer.fit_transform([i])
+
+    #     for j in bow_vectorizer.vocabulary_:
+    #         if(f"vectorizers__bow__{j}") in coef_full:
+    #             browser_testing[f"vectorizers__bow__{j}"] = coef_full[f"vectorizers__bow__{j}"]
+    
+    #     for j in tfidf_vectorizer.vocabulary_:
+    #         if(f"vectorizers__tfidf__{j}") in coef_full:
+    #             browser_testing[f"vectorizers__tfidf__{j}"] = coef_full[f"vectorizers__tfidf__{j}"]
+
+    #     browser_testing = {k: v for k,v in sorted(browser_testing.items(), key=lambda item: item[1])}
+
+    #     with open("./results/browserTesting/test_vect.txt", "a+", encoding="utf-8") as f:
+    #         f.write(f"\nTEXT {idx + 1}\n")
+    #         for _,k in enumerate(browser_testing):
+    #             line = f"{k}:\t{browser_testing[k]}\n"
+    #             f.write(line)
+        
+    #     bow_vectorizer = CountVectorizer()
+    #     tfidf_vectorizer = TfidfVectorizer(ngram_range=(1,3),tokenizer=BPETokenizer().tokenize)
+    #     idx += 1
+
+    # file1.close()
+    
     
     # ------------------------------------------------------------------------------------------
 
