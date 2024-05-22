@@ -403,43 +403,43 @@ version created for Windows \cite{apple2024}. Due to this, Apple Safari was not 
         \begin{figure}[h!]
             \centering
             \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/chrome-true-positive.png}
-            \caption{FaKe Extension testing with Google Chrome (Real).}
-            \label{fig:real-chrome-test}
+            \caption{FaKe Extension testing with Google Chrome (Fake).}
+            \label{fig:fake-chrome-test}
         \end{figure}
 
         \begin{figure}[h!]
             \centering
             \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/chrome-true-negative.png}
-            \caption{FaKe Extension testing with Google Chrome (Fake).}
-            \label{fig:fake-chrome-test}
+            \caption{FaKe Extension testing with Google Chrome (Real).}
+            \label{fig:real-chrome-test}
             \end{figure}
 
         \begin{figure}[h!]
             \centering
             \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/edge-true-positive.png}
-            \caption{FaKe Extension testing with Microsoft Edge (Real).}
-            \label{fig:real-edge-test}
-        \end{figure}
-
-        \begin{figure}[h!]
-            \centering
-            \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/edge-true-negative.png}
             \caption{FaKe Extension testing with Microsoft Edge (Fake).}
             \label{fig:fake-edge-test}
         \end{figure}
 
         \begin{figure}[h!]
             \centering
+            \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/edge-true-negative.png}
+            \caption{FaKe Extension testing with Microsoft Edge (Real).}
+            \label{fig:real-edge-test}
+        \end{figure}
+
+        \begin{figure}[h!]
+            \centering
             \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/firefox-true-positive.png}
-            \caption{FaKe Extension testing with Mozilla Firefox (Real).}
-            \label{fig:real-firefox-test}
+            \caption{FaKe Extension testing with Mozilla Firefox (Fake).}
+            \label{fig:fake-firefox-test}
         \end{figure}
 
         \begin{figure}[h!]
             \centering
             \includegraphics[width=1\textwidth,height=1\textheight, keepaspectratio]{figures/Screenshots/firefox-true-negative.png}
-            \caption{FaKe Extension testing with Mozilla Firefox (Fake).}
-            \label{fig:fake-firefox-test}
+            \caption{FaKe Extension testing with Mozilla Firefox (Real).}
+            \label{fig:real-firefox-test}
         \end{figure}
 
         Figures \ref{fig:false-positive-news-article}, \ref{fig:true-positive-news-article}, \ref{fig:false-negative-news-article}, and \ref{fig:true-negative-news-article} show sample articles, the predictions that the classifier makes on them (classifier label), and their actual categories (gold label). These articles were not included in the joint corpus used during training.
@@ -590,7 +590,7 @@ version created for Windows \cite{apple2024}. Due to this, Apple Safari was not 
 \pagebreak
 
 \subsection{Deployed Classifier}
-
+\label{subsec::deployed-class}
 To understand the decisions of the deployed Logistic Regression classifier, the coefficients of the predictors in the model were investigated. Table \ref{tab::lang_coef} shows the linguistic features and their coefficients. The deployed Logistic Regression was trained on a joint corpus comprised of Fake News Filipino and Fake News Filipino 2024. Since morphological and lexical features could not be included in training the deployed model, due to infrastructure limitations, only 19 predictors were considered. Negative coefficients mean that as the value of a predictor increases, the predicted probability decreases, assuming all other factors stay the same. Negative weights made it more likely for the prediction to be class 0 (fake). Average phrase count, average word length, and cvc density had the lowest coefficients. On the other hand, readability score, sentence count, stop word count, and OOV word count were the only linguistic features with positive coefficients. Correspondingly, positive weights made it more likely for the prediction to be class 1 (real). Furthermore, specific words also held weights since BOW and TF-IDFs were used as predictors. Table \ref{tab::vec_coef} depicts the three predictors with the highest and three with the lowest coefficients from the vectorizers. 
 
 \begin{table}
@@ -687,7 +687,7 @@ To understand the decisions of the deployed Logistic Regression classifier, the 
     \end{tabularx}
 \end{table}
 
-Articles falsely classified in section \ref{sec::app-testing} were investigated. Their linguistic predictors are depicted in table \ref{tab::pred_false_class_linguistic}. Additionally, some of the words used in the two articles were also explored. The false positive article had a relatively higher readability score, sentence count, and OOV count. It also had a higher average phrase count but lower values for other predictors with negative coefficients, which is the opposite case for the false negative article. In addition to the linguistic predictors, word usage also had a significant impact. Some had higher magnitudes in their coefficients, seen in table \ref{tab::vec_coef}. Shown in table \ref{tab::pred_false_class_vect} are examples of the two highest and two lowest vectorized word coefficients.
+Articles falsely classified in section \ref{subsec::app-testing} were investigated. Their linguistic predictors are depicted in table \ref{tab::pred_false_class_linguistic}. Additionally, some of the words used in the two articles were also explored. The false positive article had a relatively higher readability score, sentence count, and OOV count. It also had a higher average phrase count but lower values for other predictors with negative coefficients, which is the opposite case for the false negative article. In addition to the linguistic predictors, word usage also had a significant impact. Some had higher magnitudes in their coefficients, seen in table \ref{tab::vec_coef}. Shown in table \ref{tab::pred_false_class_vect} are examples of the two highest and two lowest vectorized word coefficients.
 
 \begin{table}
     \begin{tabularx}{\textwidth}{|X|X|X|}
