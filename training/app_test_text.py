@@ -5,6 +5,7 @@ import root.scripts.SYLL as SYLL
 import root.scripts.TRAD as TRAD
 from root.scripts.BPE import BPETokenizer
 from sklearn.feature_extraction.text import TfidfVectorizer, CountVectorizer
+import numpy as np
 
 texts = [
 "Mahaharap sa kasong administratibo ang isang opisyal ng pulisya matapos magwala sa mismong himpilan, pinasok sa opisina ang kanyang hepe at pinagsasalitaan umano ng masama, Lunes ng gabi, sa Bacoor City, Cavite. Kasong grave misconduct ang kakaharapin ni Chief Insp. Virgilio Rubio, deputy chief ng Bacoor City Police, batay sa reklamo ni Supt. Rommel Estolano. Sa ulat sa tanggapan ni Cavite Police Provincial Office director Senior Supt. Joselito Esquivel, bandang 7:30 ng gabi nang magtungo sa istasyon ng pulisya si Rubio na lasing na lasing, biglang pinaghahagis ang mga upuan at iba pang gamit sa opisina hanggang pumasok sa tanggapan ni Rubio habang may hawak na baril at nagbitiw ng kung anu-anong masasamang salita. Gayunman, naawat ni Senior Insp. Chey Chey Saulog si Rubio at pinalabas sa himpilan ng pulisya",
@@ -15,10 +16,13 @@ texts = [
 # list_of_vals = [ ]
 bow = CountVectorizer()
 tfid = TfidfVectorizer(ngram_range=(1,3),tokenizer=BPETokenizer().tokenize)
-bow_mat = bow.fit_transform(texts)
-tfid_mat = tfid.fit_transform(texts)
+# bow_mat = bow.fit_transform(texts)
+# tfid_mat = tfid.fit_transform(texts)
 
-# for i in texts:
+# for i,k in enumerate(bow_mat):
+#     print(i)
+
+for i in texts:
 #     # word_count_per_doc = TRAD.word_count_per_doc(i)
 #     # sentence_count_per_doc = TRAD.sentence_count_per_doc(i)
 #     # polysyll_count_per_doc = TRAD.polysyll_count_per_doc(i)
@@ -38,8 +42,13 @@ tfid_mat = tfid.fit_transform(texts)
 #     # count_stopwords = SW.count_stopwords(i)
 #     # readability_score = READ.compute_readability_score(i)
 #     # count_oov_words = OOV.count_oov_words(i)
-#     bag_of_words = bow.fit_transform([i])
-#     tfidf_mat = tfid.fit_transform([i])
+    bag_of_words = bow.fit_transform([i])
+    # tfidf_mat = tfid.fit_transform([i])
+
+    word_counts = np.sum(bag_of_words.toarray(), axis=0)
+    word_freq = dict(zip(bow.get_feature_names_out(), word_counts))
+    word_freq = {k: v for k,v in sorted(word_freq.items(), key=lambda item: item[1])}
+    print(f"Word frequencies: {word_freq}\n\n")
 
 
 #     file1.write("BOW\n\n")
