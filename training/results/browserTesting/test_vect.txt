@@ -1,0 +1,735 @@
+
+TEXT 1
+vectorizers__bow__iba:		-0.5394303591543086
+vectorizers__bow__supt:		-0.432138317113013
+vectorizers__bow__kanyang:	-0.3720429001623809
+vectorizers__bow__director:	-0.33772737834646477
+vectorizers__bow__salita:	-0.27653721706152345
+vectorizers__bow__isang:	-0.270816610306656
+vectorizers__bow__senior:	-0.22021741295779557
+vectorizers__bow__insp:	-0.20145793328592684
+vectorizers__bow__gabi:	-0.19413795959109947
+vectorizers__bow__habang:	-0.18912483287380744
+vectorizers__bow__opisina:	-0.18396766768641892
+vectorizers__bow__mismong:	-0.1828063281027477
+vectorizers__bow__30:	-0.17212399944141932
+vectorizers__bow__at:	-0.16443591714655478
+vectorizers__bow__gamit:	-0.1628046277505255
+vectorizers__bow__anu:	-0.1552811111301421
+vectorizers__bow__esquivel:	-0.14032146983578295
+vectorizers__bow__provincial:	-0.12089685936688058
+vectorizers__bow__si:	-0.11918288555560143
+vectorizers__bow__masasamang:	-0.1025064558878369
+vectorizers__bow__masama:	-0.09655060160879732
+vectorizers__bow__deputy:	-0.09271828536169309
+vectorizers__bow__upuan:	-0.08554302684681037
+vectorizers__bow__hepe:	-0.07957052135783126
+vectorizers__bow__na:	-0.046948978035061276
+vectorizers__bow__lasing:	-0.04630218456672624
+vectorizers__bow__ng:	-0.04602850183155828
+vectorizers__tfidf__, Ġna:	-0.04146482375970483
+vectorizers__bow__administratibo:	-0.038372214660028506
+vectorizers__tfidf__::	-0.03779818565698675
+vectorizers__bow__batay:	-0.03626853315025114
+vectorizers__bow__joselito:	-0.030660437870155273
+vectorizers__bow__magtungo:	-0.028244076676720842
+vectorizers__tfidf__-:	-0.02450919683281221
+vectorizers__tfidf__,:	-0.021524445039508164
+vectorizers__bow__pinalabas:	-0.020415565474396886
+vectorizers__tfidf__t .:	-0.02021490626470273
+vectorizers__tfidf__, Ġsa:	-0.019356833820223015
+vectorizers__tfidf__. Ġro:	-0.018886291185332253
+vectorizers__tfidf__Ġsup t .:	-0.018069845692828084
+vectorizers__tfidf__Ġsup t:	-0.018041437830906594
+vectorizers__tfidf__Ġj:	-0.01539384955832859
+vectorizers__tfidf__Ġang Ġkanyang:	-0.014121312302670093
+vectorizers__tfidf__Ġsup:	-0.013653247616879267
+vectorizers__tfidf__wala:	-0.013446661354518696
+vectorizers__tfidf__Ġj os:	-0.013151055061205988
+vectorizers__tfidf__Ġdirector:	-0.011879242547046042
+vectorizers__tfidf__Ġnang:	-0.010304701808775149
+vectorizers__bow__ni:	-0.009955316300826168
+vectorizers__tfidf__Ġrub:	-0.009505970093916821
+vectorizers__tfidf__Ġiba:	-0.009476755587552482
+vectorizers__tfidf__: 30:	-0.009108139508825813
+vectorizers__tfidf__Ġsenior Ġsup:	-0.008734735914500486
+vectorizers__tfidf__Ġsenior Ġsup t:	-0.008734735914500486
+vectorizers__tfidf__os:	-0.008636599420054264
+vectorizers__tfidf__Ġgabi:	-0.008537975860798798
+vectorizers__tfidf__Ġsalita:	-0.008269484247331753
+vectorizers__tfidf__Ġcity:	-0.008019144611293954
+vectorizers__tfidf__Ġang Ġmga:	-0.00794891001846024
+vectorizers__tfidf__Ġche:	-0.007539054715860714
+vectorizers__bow__virgilio:	-0.007467854578555179
+vectorizers__tfidf__Ġsenior:	-0.007313975542104771
+vectorizers__tfidf__30:	-0.0072235209610587514
+vectorizers__tfidf__Ġinsp .:	-0.006956986616440828
+vectorizers__tfidf__Ġprovincial:	-0.006562498953376108
+vectorizers__bow__magwala:	-0.006504583258049333
+vectorizers__tfidf__Ġopisina:	-0.006468880233012118
+vectorizers__tfidf__Ġcity Ġpolice:	-0.0064532667662960475
+vectorizers__tfidf__ano:	-0.0059068633747643646
+vectorizers__tfidf__unes Ġng Ġgabi:	-0.005902160247497696
+vectorizers__tfidf__Ġhabang:	-0.005860464317419111
+vectorizers__tfidf__io ,:	-0.005607844026863027
+vectorizers__tfidf__Ġng Ġgabi:	-0.005606669829978514
+vectorizers__tfidf__Ġprovincial Ġoffice:	-0.0055749635146442895
+vectorizers__tfidf__Ġpolice Ġprovincial Ġoffice:	-0.0055749635146442895
+vectorizers__tfidf__Ġpolice Ġprovincial:	-0.005500008153183118
+vectorizers__tfidf__unes Ġng:	-0.005454108340492615
+vectorizers__tfidf__Ġl unes Ġng:	-0.005454108340492615
+vectorizers__tfidf__Ġkung Ġanu -:	-0.005445058886794043
+vectorizers__tfidf__Ġkung Ġanu:	-0.005340177165515092
+vectorizers__tfidf__, Ġl:	-0.005326724662480537
+vectorizers__tfidf__Ġng Ġpulisya:	-0.005245550496851127
+vectorizers__tfidf__ivel:	-0.005166278662402443
+vectorizers__tfidf__qu ivel:	-0.005166278662402443
+vectorizers__tfidf__Ġes qu ivel:	-0.005166278662402443
+vectorizers__tfidf__Ġni Ġsenior:	-0.005137754881318227
+vectorizers__tfidf__Ġanu -:	-0.004652546774581394
+vectorizers__tfidf__Ġsa Ġbac:	-0.004475233921811333
+vectorizers__tfidf__Ġprovincial Ġoffice Ġdirector:	-0.004456585661162362
+vectorizers__tfidf__Ġanu:	-0.004448710534280723
+vectorizers__tfidf__Ġmasasamang:	-0.004369733586984403
+vectorizers__tfidf__Ġcav:	-0.004316719030706848
+vectorizers__tfidf__unes:	-0.0042725666541989
+vectorizers__tfidf__Ġmasama:	-0.00419957074748635
+vectorizers__tfidf__Ġinsp:	-0.004185367931448358
+vectorizers__tfidf__Ġoffice Ġdirector:	-0.004006315227079985
+vectorizers__tfidf__Ġcity Ġpolice ,:	-0.003996466919353953
+vectorizers__tfidf__Ġhepe:	-0.003928785165761785
+vectorizers__tfidf__Ġng Ġmasama:	-0.003902444678463753
+vectorizers__tfidf__Ġpulisya:	-0.003848731469897117
+vectorizers__tfidf__: 30 Ġng:	-0.0037536630293360045
+vectorizers__tfidf__30 Ġng:	-0.0037013863259382305
+vectorizers__tfidf__Ġsi:	-0.0036852387834418587
+vectorizers__tfidf__Ġdeputy:	-0.003605943938089638
+vectorizers__tfidf__Ġmasasamang Ġsalita:	-0.0036047514168559497
+vectorizers__tfidf__Ġni Ġsup t:	-0.003498199085264058
+vectorizers__tfidf__, Ġdeputy:	-0.0034146730802027837
+vectorizers__tfidf__tol:	-0.0033718415316908073
+vectorizers__tfidf__Ġsenior Ġinsp .:	-0.0033576886128428326
+vectorizers__tfidf__alitaan Ġumano:	-0.0033086450628923253
+vectorizers__tfidf__Ġni Ġsup:	-0.003284740962475024
+vectorizers__tfidf__Ġanu - anong:	-0.003277627648884765
+vectorizers__tfidf__anong:	-0.0031801066785201912
+vectorizers__tfidf__Ġmatapos Ġmag:	-0.003159338702902164
+vectorizers__tfidf__Ġopisyal Ġng:	-0.0031566913705824125
+vectorizers__tfidf__Ġmismong:	-0.0030999567885916304
+vectorizers__tfidf__Ġ7 ::	-0.003091168629539697
+vectorizers__tfidf__alitaan:	-0.0029361899912152176
+vectorizers__tfidf__io Ġna:	-0.0028937640097421798
+vectorizers__tfidf__Ġchief Ġng:	-0.002850367203443411
+vectorizers__tfidf__Ġsenior Ġinsp:	-0.002839006340933662
+vectorizers__tfidf__Ġpang:	-0.0028181994129269773
+vectorizers__tfidf__Ġcav ite:	-0.002692186495330258
+vectorizers__tfidf__Ġpinagh:	-0.002665072852332048
+vectorizers__tfidf__Ġng Ġgabi ,:	-0.002632617133435879
+vectorizers__tfidf__y Ġsa:	-0.0024950751083038566
+vectorizers__tfidf__Ġes qu:	-0.00249015094678519
+vectorizers__tfidf__Ġgamit:	-0.0023709591840537178
+vectorizers__tfidf__Ġl:	-0.0023416317292728637
+vectorizers__tfidf__Ġupuan:	-0.002341304528600762
+vectorizers__tfidf__ulog:	-0.0022979843709841053
+vectorizers__tfidf__Ġchief Ġinsp .:	-0.0022674534951825035
+vectorizers__tfidf__Ġl unes:	-0.002152246694485402
+vectorizers__tfidf__Ġulat Ġsa:	-0.0021091894899462724
+vectorizers__tfidf__Ġadministratibo:	-0.002007772500840461
+vectorizers__tfidf__Ġlasing:	-0.00200304354114757
+vectorizers__tfidf__Ġvir:	-0.0019461292437543583
+vectorizers__tfidf__Ġrub io Ġna:	-0.0018417361400097773
+vectorizers__tfidf__Ġ7 : 30:	-0.001795275618067769
+vectorizers__tfidf__Ġpolice ,:	-0.0017925856009805546
+vectorizers__tfidf__. Ġvir:	-0.0017804374927255183
+vectorizers__tfidf__Ġsa Ġopisina:	-0.0016701942639377103
+vectorizers__tfidf__Ġtanggapan:	-0.0016668451663130741
+vectorizers__tfidf__- anong:	-0.001588763439810309
+vectorizers__tfidf__Ġni:	-0.0015778369594422403
+vectorizers__tfidf__Ġdirector Ġsenior:	-0.0015709968047701228
+vectorizers__tfidf__Ġdirector Ġsenior Ġsup:	-0.0015709968047701228
+vectorizers__tfidf__Ġopisyal Ġng Ġpulisya:	-0.0015502479537302402
+vectorizers__tfidf__. Ġj os:	-0.001508033069809367
+vectorizers__tfidf__Ġistasyon Ġng:	-0.0015068293175722783
+vectorizers__tfidf__Ġlasing Ġna:	-0.0014763420641625642
+vectorizers__tfidf__Ġni Ġsenior Ġinsp:	-0.0014175658463871999
+vectorizers__tfidf__os elito:	-0.0014135795413115773
+vectorizers__tfidf__Ġj os elito:	-0.0014135795413115773
+vectorizers__tfidf__Ġmagtungo Ġsa:	-0.0013914318749789906
+vectorizers__tfidf__awat:	-0.001362937974675951
+vectorizers__tfidf__Ġbandang Ġ7:	-0.0013201293082282098
+vectorizers__tfidf__Ġbandang Ġ7 ::	-0.0013201293082282098
+vectorizers__tfidf__Ġsi Ġrub:	-0.001251004139402836
+vectorizers__tfidf__Ġsa Ġbac oor:	-0.0012318000401780643
+vectorizers__tfidf__Ġsalita .:	-0.0012111613367781656
+vectorizers__tfidf__, Ġl unes:	-0.001190579364875165
+vectorizers__tfidf__, Ġdeputy Ġchief:	-0.0010846043826235987
+vectorizers__tfidf__Ġbatay Ġsa:	-0.0010685132318613412
+vectorizers__tfidf__Ġbac:	-0.0010564468766688269
+vectorizers__tfidf__Ġnang Ġmagtungo Ġsa:	-0.001017342094197739
+vectorizers__tfidf__, Ġbandang:	-0.0010002775166816525
+vectorizers__tfidf__Ġoffice Ġdirector Ġsenior:	-0.0009850194075309586
+vectorizers__tfidf__Ġnang Ġmagtungo:	-0.0009688286655051865
+vectorizers__tfidf__io:	-0.0009647565007517047
+vectorizers__tfidf__Ġng Ġkung Ġanu:	-0.0009643075656883203
+vectorizers__tfidf__elito:	-0.0009316279191202095
+vectorizers__tfidf__Ġmay Ġhawak:	-0.0009190495641205988
+vectorizers__tfidf__el:	-0.0009127996439671716
+vectorizers__tfidf__Ġbatay:	-0.0008962635194704359
+vectorizers__tfidf__elito Ġes:	-0.000861046443733751
+vectorizers__tfidf__ivel ,:	-0.000861046443733751
+vectorizers__tfidf__os elito Ġes:	-0.000861046443733751
+vectorizers__tfidf__elito Ġes qu:	-0.000861046443733751
+vectorizers__tfidf__qu ivel ,:	-0.000861046443733751
+vectorizers__tfidf__Ġmagtungo:	-0.0008192823311206432
+vectorizers__tfidf__Ġrub io:	-0.0008097552137853916
+vectorizers__tfidf__alitaan Ġumano Ġng:	-0.000774760344805683
+vectorizers__tfidf__Ġumano Ġng Ġmasama:	-0.000774760344805683
+vectorizers__tfidf__t . Ġj:	-0.0007454340979762203
+vectorizers__tfidf__Ġupuan Ġat:	-0.0007447182400449328
+vectorizers__tfidf__Ġmga Ġupuan Ġat:	-0.0007447182400449328
+vectorizers__tfidf__Ġchief Ġinsp:	-0.0007435252669475245
+vectorizers__tfidf__Ġhimpilan Ġng:	-0.0007207026658426182
+vectorizers__tfidf__Ġang Ġmga Ġupuan:	-0.00068584937890456
+vectorizers__tfidf__Ġpinalabas:	-0.0006563504947767266
+vectorizers__tfidf__wala Ġsa:	-0.0006295514644116067
+vectorizers__tfidf__Ġgabi , Ġsa:	-0.0006069325095074968
+vectorizers__tfidf__<s> mah:	-0.0005912905712396503
+vectorizers__tfidf__Ġbaril Ġat:	-0.0005281314576814437
+vectorizers__tfidf__Ġni Ġcav:	-0.0005199400748005441
+vectorizers__tfidf__Ġni Ġcav ite:	-0.0005199400748005441
+vectorizers__tfidf__, Ġbiglang:	-0.0004608625268730389
+vectorizers__tfidf__Ġgabi ,:	-0.00044194447899612813
+vectorizers__tfidf__Ġiba Ġpang:	-0.0004399600468891641
+vectorizers__tfidf__Ġhabang Ġmay Ġhawak:	-0.0004344706297386934
+vectorizers__tfidf__Ġsa Ġistasyon:	-0.00040369592215359386
+vectorizers__tfidf__Ġsa Ġhimpilan Ġng:	-0.0003800292004114002
+vectorizers__tfidf__Ġmga Ġupuan:	-0.0003753533217835019
+vectorizers__tfidf__ilio:	-0.0003507626623264795
+vectorizers__tfidf__Ġvir g:	-0.00030354800294486934
+vectorizers__tfidf__g ilio:	-0.00030354800294486934
+vectorizers__tfidf__Ġvir g ilio:	-0.00030354800294486934
+vectorizers__tfidf__Ġat Ġpinalabas:	-0.00029738035761852266
+vectorizers__tfidf__Ġhimpilan Ġng Ġpulisya:	-0.00028160350007278213
+vectorizers__tfidf__Ġng Ġpulisya Ġmatapos:	-0.0002567425984939414
+vectorizers__tfidf__ahagis:	-0.00015900879811263252
+vectorizers__tfidf__oor:	-0.0001301663344827636
+vectorizers__tfidf__Ġbac oor:	-0.0001301663344827636
+vectorizers__tfidf__Ġkak aharapin:	-0.00011901939800390165
+vectorizers__tfidf__aharapin:	-0.00011493894897248527
+vectorizers__tfidf__Ġsa Ġulat Ġsa:	-0.00010101755714309651
+vectorizers__tfidf__Ġni Ġrub:	-8.47443763227124e-05
+vectorizers__tfidf__ite Ġpolice:	-6.922340649716468e-05
+vectorizers__tfidf__Ġcav ite Ġpolice:	-6.922340649716468e-05
+vectorizers__tfidf__ite Ġpolice Ġprovincial:	-6.922340649716468e-05
+vectorizers__tfidf__t . Ġro:	-6.140965595254937e-05
+vectorizers__tfidf__Ġmag wala:	-2.2712459640180286e-05
+vectorizers__tfidf__Ġmag wala Ġsa:	-2.2712459640180286e-05
+vectorizers__tfidf__Ġkanyang:	-1.4953432836045303e-05
+vectorizers__tfidf__oor Ġcity Ġpolice:	1.0449840369207419e-07
+vectorizers__tfidf__Ġpang Ġgamit:	2.918531408706169e-07
+vectorizers__tfidf__Ġiba Ġpang Ġgamit:	2.918531408706169e-07
+vectorizers__tfidf__Ġpang Ġgamit Ġsa:	2.918531408706169e-07
+vectorizers__tfidf__Ġbiglang Ġpinagh:	4.017069271596076e-07
+vectorizers__tfidf__, Ġbiglang Ġpinagh:	4.017069271596076e-07
+vectorizers__tfidf__Ġgayunman , Ġna:	6.157524995620262e-07
+vectorizers__tfidf__Ġat Ġnagbitiw:	8.986953922762543e-07
+vectorizers__tfidf__Ġnagbitiw Ġng:	8.986953922762543e-07
+vectorizers__tfidf__Ġat Ġnagbitiw Ġng:	8.986953922762543e-07
+vectorizers__tfidf__<s> mah aharap:	1.1809563246905995e-06
+vectorizers__tfidf__Ġes:	1.3896195887774688e-06
+vectorizers__tfidf__Ġmasama ,:	1.8060585932706296e-06
+vectorizers__tfidf__Ġadministratibo Ġang:	1.926145792358513e-06
+vectorizers__tfidf__Ġkasong Ġadministratibo Ġang:	1.926145792358513e-06
+vectorizers__tfidf__Ġpinagsas:	2.9759138650687943e-06
+vectorizers__tfidf__mah aharap Ġsa:	5.104288158551466e-06
+vectorizers__tfidf__Ġsa Ġistasyon Ġng:	7.978861219813922e-06
+vectorizers__tfidf__Ġni Ġchief Ġinsp:	8.829281305482366e-06
+vectorizers__tfidf__Ġna Ġlasing Ġna:	1.2891426262962376e-05
+vectorizers__tfidf__mah aharap:	1.3012718716018949e-05
+vectorizers__tfidf__Ġsa Ġreklamo Ġni:	2.2688596098628002e-05
+vectorizers__tfidf__ano . Ġsa:	2.920669772903854e-05
+vectorizers__tfidf__Ġlasing Ġna Ġlasing:	3.029731645216507e-05
+vectorizers__tfidf__Ġna awat:	3.451442875730117e-05
+vectorizers__tfidf__Ġna Ġlasing:	4.142972503825798e-05
+vectorizers__tfidf__qu:	5.4706917797206515e-05
+vectorizers__tfidf__Ġng Ġkung:	6.12836764555247e-05
+vectorizers__tfidf__Ġmisconduct:	0.00011238860781736296
+vectorizers__tfidf__Ġgrave Ġmisconduct:	0.00011628515819272503
+vectorizers__tfidf__, Ġbatay Ġsa:	0.00015916175149556164
+vectorizers__tfidf__Ġreklamo Ġni:	0.00019093818031984102
+vectorizers__tfidf__aharap Ġsa Ġkasong:	0.00019688062041888199
+vectorizers__tfidf__Ġang Ġkak aharapin:	0.00020188915908028436
+vectorizers__tfidf__oor Ġcity ,:	0.00021083332600367298
+vectorizers__tfidf__Ġhepe Ġat:	0.0002117043319040533
+vectorizers__tfidf__aharapin Ġni:	0.00021855155223966428
+vectorizers__tfidf__Ġkak aharapin Ġni:	0.00021855155223966428
+vectorizers__tfidf__Ġsa Ġhimpilan:	0.00025484466747347374
+vectorizers__tfidf__, Ġbatay:	0.00030145786217729433
+vectorizers__tfidf__Ġpulisya Ġsi:	0.000318136356941811
+vectorizers__tfidf__Ġng Ġpulisya Ġsi:	0.00033994481482142464
+vectorizers__tfidf__Ġistasyon:	0.00039290176612320375
+vectorizers__tfidf__oor Ġcity:	0.00040666745368249575
+vectorizers__tfidf__Ġbac oor Ġcity:	0.00040666745368249575
+vectorizers__tfidf__Ġhawak Ġna:	0.0004480654250585957
+vectorizers__tfidf__Ġkasong Ġadministratibo:	0.00044954406783423965
+vectorizers__tfidf__Ġrub io ,:	0.00045290565258229433
+vectorizers__tfidf__Ġsa Ġkasong Ġadministratibo:	0.0004873659890877229
+vectorizers__tfidf__Ġhimpilan:	0.0005102197421284711
+vectorizers__tfidf__Ġmay Ġhawak Ġna:	0.0005688217031846963
+vectorizers__tfidf__Ġsa Ġmismong:	0.0006898521052443877
+vectorizers__tfidf__, Ġpinasok:	0.0007465410516202622
+vectorizers__tfidf__Ġna Ġbaril:	0.0007644888924815038
+vectorizers__tfidf__Ġhimpilan ,:	0.0007935508501086817
+vectorizers__tfidf__Ġang Ġisang Ġopisyal:	0.000860441278705752
+vectorizers__tfidf__Ġgamit Ġsa:	0.0008892377916212659
+vectorizers__tfidf__mah:	0.0009310968858562345
+vectorizers__tfidf__Ġkak:	0.0009475172283589585
+vectorizers__tfidf__Ġlasing ,:	0.0009718318300436311
+vectorizers__bow__naawat:	0.001022418614177699
+vectorizers__tfidf__Ġni Ġchief:	0.0010379527453964128
+vectorizers__tfidf__Ġdeputy Ġchief:	0.0010511793561898538
+vectorizers__tfidf__Ġtanggapan Ġni:	0.0011456629009604243
+vectorizers__tfidf__Ġsa Ġtanggapan Ġni:	0.0011960181147270305
+vectorizers__tfidf__Ġang Ġkak:	0.0012097276176370876
+vectorizers__tfidf__ite:	0.0012201035193584288
+vectorizers__tfidf__Ġistasyon Ġng Ġpulisya:	0.0013008033700027525
+vectorizers__tfidf__Ġpinasok:	0.0013810356477334754
+vectorizers__tfidf__Ġng Ġbac oor:	0.0014487605372652073
+vectorizers__tfidf__ano .:	0.001454765074703572
+vectorizers__tfidf__Ġsa Ġreklamo:	0.001480083159890616
+vectorizers__tfidf__Ġhawak:	0.0015938070751588278
+vectorizers__tfidf__Ġhanggang:	0.001685522282174963
+vectorizers__tfidf__Ġgabi Ġnang:	0.0016872635145506961
+vectorizers__tfidf__Ġng Ġgabi Ġnang:	0.0017075237668982804
+vectorizers__tfidf__Ġng Ġbac:	0.001725909800858639
+vectorizers__bow__may:	0.0017299226542245
+vectorizers__tfidf__Ġ7:	0.0017327030695776858
+vectorizers__tfidf__Ġcity , Ġcav:	0.0017846301095876841
+vectorizers__tfidf__io Ġat:	0.0019665760460397495
+vectorizers__tfidf__aharap Ġsa:	0.0020703874560253042
+vectorizers__tfidf__Ġnagbitiw:	0.002167650155640715
+vectorizers__tfidf__Ġmatapos:	0.002220775887087075
+vectorizers__tfidf__Ġisang Ġopisyal:	0.0022337417985633106
+vectorizers__tfidf__<s>:	0.002255325853008203
+vectorizers__tfidf__</s>:	0.002255325853008203
+vectorizers__tfidf__, Ġcav:	0.002271783397173343
+vectorizers__tfidf__, Ġcav ite:	0.002271783397173343
+vectorizers__tfidf__. Ġj:	0.0023081121448312327
+vectorizers__tfidf__Ġopisyal:	0.0024300707388132353
+vectorizers__tfidf__Ġro mm:	0.002454554244903927
+vectorizers__tfidf__mm el:	0.002454554244903927
+vectorizers__tfidf__Ġro mm el:	0.002454554244903927
+vectorizers__bow__kakaharapin:	0.002468255380010023
+vectorizers__tfidf__ite .:	0.002482703388242211
+vectorizers__tfidf__Ġisang Ġopisyal Ġng:	0.0024938096801856244
+vectorizers__tfidf__Ġang Ġisang:	0.0026400164933915726
+vectorizers__tfidf__y:	0.002741812434567471
+vectorizers__tfidf__t:	0.0028670714208072056
+vectorizers__tfidf__Ġmag:	0.0029023427712191463
+vectorizers__tfidf__Ġat:	0.003072175272310144
+vectorizers__tfidf__Ġbiglang:	0.003184811815052112
+vectorizers__tfidf__Ġat Ġiba Ġpang:	0.0032226178570221326
+vectorizers__tfidf__Ġsa Ġtanggapan:	0.003753189456831659
+vectorizers__tfidf__30 Ġng Ġgabi:	0.0037609799388046215
+vectorizers__tfidf__Ġcav ite .:	0.0038083687384462446
+vectorizers__tfidf__Ġhabang Ġmay:	0.003951459543926703
+vectorizers__tfidf__Ġgrave:	0.004077754821017596
+vectorizers__tfidf__Ġpumasok:	0.004125139080724222
+vectorizers__tfidf__. Ġkasong:	0.004304225723808744
+vectorizers__tfidf__Ġat Ġiba:	0.004371689378783107
+vectorizers__bow__anong:	0.004469795242833481
+vectorizers__tfidf__Ġro:	0.004618615618026538
+vectorizers__tfidf__Ġumano Ġng:	0.004799264229828539
+vectorizers__tfidf__Ġpumasok Ġsa:	0.004946557893141409
+vectorizers__tfidf__mm:	0.0054644745016602485
+vectorizers__tfidf__Ġpulisya Ġmatapos:	0.005911672149299367
+vectorizers__tfidf__. Ġgayunman:	0.006028251770070808
+vectorizers__tfidf__Ġpolice:	0.0061649708196444405
+vectorizers__tfidf__. Ġgayunman ,:	0.006442654089478993
+vectorizers__tfidf__Ġsa Ġkasong:	0.006553063672868452
+vectorizers__bow__rubio:	0.0070645748108190114
+vectorizers__tfidf__Ġbandang:	0.00748159566414008
+vectorizers__tfidf__Ġreklamo:	0.007714758819920845
+vectorizers__tfidf__Ġkasong:	0.007843556768940076
+vectorizers__tfidf__Ġulat:	0.007946260453483612
+vectorizers__tfidf__Ġng:	0.007982070257436306
+vectorizers__tfidf__Ġgayunman:	0.008518194779861417
+vectorizers__tfidf__Ġoffice:	0.008850208224908713
+vectorizers__tfidf__Ġcity ,:	0.009031745507906112
+vectorizers__tfidf__Ġgayunman ,:	0.009522635404021974
+vectorizers__tfidf__Ġchief:	0.009909352099546182
+vectorizers__tfidf__aharap:	0.010255322876876225
+vectorizers__tfidf__Ġisang:	0.010418264509037252
+vectorizers__bow__misconduct:	0.010838107075370236
+vectorizers__tfidf__Ġkung:	0.011299092688329961
+vectorizers__tfidf__Ġmga:	0.011539089213044298
+vectorizers__tfidf__Ġumano:	0.013787178208937656
+vectorizers__tfidf__. Ġsa Ġulat:	0.014782067859645996
+vectorizers__tfidf__Ġbaril:	0.015799152526547105
+vectorizers__tfidf__Ġsa Ġulat:	0.01679549845756177
+vectorizers__tfidf__Ġmay:	0.017383470331885573
+vectorizers__tfidf__. Ġsa:	0.019281345124384803
+vectorizers__tfidf__Ġna:	0.0203583356190098
+vectorizers__bow__himpilan:	0.02306684633060286
+vectorizers__bow__nang:	0.02512497293055046
+vectorizers__bow__lunes:	0.030606637625056762
+vectorizers__bow__bacoor:	0.030740332904861483
+vectorizers__tfidf__Ġang:	0.031637662708500165
+vectorizers__bow__mga:	0.031924984531372255
+vectorizers__bow__hanggang:	0.03323980510663649
+vectorizers__bow__kung:	0.04309664089170781
+vectorizers__bow__police:	0.043161453625692146
+vectorizers__tfidf__Ġsa:	0.04547137574024026
+vectorizers__bow__tanggapan:	0.046018122055032834
+vectorizers__bow__pinasok:	0.050979664917452074
+vectorizers__bow__sa:	0.05170846421379015
+vectorizers__bow__mahaharap:	0.05245175468427584
+vectorizers__bow__istasyon:	0.05288945858988966
+vectorizers__bow__nagbitiw:	0.05591342462851712
+vectorizers__bow__opisyal:	0.05810687729722471
+vectorizers__tfidf__.:	0.061524150193680266
+vectorizers__tfidf__g:	0.06262635287128708
+vectorizers__bow__ang:	0.07121871488507361
+vectorizers__bow__cavite:	0.08330593024705865
+vectorizers__bow__grave:	0.0921572953043315
+vectorizers__bow__city:	0.09317219455769539
+vectorizers__bow__pulisya:	0.09486583264097025
+vectorizers__bow__hawak:	0.11407846194262196
+vectorizers__bow__biglang:	0.13161885473404816
+vectorizers__bow__pumasok:	0.14004697028104104
+vectorizers__bow__gayunman:	0.15146923696151698
+vectorizers__bow__pang:	0.1724365242865342
+vectorizers__bow__baril:	0.18110770879574928
+vectorizers__bow__rommel:	0.18247659161054858
+vectorizers__bow__bandang:	0.18785746990619714
+vectorizers__bow__chief:	0.22129658642585706
+vectorizers__bow__kasong:	0.2743847775608904
+vectorizers__bow__umano:	0.31823934054916303
+vectorizers__bow__reklamo:	0.3226479873670998
+vectorizers__bow__matapos:	0.32716791591937106
+vectorizers__bow__ulat:		0.33552914902816716
+vectorizers__bow__office:	0.4609690671520561
+
+
+TEXT 2
+
+vectorizers__bow__noong:	-0.7148983768424026
+vectorizers__bow__about:	-0.4106521931122186
+vectorizers__bow__board:	-0.4063737278920696
+vectorizers__bow__kanyang:	-0.3720429001623809
+vectorizers__bow__isang:	-0.270816610306656
+vectorizers__bow__willie:	-0.2581761361221296
+vectorizers__bow__kanya:	-0.24275616740994058
+vectorizers__bow__kontrata:	-0.23328056846311768
+vectorizers__bow__liga:	-0.21044623185218062
+vectorizers__bow__rin:	-0.20320773474486206
+vectorizers__bow__huwebes:	-0.20198186678065647
+vectorizers__bow__taong:	-0.17972581547133118
+vectorizers__bow__bagong:	-0.1537391624997282
+vectorizers__bow__basketball:	-0.15309317450795876
+vectorizers__bow__bansang:	-0.14256150561632527
+vectorizers__bow__very:	-0.14150927228577162
+vectorizers__bow__si:	-0.11918288555560143
+vectorizers__bow__bilang:	-0.1145683836225528
+vectorizers__bow__tatlong:	-0.11026652416301475
+vectorizers__bow__termino:	-0.09523870452244293
+vectorizers__bow__association:	-0.09244682856772374
+vectorizers__bow__tungkol:	-0.08221706293495817
+vectorizers__bow__panunungkulan:	-0.07668906259747463
+vectorizers__tfidf__Ġ(:	-0.06384138872760324
+vectorizers__bow__session:	-0.052836069128443776
+vectorizers__tfidf__. </s>:	-0.04954196347769738
+vectorizers__bow__na:	-0.046948978035061276
+vectorizers__bow__ng:	-0.04602850183155828
+vectorizers__bow__vargas:	-0.04527297548858019
+vectorizers__bow__nalalabi:	-0.04518825922035673
+vectorizers__bow__kay:	-0.038367603729841646
+vectorizers__bow__kanilang:	-0.03807455713119593
+vectorizers__tfidf__':	-0.035611554406578136
+vectorizers__bow__unanimous:	-0.033756679361263385
+vectorizers__bow__vote:	-0.027709337061853082
+vectorizers__bow__we:	-0.02336739764765448
+vectorizers__tfidf__,:	-0.021524445039508164
+vectorizers__tfidf__Ġpara Ġsa:	-0.018403135570579144
+vectorizers__tfidf__Ġit:	-0.017728608423593886
+vectorizers__tfidf__Ġmar:	-0.016067648238815437
+vectorizers__tfidf__Ġnoong:	-0.013590261144421483
+vectorizers__tfidf__Ġwill:	-0.012647633569912275
+vectorizers__tfidf__Ġboard:	-0.012213553962481772
+vectorizers__tfidf__Ġabout:	-0.011220950325572517
+vectorizers__tfidf__' y:	-0.011110276209578369
+vectorizers__tfidf__).:	-0.010121390510440254
+vectorizers__tfidf__Ġsa Ġkanilang:	-0.010018542624301489
+vectorizers__bow__ni:	-0.009955316300826168
+vectorizers__tfidf__Ġbagong:	-0.009947987878038049
+vectorizers__tfidf__ie:	-0.008638212833088667
+vectorizers__tfidf__Ġwill ie:	-0.008613633553227215
+vectorizers__tfidf__Ġvery:	-0.007745387470642252
+vectorizers__tfidf__Ġkontrata:	-0.007505610281725334
+vectorizers__tfidf__Ġbansang:	-0.006628653676595352
+vectorizers__tfidf__Ġkay:	-0.006598477232141599
+vectorizers__tfidf__Ġliga:	-0.0063921534907523045
+vectorizers__tfidf__Ġsa Ġkanya:	-0.005881642257902353
+vectorizers__tfidf__Ġsi Ġwill ie:	-0.005499581961230021
+vectorizers__tfidf__Ġp:	-0.005409061265089523
+vectorizers__tfidf__h:	-0.00536443971920693
+vectorizers__tfidf__'re:	-0.005264397893035119
+vectorizers__tfidf__Ġng Ġnaging:	-0.005227341442513029
+vectorizers__tfidf__Ġito ':	-0.005207122677884324
+vectorizers__tfidf__Ġito ' y:	-0.005207122677884324
+vectorizers__tfidf__Ġang Ġpagbibigay:	-0.0051759450786253575
+vectorizers__tfidf__alaga:	-0.004824461264114425
+vectorizers__tfidf__we:	-0.004658132474910831
+vectorizers__tfidf__Ġstar:	-0.00453748765078603
+vectorizers__tfidf__Ġpagkakat:	-0.0045147455155124345
+vectorizers__tfidf__uwebes:	-0.004419902385103369
+vectorizers__tfidf__âĢľ:	-0.004297066212652368
+vectorizers__tfidf__Ġkanya:	-0.0041791446940274085
+vectorizers__tfidf__Ġrin:	-0.004071767506638825
+vectorizers__tfidf__Ġng Ġp ba:	-0.0038931110907799347
+vectorizers__tfidf__Ġbilang:	-0.003848053986640291
+vectorizers__tfidf__, Ġnaging:	-0.00383593722409578
+vectorizers__tfidf__Ġand:	-0.0038086930452508306
+vectorizers__tfidf__Ġhotel:	-0.003749400922680296
+vectorizers__tfidf__Ġsi Ġwill:	-0.0037397058598625517
+vectorizers__tfidf__Ġpara:	-0.003728822018459388
+vectorizers__tfidf__Ġng Ġtatlong:	-0.0036917715357144055
+vectorizers__tfidf__Ġsi:	-0.0036852387834418587
+vectorizers__tfidf__Ġunan:	-0.003560471652045713
+vectorizers__bow__naunang:	-0.003211432108563694
+vectorizers__tfidf__Ġtermino:	-0.0032042280632098735
+vectorizers__tfidf__Ġpanunungkulan:	-0.0031785053047683667
+vectorizers__tfidf__Ġassociation:	-0.0031350556981065503
+vectorizers__tfidf__Ġpang:	-0.0028181994129269773
+vectorizers__tfidf__Ġchairman:	-0.0028003191515735726
+vectorizers__tfidf__Ġsa Ġnaunang:	-0.002754497918388317
+vectorizers__tfidf__Ġng Ġliga:	-0.002455640587419878
+vectorizers__tfidf__Ġang Ġpagbibigay Ġng:	-0.0024407981201610184
+vectorizers__tfidf__Ġni Ġp:	-0.0021797550529418443
+vectorizers__tfidf__<s> b inig:	-0.0020279254168209166
+vectorizers__tfidf__Ġng Ġboard:	-0.0018597823311200551
+vectorizers__tfidf__Ġvar:	-0.0018287229229923111
+vectorizers__tfidf__Ġng Ġextension:	-0.0018281690702028396
+vectorizers__tfidf__Ġtaon Ġsa:	-0.0018269459080298477
+vectorizers__tfidf__Ġvar gas:	-0.0018229067627683509
+vectorizers__tfidf__Ġkanyang Ġpanunungkulan:	-0.0017683382634738455
+vectorizers__tfidf__Ġbasketball:	-0.001686106097202976
+vectorizers__tfidf__Ġvote:	-0.0016798955690884244
+vectorizers__tfidf__, Ġgaya Ġng:	-0.0016136632243807722
+vectorizers__tfidf__, Ġgaya:	-0.0016094144419825567
+vectorizers__tfidf__Ġni:	-0.0015778369594422403
+vectorizers__tfidf__Ġkontrata Ġna:	-0.0015731428738659425
+vectorizers__tfidf__Ġnalalabi:	-0.0015226420760500587
+vectorizers__tfidf__im ous:	-0.0014989587505822247
+vectorizers__tfidf__Ġunan im:	-0.001497134482380315
+vectorizers__tfidf__Ġunan im ous:	-0.001497134482380315
+vectorizers__tfidf__âĢľ we:	-0.0014873770064138753
+vectorizers__tfidf__Ġp ba:	-0.001433058609487832
+vectorizers__tfidf__Ġsa Ġkanyang Ġpanunungkulan:	-0.0012625104913035559
+vectorizers__tfidf__alaga Ġsa:	-0.0012230351733643295
+vectorizers__tfidf__yan:	-0.00119625567036367
+vectorizers__tfidf__Ġabout Ġhis:	-0.0011289783772558822
+vectorizers__tfidf__Ġng Ġboard Ġof:	-0.001123346401758436
+vectorizers__tfidf__Ġliga ,:	-0.0010788695090348571
+vectorizers__tfidf__Ġboard .:	-0.0010494986670502467
+vectorizers__tfidf__Ġg:	-0.0010175272584630436
+vectorizers__tfidf__Ġng Ġliga ,:	-0.0009524858911050618
+vectorizers__tfidf__Ġrin Ġng:	-0.0009081474594675596
+vectorizers__tfidf__. Ġito ':	-0.0008423882853234593
+vectorizers__tfidf__Ġbunga:	-0.0008344160083057942
+vectorizers__tfidf__h uwebes:	-0.0006544038166570978
+vectorizers__tfidf__Ġ( h uwebes:	-0.0006544038166570978
+vectorizers__tfidf__we 're:	-0.0006508764388058358
+vectorizers__tfidf__Ġsa Ġbansang:	-0.0006429173663894688
+vectorizers__tfidf__Ġkay Ġmar:	-0.0005480353832026976
+vectorizers__tfidf__Ġnoong Ġ2018:	-0.000520916483112705
+vectorizers__tfidf__Ġchairman Ġr:	-0.0005143461986599762
+vectorizers__tfidf__Ġtatlong:	-0.00042597488153076063
+vectorizers__tfidf__b inig:	-0.00039956222148131127
+vectorizers__tfidf__yan Ġng:	-0.00039409936879580376
+vectorizers__tfidf__Ġsya Ġng Ġp:	-0.0002808588045350136
+vectorizers__tfidf__Ġbilang .:	-0.0002737333612607892
+vectorizers__tfidf__Ġtaong Ġkontrata:	-0.00013638996139809186
+vectorizers__tfidf__Ġsession:	-0.00013617974371057514
+vectorizers__tfidf__gas:	-0.00010223399303895302
+vectorizers__tfidf__Ġng Ġtatlong Ġtaong:	-5.795255610018182e-05
+vectorizers__tfidf__Ġkanyang:	-1.4953432836045303e-05
+vectorizers__tfidf__Ġmay Ġnalalabi:	3.401117177221922e-08
+vectorizers__tfidf__Ġnalalabi Ġpang:	3.401117177221922e-08
+vectorizers__tfidf__Ġmay Ġnalalabi Ġpang:	3.401117177221922e-08
+vectorizers__tfidf__Ġperformance ,âĢĿ:	4.7556369820751966e-07
+vectorizers__tfidf__Ġperformance Ġnito:	2.6614782441983253e-06
+vectorizers__tfidf__. âĢľ we:	3.4823357558224613e-06
+vectorizers__tfidf__Ġhis Ġperformance:	3.576706102675302e-06
+vectorizers__tfidf__Ġextension Ġsa:	5.831359561310152e-06
+vectorizers__tfidf__Ġand Ġvery:	6.012557750412037e-06
+vectorizers__tfidf__Ġ2018 Ġpero:	6.7051257592336264e-06
+vectorizers__tfidf__Ġmagandang Ġperformance:	1.0351367551898955e-05
+vectorizers__tfidf__overnors:	5.884420223625598e-05
+vectorizers__tfidf__Ġg overnors:	6.0920934303508576e-05
+vectorizers__tfidf__Ġboard Ġng:	8.044723265401229e-05
+vectorizers__tfidf__im:	0.00012658921844402627
+vectorizers__tfidf__Ġpero Ġbinigyan:	0.00012868749244492248
+vectorizers__tfidf__Ġkanya Ġbilang:	0.00016609775785826023
+vectorizers__tfidf__Ġsa Ġkanya Ġbilang:	0.00016609775785826023
+vectorizers__tfidf__Ġpang Ġisang Ġtaon:	0.00016696974875151196
+vectorizers__tfidf__Ġtermino Ġni Ġmar:	0.0003796699895653204
+vectorizers__tfidf__Ġit alya:	0.0003972782629159406
+vectorizers__tfidf__alya ,:	0.0003972782629159406
+vectorizers__tfidf__Ġit alya ,:	0.0003972782629159406
+vectorizers__tfidf__inig:	0.0004046362838424467
+vectorizers__tfidf__Ġsa Ġstar:	0.00043779565699931383
+vectorizers__tfidf__Ġbunga Ġna:	0.00044757006278027534
+vectorizers__tfidf__Ġbunga Ġna Ġrin:	0.00044757006278027534
+vectorizers__tfidf__Ġof Ġg:	0.00045973140921521847
+vectorizers__tfidf__ie Ġmar:	0.0005128583719997185
+vectorizers__tfidf__Ġwill ie Ġmar:	0.0005128583719997185
+vectorizers__tfidf__ie Ġmar cial:	0.0005128583719997185
+vectorizers__tfidf__Ġni Ġp ba:	0.0005128583719997185
+vectorizers__tfidf__cial . </s>:	0.0005368570037461799
+vectorizers__tfidf__Ġplanning:	0.0006274088000553484
+vectorizers__tfidf__inig yan Ġng:	0.0006335118170580148
+vectorizers__tfidf__Ġhotel s Ġsa:	0.0007050135974274573
+vectorizers__tfidf__Ġconfidence .:	0.0008435562862285611
+vectorizers__tfidf__Ġextension:	0.0008659440553170339
+vectorizers__tfidf__Ġtatlong Ġtaong:	0.0011723594592903362
+vectorizers__tfidf__. âĢľ:	0.0011747055939134996
+vectorizers__tfidf__Ġtaong:	0.0012479150817995706
+vectorizers__tfidf__Ġmagandang:	0.0012758286215790342
+vectorizers__tfidf__Ġcommissioner:	0.0013185121750778758
+vectorizers__tfidf__Ġperformance:	0.0013407429665039557
+vectorizers__tfidf__Ġng Ġmagandang:	0.001356353042711986
+vectorizers__tfidf__Ġpara Ġsa Ġkanyang:	0.001357207938864819
+vectorizers__tfidf__Ġr icky:	0.001387039424526353
+vectorizers__tfidf__Ġni Ġmar cial:	0.0013963500727089944
+vectorizers__tfidf__Ġpang Ġisang:	0.001406292975798572
+vectorizers__tfidf__). Ġmay:	0.0014327544869211096
+vectorizers__tfidf__Ġboard Ġof:	0.0015137212718206977
+vectorizers__tfidf__Ġtermino Ġni:	0.0015359203757079026
+vectorizers__tfidf__cial .:	0.0015373782950224278
+vectorizers__tfidf__Ġmar cial .:	0.0015373782950224278
+vectorizers__tfidf__Ġhis:	0.0015454479358947017
+vectorizers__tfidf__Ġtungkol Ġkay:	0.0015794972255049485
+vectorizers__tfidf__alya:	0.0016101559548702938
+vectorizers__tfidf__Ġwika:	0.0016284200066816715
+vectorizers__tfidf__Ġopen:	0.0016821765089708748
+vectorizers__tfidf__Ġsession Ġsa:	0.001686902141442264
+vectorizers__tfidf__Ġnaunang:	0.0017159113726715586
+vectorizers__bow__may:	0.0017299226542245
+vectorizers__tfidf__Ġconfidence:	0.0017546807473315888
+vectorizers__tfidf__Ġsa Ġtermino:	0.0017952491113979255
+vectorizers__tfidf__Ġnaging:	0.0018379603172305828
+vectorizers__tfidf__s:	0.002009095359902228
+vectorizers__tfidf__inig yan:	0.0020104084543244053
+vectorizers__tfidf__b inig yan:	0.0020329051060787974
+vectorizers__tfidf__,âĢĿ Ġwika:	0.0021623436207045444
+vectorizers__tfidf__<s>:	0.002255325853008203
+vectorizers__tfidf__</s>:	0.002255325853008203
+vectorizers__tfidf__icky:	0.0022685167730347945
+vectorizers__tfidf__ine Ġbasketball:	0.0023407035938952576
+vectorizers__tfidf__Ġphilipp ine Ġbasketball:	0.0023407035938952576
+vectorizers__tfidf__Ġtungkol:	0.0024331923974550062
+vectorizers__tfidf__Ġgaya Ġng:	0.0024497679845654975
+vectorizers__tfidf__Ġwika Ġni:	0.0024524169820256975
+vectorizers__tfidf__s Ġsa:	0.002507560893010616
+vectorizers__tfidf__Ġnilagdaan Ġni:	0.002527789696349707
+vectorizers__tfidf__Ġhotel s:	0.002556917285552324
+vectorizers__tfidf__Ġbasketball Ġassociation:	0.0025745622276873888
+vectorizers__tfidf__ine Ġbasketball Ġassociation:	0.0025745622276873888
+vectorizers__tfidf__Ġgaya:	0.002577376503144729
+vectorizers__tfidf__y:	0.002741812434567471
+vectorizers__tfidf__,âĢĿ Ġwika Ġni:	0.0029350328456854255
+vectorizers__tfidf__. Ġsa Ġkanilang:	0.003193532124540488
+vectorizers__tfidf__Ġna Ġnilagdaan Ġni:	0.0032511507689872623
+vectorizers__tfidf__Ġnilagdaan:	0.0034564422289131294
+vectorizers__tfidf__Ġni Ġmar:	0.0036585138532182282
+vectorizers__tfidf__Ġng Ġbagong:	0.003883871743740906
+vectorizers__bow__governors:	0.003892284382633434
+vectorizers__tfidf__Ġna Ġnilagdaan:	0.004141824265342801
+vectorizers__tfidf__Ġmar cial:	0.00424156928072037
+vectorizers__tfidf__cial:	0.004241806463478826
+vectorizers__tfidf__ous:	0.004258769964564526
+vectorizers__tfidf__ine:	0.004274524425524808
+vectorizers__bow__star:	0.004488489970777812
+vectorizers__tfidf__Ġtransparent:	0.004596280558482745
+vectorizers__tfidf__Ġ( h:	0.004740494532182963
+vectorizers__tfidf__Ġ2018:	0.004928139332206938
+vectorizers__tfidf__Ġna Ġrin Ġng:	0.005109665694425606
+vectorizers__tfidf__Ġbinigyan:	0.005379245398029285
+vectorizers__tfidf__Ġpero:	0.005707979058109088
+vectorizers__tfidf__Ġnagustuhan:	0.0057302696574941395
+vectorizers__tfidf__Ġphilipp ine:	0.0057905638501327605
+vectorizers__tfidf__Ġkanilang:	0.006458107895150615
+vectorizers__tfidf__Ġannual:	0.006641340552673081
+vectorizers__tfidf__Ġnagustuhan Ġng:	0.0073181398919817476
+vectorizers__tfidf__Ġng Ġphilipp ine:	0.0074011755637315374
+vectorizers__tfidf__Ġng Ġphilipp:	0.0074027244869063836
+vectorizers__tfidf__Ġsya:	0.007420764657620526
+vectorizers__tfidf__Ġng:	0.007982070257436306
+vectorizers__tfidf__Ġcommissioner Ġng:	0.008640954126402985
+vectorizers__tfidf__Ġisang:	0.010418264509037252
+vectorizers__tfidf__<s> b:	0.010570832150013776
+vectorizers__tfidf__Ġsya Ġng:	0.010897153774370507
+vectorizers__tfidf__ba:	0.011255591548546641
+vectorizers__tfidf__Ġof:	0.011272029731079429
+vectorizers__tfidf__b:	0.012392379404302047
+vectorizers__tfidf__Ġphilipp:	0.013564852009742919
+vectorizers__tfidf__Ġng Ġp:	0.014063770553672828
+vectorizers__bow__italya:	0.014291716148529783
+vectorizers__bow__bunga:	0.016016894313038234
+vectorizers__tfidf__Ġkahapon:	0.016425818273622293
+vectorizers__tfidf__Ġmay:	0.017383470331885573
+vectorizers__tfidf__Ġpagbibigay:	0.017947027193864113
+vectorizers__bow__performance:	0.018139073664007663
+vectorizers__tfidf__. Ġsa:	0.019281345124384803
+vectorizers__tfidf__Ġna:	0.0203583356190098
+vectorizers__tfidf__. Ġito:	0.020412093778453422
+vectorizers__tfidf__Ġsa Ġkanyang:	0.02053256421431247
+vectorizers__bow__chairman:	0.021852907963961103
+vectorizers__tfidf__Ġnito:	0.02284283865259406
+vectorizers__tfidf__Ġnito Ġna:	0.024529414102322667
+vectorizers__tfidf__Ġpagbibigay Ġng:	0.02665682863592396
+vectorizers__tfidf__Ġna Ġrin:	0.027058130575830536
+vectorizers__bow__planning:	0.029874678742440697
+vectorizers__tfidf__Ġtaon:	0.029917370886342023
+vectorizers__tfidf__Ġang:	0.031637662708500165
+vectorizers__tfidf__,âĢĿ:	0.03188384640212309
+vectorizers__bow__confidence:	0.034479020514296126
+vectorizers__bow__sya:	0.03469059514407887
+vectorizers__bow__his:	0.035053924782187704
+vectorizers__tfidf__Ġito:	0.03577580710087547
+vectorizers__bow__ricky:	0.041058153312808356
+vectorizers__tfidf__Ġr:	0.04411286630547624
+vectorizers__tfidf__Ġsa:	0.04547137574024026
+vectorizers__bow__sa:	0.05170846421379015
+vectorizers__bow__ito:	0.05419108530612639
+vectorizers__bow__wika:	0.05899937838462871
+vectorizers__tfidf__.:	0.061524150193680266
+vectorizers__bow__magandang:	0.0633826697275299
+vectorizers__bow__extension:	0.06488075385247771
+vectorizers__bow__pba:	0.07039206339750974
+vectorizers__tfidf__Ġisang Ġtaon:	0.07098842768984101
+vectorizers__bow__ang:	0.07121871488507361
+vectorizers__bow__hotels:	0.07143517953225598
+vectorizers__bow__annual:	0.0939579888126684
+vectorizers__bow__open:	0.10227938533642021
+vectorizers__bow__pero:	0.10244946039312297
+vectorizers__bow__commissioner:	0.10264020122945346
+vectorizers__bow__nito:	0.10754536992668785
+vectorizers__bow__gaya:	0.11451407480454373
+vectorizers__bow__binigyan:	0.11557463319292557
+vectorizers__bow__nilagdaan:	0.12629791402550875
+vectorizers__bow__marcial:	0.13013710529823158
+vectorizers__bow__nagustuhan:	0.1439018658042988
+vectorizers__bow__transparent:	0.14436318864496708
+vectorizers__bow__naging:	0.14949075304393972
+vectorizers__bow__re:	0.15140316007640184
+vectorizers__bow__pang:	0.1724365242865342
+vectorizers__bow__para:	0.23725497458142156
+vectorizers__bow__and:	0.24606594062383733
+vectorizers__bow__of:	0.2676920346798862
+vectorizers__bow__2018:	0.2710970839384557
+vectorizers__bow__kahapon:	0.2879201789757144
+vectorizers__bow__pagbibigay:	0.33013007226587454
+vectorizers__bow__taon:	0.3321042635877868
+vectorizers__bow__philippine:	0.36150277353868315

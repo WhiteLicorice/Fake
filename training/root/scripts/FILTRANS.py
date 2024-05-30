@@ -72,7 +72,8 @@ class TRADExtractor(BaseEstimator, TransformerMixin):
                 word_count_per_sentence
             ])
         return features
-
+    def get_feature_names_out(self, _):
+        return ['word_count','sentence_count','polysyll_count','ave_word_length','ave_phrase_count','ave_syllable_count_of_word','word_count_per_sentence']
 
 #   Custom transformer for SYLL feature extraction
 class SYLLExtractor(BaseEstimator, TransformerMixin):
@@ -144,6 +145,9 @@ class SYLLExtractor(BaseEstimator, TransformerMixin):
             ])
         return features
     
+    def get_feature_names_out(self, _):
+        return ['consonant_cluster','v_density','cv_density','vc_density','cvc_density','vcc_density','cvcc_density','ccvcc_density','ccvccc_density',]
+    
 class LEXExtractor(BaseEstimator, TransformerMixin):
     def __init__(self, from_csv = False):
         self.from_csv = from_csv
@@ -179,6 +183,8 @@ class LEXExtractor(BaseEstimator, TransformerMixin):
                 lexical_density, foreign_tr, compound_tr
             ])
         return features
+    def get_feature_names_out(self, _):
+        return ['ttr','root_ttr','corr_ttr','log_ttr','noun_tr','verb_tr','lexical_density','foreign_tr','compound_tr']
     
 class MORPHExtractor(BaseEstimator, TransformerMixin):
     def __init__(self, from_csv = False):
@@ -254,6 +260,8 @@ class MORPHExtractor(BaseEstimator, TransformerMixin):
             ])
 
         return features
+    def get_feature_names_out(self, _):
+        return ['prefix_token_ratio','prefix_derived_ratio','suffix_token_ratio','suffix_derived_ratio','total_affix_token_ratio','total_affix_derived_ratio','actor_focus_ratio','object_focus_ratio','benefactive_focus_ratio','locative_focus_ratio','instrumental_focus_ratio','referential_focus_ratio','infinitive_verb_ratio','participle_verb_ratio','perfective_verb_ratio','imperfective_verb_ratio','contemplative_verb_ratio','recent_past_verb_ratio','aux_verb_ratio']
 
 
 #   Custom transformer for OOV count feature extraction
@@ -283,6 +291,9 @@ class OOVExtractor(BaseEstimator, TransformerMixin):
                 oov_count,
             ])
         return features
+    
+    def get_feature_names_out(self, _):
+        return["count_oov_words"]
 
 #   Custom transformer for StopWords count feature extraction
 class StopWordsExtractor(BaseEstimator, TransformerMixin):
@@ -312,6 +323,9 @@ class StopWordsExtractor(BaseEstimator, TransformerMixin):
             ])
         return features
 
+    def get_feature_names_out(self, _):
+        return ["count_stopwords"]
+
 #   Custom transformer for StopWords count feature extraction
 class READExtractor(BaseEstimator, TransformerMixin):
     def __init__(self, from_csv = False):
@@ -339,3 +353,5 @@ class READExtractor(BaseEstimator, TransformerMixin):
                 readability_score,
             ])
         return features
+    def get_feature_names_out(self, _):
+        return ["readability_score"]

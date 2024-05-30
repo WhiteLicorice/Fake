@@ -15,3 +15,5 @@ _minted/
 *.fls
 *.lof
 *.lot
+
+!figures/Model Training.pdf
