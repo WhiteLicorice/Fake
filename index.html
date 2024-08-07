@@ -17,6 +17,28 @@
   <meta name="msapplication-TileColor" content="#da532c">
   <meta name="theme-color" content="#ffffff">
 
+  <style>
+    /* Adjust padding and margin for sections */
+    section {
+      padding: 20px 10px;
+    }
+
+    @media (min-width: 640px) {
+      section {
+        padding: 40px 20px;
+      }
+    }
+
+    /* Ensure minimum height for sections */
+    section {
+      min-height: 100vh;
+    }
+
+    /* Additional styles for better layout on mobile */
+    .border {
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
 </head>
 
 <body class="font-serif">
@@ -43,23 +65,21 @@
     </div>
   </header>
 
-
   <div class="border"></div>
 
-  <div class="bg-cover bg-top relative flex flex-col text-center min-h-screen justify-center bg-gradient-to-r from-white to-gray-300 sm:flex-row sm:items-center" style="background-image: url('src/images/cha-cha.jpg');" id="about">
+  <section class="bg-cover bg-top relative flex flex-col text-center justify-center bg-gradient-to-r from-white to-gray-300" style="background-image: url('src/images/cha-cha.jpg');" id="about">
     <div class="flex items-center justify-center absolute inset-0 bg-white bg-opacity-95">
       <div class="mx-4 sm:mx-64 mt-20 mb-10 sm:mt-0 sm:mb-0 gap-4">
         <h1 class="text-5xl mb-10">Fake news no more.</h1>
         <p class="mb-9">Built by a team of students from the University of the Philippines, FaKe detects Tagalog fake news at a staggering 98% accuracy. We leverage advances in artificial intelligence and web technologies to protect you from fake news.</p>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="border"></div>
 
-
-    <!-- Article Check Section -->
-  <div class="flex text-center min-h-screen justify-center bg-cover bg-center relative overflow-auto pb-20" style="background-image: url('src/images/pexels-digitalbuggu-167538.jpg')" id="check_news_section">
+  <!-- Article Check Section -->
+  <section class="flex text-center justify-center bg-cover bg-center relative overflow-auto" style="background-image: url('src/images/pexels-digitalbuggu-167538.jpg')" id="check_news_section">
     <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center">
       <div class="mx-4 sm:mx-64">
         <h2 class="text-3xl font-bold mb-5 text-white">Check for Tagalog Fake News</h2>
@@ -83,16 +103,14 @@
         </div>
       </div>
     </div>
-  </div>
-
-
+  </section>
 
   <div class="border"></div>
 
-  <div class="flex text-center h-screen justify-center bg-cover bg-center relative" style="background-image: url('src/images/delayed-projects.jpg');" id="installation">
+  <section class="flex text-center justify-center bg-cover bg-center relative" style="background-image: url('src/images/delayed-projects.jpg');" id="installation">
     <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center">
       <div class="mx-10 text-white">
-        <h1 class="text-5xl mb-10">Browser Extension?</h1>
+        <h1 class="text-5xl mb-10">How to install the browser extension?</h1>
         <ol class="text-left">
           <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">1</span>Download and install <a href="https://www.tampermonkey.net/" class="underline text-orange-400">Tampermonkey</a> for your browser of choice.</li>
           <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">2</span>Download the latest release of the FaKe web extension from <a href="https://github.com/WhiteLicorice/Fake/releases" class="underline text-orange-400">GitHub</a>.</li>
@@ -105,14 +123,14 @@
         </ol>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="border"></div>
 
-  <div class="bg-cover bg-top relative flex text-center h-screen justify-center bg-gradient-to-r from-white to-gray-300" style="background-image: url('src/images/pexels-digitalbuggu-167538.jpg');" id="usage">
+  <section class="bg-cover bg-top relative flex text-center justify-center bg-gradient-to-r from-white to-gray-300" style="background-image: url('src/images/pexels-digitalbuggu-167538.jpg');" id="usage">
     <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-95">
       <div class="mx-10 text-black">
-        <h1 class="text-5xl mb-10">How to use?</h1>
+        <h1 class="text-5xl mb-10">How to use the browser extension?</h1>
         <ol class="text-left">
           <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">1</span>Navigate to a Tagalog news article.</li>
           <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">2</span>Pin Tampermonkey to your browser's address bar.</li>
@@ -123,12 +141,11 @@
         </ol>
       </div>
     </div>
-  </div>
-
+  </section>
 
   <div class="border"></div>
 
-  <div class="flex flex-col text-center min-h-screen justify-center bg-orange-600" id="contact">
+  <section class="flex flex-col text-center min-h-screen justify-center bg-orange-600" id="contact">
     <div class="container mx-auto px-4 md:px-8 py-8 md:py-12">
       <h1 class="text-4xl md:text-5xl text-white mb-6 md:mb-12">Let's Get In Touch!</h1>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
@@ -168,7 +185,7 @@
         </a>
       </div>
     </div>
-  </div>
+  </section>
 
   <div class="bg-orange-600 text-white py-4 text-center">
     &copy; 2024 The FaKe Team. <br /> Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" class="underline text-white hover:text-blue-400">Apache 2.0 License</a>.<br />
