@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         FaKe
-// @namespace    http://tampermonkey.net/
-// @version      2.0.0
+// @namespace	 https://github.com/WhiteLicorice
+// @version      2.0.1
 // @description  A userscript that interfaces with a cloud-hosted machine learning model to determine if an article is fake news or not.
 // @author       Rene Andre Jocsing, Kobe Austin Lupac, Chancy Ponce de Leon, Ron Gerlan Naragdao
 // @icon         https://cdn0.iconfinder.com/data/icons/modern-fake-news/500/asp1430a_9_newspaper_fake_news_icon_outline_vector_thin-1024.png
@@ -11,6 +11,8 @@
 // @connect https://fake-ph.cyclic.cloud
 // @connect https://fph-ml.onrender.com/check-news
 // @connect localhost
+// @updateURL https://github.com/WhiteLicorice/Fake/blob/main/userscript/script.js
+// @downloadURL https://raw.githubusercontent.com/WhiteLicorice/Fake/refs/heads/main/userscript/script.js
 // ==/UserScript==
 
 (function() {
