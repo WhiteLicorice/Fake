@@ -30,7 +30,7 @@ This repository hosts a fake news classifier trained partly on a corpus of Filip
 
 
 ## Contributing
-If you wish to contribute to the project, please open a pull request.
+If you wish to contribute to the project, please open a pull request. The project runs on Python 3.11.
 
 ## Resources
 ```
