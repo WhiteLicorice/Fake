@@ -194,6 +194,19 @@ classifiers = [
         'model_id': 'SVC',
         'model': SVC(C=0.1, kernel='linear'),
     },
+    {
+    'name': 'Voting Classifier',
+    'model_id': 'VotingClassifier',
+    'model': VotingClassifier(
+        estimators=[
+            ('lr', LogisticRegression(max_iter=2000, n_jobs=-1, C=1.0)),
+            ('mnb', MultinomialNB(alpha=0.1)),
+            ('rf', RandomForestClassifier(n_jobs=-1, min_samples_split=5, max_depth=20, n_estimators=100))
+        ],
+        voting='soft',
+        n_jobs=-1
+    ),
+    }
 ]
 
 # Train each classifier with repeated cross-validation
