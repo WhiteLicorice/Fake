@@ -32,6 +32,10 @@ This repository hosts a fake news classifier trained partly on a corpus of Filip
 ## Contributing
 If you wish to contribute to the project, please open a pull request. The project runs on Python 3.11.
 
+## TODO
+
+This branch is for formatting the paper in compliance with IEEE-754 publishing standards.
+
 ## Resources
 ```
 @inproceedings{cruz2020localization,
