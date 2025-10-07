@@ -96,7 +96,7 @@ fddimzon1@up.edu.ph}
 \conf{\textit{  Proc. of International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA 2026) \\ 
 5-7 February 2026, Boracay-Philippines}}
 \begin{abstract}
-    Methods for curbing the spread of misinformation in the Philippines remain inadequate. The internet as a medium for fake news necessitates fast, automated, and accessible countermeasures. A precursor study from 2020 benchmarks Transfer Learning (TL) techniques in building Filipino language fake news classifiers from a low-resource dataset. Despite promising results, the models from the aforementioned study cannot be easily deployed for a wide audience. In this work, we show that robust fake news classifiers for a morphologically rich language can be constructed from lightweight machine learning models and a low-resource dataset. We show that these machine learning models can be successfully deployed on a stringent infrastructure. First, we construct a dataset of Filipino language news articles. We extract Filipino linguistic features from the dataset. Next, we train a Logistic Regression model, which achieves an accuracy of 95\% without hyperparameter tuning. Using this model, we build and deploy a system for classifying Filipino language fake news.
+    Methods for curbing the spread of misinformation in the Philippines remain inadequate. The internet as a medium for fake news necessitates fast, automated, and accessible countermeasures. A precursor study from 2020 benchmarks Transfer Learning (TL) techniques in building Filipino language fake news classifiers from a low-resource dataset. Despite promising results, the models from the aforementioned study cannot be easily deployed for a wide audience. In this work, we show that robust fake news classifiers for a morphologically rich language can be constructed from lightweight machine learning models and a low-resource dataset. We show that these machine learning models can be successfully deployed on a stringent infrastructure. First, we construct a dataset of Filipino language news articles. We extract Filipino linguistic features from the dataset. Next, we train a Logistic Regression model, which achieves a top accuracy of 95\%. Using this model, we build and deploy a system for classifying Filipino language fake news.
 \end{abstract}
 
 %\copyrightnotice{XXX-X-XXXX-XXXX-X/XX/\$XX.00 ©20XX IEEE}
@@ -109,15 +109,15 @@ natural language processing, machine learning, fake news in Filipino language, F
 \end{IEEEkeywords}
 
 \section{Introduction}
-Misinformation ranks among the world's top global risks as fake news outlets see traffic. In the Philippines, journalists and political analysts speculate that Former President Rodrigo Duterte's landslide victory in the 2016 presidential elections has been brought about by paid trolls disseminating fake news through social media outlets \cite{b1}. Former President Duterte earned publicity by popularizing a depiction of the Philippines as a \textit{narco-state}.  Though he insists that this rhetoric is truth, the UN Office on Drugs and Crime reports otherwise—the Philippines' drug use prevalence is lower than the global average \cite{b2}.
+Misinformation ranks among the world's top global risks as fake news outlets see traffic. In the Philippines, journalists and political analysts speculate that Former President Rodrigo Duterte's landslide victory in the 2016 presidential elections has been brought about by paid trolls disseminating fake news through social media outlets \cite{b1}. Former President Duterte earned publicity by popularizing a depiction of the Philippines as a \textit{narco-state}. Though he insists that this rhetoric is truth, the United Nations Office on Drugs and Crime reports otherwise—the Philippines' drug use prevalence is lower than the global average \cite{b2}.
 
 A precursor work \cite{b3} explores Transfer Learning (TL) in building robust fake news classifiers for the morphologically rich Filipino language. Despite promising results, the deployment of the models (e.g., BERT) used in this work costs somewhere around 50,000 to 1,600,000 USD \cite{b4}. Hence, they cannot be easily deployed for consumer-level applications \cite{b3, b4}.
 
-This work investigates lightweight machine learning models in tackling the classification of Filipino language fake news. A low-resource dataset of Filipino language news articles (Fake News Filipino 2024) is sourced from the internet to alleviate resource scarcity. A Logistic Regression model is trained on the combined Fake News Filipino and Fake News Filipino 2024 dataset, achieving an accuracy of 95\%. The authors successfully deploy the fake news classifier as a web extension (dubbed as FaKe) on a stringent infrastructure.
+This work investigates lightweight machine learning models in tackling the classification of Filipino language fake news. A low-resource dataset of Filipino language news articles (Fake News Filipino 2024) is sourced from the internet to alleviate resource scarcity. A Logistic Regression (LR) model is trained on the joint Fake News Filipino and Fake News Filipino 2024 dataset, achieving a top accuracy of 95\%. The authors successfully deploy the fake news classifier as a web extension (dubbed as FaKe) on a stringent infrastructure.
 
 \section{Related Work}
 
-Machine learning models have shown promise in automating fake news detection. A study \cite{b5} reports that Naive Bayes with \textit{n}-grams achieves 93\% accuracy on English datasets, while another study \cite{b6} finds that Support Vector Machine (SVM) reaches 96\% accuracy on a large corpora of about 20,000 articles. However, these studies focus on resource-rich English datasets.
+Machine learning models have shown promise in automating fake news detection. A study \cite{b5} reports that Naive Bayes with \textit{n}-grams achieves 93\% accuracy on English datasets, while another study \cite{b6} finds that Support Vector Classifier (SVC) reaches 96\% accuracy on a large corpora of about 20,000 articles. However, these studies focus on resource-rich English datasets.
 
 For Filipino language news articles, a study \cite{b3} pioneers fake news detection using Byte-Pair Encoding (BPE) tokenization to handle morphologically rich language features and out of vocabulary (OOV) words. While another study \cite{b7} identifies 76 linguistic features for fake news detection in the Filipino context, their corpus uses English-language articles. Two studies \cite{b8, b9} develop Filipino-specific readability metrics and linguistic features including traditional features (word count, sentence count), syllabic patterns based on Philippine orthography, and morphological features from verb inflections. These studies identify polysyllable word count, sentence count, and average sentence length as top predictors for Filipino text readability. As of the time of writing, no standardized instrument or assessment tool exists for measuring the readability of texts in the Filipino language \cite{b8}. However, a study \cite{b10} proposes a formula for assessing the readability of modern Filipino texts, wherein readability score is a function of word count and words per sentence.
 
@@ -131,44 +131,196 @@ Following a precursor study \cite{b3}, the authors constructed a new dataset of 
 \subsection{Feature Extraction and Model Training}
 Text was tokenized using BPE, adhering to the methodology of the precursor study \cite{b3}. The authors extracted the following Filipino linguistic features \cite{b8,b9,b10}: traditional features (TRAD) (word, sentence, and character counts), syllabic features (SYLL) (Philippine orthography: \textit{v}, \textit{cv}, \textit{vc}, \textit{cvc}, etc.), and lexical features (LEX) (type-token ratio, parts-of-speech densities), morphological features (MORPH) (verb inflections). OOV words and stop words (SW) were also extracted. Macahilig's readability formula \cite{b10} was also used to extract readability scores from the corpus (READ). Tokens were vectorized with Term Frequency-Inverse Document Frequency (TF-IDF) (unigrams, bigrams, trigrams) and bag of words (BOW).
 
-The authors trained four classifiers: Multinomial Naive Bayes, Logistic Regression, Random Forest, and SVC. Grid search with 5-fold cross-validation (CV) determined optimal hyperparameters. The classifiers were evaluated 30 times (5-fold CV x 6 runs) across three datasets: Fake News Filipino \cite{b3}, Fake News Filipino 2024, and their combined corpus. Two-way ANOVA with Bonferroni correction assessed performance differences and found these differences between models to be significant. The best model, Logistic Regression without hyperparameter tuning, achieved 95\% accuracy.
+The authors trained four classifiers: Multinomial Naive Bayes (MNB), Logistic Regression, Random Forest (RF), and Support Vector Classifier. Grid search with five-fold cross-validation determined optimal hyperparameters. The classifiers were evaluated 30 times (six runs of five-fold cross validation) across three datasets: Fake News Filipino \cite{b3}, Fake News Filipino 2024, and their joint corpus. Two-way ANOVA with Bonferroni correction assessed performance differences and found these differences between models to be significant. The best model, Logistic Regression, achieved a top accuracy of 95\%.
 
 \subsection{System Deployment}
-The best model was deployed as a web service using FastAPI on Render's free tier, interfaced through Tampermonkey. A web extension scrapes article text, sends it to the service for feature extraction and classification, then displays results. Due to infrastructure constraints, the deployed model excludes LEX and MORPH (requires deployment of Java runtime and 3+ minutes of processing time per article). The exclusion of these features during cross validation did not significantly affect the accuracy of the deployed model.
+The best model was deployed as a web service using FastAPI on Render's \textbf{free} tier, interfaced through Tampermonkey. A web extension scrapes article text, sends it to the service for feature extraction and classification, then displays results. Due to infrastructure constraints, the deployed model excludes LEX and MORPH features (requires deployment of Java runtime and 3+ minutes of processing time per article). The exclusion of these features during cross validation did not significantly affect the accuracy of the deployed model.
 
-\section*{Acknowledgment}
+\section{Results}
 
-The preferred spelling of the word ``acknowledgment'' in America is without 
-an ``e'' after the ``g''. Avoid the stilted expression ``one of us (R. B. 
-G.) thanks $\ldots$''. Instead, try ``R. B. G. thanks$\ldots$''. Put sponsor 
-acknowledgments in the unnumbered footnote on the first page.
+\section{Results and Discussion}
 
-\section*{References}
+\subsection{Dataset Characteristics}
+Fake News Filipino 2024 contains 3,206 balanced articles. Compared to Fake News Filipino (2020), it has higher average OOV count (22.2 vs 17.6), lower readability (19.7 vs 20.5), and fewer stop words (74.5 vs 77.8), indicating some stylistic differences between datasets.
 
-Please number citations consecutively within brackets \cite{b1}. The 
-sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
-number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
-the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+\subsection{Model Performance}
+Four classifiers were trained with and without optimal hyperparameters, identified via grid search. Table \ref{tab:no_hyperparam_summary} shows performance on the joint corpus without hyperparameter tuning, while Table \ref{tab:hyperparam_summary} shows performance on the joint corpus with hyperparameter tuning. LR and SVC both achieved highest accuracy (93\%), though SVC required hyperparameter tuning while LR did not. MNB improved significantly with tuning (58\% to 87\%). The best-performing model is LR.
 
-Number footnotes separately in superscripts. Place the actual footnote at 
-the bottom of the column in which it was cited. Do not put footnotes in the 
-abstract or reference list. Use letters for table footnotes.
+\begin{table}[!t]
+\caption{Performance metrics for classifiers without hyperparameter tuning.}
+\label{tab:no_hyperparam_summary}
+\begin{center}
+\begin{tabular}{|l|ccc|ccc|}
+\hline
+& \multicolumn{3}{c|}{\textbf{Multinomial Naive Bayes}} & \multicolumn{3}{c|}{\textbf{Logistic Regression}} \\
+\hline
+& \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
+\hline
+Fake & 1.00 & 0.16 & 0.28 & 0.92 & 0.93 & 0.93 \\
+Not Fake & 0.54 & 1.00 & 0.70 & 0.93 & 0.92 & 0.93 \\
+Accuracy & & & 0.58 & & & 0.93 \\
+\hline
+& \multicolumn{3}{c|}{\textbf{Random Forest}} & \multicolumn{3}{c|}{\textbf{Support Vector Classifier}} \\
+\hline
+& \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
+\hline
+Fake & 0.91 & 0.90 & 0.90 & 0.87 & 0.74 & 0.80 \\
+Not Fake & 0.90 & 0.91 & 0.90 & 0.77 & 0.89 & 0.83 \\
+Accuracy & & & 0.90 & & & 0.81 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
-Unless there are six authors or more give all authors' names; do not use 
-``et al.''. Papers that have not been published, even if they have been 
-submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
-that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
-Capitalize only the first word in a paper title, except for proper nouns and 
-element symbols.
+\begin{table}[!t]
+\caption{Classifier performance with hyperparameter tuning.}
+\label{tab:hyperparam_summary}
+\begin{center}
+\begin{tabular}{|l|ccc|ccc|}
+\hline
+& \multicolumn{3}{c|}{\textbf{Multinomial NB}} & \multicolumn{3}{c|}{\textbf{Logistic Reg.}} \\
+\hline
+& \textbf{Prec.} & \textbf{Rec.} & \textbf{F1} & \textbf{Prec.} & \textbf{Rec.} & \textbf{F1} \\
+\hline
+Fake & 0.93 & 0.76 & 0.85 & 0.92 & 0.93 & 0.93 \\
+Real & 0.80 & 0.97 & 0.88 & 0.93 & 0.92 & 0.93 \\
+Accuracy & & & 0.87 & & & 0.93 \\
+\hline
+& \multicolumn{3}{c|}{\textbf{Random Forest}} & \multicolumn{3}{c|}{\textbf{SVC}} \\
+\hline
+& \textbf{Prec.} & \textbf{Rec.} & \textbf{F1} & \textbf{Prec.} & \textbf{Rec.} & \textbf{F1} \\
+\hline
+Fake & 0.90 & 0.88 & 0.89 & 0.92 & 0.93 & 0.93 \\
+Real & 0.88 & 0.90 & 0.89 & 0.93 & 0.92 & 0.93 \\
+Accuracy & & & 0.89 & & & 0.93 \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
 
-For papers published in translation journals, please give the English 
-citation first, followed by the original foreign-language citation \cite{b6}.
+\subsection{Cross-Dataset Evaluation}
+Models were evaluated 30 times across three datasets. Table \ref{tab::AverageAccuracies} shows average accuracies. LR and SVC achieved 95\% accuracy on individual datasets but dropped to 92\% on the joint corpus, while Naive Bayes and Random Forest dropped further (86\% to 89\%).
+
+\begin{table}[!t]
+\centering
+\footnotesize
+\begin{tabular}{|l|l|c|}
+\hline
+Classifier & Dataset & Accuracy \\
+\hline
+LR & FN Filipino 2020 & \textbf{0.951} \\
+ & FN Filipino 2024 & \textbf{0.947} \\
+ & Combined & 0.924 \\
+\hline
+MNB & FN Filipino 2020 & 0.923 \\
+ & FN Filipino 2024 & 0.885 \\
+ & Combined & 0.860 \\
+\hline
+RF & FN Filipino 2020 & 0.919 \\
+ & FN Filipino 2024 & 0.926 \\
+ & Combined & 0.888 \\
+\hline
+SVC & FN Filipino 2020 & \textbf{0.951} \\
+ & FN Filipino 2024 & \textbf{0.947} \\
+ & Combined & 0.922 \\
+\hline
+\end{tabular}
+\caption{Average accuracies across datasets.}
+\label{tab::AverageAccuracies}
+\end{table}
+
+Two-way ANOVA revealed significant main effects for dataset ($p<0.001$) and classifier ($p<0.001$), plus interaction ($p<0.001$). Bonferroni post-hoc tests showed LR and SVC performed similarly across all datasets ($p>0.05$), while all classifiers performed significantly worse on the combined corpus ($p<0.001$). This degradation likely stems from inconsistent writing styles between datasets, an inference supported by their differing OOV counts and readability scores.
+
+\subsection{Deployment and Model Interpretation}
+The FaKe browser extension (LR without LEX and MORPH features) was validated on Chrome, Edge, and Firefox with uniform results. Analysis of model coefficients revealed readability score (0.37) as strongest positive predictor for authentic news, while average phrase count (-0.42) most strongly indicated fake news. Specific words also influenced predictions: "source" (2.28) and "gma" (1.32) suggested authenticity, while "upang" (-0.88) and "ngunit" (-0.88) indicated fake news, reflecting patterns learned from the joint corpus. Tables \ref{tab::lang_coef} and \ref{tab::vec_coef} show the coefficients of the predictors.
+
+\begin{table}[!t]
+\caption{Linguistic features coefficients.}
+\label{tab::lang_coef}
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Predictor} & \textbf{Coefficient} \\ 
+\hline
+ave-phrase-count & $-0.422$ \\
+ave-word-length & $-0.346$ \\
+cvc-density & $-0.337$ \\ 
+consonant-cluster & $-0.319$ \\ 
+cvcc-density & $-0.248$ \\ 
+vcc-density & $-0.213$ \\ 
+vc-density & $-0.134$ \\ 
+word-count-per-sentence & $-0.129$ \\ 
+v-density & $-0.060$ \\ 
+ave-syllable-count-of-word & $-0.060$ \\ 
+polysyll-count & $-0.054$ \\ 
+ccvcc-density & $-0.054$ \\ 
+word-count & $-0.016$ \\ 
+cv-density & $-0.014$ \\ 
+ccvccc-density & $-0.0001$ \\ 
+count-oov-words & $0.025$ \\ 
+count-stopwords & $0.025$ \\ 
+sentence-count & $0.064$ \\ 
+readability-score & $0.367$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\begin{table}[!t]
+\caption{Top vectorizer predictors for each class.}
+\label{tab::vec_coef}
+\begin{center}
+\begin{tabular}{|l|r|}
+\hline
+\textbf{Predictor} & \textbf{Coefficient} \\ 
+\hline
+vectorizers--bow--upang & $-0.876$ \\
+vectorizers--bow--ngunit & $-0.876$ \\
+vectorizers--bow--sinabi & $-0.824$ \\
+vectorizers--bow--gma & $1.320$ \\
+vectorizers--bow--below & $1.444$ \\
+vectorizers--bow--source & $2.279$ \\
+\hline
+\end{tabular}
+\end{center}
+\end{table}
+
+\section{Conclusion}
+
+In this study, the authors constructed a balanced dataset of fake and authentic Filipino news articles named Fake News Filipino 2024, containing 1603 instances of real news and 1603 instances of fake news. The authors augmented Fake News Filipino (2020) and compiled a joint corpus for training several machine learning models. They compared the performance of four classifiers: Logistic Regression, Multinomial Naive Bayes, Random Forest, and Support Vector Classifier in classifying news articles across three datasets: Fake News Filipino 2024, Fake News Filipino, and a joint corpus. Hyperparameter tuning was conducted to determine the optimal hyperparameters of each classifier. Logistic Regression emerged as the most suitable model for deployment as it held the highest accuracies, without requiring hyperparameter tuning. The application yielded satisfactory results across different browsers.
+
+\section{Recommendations}
+
+For future studies, the authors recommend the expansion of the corpus, to include more domains and incorporate more writing styles. The authors recommend the development of a Filipino fake news detection system on a less stringent infrastructure. Furthermore, the authors recommend the undertaking of future studies that tackle other forms of fake news (e.g., spam, tweets, posts, etc.). With respect to deploying a microservice on Render, it is possible to further improve performance by incurring a small monthly fee. Articles flagged by the web extension should have their sources collated into a database. Future studies may build a dataset that incorporates article headings and article sources as features. Lastly, as the study of Filipino linguistic features are in a stage of infancy, more work should be conducted in this domain.
+
+\section*{Acknowledgments}
+
+We acknowledge the assistance rendered by Mr. Ron Gerlan F. Naragdao, in providing computational units for training the models in this study. Furthermore, his aid in designing the website for the FaKe browser extension and beta-testing the extension itself was indispensable.
+
+% Please number citations consecutively within brackets \cite{b1}. The 
+% sentence punctuation follows the bracket \cite{b2}. Refer simply to the reference 
+% number, as in \cite{b3}---do not use ``Ref. \cite{b3}'' or ``reference \cite{b3}'' except at 
+% the beginning of a sentence: ``Reference \cite{b3} was the first $\ldots$''
+
+% Number footnotes separately in superscripts. Place the actual footnote at 
+% the bottom of the column in which it was cited. Do not put footnotes in the 
+% abstract or reference list. Use letters for table footnotes.
+
+% Unless there are six authors or more give all authors' names; do not use 
+% ``et al.''. Papers that have not been published, even if they have been 
+% submitted for publication, should be cited as ``unpublished'' \cite{b4}. Papers 
+% that have been accepted for publication should be cited as ``in press'' \cite{b5}. 
+% Capitalize only the first word in a paper title, except for proper nouns and 
+% element symbols.
+
+% For papers published in translation journals, please give the English 
+% citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
-\bibitem{b1} J. Lanuza, J. Ong, and R. Tapsell, ``Evolutions of 'fake news' from the south: Tracking disinformation innovations and interventions between the 2016 and 2019 Philippines elections,'' Berkman Klein Center for Internet \& Society, Harvard University, 2019. [Online]. Available: https://cyber.harvard.edu/sites/default/files/2019-11/Comparative\%20Approaches\%20to\%20Disinformation\%20-\%20Jose\%20Mari\%20Hall\%20Lanuza\%20Slides.pdf
+\bibitem{b1} J. Lanuza, J. Ong, and R. Tapsell, ``Evolutions of 'fake news' from the south: tracking disinformation innovations and interventions between the 2016 and 2019 Philippines elections,'' Berkman Klein Center for Internet \& Society, Harvard University, 2019. [Online]. Available: https://cyber.harvard.edu/sites/default/files/2019-11/Comparative\%20Approaches\%20to\%20Disinformation\%20-\%20Jose\%20Mari\%20Hall\%20Lanuza\%20Slides.pdf
 \bibitem{b2} A. Yee, ``Post-truth politics and fake news in Asia,'' Global Asia, vol. 12, pp. 66--71, 2017.
 \bibitem{b3} J. C. B. Cruz, J. A. Tan, and C. Cheng, ``Localization of fake news detection via multitask transfer learning,'' in Proc. 12th Language Resources and Evaluation Conf., 2020, pp. 2596--2604.
-\bibitem{b4} A. Paleyes, R.-G. Urma, and N. D. Lawrence, ``Challenges in deploying machine learning: A survey of case studies,'' ACM Comput. Surv., vol. 55, no. 6, pp. 1--29, 2022.
+\bibitem{b4} A. Paleyes, R.-G. Urma, and N. D. Lawrence, ``Challenges in deploying machine learning: a survey of case studies,'' ACM Comput. Surv., vol. 55, no. 6, pp. 1--29, 2022.
 \bibitem{b5} J. Y. Khan, Md. T. Khondaker, S. Afroz, G. Uddin, and A. Iqbal, ``A benchmark study of machine learning models for online fake news detection,'' Mach. Learn. Appl., vol. 4, p. 100032, 2021.
 \bibitem{b6} D. Choudhury and T. Acharjee, ``A novel approach to fake news detection in social networks using genetic algorithm applying machine learning classifiers,'' Multimedia Tools Appl., vol. 82, no. 6, pp. 9029--9045, 2022.
 \bibitem{b7} A. C. T. Fernandez and M. Devaraj, ``Computing the linguistic-based cues of fake news in the Philippines towards its detection,'' in Proc. 9th Int. Conf. Web Intelligence, Mining and Semantics, 2019, pp. 1--9.
@@ -176,8 +328,8 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b9} J. M. Imperial and E. Ong, ``Diverse linguistic features for assessing reading difficulty of educational Filipino texts,'' arXiv:2108.00241, 2021.
 \bibitem{b10} H. B. Macahilig, ``A content-based readability formula for Filipino texts,'' The Normal Lights, vol. 8, 2015.
 \end{thebibliography}
-\vspace{12pt}
-\color{red}
-IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
+% \vspace{12pt}
+% \color{red}
+% IEEE conference templates contain guidance text for composing and formatting conference papers. Please ensure that all template text is removed from your conference paper prior to submission to the conference. Failure to remove the template text from your paper may result in your paper not being published.
 
 \end{document}
