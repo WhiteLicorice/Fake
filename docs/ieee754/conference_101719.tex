@@ -126,7 +126,7 @@ Despite these advances, Filipino linguistic features have not been applied in tr
 \section{Methodology}
 
 \subsection{Data Collection}
-Following a precursor study \cite{b3}, the authors constructed a new dataset of Filipino language news articles, Fake News Filipino 2024, containing 3,206 articles (1,603 fake, 1,603 authentic). Fake articles were sourced from fraudulent sites tagged by VERA Files while authentic articles were sourced from mainstream sources (Philippine Star, ABS-CBN). The news articles were UTF-8 encoded with minimal preprocessing to preserve features such as misspellings and punctuation.
+Following a precursor study \cite{b3}, the authors constructed a new dataset of Filipino language news articles, Fake News Filipino 2024, containing 3,206 articles (1,603 fake, 1,603 real). Fake articles were sourced from fraudulent sites tagged by VERA Files while real articles were sourced from mainstream sources (Philippine Star, ABS-CBN). The news articles were UTF-8 encoded with minimal preprocessing to preserve features such as misspellings and punctuation.
 
 \subsection{Feature Extraction and Model Training}
 Text was tokenized using BPE, adhering to the methodology of the precursor study \cite{b3}. The authors extracted the following Filipino linguistic features \cite{b8,b9,b10}: traditional features (TRAD), syllabic features (SYLL), lexical features (LEX), and morphological features (MORPH). OOV words and stop words (SW) were also extracted. Macahilig's readability formula \cite{b10} was also used to extract readability scores from the corpus (READ). Tokens were vectorized with Term Frequency-Inverse Document Frequency (TF-IDF) and bag of words (BOW). Table \ref{tab:features} shows a summary of the extracted linguistic features.
@@ -189,7 +189,7 @@ Four classifiers were trained with and without optimal hyperparameters, identifi
 & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
 \hline
 Fake & 1.00 & 0.16 & 0.28 & 0.92 & 0.93 & 0.93 \\
-Not Fake & 0.54 & 1.00 & 0.70 & 0.93 & 0.92 & 0.93 \\
+Real & 0.54 & 1.00 & 0.70 & 0.93 & 0.92 & 0.93 \\
 Accuracy & & & 0.58 & & & 0.93 \\
 \hline
 & \multicolumn{3}{c|}{\textbf{Random Forest}} & \multicolumn{3}{c|}{\textbf{Support Vector Classifier}} \\
@@ -197,7 +197,7 @@ Accuracy & & & 0.58 & & & 0.93 \\
 & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} & \textbf{Precision} & \textbf{Recall} & \textbf{F1-score} \\
 \hline
 Fake & 0.91 & 0.90 & 0.90 & 0.87 & 0.74 & 0.80 \\
-Not Fake & 0.90 & 0.91 & 0.90 & 0.77 & 0.89 & 0.83 \\
+Real & 0.90 & 0.91 & 0.90 & 0.77 & 0.89 & 0.83 \\
 Accuracy & & & 0.90 & & & 0.81 \\
 \hline
 \end{tabular}
@@ -263,7 +263,7 @@ SVC & FN Filipino 2020 & \textbf{0.951} \\
 Two-way ANOVA revealed significant main effects for dataset ($p<0.001$) and classifier ($p<0.001$), plus interaction ($p<0.001$). Bonferroni post-hoc tests showed LR and SVC performed similarly across all datasets ($p>0.05$), while all classifiers performed significantly worse on the combined corpus ($p<0.001$). This degradation likely stems from inconsistent writing styles between datasets, an inference supported by their differing OOV counts and readability scores.
 
 \subsection{Deployment and Model Interpretation}
-The FaKe browser extension (LR without LEX and MORPH features) was validated on Chrome, Edge, and Firefox with uniform results. Analysis of model coefficients revealed readability score (0.37) as strongest positive predictor for authentic news, while average phrase count (-0.42) most strongly indicated fake news. Specific words also influenced predictions: "source" (2.28) and "gma" (1.32) suggested authenticity, while "upang" (-0.88) and "ngunit" (-0.88) indicated fake news, reflecting patterns learned from the joint corpus. Tables \ref{tab::lang_coef} and \ref{tab::vec_coef} show the coefficients of the predictors.
+The FaKe browser extension (LR without LEX and MORPH features) was validated on Chrome, Edge, and Firefox with uniform results. Analysis of model coefficients revealed readability score (0.37) as strongest positive predictor for real news, while average phrase count (-0.42) most strongly indicated fake news. Specific words also influenced predictions: "source" (2.28) and "gma" (1.32) suggested authenticity, while "upang" (-0.88) and "ngunit" (-0.88) indicated fake news, reflecting patterns learned from the joint corpus. Tables \ref{tab::lang_coef} and \ref{tab::vec_coef} show the coefficients of the predictors.
 
 \begin{table}[!t]
 \caption{Linguistic features coefficients.}
@@ -318,7 +318,7 @@ vectorizers--bow--source & $2.279$ \\
 
 \section{Conclusion}
 
-In this study, the authors constructed a balanced dataset of fake and authentic Filipino news articles named Fake News Filipino 2024, containing 1603 instances of real news and 1603 instances of fake news. The authors augmented Fake News Filipino (2020) and compiled a joint corpus for training several machine learning models. They compared the performance of four classifiers: Logistic Regression, Multinomial Naive Bayes, Random Forest, and Support Vector Classifier in classifying news articles across three datasets: Fake News Filipino 2024, Fake News Filipino, and a joint corpus. Hyperparameter tuning was conducted to determine the optimal hyperparameters of each classifier. Logistic Regression emerged as the most suitable model for deployment as it held the highest accuracies, without requiring hyperparameter tuning. The FaKe browser extension yielded satisfactory results across different browsers. Though it is available for installation on this paper's code repository, there is also a web version that does not require installation on the user's browser.
+In this study, the authors constructed a balanced dataset of fake and real Filipino news articles named Fake News Filipino 2024, containing 1603 instances of real news and 1603 instances of fake news. The authors augmented Fake News Filipino (2020) and compiled a joint corpus for training several machine learning models. They compared the performance of four classifiers: Logistic Regression, Multinomial Naive Bayes, Random Forest, and Support Vector Classifier in classifying news articles across three datasets: Fake News Filipino 2024, Fake News Filipino, and a joint corpus. Hyperparameter tuning was conducted to determine the optimal hyperparameters of each classifier. Logistic Regression emerged as the most suitable model for deployment as it held the highest accuracies, without requiring hyperparameter tuning. The FaKe browser extension yielded satisfactory results across different browsers. Though it is available for installation on this paper's code repository, there is also a web version that does not require installation on the user's browser.
 
 \section{Recommendations}
 
