@@ -88,7 +88,7 @@ fddimzon1@up.edu.ph}
 \conf{\textit{  Proc. of International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA 2026) \\ 
 5-7 February 2026, Boracay-Philippines}}
 \begin{abstract}
-    Methods for curbing the spread of misinformation in the Philippines remain inadequate. The internet as a medium for fake news necessitates fast, automated, and accessible countermeasures. A precursor study from 2020 benchmarks deep learning techniques in building Filipino language fake news classifiers from a low-resource dataset. Despite promising results, the models from the aforementioned study cannot be feasibly deployed for a wide audience. In this work, we show that robust fake news classifiers for a morphologically rich language can be constructed from lightweight machine learning models. We show that these machine learning models can be deployed on a stringent infrastructure, with promising results. First, we construct a dataset of Filipino language news articles. Next, we extract Filipino linguistic features from the dataset. We train a Logistic Regression model, which achieves an accuracy of 95\% without hyperparameter tuning. Using this model, we build and deploy a system for classifying Filipino language fake news.
+    Methods for curbing the spread of misinformation in the Philippines remain inadequate. The internet as a medium for fake news necessitates fast, automated, and accessible countermeasures. A precursor study from 2020 benchmarks deep learning models in building Filipino language fake news classifiers from a low-resource dataset. Despite promising results, the models from the aforementioned study cannot be feasibly deployed for a wide audience. In this work, we show that robust fake news classifiers for a morphologically rich language can be constructed from lightweight machine learning models. We show that these machine learning models can be deployed on a stringent infrastructure, with promising results. First, we construct a dataset of Filipino language news articles. Next, we extract Filipino linguistic features from the dataset. We train a Logistic Regression model, which achieves an accuracy of 95\% without hyperparameter tuning. Using this model, we build and deploy a system for classifying Filipino language fake news.
 \end{abstract}
 
 %\copyrightnotice{XXX-X-XXXX-XXXX-X/XX/\$XX.00 ©20XX IEEE}
@@ -101,9 +101,11 @@ natural language processing, machine learning, fake news in Filipino language, F
 \end{IEEEkeywords}
 
 \section{Introduction}
-Misinformation ranks among the world's top global risks as fake news outlets see astounding traffic and engagement. In the Philippines, journalists and political analysts speculate that Former President Rodrigo Duterte's landslide victory in the 2016 presidential elections has been largely brought about by paid trolls disseminating fake news articles through social media outlets \cite{b1}. During the 2016 elections, Former President Duterte earns tremendous publicity by popularizing a depiction of the Philippines as a \textit{narco-state}. Despite his insistence that this rhetoric is truth, the United Office on Drugs and Crime claims otherwise—the Philippines' drug use prevalence is lower than the global average \cite{b2}.
+Misinformation ranks among the world's top global risks as fake news outlets see astounding engagement. In the Philippines, journalists and political analysts speculate that Former President Rodrigo Duterte's landslide victory in the 2016 presidential elections has been largely brought about by paid trolls disseminating fake news articles through social media outlets \cite{b1}. Former President Duterte earned tremendous publicity by popularizing a depiction of the Philippines as a \textit{narco-state}. Despite his insistence that this rhetoric is truth, the United Office on Drugs and Crime claims otherwise—the Philippines' drug use prevalence is lower than the global average \cite{b2}.
 
-\section{Ease of Use}
+Previous studies explore deep learning models in building robust fake news classifiers for the morphologically rich Filipino language. Despite promising results, these models cannot be feasibly deployed for a wide audience due to high cost of deployment \cite{b3}. Therefore, this work investigates lightweight machine learning models in tackling the classification of Filipino language fake news. The authors deploy a cross-browser web extension that relies on a trained Logistic Regression model to classify Filipino language fake news.
+
+\section{Related Work}
 
 \subsection{Maintaining the Integrity of the Specifications}
 
@@ -308,7 +310,7 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \begin{thebibliography}{00}
 \bibitem{b1} J. Lanuza, J. Ong, and R. Tapsell, ``Evolutions of 'fake news' from the south: Tracking disinformation innovations and interventions between the 2016 and 2019 Philippines elections,'' Berkman Klein Center for Internet \& Society, Harvard University, 2019. [Online]. Available: https://cyber.harvard.edu/sites/default/files/2019-11/Comparative\%20Approaches\%20to\%20Disinformation\%20-\%20Jose\%20Mari\%20Hall\%20Lanuza\%20Slides.pdf
 \bibitem{b2} A. Yee, ``Post-truth politics and fake news in Asia,'' Global Asia, vol. 12, pp. 66--71, 2017.
-\bibitem{b3} I. S. Jacobs and C. P. Bean, ``Fine particles, thin films and exchange anisotropy,'' in Magnetism, vol. III, G. T. Rado and H. Suhl, Eds. New York: Academic, 1963, pp. 271--350.
+\bibitem{b3} J. C. B. Cruz, J. A. Tan, and C. Cheng, ``Localization of fake news detection via multitask transfer learning,'' in Proc. 12th Language Resources and Evaluation Conf., 2020, pp. 2596--2604.
 \bibitem{b4} K. Elissa, ``Title of paper if known,'' unpublished.
 \bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
 \bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
