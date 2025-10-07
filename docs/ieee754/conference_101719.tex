@@ -117,13 +117,11 @@ This work investigates lightweight machine learning models in tackling the class
 
 \section{Related Work}
 
-The IEEEtran class file is used to format your paper and style the text. All margins, 
-column widths, line spaces, and text fonts are prescribed; please do not 
-alter them. You may note peculiarities. For example, the head margin
-measures proportionately more than is customary. This measurement 
-and others are deliberate, using specifications that anticipate your paper 
-as one part of the entire proceedings, and not as an independent document. 
-Please do not revise any of the current designations.
+Machine learning models have shown promise in automating fake news detection. A study \cite{b5} reports that Naive Bayes with \textit{n}-grams achieves 93\% accuracy on English datasets, while another study \cite{b6} finds that SVM reaches 96\% accuracy on a large corpora of about 20,000 articles. However, these studies focus on resource-rich English datasets.
+
+For Filipino language news articiles, a study \cite{b3} pioneers fake news detection using Byte-Pair Encoding (BPE) tokenization to handle morphologically-rich language features and out-of-vocabulary words. While another study \cite{b7} identifies 76 linguistic features for fake news detection in the Filipino context, their corpus used English-language articles. Two studies \cite{b8, b9} develop Filipino-specific readability metrics and linguistic features including traditional features (word count, sentence count), syllabic patterns based on Philippine orthography, and morphological features from verb inflections. These studies identify polysyllable word count, sentence count, and average sentence length as top predictors for Filipino text readability.
+
+Despite advances, Filipino linguistic features have not been applied in training Filipino language fake news classifiers. Moreover, deployment costs for complex models remain prohibitive (\$50,000-\$1,600,000) \cite{b4}, necessitating the investigation of lightweight models for Filipino language fake news detection.
 
 \section{Prepare Your Paper Before Styling}
 Before you begin to format your paper, first write and save the content as a 
@@ -320,9 +318,11 @@ citation first, followed by the original foreign-language citation \cite{b6}.
 \bibitem{b2} A. Yee, ``Post-truth politics and fake news in Asia,'' Global Asia, vol. 12, pp. 66--71, 2017.
 \bibitem{b3} J. C. B. Cruz, J. A. Tan, and C. Cheng, ``Localization of fake news detection via multitask transfer learning,'' in Proc. 12th Language Resources and Evaluation Conf., 2020, pp. 2596--2604.
 \bibitem{b4} A. Paleyes, R.-G. Urma, and N. D. Lawrence, ``Challenges in deploying machine learning: A survey of case studies,'' ACM Comput. Surv., vol. 55, no. 6, pp. 1--29, 2022.
-\bibitem{b5} R. Nicole, ``Title of paper with only first word capitalized,'' J. Name Stand. Abbrev., in press.
-\bibitem{b6} Y. Yorozu, M. Hirano, K. Oka, and Y. Tagawa, ``Electron spectroscopy studies on magneto-optical media and plastic substrate interface,'' IEEE Transl. J. Magn. Japan, vol. 2, pp. 740--741, August 1987 [Digests 9th Annual Conf. Magnetics Japan, p. 301, 1982].
-\bibitem{b7} M. Young, The Technical Writer's Handbook. Mill Valley, CA: University Science, 1989.
+\bibitem{b5} J. Y. Khan, Md. T. Khondaker, S. Afroz, G. Uddin, and A. Iqbal, ``A benchmark study of machine learning models for online fake news detection,'' Mach. Learn. Appl., vol. 4, p. 100032, 2021.
+\bibitem{b6} D. Choudhury and T. Acharjee, ``A novel approach to fake news detection in social networks using genetic algorithm applying machine learning classifiers,'' Multimedia Tools Appl., vol. 82, no. 6, pp. 9029--9045, 2022.
+\bibitem{b7} A. C. T. Fernandez and M. Devaraj, ``Computing the linguistic-based cues of fake news in the Philippines towards its detection,'' in Proc. 9th Int. Conf. Web Intelligence, Mining and Semantics, 2019, pp. 1--9.
+\bibitem{b8} J. M. Imperial and E. Ong, ``Exploring hybrid linguistic feature sets to measure Filipino text readability,'' in Proc. Int. Conf. Asian Language Processing (IALP), 2020, pp. 175--180.
+\bibitem{b9} J. M. Imperial and E. Ong, ``Diverse linguistic features for assessing reading difficulty of educational Filipino texts,'' arXiv:2108.00241, 2021.
 \end{thebibliography}
 \vspace{12pt}
 \color{red}
