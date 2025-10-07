@@ -129,7 +129,39 @@ Despite these advances, Filipino linguistic features have not been applied in tr
 Following a precursor study \cite{b3}, the authors constructed a new dataset of Filipino language news articles, Fake News Filipino 2024, containing 3,206 articles (1,603 fake, 1,603 authentic). Fake articles were sourced from fraudulent sites tagged by VERA Files while authentic articles were sourced from mainstream sources (Philippine Star, ABS-CBN). The news articles were UTF-8 encoded with minimal preprocessing to preserve features such as misspellings and punctuation.
 
 \subsection{Feature Extraction and Model Training}
-Text was tokenized using BPE, adhering to the methodology of the precursor study \cite{b3}. The authors extracted the following Filipino linguistic features \cite{b8,b9,b10}: traditional features (TRAD) (word, sentence, and character counts), syllabic features (SYLL) (Philippine orthography: \textit{v}, \textit{cv}, \textit{vc}, \textit{cvc}, etc.), and lexical features (LEX) (type-token ratio, parts-of-speech densities), morphological features (MORPH) (verb inflections). OOV words and stop words (SW) were also extracted. Macahilig's readability formula \cite{b10} was also used to extract readability scores from the corpus (READ). Tokens were vectorized with Term Frequency-Inverse Document Frequency (TF-IDF) (unigrams, bigrams, trigrams) and bag of words (BOW).
+Text was tokenized using BPE, adhering to the methodology of the precursor study \cite{b3}. The authors extracted the following Filipino linguistic features \cite{b8,b9,b10}: traditional features (TRAD), syllabic features (SYLL), lexical features (LEX), and morphological features (MORPH). OOV words and stop words (SW) were also extracted. Macahilig's readability formula \cite{b10} was also used to extract readability scores from the corpus (READ). Tokens were vectorized with Term Frequency-Inverse Document Frequency (TF-IDF) (unigrams, bigrams, trigrams) and bag of words (BOW). Table \ref{tab:features} shows a summary of the extracted linguistic features.
+
+\begin{table*}[!t]
+\centering
+\caption{Descriptions and predictors of features.}
+\label{tab:features}
+\footnotesize
+\begin{tabular}{|p{0.18\textwidth}|p{0.38\textwidth}|p{0.38\textwidth}|}
+\hline
+\textbf{Feature} & \textbf{Description} & \textbf{Predictors} \\ \hline
+
+Bag-of-words & Unordered collection of words. & Bag-of-words model of the input text. \\ \hline
+
+TF-IDF & Word to document ratio in the corpus. & TF-IDF using \textit{n}-gram values of \{1, 2, 3\}. \\ \hline
+
+Misspelled words & Misspelled words in the input text. & Total misspelled word count. \\ \hline
+
+OOV words & Words in the input text that are not found in the Filipino and English dictionary used in training. & Total OOV word count. \\ \hline
+
+Stop words & Words considered insignificant in processing text input e.g. ``at'', ``ay'', ``din'', etc. in Filipino or ``a'', ``the'', ``to'', ``as'' in English. & Total stop word count. \\ \hline
+
+Readability Score & Score determined by the readability formula for Filipino text by \cite{b10}. The higher the readability index, the more difficult the text is to read. & Readability is computed by: \(P = -4.161 + 0.280(w/s) + 0.106(cw)\) where \(P\) is the readability index, \(w/s\) is the average number of words per sentence, and \(cw\) is the word count. \\ \hline
+
+Traditional & Traditional or surface-based features based on counts and frequencies. & Total word, sentence, phrase, polysyllabic word counts. Average word length, sentence length, syllable per word. \\ \hline
+
+Syllabic Pattern & Syllable pattern densities based on the prescribed Philippine orthography. & Prescribed Philippine orthography \{v, cv, vc, cvc, vcc, cvcc, ccvc, ccvcc, ccvccc\}, where c and v are consonant and vowel notations. \\ \hline
+
+Lexical & Lexical or context-carrying features using part-of-speech categories. & Type-token variations (regular, logarithmic, corrected, root). Noun and verb token ratio. Lexical density. Foreign word and compound word density. \\ \hline
+
+Morphological & Morphological features based on verb inflection. & Densities of foci of verbs based on tense: \{actor, object, benefactive, locative, instrumental, referential\}. Densities of various foci of verbs based on aspect: \{infinitive, perfective, imperfective, contemplative, participle, recent-past, auxiliary\}. \\ \hline
+
+\end{tabular}
+\end{table*}
 
 The authors trained four classifiers: Multinomial Naive Bayes (MNB), Logistic Regression, Random Forest (RF), and Support Vector Classifier. Grid search with five-fold cross-validation determined optimal hyperparameters. The classifiers were evaluated 30 times (six runs of five-fold cross validation) across three datasets: Fake News Filipino \cite{b3}, Fake News Filipino 2024, and their joint corpus. Two-way ANOVA with Bonferroni correction assessed performance differences and found these differences between models to be significant. The best model, Logistic Regression, achieved a top accuracy of 95\%.
 
@@ -203,10 +235,11 @@ Models were evaluated 30 times across three datasets. Table \ref{tab::AverageAcc
 
 \begin{table}[!t]
 \centering
-\footnotesize
-\begin{tabular}{|l|l|c|}
+\caption{Average accuracies across datasets.}
+\label{tab:AverageAccuracies}
+\begin{tabular}{llr}
 \hline
-Classifier & Dataset & Accuracy \\
+\textbf{Classifier} & \textbf{Dataset} & \textbf{Accuracy} \\
 \hline
 LR & FN Filipino 2020 & \textbf{0.951} \\
  & FN Filipino 2024 & \textbf{0.947} \\
@@ -225,8 +258,6 @@ SVC & FN Filipino 2020 & \textbf{0.951} \\
  & Combined & 0.922 \\
 \hline
 \end{tabular}
-\caption{Average accuracies across datasets.}
-\label{tab::AverageAccuracies}
 \end{table}
 
 Two-way ANOVA revealed significant main effects for dataset ($p<0.001$) and classifier ($p<0.001$), plus interaction ($p<0.001$). Bonferroni post-hoc tests showed LR and SVC performed similarly across all datasets ($p>0.05$), while all classifiers performed significantly worse on the combined corpus ($p<0.001$). This degradation likely stems from inconsistent writing styles between datasets, an inference supported by their differing OOV counts and readability scores.
@@ -291,7 +322,7 @@ In this study, the authors constructed a balanced dataset of fake and authentic 
 
 \section{Recommendations}
 
-For future studies, the authors recommend the expansion of the corpus, to include more domains and incorporate more writing styles. The authors recommend the development of a Filipino fake news detection system on a less stringent infrastructure. Furthermore, the authors recommend the undertaking of future studies that tackle other forms of fake news (e.g., spam, tweets, posts, etc.). With respect to deploying a microservice on Render, it is possible to further improve performance by incurring a small monthly fee. Articles flagged by the web extension should have their sources collated into a database. Future studies may build a dataset that incorporates article headings and article sources as features. Lastly, as the study of Filipino linguistic features are in a stage of infancy, more work should be conducted in this domain.
+For future studies, the authors recommend the expansion of the corpus, to include more domains and incorporate more writing styles. The authors recommend the development of a Filipino fake news detection system on a less stringent infrastructure. Furthermore, the authors recommend the undertaking of future studies that tackle other forms of fake news (e.g., spam, tweets, posts, etc.). With respect to deploying a microservice on Render, it is possible to further improve performance by incurring a small monthly fee. Hence, it may be possible to deploy models that use LEX and MORPH features. Articles flagged by the web extension should have their sources collated into a database. This way, future studies may build a dataset that incorporates article headings and article sources as features. Lastly, as the study of Filipino linguistic features are in a stage of infancy, more work should be conducted in this domain.  
 
 \section*{Acknowledgments}
 
