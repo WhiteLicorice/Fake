@@ -96,7 +96,7 @@ fddimzon1@up.edu.ph}
 \conf{\textit{  Proc. of International Conference on Artificial Intelligence, Computer, Data Sciences and Applications (ACDSA 2026) \\ 
 5-7 February 2026, Boracay-Philippines}}
 \begin{abstract}
-    Methods for curbing the spread of misinformation in the Philippines remain inadequate. The internet as a medium for fake news necessitates fast, automated, and accessible countermeasures. A precursor study from 2020 benchmarks Transfer Learning (TL) techniques in building Filipino language fake news classifiers from a low-resource dataset. Despite promising results, the models from the aforementioned study cannot be easily deployed for a wide audience. In this work, we show that robust fake news classifiers for a morphologically rich language can be constructed from lightweight machine learning models and a low-resource dataset. We show that these machine learning models can be successfully deployed on a stringent infrastructure. First, we construct a dataset of Filipino language news articles. We extract Filipino linguistic features from the dataset. Next, we train a Logistic Regression model, which achieves a top accuracy of 95\%. Using this model, we build and deploy a system for classifying Filipino language fake news.
+    Methods for curbing the spread of misinformation in the Philippines remain inadequate. The internet as a medium for fake news necessitates fast, automated, and accessible countermeasures. A precursor study from 2020 benchmarks Transfer Learning (TL) techniques in building Filipino language fake news classifiers from a low-resource dataset. Despite promising results, the models from the aforementioned study cannot be easily deployed for a wide audience. In this work, we show that robust fake news classifiers for a morphologically rich language can be constructed from lightweight machine learning models and a low-resource dataset. We show that these machine learning models can be successfully deployed on a stringent infrastructure. First, we construct a dataset of Filipino language news articles. We extract Filipino linguistic features from the dataset. Next, we train several machine learning models and find that the Logistic Regression model achieves the top accuracy of 95\%. Using this model, we build and deploy a system for classifying Filipino language fake news.
 \end{abstract}
 
 %\copyrightnotice{XXX-X-XXXX-XXXX-X/XX/\$XX.00 ©20XX IEEE}
@@ -126,7 +126,7 @@ Despite these advances, Filipino linguistic features have not been applied in tr
 \section{Methodology}
 
 \subsection{Data Collection}
-Following a precursor study \cite{b3}, the authors constructed a new dataset of Filipino language news articles, Fake News Filipino 2024, containing 3,206 articles (1,603 fake, 1,603 real). Fake articles were sourced from fraudulent sites tagged by VERA Files while real articles were sourced from mainstream sources (Philippine Star, ABS-CBN). The news articles were UTF-8 encoded with minimal preprocessing to preserve features such as misspellings and punctuation.
+Following a precursor study \cite{b3}, the authors constructed a new dataset of Filipino language news articles, Fake News Filipino 2024, containing 3,206 articles (1,603 fake, 1,603 real). Fake articles were sourced from fraudulent sites tagged by  VERA Files \cite{b11, b12} while real articles were sourced from mainstream sources like ABS-CBN \cite{b13} and Philippine Star \cite{b14}. The news articles were encoded in UTF-8 format with minimal preprocessing to preserve features such as misspellings and punctuation.
 
 \subsection{Feature Extraction and Model Training}
 Text was tokenized using BPE, adhering to the methodology of the precursor study \cite{b3}. The authors extracted the following Filipino linguistic features \cite{b8,b9,b10}: traditional features (TRAD), syllabic features (SYLL), lexical features (LEX), and morphological features (MORPH). OOV words and stop words (SW) were also extracted. Macahilig's readability formula \cite{b10} was also used to extract readability scores from the corpus (READ). Tokens were vectorized with Term Frequency-Inverse Document Frequency (TF-IDF) and bag of words (BOW). Table \ref{tab:features} shows a summary of the extracted linguistic features.
@@ -163,10 +163,12 @@ Morphological & Morphological features based on verb inflection. & Densities of 
 \end{tabular}
 \end{table*}
 
-The authors trained four classifiers: Multinomial Naive Bayes (MNB), Logistic Regression, Random Forest (RF), and Support Vector Classifier. Grid search with five-fold cross-validation determined optimal hyperparameters. The classifiers were evaluated 30 times (six runs of five-fold cross validation) across three datasets: Fake News Filipino \cite{b3}, Fake News Filipino 2024, and their joint corpus. Two-way ANOVA with Bonferroni correction assessed performance differences and found these differences between models to be significant. The best model, Logistic Regression, achieved a top accuracy of 95\%.
+The authors trained four classifiers: Multinomial Naive Bayes (MNB), Logistic Regression, Random Forest (RF), and Support Vector Classifier. Grid search with five-fold cross-validation determined optimal hyperparameters. The classifiers were evaluated 30 times (six runs of five-fold cross validation) across three datasets: Fake News Filipino \cite{b3}, Fake News Filipino 2024, and their joint corpus. Two-way ANOVA with Bonferroni correction assessed performance differences and found these differences between models to be significant.
 
 \subsection{System Deployment}
-The best model was deployed as a web service using FastAPI on Render's \textbf{free} tier, interfaced through Tampermonkey. A browser extension scrapes article text, sends it to the service for feature extraction and classification, then displays results. Due to infrastructure constraints, the deployed model excludes LEX and MORPH features (requires deployment of Java runtime and 3+ minutes of processing time per article). The exclusion of these features during cross validation did not significantly affect the accuracy of the deployed model.
+The best model was deployed as a web service using FastAPI on Render's \cite{b15} \textbf{free} tier, interfaced through Tampermonkey \cite{b16}. Tampermonkey allowed users to enhance the functionality of web pages by injecting a script (written in JavaScript) into the page. It was chosen as it was one of the most popular browser extension managers available on mainstream web browsers (e.g., Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera, Next). Tampermonkey granted web developers the ability to write browser-independent code and provided a way to easily install cross-browser web extensions.
+
+The browser extension, FaKe, scrapes article text, sends it to the service for feature extraction and classification, then displays results. Due to infrastructure constraints, the deployed model excludes LEX and MORPH features (requires deployment of Java runtime and 3+ minutes of processing time per article). The FaKe browser extension, using the best machine learning model, was validated on the Chrome, Edge, and Firefox web browsers.
 
 \section{Results}
 
@@ -176,7 +178,7 @@ The best model was deployed as a web service using FastAPI on Render's \textbf{f
 Fake News Filipino 2024 contains 3,206 balanced articles. Compared to Fake News Filipino (2020), it has higher average OOV count (22.2 vs 17.6), lower readability (19.7 vs 20.5), and fewer stop words (74.5 vs 77.8), indicating some stylistic differences between datasets.
 
 \subsection{Model Performance}
-Four classifiers were trained with and without optimal hyperparameters, identified via grid search. Table \ref{tab:no_hyperparam_summary} shows performance on the joint corpus without hyperparameter tuning, while Table \ref{tab:hyperparam_summary} shows performance on the joint corpus with hyperparameter tuning. LR and SVC both achieved highest accuracy (93\%), though SVC required hyperparameter tuning while LR did not. MNB improved significantly with tuning (58\% to 87\%). The best-performing model is LR.
+Four classifiers were trained with and without optimal hyperparameters, identified via grid search. Table \ref{tab:no_hyperparam_summary} shows performance on the joint corpus without hyperparameter tuning, while Table \ref{tab:hyperparam_summary} shows performance on the joint corpus with hyperparameter tuning. LR and SVC both achieved highest accuracy (93\%), though SVC required hyperparameter tuning while LR did not. MNB improved significantly with tuning (58\% to 87\%). The best-performing model is LR, as it did not require hyperparameter tuning.
 
 \begin{table}[!t]
 \caption{Performance metrics for classifiers without hyperparameter tuning.}
@@ -231,7 +233,7 @@ Accuracy & & & 0.89 & & & 0.93 \\
 \end{table}
 
 \subsection{Cross-Dataset Evaluation}
-Models were evaluated 30 times across three datasets. Table \ref{tab:average_accuracies} shows average accuracies. LR and SVC achieved 95\% accuracy on individual datasets but dropped to 92\% on the joint corpus, while Naive Bayes and Random Forest dropped further (86\% to 89\%).
+Models were evaluated 30 times across three datasets. Table \ref{tab:average_accuracies} shows average accuracies. LR and SVC achieved 95\% accuracy on individual datasets but dropped to 92\% on the joint corpus, while MNB (92\% to 86\%) and RF (92\% to 88\%) dropped further. The best model, Logistic Regression, achieved a top accuracy of 95\%.
 
 \begin{table}[!t]
 \centering
@@ -263,7 +265,7 @@ SVC & FN Filipino 2020 & \textbf{0.951} \\
 Two-way ANOVA revealed significant main effects for dataset ($p<0.001$) and classifier ($p<0.001$), plus interaction ($p<0.001$). Bonferroni post-hoc tests showed LR and SVC performed similarly across all datasets ($p>0.05$), while all classifiers performed significantly worse on the combined corpus ($p<0.001$). This degradation likely stems from inconsistent writing styles between datasets, an inference supported by their differing OOV counts and readability scores.
 
 \subsection{Deployment and Model Interpretation}
-The FaKe browser extension (LR without LEX and MORPH features) was validated on Chrome, Edge, and Firefox with uniform results. Analysis of model coefficients revealed readability score (0.37) as strongest positive predictor for real news, while average phrase count (-0.42) most strongly indicated fake news. Specific words also influenced predictions: "source" (2.28) and "gma" (1.32) suggested authenticity, while "upang" (-0.88) and "ngunit" (-0.88) indicated fake news, reflecting patterns learned from the joint corpus. Tables \ref{tab::lang_coef} and \ref{tab::vec_coef} show the coefficients of the predictors.
+The FaKe browser extension (LR without LEX and MORPH features) was validated on Chrome, Edge, and Firefox with uniform results.  The exclusion of LEX and MORPH during cross validation did not significantly affect the accuracy of the deployed model. Analysis of model coefficients revealed readability score (0.37) as strongest positive predictor for real news, while average phrase count (-0.42) most strongly indicated fake news. Specific words also influenced predictions: "source" (2.28) and "gma" (1.32) suggested authenticity, while "upang" (-0.88) and "ngunit" (-0.88) indicated fake news, reflecting patterns learned from the joint corpus. Tables \ref{tab::lang_coef} and \ref{tab::vec_coef} show the coefficients of the predictors.
 
 \begin{table}[!t]
 \caption{Linguistic features coefficients.}
@@ -348,7 +350,7 @@ We acknowledge the assistance rendered by Mr. Ron Gerlan F. Naragdao, in providi
 % citation first, followed by the original foreign-language citation \cite{b6}.
 
 \begin{thebibliography}{00}
-\bibitem{b1} J. Lanuza, J. Ong, and R. Tapsell, ``Evolutions of 'fake news' from the south: tracking disinformation innovations and interventions between the 2016 and 2019 Philippines elections,'' Berkman Klein Center for Internet \& Society, Harvard University, 2019. [Online]. Available: https://cyber.harvard.edu/sites/default/files/2019-11/Comparative\%20Approaches\%20to\%20Disinformation\%20-\%20Jose\%20Mari\%20Hall\%20Lanuza\%20Slides.pdf
+\bibitem{b1} J. Lanuza, J. Ong, and R. Tapsell, ``Evolutions of `fake news' from the south: tracking disinformation innovations and interventions between the 2016 and 2019 Philippines elections,'' Berkman Klein Center for Internet \& Society, Harvard University, 2019. [Online]. Available: https://cyber.harvard.edu/sites/default/files/2019-11/Comparative\%20Approaches\%20to\%20Disinformation\%20-\%20Jose\%20Mari\%20Hall\%20Lanuza\%20Slides.pdf
 \bibitem{b2} A. Yee, ``Post-truth politics and fake news in Asia,'' Global Asia, vol. 12, pp. 66--71, 2017.
 \bibitem{b3} J. C. B. Cruz, J. A. Tan, and C. Cheng, ``Localization of fake news detection via multitask transfer learning,'' in Proc. 12th Language Resources and Evaluation Conf., 2020, pp. 2596--2604.
 \bibitem{b4} A. Paleyes, R.-G. Urma, and N. D. Lawrence, ``Challenges in deploying machine learning: a survey of case studies,'' ACM Comput. Surv., vol. 55, no. 6, pp. 1--29, 2022.
@@ -358,6 +360,12 @@ We acknowledge the assistance rendered by Mr. Ron Gerlan F. Naragdao, in providi
 \bibitem{b8} J. M. Imperial and E. Ong, ``Exploring hybrid linguistic feature sets to measure Filipino text readability,'' in Proc. Int. Conf. Asian Language Processing (IALP), 2020, pp. 175--180.
 \bibitem{b9} J. M. Imperial and E. Ong, ``Diverse linguistic features for assessing reading difficulty of educational Filipino texts,'' arXiv:2108.00241, 2021.
 \bibitem{b10} H. B. Macahilig, ``A content-based readability formula for Filipino texts,'' The Normal Lights, vol. 8, 2015.
+\bibitem{b11} ``VERA Files: about.'' [Online]. Available: https://verafiles.org/about. Accessed: May 10, 2024.
+\bibitem{b12} ``VERA Files: fact-check.'' [Online]. Available: https://verafiles.org/fact-check. Accessed: May 10, 2024.
+\bibitem{b13} ``ABS-CBN News.'' [Online]. Available: https://www.abs-cbn.com/news
+\bibitem{b14} ``The Philippine Star.'' [Online]. Available: https://www.philstar.com/
+\bibitem{b15} ``Render: cloud application platform.'' [Online]. Available: https://render.com/
+\bibitem{b16} ``Tampermonkey.'' [Online]. Available: https://www.tampermonkey.net/
 \end{thebibliography}
 % \vspace{12pt}
 % \color{red}
