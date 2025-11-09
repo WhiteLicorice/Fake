@@ -128,6 +128,12 @@ Despite these advances, Filipino linguistic features have not been applied in tr
 \subsection{Data Collection}
 Following a precursor study \cite{b3}, the authors constructed a new dataset of Filipino language news articles, Fake News Filipino 2024, containing 3,206 articles (1,603 fake, 1,603 real). Fake articles were sourced from fraudulent sites tagged by  VERA Files \cite{b11, b12} while real articles were sourced from mainstream sources like ABS-CBN \cite{b13} and Philippine Star \cite{b14}. The news articles were encoded in UTF-8 format with minimal preprocessing to preserve features such as misspellings and punctuation.
 
+\subsection{VERA Files Fact-Check}
+
+VERA Files is a Philippine nonprofit media organization that conducts fact-checking of the statement of public officials and online information. The organization selects claims based on three criteria: (1) the statement must be factual rather than opinion, (2) verification must be feasible using available records and expert sources, and (3) the claim must be of public interest. For viral online content, reach is also considered \cite{b15}.
+
+VERA Files employs a rigorous six-step verification process involving multiple team members, cross-checking sources, and editorial review before publication. These steps are the following: monitoring public statements, assigning research to verify claims using multiple sources, collaborative review by the entire team, additional fact-checking and editing, preparation of supporting materials, and final sign-off by senior editors before publication \cite{b15}. The organization adheres to the International Fact-Checking Network's code of principles \cite{b16} and maintains strict transparency by providing links to primary sources in all fact-check articles.
+
 \subsection{Feature Extraction and Model Training}
 Text was tokenized using BPE, adhering to the methodology of the precursor study \cite{b3}. The authors extracted the following Filipino linguistic features \cite{b8,b9,b10}: traditional features (TRAD), syllabic features (SYLL), lexical features (LEX), and morphological features (MORPH). OOV words and stop words (SW) were also extracted. Macahilig's readability formula \cite{b10} was also used to extract readability scores from the corpus (READ). Tokens were vectorized with Term Frequency-Inverse Document Frequency (TF-IDF) and bag of words (BOW). Table \ref{tab:features} shows a summary of the extracted linguistic features.
 
@@ -166,7 +172,7 @@ Morphological & Morphological features based on verb inflection. & Densities of 
 The authors trained four classifiers: Multinomial Naive Bayes (MNB), Logistic Regression, Random Forest (RF), and Support Vector Classifier. Grid search with five-fold cross-validation determined optimal hyperparameters. The classifiers were evaluated 30 times (six runs of five-fold cross validation) across three datasets: Fake News Filipino \cite{b3}, Fake News Filipino 2024, and their joint corpus. Two-way ANOVA with Bonferroni correction assessed performance differences and found these differences between models to be significant.
 
 \subsection{System Deployment}
-The best model was deployed as a web service using FastAPI on Render's \cite{b15} \textbf{free} tier, interfaced through Tampermonkey \cite{b16}. Tampermonkey allowed users to enhance the functionality of web pages by injecting a script (written in JavaScript) into the page. It was chosen as it was one of the most popular browser extension managers available on mainstream web browsers (e.g., Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera, Next). Tampermonkey granted web developers the ability to write browser-independent code and provided a way to easily install cross-browser web extensions.
+The best model was deployed as a web service using FastAPI on Render's \cite{b17} \textbf{free} tier, interfaced through Tampermonkey \cite{b18}. Tampermonkey allowed users to enhance the functionality of web pages by injecting a script (written in JavaScript) into the page. It was chosen as it was one of the most popular browser extension managers available on mainstream web browsers (e.g., Google Chrome, Mozilla Firefox, Microsoft Edge, Safari, Opera, Next). Tampermonkey granted web developers the ability to write browser-independent code and provided a way to easily install cross-browser web extensions.
 
 The browser extension, FaKe, scrapes article text, sends it to the service for feature extraction and classification, then displays results. Due to infrastructure constraints, the deployed model excludes LEX and MORPH features (requires deployment of Java runtime and 3+ minutes of processing time per article). The FaKe browser extension, using the best machine learning model, was validated on the Chrome, Edge, and Firefox web browsers.
 
@@ -364,8 +370,10 @@ We acknowledge the assistance rendered by Mr. Ron Gerlan F. Naragdao, in providi
 \bibitem{b12} ``VERA Files: fact-check.'' [Online]. Available: https://verafiles.org/fact-check. Accessed: May 10, 2024.
 \bibitem{b13} ``ABS-CBN News.'' [Online]. Available: https://www.abs-cbn.com/news
 \bibitem{b14} ``The Philippine Star.'' [Online]. Available: https://www.philstar.com/
-\bibitem{b15} ``Render: cloud application platform.'' [Online]. Available: https://render.com/
-\bibitem{b16} ``Tampermonkey.'' [Online]. Available: https://www.tampermonkey.net/
+\bibitem{b15} ``What you want to know about `VERA FILES FACT CHECK','' VERA Files. [Online]. Available: https://verafiles.org/articles/what-you-want-know-about-vera-files-fact-check.
+\bibitem{b16} ``International Fact-Checking Network code of principles,'' Poynter Institute. [Online]. Available: https://www.ifcncodeofprinciples.poynter.org/how-does-vera-files-rate-its-fact-checks
+\bibitem{b17} ``Render: cloud application platform.'' [Online]. Available: https://render.com/
+\bibitem{b18} ``Tampermonkey.'' [Online]. Available: https://www.tampermonkey.net/
 \end{thebibliography}
 % \vspace{12pt}
 % \color{red}
