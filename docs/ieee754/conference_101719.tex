@@ -273,6 +273,12 @@ Two-way ANOVA revealed significant main effects for dataset ($p<0.001$) and clas
 \subsection{Deployment and Model Interpretation}
 The FaKe browser extension (LR without LEX and MORPH features) was validated on Chrome, Edge, and Firefox with uniform results.  The exclusion of LEX and MORPH during cross validation did not significantly affect the accuracy of the deployed model. Analysis of model coefficients revealed readability score (0.37) as strongest positive predictor for real news, while average phrase count (-0.42) most strongly indicated fake news. Specific words also influenced predictions: "source" (2.28) and "gma" (1.32) suggested authenticity, while "upang" (-0.88) and "ngunit" (-0.88) indicated fake news, reflecting patterns learned from the joint corpus. Tables \ref{tab::lang_coef} and \ref{tab::vec_coef} show the coefficients of the predictors.
 
+\subsection{Results from Other Studies}
+
+Two previous studies investigated different models for Filipino language fake news classification. The first precursor study \cite{b3} explored transfer-learning techniques and large models like BERT, achieving an accuracy of 96\% on their best model, while a second, concurrent study \cite{b19} used an improved DistilBERT model to achieve a best accuracy of 94.7\%. Both of these studies \cite{b3, b19} incorporated the Fake News Filipino \cite{b3} dataset in training their models. However, the second study also applied data augmentation through random deletion to generate synthetic data for the dataset \cite{b19}.
+
+While this study's LR model achieves comparable accuracy (95\% on the Fake News Filipino dataset), it offers significant advantages in deployment feasibility. The DistilBERT model requires 254.18 MB of memory and 66.6M parameters \cite{b19}. In contrast, the LR model has 1.2M parameters and requires negligible memory (55.64 MB) in comparison. It can run on Render's free tier without any GPU requirements. This validates the approach of using lightweight models for resource-constrained, consumer-facing applications.
+
 \begin{table}[!t]
 \caption{Linguistic features coefficients.}
 \label{tab::lang_coef}
@@ -374,6 +380,7 @@ We acknowledge the assistance rendered by Mr. Ron Gerlan F. Naragdao, in providi
 \bibitem{b16} ``International Fact-Checking Network code of principles,'' Poynter Institute. [Online]. Available: https://www.ifcncodeofprinciples.poynter.org/how-does-vera-files-rate-its-fact-checks
 \bibitem{b17} ``Render: cloud application platform.'' [Online]. Available: https://render.com/
 \bibitem{b18} ``Tampermonkey.'' [Online]. Available: https://www.tampermonkey.net/
+\bibitem{b19} A. C. B. Sabado, R. J. E. Policarpio, J. M. R. C. Espiritu, V. M. B. Sabado, and H. T. Sueno,  ``Classifying fake news in Filipino language using improved DistilBERT model,'' in Proc. 10th Int. Conf. Information Technology, Computer, and Electrical Engineering (ICITACEE), 2024, pp. 1--6.
 \end{thebibliography}
 % \vspace{12pt}
 % \color{red}
