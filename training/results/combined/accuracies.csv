@@ -329,33 +329,153 @@ accuracy,features,classifier,dataset
 0.8898635477582846,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll']",Random Forest,combined
 0.8947368421052632,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll']",Random Forest,combined
 0.8721951219512195,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll']",Random Forest,combined
-0.9210526315789473,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9210526315789472,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9074074074074074,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9259259259259259,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9259259259259259,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9297560975609757,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9259259259259259,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9297560975609755,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9200779727095516,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9249512670565302,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9190243902439025,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9220272904483431,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9190243902439024,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9220272904483432,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9200779727095516,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9259259259259259,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9239024390243903,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9239024390243904,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.928849902534113,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9249512670565302,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9385964912280702,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9064327485380117,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9064327485380116,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9170731707317074,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.949317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9132553606237817,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9161793372319688,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9092682926829269,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9220272904483431,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9092682926829267,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9220272904483432,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.9132553606237817,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
 0.935672514619883,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
-0.9229268292682927,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.9229268292682928,"['vectorizers', 'read', 'oov', 'sw', 'trad']",SVC,combined
+0.8693957115009746,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8430799220272904,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.878167641325536,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8723196881091618,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.833170731707317,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.854775828460039,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8606237816764133,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8869395711500975,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8518518518518519,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8409756097560975,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8528265107212476,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.847953216374269,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8801169590643275,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8606237816764133,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8546341463414634,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8654970760233918,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8625730994152047,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8567251461988304,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.854775828460039,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.864390243902439,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8771929824561403,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8625730994152047,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8528265107212476,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8518518518518519,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8517073170731707,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8654970760233918,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8830409356725146,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8674463937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8576998050682261,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.8273170731707317,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Multinomial Naive Bayes,combined
+0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9044834307992202,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9337231968810916,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9317738791423,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9248780487804878,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9171539961013644,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9278752436647172,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9269005847953216,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9220272904483432,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9307992202729044,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.919103313840156,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.911219512195122,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.925925925925926,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9249512670565302,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9405458089668616,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9074074074074074,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9209756097560976,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9483430799220272,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9298245614035088,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9152046783625732,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9161793372319688,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9131707317073172,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9230019493177388,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9249512670565302,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.919103313840156,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.9376218323586744,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Logistic Regression,combined
+0.898635477582846,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8674463937621832,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.9035087719298246,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.9074074074074074,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8663414634146341,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8898635477582846,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.884990253411306,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8996101364522417,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8840155945419104,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8839024390243903,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8840155945419104,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8888888888888888,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8976608187134503,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8888888888888888,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8995121951219512,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.905458089668616,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8898635477582846,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8957115009746589,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8586744639376218,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8926829268292683,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.9044834307992202,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.9074074074074074,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8762183235867447,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8996101364522417,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8897560975609756,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8918128654970761,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8908382066276803,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.884990253411306,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8996101364522417,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.8682926829268293,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",Random Forest,combined
+0.9181286549707602,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9103313840155945,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9249512670565302,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9269005847953217,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9297560975609757,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9278752436647173,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9171539961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.928849902534113,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9200779727095516,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.919103313840156,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9210526315789473,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9259259259259259,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9230019493177388,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.935672514619883,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9083820662768031,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9151219512195122,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9483430799220273,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9171539961013645,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9152046783625731,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9053658536585366,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9230019493177388,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9239766081871345,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9074074074074074,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.9395711500974658,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
+0.92,"['vectorizers', 'read', 'oov', 'sw', 'trad', 'syll', 'lex', 'morph']",SVC,combined
