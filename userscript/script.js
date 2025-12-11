@@ -115,7 +115,8 @@
 
 		try {
 			const processed_article = await scrape_paragraphs();
-
+			
+			// TODO: Somehow, someway, find a method to guard against infinite-scrolling pages.
 			if (!processed_article || processed_article.length < 100) {
 				showStatus('error', 'No text found', 'Could not find enough paragraph text to analyze.');
 				return;
@@ -129,7 +130,7 @@
 			if (isFake) {
 				showStatus('fake', 'Potential Fake News', 'FaKe flagged this content.');
 			} else {
-				showStatus('real', 'Likely Credible', 'FaKwe found no issues.');
+				showStatus('real', 'Likely Credible', 'FaKe found no issues.');
 			}
 
 		} catch (e) {
