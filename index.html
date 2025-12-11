@@ -1,185 +1,306 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" class="scroll-smooth">
+
 <head>
   <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>FaKe PH</title>
-  <meta name="description" content="" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>FaKe
+  </title>
+
   <link rel="stylesheet" href="src/output.css" />
+
   <script src="https://kit.fontawesome.com/39f664edb7.js" crossorigin="anonymous"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Merriweather:ital,wght@0,300;0,700;1,300&display=swap"
+    rel="stylesheet">
 
   <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
   <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
   <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-  <link rel="manifest" href="site.webmanifest">
-  <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
-  <meta name="msapplication-TileColor" content="#da532c">
-  <meta name="theme-color" content="#ffffff">
+  <meta name="theme-color" content="#ea580c">
 
+  <style>
+    body {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .news-font {
+      font-family: 'Merriweather', serif;
+    }
+
+    .glass-nav {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+  </style>
 </head>
 
-<body class="font-serif">
-  <nav class="grid grid-cols-1 sm:grid-cols-2 w-screen bg-orange-600 p-2 fixed top-0 z-50 text-white font-bold transition-all duration-300" id="navbar">
-    <a class="flex justify-center items-center hover:cursor-pointer hover:text-blue-600 transition-colors duration-300 p-3 pl-5 sm:justify-start" onclick="scrollAnimation('header')">
-      <p class="flex items-center text-xl">FaKe</p>
-    </a>
-    <div class="flex justify-center space-x-2 sm:justify-end">
+<body class="bg-slate-50 text-slate-800">
 
-      <a class="flex items-center text-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 rounded-md p-3" onclick="scrollAnimation('check_news_section')">FaKe Online</a>
-      <a class="flex items-center text-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 rounded-md p-3" onclick="scrollAnimation('installation')">FaKe Extension</a>
-      <a class="flex items-center text-center hover:cursor-pointer hover:bg-blue-600 transition-colors duration-300 rounded-md p-3" onclick="scrollAnimation('contact')">Contact Us</a>
+  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex justify-between items-center h-16">
+        <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="scrollAnimation('header')">
+          <span class="text-2xl font-black text-orange-600 tracking-tighter">FaKe</span>
+          <span
+            class="ml-2 text-xs font-bold bg-slate-100 text-slate-500 px-2 py-0.5 rounded-full border border-slate-200">PH</span>
+        </div>
+
+        <div class="hidden md:flex space-x-8 items-center">
+          <button onclick="scrollAnimation('about')"
+            class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">About</button>
+          <button onclick="scrollAnimation('installation')"
+            class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Install</button>
+          <button onclick="scrollAnimation('contact')"
+            class="text-sm font-medium text-slate-600 hover:text-orange-600 transition-colors">Contact</button>
+          <button onclick="scrollAnimation('check_news_section')"
+            class="bg-slate-900 text-white px-5 py-2 rounded-full text-sm font-semibold hover:bg-orange-600 transition-all shadow-lg shadow-orange-600/20">
+            Try Now
+          </button>
+        </div>
+      </div>
     </div>
   </nav>
 
-  <header class="flex text-center h-screen justify-center bg-cover bg-center relative" style="background-image: url('src/images/pexels-jeremy-bishop-1260133-3464799.jpg');" id="header">
-    <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
-      <div class="mx-4 sm:mx-64 gap-4">
-        <h1 class="text-white font-extrabold m-5 text-5xl">FaKe</h1>
-        <h2 class="text-white text-2xl m-5">The #1 Filipino Fake News Detector</h2>
-        <button class="bg-orange-600 p-3 rounded-full hover:bg-blue-600 transition-colors duration-300" id="try_button" onclick="scrollAnimation('check_news_section')">
-          <span class="p-3 text-white">Try it for free!</span>
+  <header id="header" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+    <div class="absolute inset-0 z-0">
+      <img src="src/images/pexels-jeremy-bishop-1260133-3464799.jpg" class="w-full h-full object-cover"
+        alt="Background">
+      <div class="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900/90"></div>
+    </div>
+
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+      <div
+        class="inline-block mb-4 px-4 py-1 rounded-full bg-orange-600/20 border border-orange-500/30 backdrop-blur-sm">
+        <p class="text-orange-300 text-sm font-semibold tracking-wide uppercase">The #1 Filipino Fake News Detector</p>
+      </div>
+      <h1 class="text-5xl md:text-7xl font-black text-white mb-6 tracking-tight leading-tight">
+        Truth matters.<br>
+        <span class="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-600">Spot fake
+          news.</span>
+      </h1>
+      <p class="text-lg md:text-xl text-slate-300 mb-10 max-w-2xl mx-auto leading-relaxed">
+        Built by a team of students from the University of the Philippines Visayas, FaKe leverages artificial
+        intelligence
+        and web technologies to protect you from fake news.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button onclick="scrollAnimation('check_news_section')"
+          class="px-8 py-4 bg-orange-600 text-white rounded-xl font-bold text-lg hover:bg-orange-700 transition-all shadow-lg shadow-orange-600/30 flex items-center justify-center gap-2">
+          <i class="fas fa-search"></i> Try For Free
+        </button>
+        <button onclick="scrollAnimation('installation')"
+          class="px-8 py-4 bg-white/10 text-white backdrop-blur-sm border border-white/20 rounded-xl font-bold text-lg hover:bg-white/20 transition-all flex items-center justify-center gap-2">
+          <i class="fas fa-download"></i> Get Extension
         </button>
       </div>
     </div>
   </header>
 
-
-  <div class="border"></div>
-
-  <div class="bg-cover bg-top relative flex flex-col text-center min-h-screen justify-center bg-gradient-to-r from-white to-gray-300 sm:flex-row sm:items-center" style="background-image: url('src/images/cha-cha.jpg');" id="about">
-    <div class="flex items-center justify-center absolute inset-0 bg-white bg-opacity-95">
-      <div class="mx-4 sm:mx-64 mt-20 mb-10 sm:mt-0 sm:mb-0 gap-4">
-        <h1 class="text-5xl mb-10">Fake news no more.</h1>
-        <p class="mb-9">Built by a team of students from the University of the Philippines, FaKe detects Tagalog fake news at a staggering 98% accuracy. We leverage advances in artificial intelligence and web technologies to protect you from fake news.</p>
+  <section id="check_news_section" class="py-24 px-4 bg-white relative">
+    <div class="max-w-4xl mx-auto">
+      <div class="text-center mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Analyze News Article</h2>
+        <p class="text-slate-500">Paste the text of any Tagalog or Filipino news article below to verify its
+          credibility.</p>
       </div>
-    </div>
-  </div>
 
-  <div class="border"></div>
-
-
-  <!-- Article Check Section -->
-  <div class="flex flex-col text-center h-screen justify-center bg-cover bg-center relative" style="background-image: url('src/images/pexels-digitalbuggu-167538.jpg')" id="check_news_section">
-    <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center">
-      <div class="mx-4 sm:mx-64">
-        <h2 class="text-3xl font-bold mb-5 text-white">FaKe Online</h2>
-        <p class="mb-8 text-white">Enter the text of the Tagalog news article you want to verify.</p>
-        <div class="flex flex-col justify-center mx-auto max-w-3xl w-full px-4">
-          <textarea
-            id="content_input"
-            placeholder="Paste the news article content here..."
-            class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:border-orange-600 resize-none"
-            rows="10"
-          ></textarea>
-          <button
-            id="check_button"
-            class="p-3 mt-4 bg-orange-600 text-white rounded-lg hover:bg-blue-600 transition-colors duration-300"
-          >
-            Check
-          </button>
+      <div class="bg-white rounded-2xl shadow-2xl shadow-slate-200 border border-slate-100 overflow-hidden">
+        <div class="p-1 bg-slate-50 border-b border-slate-100 flex gap-2 px-4 py-3">
+          <div class="w-3 h-3 rounded-full bg-red-400"></div>
+          <div class="w-3 h-3 rounded-full bg-yellow-400"></div>
+          <div class="w-3 h-3 rounded-full bg-green-400"></div>
         </div>
-        <div class="mt-5 text-lg text-white" id="result">
-          <div id="loading-spinner" class="hidden"></div>
+
+        <div class="p-6 md:p-8">
+          <textarea id="content_input" placeholder="Paste article here..."
+            class="w-full h-64 p-4 news-font text-lg text-slate-700 bg-slate-50 border-2 border-dashed border-slate-200 rounded-xl focus:outline-none focus:border-orange-500 focus:bg-white transition-all resize-none placeholder:text-slate-400 placeholder:font-sans"></textarea>
+
+          <div class="mt-6 flex justify-end">
+            <button id="check_button"
+              class="bg-slate-900 text-white px-8 py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
+              <span>Analyze Text</span>
+              <i class="fas fa-arrow-right"></i>
+            </button>
+          </div>
+        </div>
+
+        <div id="result_container" class="hidden bg-slate-50 border-t border-slate-100 p-6 md:p-8 animate-fade-in">
+          <div class="flex items-start gap-4">
+            <div id="result_icon_container" class="p-3 rounded-full shrink-0">
+              <i id="result_icon" class="fas fa-check text-2xl"></i>
+            </div>
+            <div>
+              <h3 id="result_title" class="text-xl font-bold mb-1">Result</h3>
+              <p id="result_desc" class="text-slate-600">Analysis complete.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
-
-  <div class="border"></div>
-
-  <div class="flex flex-col text-center h-screen justify-center bg-cover bg-center relative" style="background-image: url('src/images/delayed-projects.jpg');" id="installation">
-    <div class="absolute inset-0 bg-black bg-opacity-70 flex flex-col justify-center items-center">
-      <div class="mx-10 text-white">
-        <h1 class="text-3xl font-bold mb-5 text-white">FaKe Extension</h1>
-        <ol class="text-left">
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">1</span>Download and install <a href="https://www.tampermonkey.net/" class="underline text-orange-400">Tampermonkey</a>.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">2</span>Download the latest release of the FaKe extension from <a href="https://github.com/WhiteLicorice/Fake/releases" class="underline text-orange-400">GitHub</a>.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">3</span>Extract the zip and open script.js with Notepad.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">4</span>Click the + button and open a new userscript.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">5</span>Copy and paste script.js, replacing the old contents.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">6</span>Click file and then save. Done!</li>
-        </ol>
+  <section id="installation" class="py-24 bg-slate-50 border-t border-slate-200">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl font-bold text-slate-900">Install the FaKe Extension</h2>
+        <p class="text-slate-500 mt-2">Protect yourself from trolls and fake news with 3 easy steps.</p>
       </div>
-    </div>
-  </div>
 
-  <div class="border"></div>
-
-  <div class="bg-cover bg-top relative flex flex-col text-center h-screen justify-center bg-gradient-to-r from-white to-gray-300" style="background-image: url('src/images/pexels-digitalbuggu-167538.jpg');" id="usage">
-    <div class="absolute inset-0 flex flex-col justify-center items-center bg-white bg-opacity-95">
-      <div class="mx-10 text-black">
-        <h1 class="text-3xl font-bold mb-5 text-black">Extension Usage</h1>
-        <ol class="text-left">
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">1</span>Navigate to a Tagalog news article.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">2</span>Pin Tampermonkey to your browser's address bar.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">3</span>Once pinned, click the Tampermonkey icon.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">4</span>Under Fake News Detector, click Detect Fake News.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">5</span>Wait for the system to process the article you're reading.</li>
-          <li class="mb-2"><span class="bg-orange-600 text-white rounded-full px-3 py-1.5 mr-2">6</span>Profit!</li>
-        </ol>
-      </div>
-    </div>
-  </div>
-
-
-  <div class="border"></div>
-
-  <div class="flex flex-col text-center min-h-screen justify-center bg-orange-600" id="contact">
-    <div class="container mx-auto px-4 md:px-8 py-8 md:py-12">
-      <h1 class="text-4xl md:text-5xl text-white mb-6 md:mb-12">Let's Get In Touch!</h1>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-        <a href="mailto:rbjocsing@up.edu.ph" class="flex items-center justify-center bg-white rounded-lg py-6 px-4 md:p-6 hover:bg-blue-600 transition-colors duration-300">
-          <div class="flex flex-col items-center">
-            <i class="fas fa-envelope text-2xl md:text-3xl text-black mb-2 md:mb-4"></i>
-            <p class="text-lg md:text-xl text-black">Email</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+          <div
+            class="absolute -right-4 -top-4 text-9xl font-black text-slate-50 opacity-50 group-hover:text-orange-50 transition-colors select-none">
+            1</div>
+          <div class="relative z-10">
+            <div
+              class="w-12 h-12 bg-orange-100 text-orange-600 rounded-lg flex items-center justify-center text-xl font-bold mb-6">
+              <i class="fas fa-puzzle-piece"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Get Tampermonkey</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">Install the script manager required to run FaKe on
+              your browser.</p>
+            <a href="https://www.tampermonkey.net/" target="_blank"
+              class="text-orange-600 font-semibold text-sm hover:underline">Download Tampermonkey &rarr;</a>
           </div>
-        </a>
-        <a class="flex items-center justify-center bg-white rounded-lg py-6 px-4 md:p-6 hover:bg-blue-600 transition-colors duration-300" href="https://github.com/WhiteLicorice/Fake">
-          <div class="flex flex-col items-center">
-            <i class="fab fa-github text-2xl md:text-3xl text-black mb-2 md:mb-4 "></i>
-            <p class="text-lg md:text-xl text-black">GitHub</p>
+        </div>
+
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+          <div
+            class="absolute -right-4 -top-4 text-9xl font-black text-slate-50 opacity-50 group-hover:text-orange-50 transition-colors select-none">
+            2</div>
+          <div class="relative z-10">
+            <div
+              class="w-12 h-12 bg-blue-100 text-blue-600 rounded-lg flex items-center justify-center text-xl font-bold mb-6">
+              <i class="fab fa-github"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Download Script</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">Get the latest release from our official
+              repository. It's free and open-source!</p>
+            <a href="https://github.com/WhiteLicorice/Fake/releases" target="_blank"
+              class="text-orange-600 font-semibold text-sm hover:underline">Go to Releases &rarr;</a>
           </div>
-        </a>
-      </div>
-      <p class="text-white mt-8 md:mt-12">You may also contact:</p>
-      <div class="border border-white w-16 md:w-20 mx-auto my-4"></div>
-      <h2 class="text-2xl md:text-3xl text-white mb-6 md:mb-8">The FaKe Team</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
-        <!-- Team members -->
-        <a class="bg-white rounded-lg py-6 px-4 md:p-6 text-center hover:bg-blue-600 transition-colors duration-300" href="https://github.com/WhiteLicorice">
-          <p class="text-lg md:text-xl font-bold mb-2">Ren</p>
-          <p class="text-sm md:text-base mb-2">Generic NPC</p>
-        </a>
-        <a class="bg-white rounded-lg py-6 px-4 md:p-6 text-center hover:bg-blue-600 transition-colors duration-300" href="https://github.com/Cmpdleon">
-          <p class="text-lg md:text-xl font-bold mb-2">Chancy</p>
-          <p class="text-sm md:text-base mb-2">Basically Jesus</p>
-        </a>
-        <a class="bg-white rounded-lg py-6 px-4 md:p-6 text-center hover:bg-blue-600 transition-colors duration-300" href="https://github.com/CoebeAustin">
-          <p class="text-lg md:text-xl font-bold mb-2">Kobe</p>
-          <p class="text-sm md:text-base mb-2">Lord and Savior</p>
-        </a>
-        <a class="bg-white rounded-lg py-6 px-4 md:p-6 text-center hover:bg-blue-600 transition-colors duration-300" href="https://github.com/SkyBluePenguin53">
-          <p class="text-lg md:text-xl font-bold mb-2">Ron</p>
-          <p class="text-sm md:text-base mb-2">Sleeper MVP</p>
-        </a>
+        </div>
+
+        <div
+          class="bg-white p-8 rounded-2xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow relative overflow-hidden group">
+          <div
+            class="absolute -right-4 -top-4 text-9xl font-black text-slate-50 opacity-50 group-hover:text-orange-50 transition-colors select-none">
+            3</div>
+          <div class="relative z-10">
+            <div
+              class="w-12 h-12 bg-green-100 text-green-600 rounded-lg flex items-center justify-center text-xl font-bold mb-6">
+              <i class="fas fa-save"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3">Install & Save</h3>
+            <p class="text-slate-500 text-sm leading-relaxed mb-4">Open the Tampermonkey dashboard, create new script,
+              paste
+              code, and save.</p>
+            <a href="https://github.com/WhiteLicorice/Fake?tab=readme-ov-file#installation" target="_blank"
+              class="text-orange-600 font-semibold text-sm hover:underline">See Detailed Guide &rarr;</a>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <div class="bg-orange-600 text-white py-4 text-center">
-    &copy; 2024 The FaKe Team. <br /> Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0" class="underline text-white hover:text-blue-400">Apache 2.0 License</a>.<br />
-    <a href="https://github.com/WhiteLicorice/Fake/blob/main/LICENSE" class="underline text-white hover:text-blue-400">Read the full license here</a>.
-  </div>
+  <section id="contact" class="py-24 bg-slate-900 text-white">
+    <div class="max-w-7xl mx-auto px-4">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        <div>
+          <h2 class="text-4xl font-bold mb-6">Let's verify facts together.</h2>
+          <p class="text-slate-400 text-lg mb-8">
+            Our team is committed to fighting misinformation using
+            artificial intelligence and web technologies. We are slaves to the truth.
+          </p>
+
+          <div class="flex flex-col gap-4">
+            <a href="mailto:rbjocsing@up.edu.ph"
+              class="flex items-center gap-4 p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors group">
+              <div
+                class="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-orange-500 group-hover:scale-110 transition-transform">
+                <i class="fas fa-envelope"></i>
+              </div>
+              <div>
+                <p class="font-bold">Reach Out</p>
+                <p class="text-slate-400 text-sm">rbjocsing@up.edu.ph</p>
+              </div>
+            </a>
+            <a href="https://github.com/WhiteLicorice/Fake" target="_blank"
+              class="flex items-center gap-4 p-4 rounded-xl bg-slate-800 hover:bg-slate-700 transition-colors group">
+              <div
+                class="w-12 h-12 rounded-full bg-slate-900 flex items-center justify-center text-white group-hover:scale-110 transition-transform">
+                <i class="fab fa-github"></i>
+              </div>
+              <div>
+                <p class="font-bold">Contribute on GitHub</p>
+                <p class="text-slate-400 text-sm">FaKe is forever free and open-source</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div>
+          <h3 class="text-xl font-bold mb-6 text-slate-300">Meet The Team</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <a href="https://github.com/WhiteLicorice" target="_blank"
+              class="p-6 bg-slate-800 rounded-xl hover:bg-orange-600 transition-colors group">
+              <p class="font-bold text-lg group-hover:text-white">Ren</p>
+              <p class="text-xs text-slate-400 uppercase tracking-widest group-hover:text-orange-200">Pro Tambay</p>
+            </a>
+            <a href="https://github.com/Cmpdleon" target="_blank"
+              class="p-6 bg-slate-800 rounded-xl hover:bg-orange-600 transition-colors group">
+              <p class="font-bold text-lg group-hover:text-white">Chancy</p>
+              <p class="text-xs text-slate-400 uppercase tracking-widest group-hover:text-orange-200">Basically Jesus
+              </p>
+            </a>
+            <a href="https://github.com/CoebeAustin" target="_blank"
+              class="p-6 bg-slate-800 rounded-xl hover:bg-orange-600 transition-colors group">
+              <p class="font-bold text-lg group-hover:text-white">Kobe</p>
+              <p class="text-xs text-slate-400 uppercase tracking-widest group-hover:text-orange-200">Lord and Savior
+              </p>
+            </a>
+            <a href="https://github.com/SkyBluePenguin53" target="_blank"
+              class="p-6 bg-slate-800 rounded-xl hover:bg-orange-600 transition-colors group">
+              <p class="font-bold text-lg group-hover:text-white">Ron</p>
+              <p class="text-xs text-slate-400 uppercase tracking-widest group-hover:text-orange-200">Sleeper MVP</p>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="bg-slate-950 py-8 text-center text-slate-500 text-sm border-t border-slate-900">
+    <p>
+      &copy; 2023-2025 The FaKe Team.
+      <br> Licensed under <a href="https://github.com/WhiteLicorice/Fake/blob/main/LICENSE" class="hover:text-orange-500" target="_blank"><u>Apache 2.0</u></a>.
+    </p>
+  </footer>
 
   <script>
     function scrollAnimation(divId) {
       const div = document.getElementById(divId);
-      div.scrollIntoView({ behavior: "smooth" });
+      // Adjust for fixed navbar height
+      const offset = 80;
+      const bodyRect = document.body.getBoundingClientRect().top;
+      const elementRect = div.getBoundingClientRect().top;
+      const elementPosition = elementRect - bodyRect;
+      const offsetPosition = elementPosition - offset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth"
+      });
     }
   </script>
-  <script src="src/js/navbarHide.js"></script>
   <script src="src/js/checkNews.js"></script>
+  <script src="src/js/navbarHide.js"></script>
 </body>
+
 </html>

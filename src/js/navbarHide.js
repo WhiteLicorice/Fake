@@ -1,16 +1,14 @@
-let lastScrollTop = 0;
 const navbar = document.getElementById('navbar');
-let navbarHeight = navbar.offsetHeight;
+let lastScrollTop = 0;
 
-window.addEventListener('scroll', function() {
+window.addEventListener('scroll', function () {
   let scrollTop = window.pageY || document.documentElement.scrollTop;
 
-  if (scrollTop > lastScrollTop) {
-    // Scroll down
-    navbar.style.top = `-${navbarHeight}px`;
+  // Add shadow when scrolled
+  if (scrollTop > 10) {
+    navbar.classList.add('shadow-md');
   } else {
-    // Scroll up
-    navbar.style.top = '0';
+    navbar.classList.remove('shadow-md');
   }
 
   lastScrollTop = scrollTop;
