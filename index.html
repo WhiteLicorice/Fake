@@ -30,17 +30,17 @@
       font-family: 'Merriweather', serif;
     }
 
-    .glass-nav {
+    /*     .glass-nav {
       background: rgba(255, 255, 255, 0.85);
       backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(0, 0, 0, 0.05);
-    }
+    } */
   </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800">
 
-  <nav class="fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
+  <!-- <nav class="hidden md:block fixed top-0 w-full z-50 glass-nav transition-all duration-300" id="navbar">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex justify-between items-center h-16">
         <div class="flex-shrink-0 flex items-center cursor-pointer" onclick="scrollAnimation('header')">
@@ -63,7 +63,7 @@
         </div>
       </div>
     </div>
-  </nav>
+  </nav> -->
 
   <header id="header" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
     <div class="absolute inset-0 z-0">
@@ -103,8 +103,8 @@
   <section id="check_news_section" class="py-24 px-4 bg-white relative">
     <div class="max-w-4xl mx-auto">
       <div class="text-center mb-12">
-        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Analyze News Article</h2>
-        <p class="text-slate-500">Paste the text of any Tagalog or Filipino news article below to verify its
+        <h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Detect Fake News</h2>
+        <p class="text-slate-500">Paste the text of any Tagalog or Filipino news article below to check its
           credibility.</p>
       </div>
 
@@ -122,7 +122,7 @@
           <div class="mt-6 flex justify-end">
             <button id="check_button"
               class="bg-slate-900 text-white px-8 py-3 rounded-xl font-semibold hover:bg-orange-600 transition-colors flex items-center gap-2 disabled:opacity-50 disabled:cursor-not-allowed">
-              <span>Analyze Text</span>
+              <span>Analyze</span>
               <i class="fas fa-arrow-right"></i>
             </button>
           </div>
@@ -279,7 +279,8 @@
   <footer class="bg-slate-950 py-8 text-center text-slate-500 text-sm border-t border-slate-900">
     <p>
       &copy; 2023-2025 The FaKe Team.
-      <br> Licensed under <a href="https://github.com/WhiteLicorice/Fake/blob/main/LICENSE" class="hover:text-orange-500" target="_blank"><u>Apache 2.0</u></a>.
+      <br> Licensed under <a href="https://github.com/WhiteLicorice/Fake/blob/main/LICENSE"
+        class="hover:text-orange-500" target="_blank"><u>Apache 2.0</u></a>.
     </p>
   </footer>
 
