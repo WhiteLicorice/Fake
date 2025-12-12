@@ -4,8 +4,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>FaKe
-  </title>
+  <title>FaKe</title>
 
   <link rel="stylesheet" href="src/output.css" />
 
@@ -29,19 +28,19 @@
     .news-font {
       font-family: 'Merriweather', serif;
     }
-
   </style>
 </head>
 
 <body class="bg-slate-50 text-slate-800">
-  <header id="header" class="relative h-[85vh] flex items-center justify-center overflow-hidden">
+
+  <header id="header" class="relative min-h-screen flex items-center justify-center overflow-hidden py-24 md:py-32">
     <div class="absolute inset-0 z-0">
       <img src="src/images/pexels-jeremy-bishop-1260133-3464799.jpg" class="w-full h-full object-cover"
         alt="Background">
       <div class="absolute inset-0 bg-gradient-to-b from-slate-900/70 to-slate-900/90"></div>
     </div>
 
-    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto mt-16">
+    <div class="relative z-10 text-center px-4 max-w-4xl mx-auto">
       <div
         class="inline-block mb-4 px-4 py-1 rounded-full bg-orange-600/20 border border-orange-500/30 backdrop-blur-sm">
         <p class="text-orange-300 text-sm font-semibold tracking-wide uppercase">The #1 Filipino Fake News Detector</p>
@@ -256,8 +255,7 @@
   <script>
     function scrollAnimation(divId) {
       const div = document.getElementById(divId);
-      // Adjust for fixed navbar height
-      const offset = 80;
+      const offset = 0;
       const bodyRect = document.body.getBoundingClientRect().top;
       const elementRect = div.getBoundingClientRect().top;
       const elementPosition = elementRect - bodyRect;
@@ -270,7 +268,6 @@
     }
   </script>
   <script src="src/js/checkNews.js"></script>
-  <script src="src/js/navbarHide.js"></script>
 </body>
 
 </html>
