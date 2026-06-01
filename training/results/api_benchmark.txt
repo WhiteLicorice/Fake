@@ -1,0 +1,17 @@
+API endpoint: https://fph-ml.onrender.com/check-news
+Warmup response time: 809 ms (excluded from benchmark)
+
+Short article (~50 words)
+  Responses (ms): [89, 93, 89, 84, 89, 77, 77, 100, 79, 97]
+  Mean: 87 ms,  Median: 89 ms,  SD: 8 ms
+
+Medium article (~100 words)
+  Responses (ms): [109, 88, 89, 75, 89, 91, 90, 75, 108, 101]
+  Mean: 92 ms,  Median: 90 ms,  SD: 12 ms
+
+Long article (~200 words)
+  Responses (ms): [106, 94, 101, 89, 111, 99, 99, 101, 101, 101]
+  Mean: 100 ms,  Median: 101 ms,  SD: 6 ms
+
+Overall mean across all 30 requests: 93 ms
+Overall range: 75 ms – 111 ms
