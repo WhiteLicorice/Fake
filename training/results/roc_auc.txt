@@ -1,0 +1,6 @@
+ROC-AUC on joint corpus (30-run average, tuned hyperparameters, full feature set):
+
+  MNB:  AUC = 0.925 ± 0.010
+  LR:   AUC = 0.976 ± 0.005
+  RF:   AUC = 0.960 ± 0.006
+  SVC:  AUC = 0.973 ± 0.005

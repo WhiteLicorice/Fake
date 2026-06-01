@@ -31,7 +31,7 @@ from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
-from sklearn.metrics import RocCurveDisplay, roc_auc_score
+from sklearn.metrics import RocCurveDisplay, roc_auc_score, roc_curve
 from sklearn.model_selection import RepeatedKFold, train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import FeatureUnion, Pipeline
@@ -278,12 +278,14 @@ def save_plot(
     PLOT_PATH.parent.mkdir(parents=True, exist_ok=True)
     fig, ax = plt.subplots(figsize=(7, 6))
     for name, (y_true, y_score, auc) in representative_curves.items():
-        RocCurveDisplay.from_predictions(
-            y_true,
-            y_score,
-            name=f"{name} (AUC={auc:.3f})",
-            ax=ax,
+        fpr, tpr, _ = roc_curve(y_true, y_score, pos_label=1)
+        display = RocCurveDisplay(
+            fpr=fpr,
+            tpr=tpr,
+            roc_auc=None,
+            estimator_name=f"{name} (AUC={auc:.3f})",
         )
+        display.plot(ax=ax)
 
     ax.plot([0, 1], [0, 1], linestyle="--", color="0.45", linewidth=1)
     ax.set_title("ROC Curves on Joint Corpus")
@@ -322,7 +324,7 @@ def main() -> None:
     print()
     for name in ["MNB", "LR", "RF", "SVC"]:
         aucs = np.array(results[name], dtype=float)
-        print(f"  {name}:  AUC = {aucs.mean():.3f} ± {aucs.std(ddof=1):.3f}")
+        print(f"  {name + ':':<5} AUC = {aucs.mean():.3f} ± {aucs.std(ddof=1):.3f}")
 
 
 if __name__ == "__main__":
