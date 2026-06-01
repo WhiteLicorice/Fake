@@ -1,0 +1,23 @@
+OOV word count
+  Cruz (FNF):     mean = 17.6, SD = 13.5, n = 3206
+  Lupac (FNF2024): mean = 22.2, SD = 20.0, n = 3206
+  Test: Mann-Whitney U
+  Statistic: 5814710.50, p = 0.0000 (Bonferroni-corrected)
+  Effect size: rank-biserial r = 0.13 [small]
+  Result: significant at α = 0.05
+
+Readability index
+  Cruz (FNF):     mean = 20.5, SD = 12.3, n = 3206
+  Lupac (FNF2024): mean = 19.7, SD = 14.5, n = 3206
+  Test: Mann-Whitney U
+  Statistic: 4745072.00, p = 0.0000 (Bonferroni-corrected)
+  Effect size: rank-biserial r = -0.08 [small]
+  Result: significant at α = 0.05
+
+Stop word count
+  Cruz (FNF):     mean = 77.8, SD = 54.8, n = 3206
+  Lupac (FNF2024): mean = 74.5, SD = 60.9, n = 3206
+  Test: Mann-Whitney U
+  Statistic: 4759872.00, p = 0.0000 (Bonferroni-corrected)
+  Effect size: rank-biserial r = -0.07 [small]
+  Result: significant at α = 0.05
