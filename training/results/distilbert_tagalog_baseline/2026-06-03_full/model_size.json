@@ -1,0 +1,6 @@
+{
+  "model": "jcblaise/distilbert-tagalog-base-cased",
+  "parameter_count": 66631682,
+  "model_size_mb": 254.8938856124878,
+  "representative_model_dir": "results\\distilbert_tagalog_baseline\\2026-06-03_full\\representative_joint_model"
+}

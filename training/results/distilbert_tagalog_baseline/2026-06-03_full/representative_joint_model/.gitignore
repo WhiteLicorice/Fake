@@ -1,0 +1,6 @@
+# Ignore training artifacts
+config.json
+model.safetensors
+tokenizer_config.json
+tokenizer.json
+training_args.bin

@@ -1,0 +1,8 @@
+# Transformer baseline dependencies.
+# The CUDA wheel below matches the local test environment where torch reports
+# CUDA 12.8 on an NVIDIA RTX 3060 Laptop GPU.
+--extra-index-url https://download.pytorch.org/whl/cu128
+torch==2.11.0+cu128
+transformers==5.9.0
+datasets==4.8.5
+accelerate==1.13.0
