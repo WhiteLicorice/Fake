@@ -310,7 +310,7 @@ class StopWordsExtractor(BaseEstimator, TransformerMixin):
         features = []
         if(self.from_csv):
             for doc in X.itertuples():
-                stopwords_count = doc.count_oov_words
+                stopwords_count = doc.count_stopwords
                 features.append([
                     stopwords_count,
                 ])
