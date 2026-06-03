@@ -1,6 +1,9 @@
 ![FaKe Logo](docs/fAke.png)
 
 # FaKe : A Cross-Browser Extension For Classifying Filipino Fake News
+
+[No-install web version here!](https://fakeph.netlify.app/)
+
 Cross-browser extension for detecting fake news written in Filipino, powered by machine learning. 
 
 ## Description
