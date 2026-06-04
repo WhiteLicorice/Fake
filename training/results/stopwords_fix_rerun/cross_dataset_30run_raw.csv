@@ -1,0 +1,361 @@
+dataset_key,dataset,classifier,classifier_name,feature_set,repeat,fold,accuracy,elapsed_seconds
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,1,1,0.9259259259259259,4.789530400070362
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,1,2,0.9142300194931774,4.821386799914762
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,1,3,0.9317738791423001,4.807047500042245
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,1,4,0.9122807017543859,4.861472200020216
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,1,5,0.923828125,4.613378299982287
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,2,1,0.9298245614035088,4.548078799969517
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,2,2,0.9064327485380117,4.6329094000393525
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,2,3,0.9122807017543859,4.722048499970697
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,2,4,0.9122807017543859,5.003023800090887
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,2,5,0.93359375,5.188067800016142
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,3,1,0.9083820662768031,4.98470150004141
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,3,2,0.935672514619883,5.092221700004302
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,3,3,0.9259259259259259,4.782373099937104
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,3,4,0.9181286549707602,4.722648299997672
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,3,5,0.921875,4.747940700035542
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,4,1,0.9044834307992202,4.769795499974862
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,4,2,0.9161793372319688,4.608820399967954
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,4,3,0.9376218323586745,4.617168199969456
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,4,4,0.9122807017543859,4.620861000032164
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,4,5,0.927734375,4.642720900010318
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,5,1,0.9005847953216374,4.591158200055361
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,5,2,0.9161793372319688,4.614073900040239
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,5,3,0.9220272904483431,4.593673600000329
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,5,4,0.9259259259259259,4.563033200101927
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,5,5,0.9375,4.607869200059213
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,6,1,0.9415204678362573,4.5854476999957114
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,6,2,0.9337231968810916,4.547358299954794
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,6,3,0.9064327485380117,4.661979099968448
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,6,4,0.9064327485380117,4.055905199958943
+Cruz,Fake News Filipino 2020,MNB,Multinomial Naive Bayes,full,6,5,0.9140625,4.00263989996165
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,1,1,0.9688109161793372,144.5905365999788
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,1,2,0.9454191033138402,93.87460779992398
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,1,3,0.9532163742690059,145.50638929998968
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,1,4,0.9395711500974658,149.74845090007875
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,1,5,0.955078125,136.88303959998302
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,2,1,0.9551656920077972,152.91357019997668
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,2,2,0.9395711500974658,158.96716099989135
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,2,3,0.9571150097465887,154.43435250001494
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,2,4,0.949317738791423,144.97600989998318
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,2,5,0.95703125,153.84544429997914
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,3,1,0.9278752436647173,88.1890851999633
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,3,2,0.9688109161793372,154.6919382000342
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,3,3,0.9629629629629629,171.20402349997312
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,3,4,0.9590643274853801,145.53611959994305
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,3,5,0.94140625,140.8438494000584
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,4,1,0.9415204678362573,104.36506810004357
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,4,2,0.9629629629629629,158.2533531000372
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,4,3,0.9551656920077972,153.31878099997994
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,4,4,0.9532163742690059,142.00911400001496
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,4,5,0.951171875,151.91345620003995
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,5,1,0.949317738791423,154.0993362000445
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,5,2,0.9532163742690059,175.820587299997
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,5,3,0.949317738791423,158.34143769997172
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,5,4,0.949317738791423,137.35101340000983
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,5,5,0.95703125,152.0624400000088
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,6,1,0.9649122807017544,147.31170000007842
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,6,2,0.9512670565302144,151.2177464000415
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,6,3,0.9454191033138402,149.9955359000014
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,6,4,0.9571150097465887,73.45419530000072
+Cruz,Fake News Filipino 2020,LR,Logistic Regression,full,6,5,0.947265625,104.16142599994782
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,1,1,0.9200779727095516,11.220448200008832
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,1,2,0.9142300194931774,11.765526799950749
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,1,3,0.9142300194931774,10.998086699983105
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,1,4,0.9025341130604289,11.28523519996088
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,1,5,0.94140625,11.209979999926873
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,2,1,0.9181286549707602,11.34039089991711
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,2,2,0.9122807017543859,11.366106300032698
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,2,3,0.9161793372319688,11.582358399988152
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,2,4,0.9278752436647173,11.373530699987896
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,2,5,0.923828125,11.529872999992222
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,3,1,0.9064327485380117,10.769059200072661
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,3,2,0.9298245614035088,11.37974729994312
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,3,3,0.9278752436647173,11.065187099971808
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,3,4,0.9200779727095516,11.35161569993943
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,3,5,0.919921875,11.188958100043237
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,4,1,0.9103313840155945,11.663824700051919
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,4,2,0.9259259259259259,11.060262399958447
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,4,3,0.9298245614035088,10.99477420002222
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,4,4,0.9220272904483431,11.725097099901177
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,4,5,0.9140625,11.486916200025007
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,5,1,0.9337231968810916,11.221880199969746
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,5,2,0.9122807017543859,11.364217199967243
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,5,3,0.9259259259259259,11.322178600006737
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,5,4,0.9044834307992202,11.398806900018826
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,5,5,0.912109375,11.54638780001551
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,6,1,0.9473684210526315,11.265620499965735
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,6,2,0.9122807017543859,11.261531200027093
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,6,3,0.8869395711500975,11.387293500010855
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,6,4,0.9142300194931774,10.001277499948628
+Cruz,Fake News Filipino 2020,RF,Random Forest,full,6,5,0.93359375,10.398350000032224
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,1,1,0.9707602339181286,10.213636100059375
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,1,2,0.9376218323586745,10.080369999981485
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,1,3,0.9434697855750487,10.06609340000432
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,1,4,0.9473684210526315,9.842049000086263
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,1,5,0.9609375,10.191064600017853
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,2,1,0.9532163742690059,10.154922799905762
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,2,2,0.9434697855750487,9.977236400009133
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,2,3,0.9571150097465887,9.9528562000487
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,2,4,0.9551656920077972,10.153066599974409
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,2,5,0.958984375,10.397110399906524
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,3,1,0.9298245614035088,9.788811800070107
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,3,2,0.9727095516569201,10.501586899976246
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,3,3,0.9571150097465887,10.340107799973339
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,3,4,0.9590643274853801,10.394666300038807
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,3,5,0.93359375,9.939307699911296
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,4,1,0.949317738791423,10.3232259999495
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,4,2,0.9610136452241715,10.286481100018136
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,4,3,0.949317738791423,10.252024800051004
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,4,4,0.9512670565302144,10.13669400010258
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,4,5,0.953125,9.88162060000468
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,5,1,0.9571150097465887,10.082958100014366
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,5,2,0.9571150097465887,10.054772900068201
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,5,3,0.949317738791423,10.25182520004455
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,5,4,0.9434697855750487,10.016445699962787
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,5,5,0.958984375,9.946061599999666
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,6,1,0.9551656920077972,10.417779400013387
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,6,2,0.9434697855750487,10.243192699970677
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,6,3,0.9473684210526315,9.933342100004666
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,6,4,0.9532163742690059,9.35912450007163
+Cruz,Fake News Filipino 2020,SVC,Support Vector Classifier,full,6,5,0.947265625,9.33880470006261
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,1,1,0.8635477582846004,4.751084399991669
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,1,2,0.8888888888888888,4.6899657000321895
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,1,3,0.8830409356725146,4.6434554000152275
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,1,4,0.8947368421052632,4.7663857999723405
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,1,5,0.86328125,4.673882700037211
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,2,1,0.9064327485380117,4.632978099980392
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,2,2,0.8732943469785575,4.7486909999279305
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,2,3,0.8615984405458089,4.6401814999990165
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,2,4,0.8713450292397661,4.769302200060338
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,2,5,0.87890625,4.692446399945766
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,3,1,0.8810916179337231,4.792637899983674
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,3,2,0.8635477582846004,4.743325799936429
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,3,3,0.9083820662768031,4.688475099974312
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,3,4,0.884990253411306,4.703777299961075
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,3,5,0.884765625,4.786477799993008
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,4,1,0.8693957115009746,4.718400800018571
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,4,2,0.9044834307992202,4.6989802999887615
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,4,3,0.884990253411306,4.589821000001393
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,4,4,0.8771929824561403,4.647577300085686
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,4,5,0.873046875,4.717881400021724
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,5,1,0.8771929824561403,4.730206099920906
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,5,2,0.8791423001949318,4.687994599924423
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,5,3,0.8654970760233918,4.746902299928479
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,5,4,0.9103313840155945,4.724847599980421
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,5,5,0.88671875,4.707537499954924
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,6,1,0.8635477582846004,4.719747999915853
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,6,2,0.898635477582846,4.655063800048083
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,6,3,0.8557504873294347,4.665607499890029
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,6,4,0.8791423001949318,4.158880000002682
+Lupac,Fake News Filipino 2024,MNB,Multinomial Naive Bayes,full,6,5,0.908203125,4.102682799915783
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,1,1,0.9317738791423001,145.6702158000553
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,1,2,0.935672514619883,153.76586489996407
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,1,3,0.9610136452241715,160.65677510004025
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,1,4,0.9454191033138402,159.7697353999829
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,1,5,0.94140625,186.40183350001462
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,2,1,0.9590643274853801,161.14297789998818
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,2,2,0.9415204678362573,146.87745050003286
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,2,3,0.9454191033138402,144.23290369997267
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,2,4,0.9298245614035088,167.58708559989464
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,2,5,0.939453125,138.7508172999369
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,3,1,0.9610136452241715,139.62753910000902
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,3,2,0.9337231968810916,143.26290349999908
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,3,3,0.9473684210526315,142.73658439994324
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,3,4,0.9551656920077972,148.34624679991975
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,3,5,0.94921875,141.97707750007976
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,4,1,0.949317738791423,134.84139650000725
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,4,2,0.9532163742690059,143.30936119996477
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,4,3,0.9571150097465887,153.35298849991523
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,4,4,0.9298245614035088,149.57588819996454
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,4,5,0.935546875,148.39338290004525
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,5,1,0.949317738791423,138.36150769994128
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,5,2,0.9512670565302144,155.796293899999
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,5,3,0.9434697855750487,142.83761849999428
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,5,4,0.9551656920077972,150.60464529995807
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,5,5,0.935546875,149.32929820008576
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,6,1,0.9571150097465887,154.82410990004428
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,6,2,0.9454191033138402,153.47195040003862
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,6,3,0.9239766081871345,156.53105089999735
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,6,4,0.9415204678362573,123.70453009998892
+Lupac,Fake News Filipino 2024,LR,Logistic Regression,full,6,5,0.958984375,86.8483053999953
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,1,1,0.9239766081871345,11.902969500049949
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,1,2,0.9122807017543859,11.919102699961513
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,1,3,0.9415204678362573,12.399495500023477
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,1,4,0.9259259259259259,12.405325799947605
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,1,5,0.931640625,12.647457799990661
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,2,1,0.935672514619883,12.252917299978435
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,2,2,0.9083820662768031,11.897486899979413
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,2,3,0.9278752436647173,11.903886099928059
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,2,4,0.9220272904483431,12.479290499933995
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,2,5,0.9140625,11.856930000009015
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,3,1,0.9317738791423001,12.271288500051014
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,3,2,0.9142300194931774,11.903455000021495
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,3,3,0.9337231968810916,12.367488800082356
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,3,4,0.9200779727095516,11.783790100016631
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,3,5,0.935546875,12.256383800064214
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,4,1,0.9239766081871345,12.141978399944492
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,4,2,0.9376218323586745,12.12446859991178
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,4,3,0.9473684210526315,12.057310700067319
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,4,4,0.9083820662768031,11.964893299969845
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,4,5,0.9140625,12.011032000067644
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,5,1,0.9415204678362573,11.952197100035846
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,5,2,0.9239766081871345,11.769022400025278
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,5,3,0.9064327485380117,12.31850289995782
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,5,4,0.9278752436647173,12.009488000068814
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,5,5,0.931640625,12.265788900083862
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,6,1,0.9181286549707602,12.427787599968724
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,6,2,0.9259259259259259,11.932613600045443
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,6,3,0.9278752436647173,12.001450799987651
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,6,4,0.9220272904483431,11.568137699970976
+Lupac,Fake News Filipino 2024,RF,Random Forest,full,6,5,0.9375,10.471667999983765
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,1,1,0.9376218323586745,10.039809699985199
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,1,2,0.9395711500974658,10.088405100046657
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,1,3,0.9571150097465887,10.282947800005786
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,1,4,0.9473684210526315,10.138227200019173
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,1,5,0.94140625,10.233654999989085
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,2,1,0.9512670565302144,10.237421000027098
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,2,2,0.9532163742690059,10.317057200009003
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,2,3,0.9473684210526315,10.192498599993996
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,2,4,0.9337231968810916,10.088362700073048
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,2,5,0.939453125,10.193993799970485
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,3,1,0.9551656920077972,10.375973100075498
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,3,2,0.9376218323586745,10.063242899952456
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,3,3,0.9434697855750487,10.392956400057301
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,3,4,0.9512670565302144,10.107109700096771
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,3,5,0.94140625,10.290569499949925
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,4,1,0.9473684210526315,10.311981500010006
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,4,2,0.9590643274853801,10.262948299990967
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,4,3,0.9649122807017544,10.127661800011992
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,4,4,0.9317738791423001,10.020672200014815
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,4,5,0.9375,10.24726820003707
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,5,1,0.9571150097465887,10.05781000002753
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,5,2,0.9571150097465887,10.263666500104591
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,5,3,0.9395711500974658,9.81090490007773
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,5,4,0.9649122807017544,10.267423800076358
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,5,5,0.947265625,10.257737400010228
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,6,1,0.9532163742690059,10.305075100040995
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,6,2,0.9454191033138402,10.120090500102378
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,6,3,0.9239766081871345,9.942449599970132
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,6,4,0.9454191033138402,9.454596700030379
+Lupac,Fake News Filipino 2024,SVC,Support Vector Classifier,full,6,5,0.958984375,9.591735599911772
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,1,1,0.8645224171539961,9.233856900013052
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,1,2,0.8411306042884991,9.468005000031553
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,1,3,0.8771929824561403,9.438863800023682
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,1,4,0.868421052631579,9.357614599983208
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,1,5,0.8312195121951219,9.202140299952589
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,2,1,0.8508771929824561,9.28194099990651
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,2,2,0.8606237816764133,9.199878899962641
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,2,3,0.8830409356725146,9.435928100021556
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,2,4,0.8499025341130604,9.364053400000557
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,2,5,0.84,9.35895000002347
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,3,1,0.8450292397660819,9.209702500025742
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,3,2,0.8489278752436648,9.40243689995259
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,3,3,0.8771929824561403,9.33920719998423
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,3,4,0.8586744639376218,9.243464999948628
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,3,5,0.848780487804878,9.335669399937615
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,4,1,0.8606237816764133,9.293376400019042
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,4,2,0.8635477582846004,9.32252399995923
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,4,3,0.8508771929824561,9.409056500066072
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,4,4,0.8518518518518519,9.342865400016308
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,4,5,0.8595121951219512,9.386190199991688
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,5,1,0.8752436647173489,9.24030079995282
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,5,2,0.8596491228070176,9.420769799966365
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,5,3,0.8528265107212476,9.253684299997985
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,5,4,0.8499025341130604,9.389244199963287
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,5,5,0.8439024390243902,9.266012100037187
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,6,1,0.8625730994152047,9.297308100038208
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,6,2,0.8791423001949318,9.3214570999844
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,6,3,0.8606237816764133,9.319848200073466
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,6,4,0.8508771929824561,8.362492199987173
+Joint,Joint corpus,MNB,Multinomial Naive Bayes,full,6,5,0.8234146341463414,8.33113870001398
+Joint,Joint corpus,LR,Logistic Regression,full,1,1,0.9200779727095516,425.9787976000225
+Joint,Joint corpus,LR,Logistic Regression,full,1,2,0.9025341130604289,316.6693660999881
+Joint,Joint corpus,LR,Logistic Regression,full,1,3,0.9366471734892787,293.627898799954
+Joint,Joint corpus,LR,Logistic Regression,full,1,4,0.928849902534113,313.22373470000457
+Joint,Joint corpus,LR,Logistic Regression,full,1,5,0.9248780487804878,290.2662784999702
+Joint,Joint corpus,LR,Logistic Regression,full,2,1,0.9230019493177388,316.18447870004456
+Joint,Joint corpus,LR,Logistic Regression,full,2,2,0.9181286549707602,305.89520020002965
+Joint,Joint corpus,LR,Logistic Regression,full,2,3,0.928849902534113,266.686718699988
+Joint,Joint corpus,LR,Logistic Regression,full,2,4,0.9278752436647173,292.2936547000427
+Joint,Joint corpus,LR,Logistic Regression,full,2,5,0.9209756097560976,283.3062581999693
+Joint,Joint corpus,LR,Logistic Regression,full,3,1,0.9249512670565302,263.44928310008254
+Joint,Joint corpus,LR,Logistic Regression,full,3,2,0.9239766081871345,261.45789970003534
+Joint,Joint corpus,LR,Logistic Regression,full,3,3,0.9307992202729045,283.25225340004545
+Joint,Joint corpus,LR,Logistic Regression,full,3,4,0.9161793372319688,295.4801670999732
+Joint,Joint corpus,LR,Logistic Regression,full,3,5,0.911219512195122,428.38992610003334
+Joint,Joint corpus,LR,Logistic Regression,full,4,1,0.9269005847953217,438.1151381999953
+Joint,Joint corpus,LR,Logistic Regression,full,4,2,0.9230019493177388,292.9802512000315
+Joint,Joint corpus,LR,Logistic Regression,full,4,3,0.9405458089668616,439.0028982999502
+Joint,Joint corpus,LR,Logistic Regression,full,4,4,0.905458089668616,317.4253121999791
+Joint,Joint corpus,LR,Logistic Regression,full,4,5,0.9229268292682927,430.969497699989
+Joint,Joint corpus,LR,Logistic Regression,full,5,1,0.9463937621832359,308.58213570003863
+Joint,Joint corpus,LR,Logistic Regression,full,5,2,0.9269005847953217,310.36077280004974
+Joint,Joint corpus,LR,Logistic Regression,full,5,3,0.9161793372319688,275.87483610003255
+Joint,Joint corpus,LR,Logistic Regression,full,5,4,0.9132553606237817,294.9635082000168
+Joint,Joint corpus,LR,Logistic Regression,full,5,5,0.911219512195122,278.5695514999097
+Joint,Joint corpus,LR,Logistic Regression,full,6,1,0.9200779727095516,429.317850499996
+Joint,Joint corpus,LR,Logistic Regression,full,6,2,0.9269005847953217,299.1979793999344
+Joint,Joint corpus,LR,Logistic Regression,full,6,3,0.9200779727095516,404.40665710007306
+Joint,Joint corpus,LR,Logistic Regression,full,6,4,0.9346978557504874,389.7584085999988
+Joint,Joint corpus,LR,Logistic Regression,full,6,5,0.9190243902439025,264.2784192999825
+Joint,Joint corpus,RF,Random Forest,full,1,1,0.8918128654970761,25.182621099986136
+Joint,Joint corpus,RF,Random Forest,full,1,2,0.8723196881091618,25.386594200041145
+Joint,Joint corpus,RF,Random Forest,full,1,3,0.9074074074074074,24.10635340004228
+Joint,Joint corpus,RF,Random Forest,full,1,4,0.9113060428849903,24.4525685000699
+Joint,Joint corpus,RF,Random Forest,full,1,5,0.8682926829268293,23.9270185000496
+Joint,Joint corpus,RF,Random Forest,full,2,1,0.884990253411306,24.8327117000008
+Joint,Joint corpus,RF,Random Forest,full,2,2,0.8918128654970761,25.072078999946825
+Joint,Joint corpus,RF,Random Forest,full,2,3,0.8957115009746589,24.48633870005142
+Joint,Joint corpus,RF,Random Forest,full,2,4,0.8859649122807017,25.199745999998413
+Joint,Joint corpus,RF,Random Forest,full,2,5,0.8897560975609756,24.659758399939165
+Joint,Joint corpus,RF,Random Forest,full,3,1,0.8820662768031189,24.981531199999154
+Joint,Joint corpus,RF,Random Forest,full,3,2,0.8908382066276803,25.036096600000747
+Joint,Joint corpus,RF,Random Forest,full,3,3,0.898635477582846,23.88591459998861
+Joint,Joint corpus,RF,Random Forest,full,3,4,0.8869395711500975,24.472596799954772
+Joint,Joint corpus,RF,Random Forest,full,3,5,0.9024390243902439,24.773696499993093
+Joint,Joint corpus,RF,Random Forest,full,4,1,0.9035087719298246,25.12287359999027
+Joint,Joint corpus,RF,Random Forest,full,4,2,0.8840155945419104,24.61217179999221
+Joint,Joint corpus,RF,Random Forest,full,4,3,0.8976608187134503,24.5460493999999
+Joint,Joint corpus,RF,Random Forest,full,4,4,0.8693957115009746,24.696691200020723
+Joint,Joint corpus,RF,Random Forest,full,4,5,0.8868292682926829,25.07535940001253
+Joint,Joint corpus,RF,Random Forest,full,5,1,0.9093567251461988,24.663824599934742
+Joint,Joint corpus,RF,Random Forest,full,5,2,0.905458089668616,24.584814099944197
+Joint,Joint corpus,RF,Random Forest,full,5,3,0.8859649122807017,24.45202079997398
+Joint,Joint corpus,RF,Random Forest,full,5,4,0.8869395711500975,24.578171900007874
+Joint,Joint corpus,RF,Random Forest,full,5,5,0.8868292682926829,24.50263890007045
+Joint,Joint corpus,RF,Random Forest,full,6,1,0.884990253411306,24.669834200059995
+Joint,Joint corpus,RF,Random Forest,full,6,2,0.8947368421052632,25.04411389993038
+Joint,Joint corpus,RF,Random Forest,full,6,3,0.8908382066276803,25.022658300003968
+Joint,Joint corpus,RF,Random Forest,full,6,4,0.9015594541910331,23.31221430003643
+Joint,Joint corpus,RF,Random Forest,full,6,5,0.8673170731707317,22.519459999981336
+Joint,Joint corpus,SVC,Support Vector Classifier,full,1,1,0.9161793372319688,35.06382489996031
+Joint,Joint corpus,SVC,Support Vector Classifier,full,1,2,0.9103313840155945,34.950122700072825
+Joint,Joint corpus,SVC,Support Vector Classifier,full,1,3,0.9249512670565302,35.58670470002107
+Joint,Joint corpus,SVC,Support Vector Classifier,full,1,4,0.9269005847953217,35.010100400075316
+Joint,Joint corpus,SVC,Support Vector Classifier,full,1,5,0.9297560975609757,34.953446400002576
+Joint,Joint corpus,SVC,Support Vector Classifier,full,2,1,0.9278752436647173,35.90957940008957
+Joint,Joint corpus,SVC,Support Vector Classifier,full,2,2,0.919103313840156,35.09858470002655
+Joint,Joint corpus,SVC,Support Vector Classifier,full,2,3,0.9317738791423001,35.68358409998473
+Joint,Joint corpus,SVC,Support Vector Classifier,full,2,4,0.9278752436647173,34.84512899990659
+Joint,Joint corpus,SVC,Support Vector Classifier,full,2,5,0.9209756097560976,34.741900700028054
+Joint,Joint corpus,SVC,Support Vector Classifier,full,3,1,0.9210526315789473,35.37300690007396
+Joint,Joint corpus,SVC,Support Vector Classifier,full,3,2,0.9200779727095516,35.25068669999018
+Joint,Joint corpus,SVC,Support Vector Classifier,full,3,3,0.9239766081871345,34.82054009998683
+Joint,Joint corpus,SVC,Support Vector Classifier,full,3,4,0.9200779727095516,35.241232999949716
+Joint,Joint corpus,SVC,Support Vector Classifier,full,3,5,0.9219512195121952,35.311649000039324
+Joint,Joint corpus,SVC,Support Vector Classifier,full,4,1,0.9239766081871345,35.427104299888015
+Joint,Joint corpus,SVC,Support Vector Classifier,full,4,2,0.9249512670565302,35.811129099922255
+Joint,Joint corpus,SVC,Support Vector Classifier,full,4,3,0.935672514619883,35.36327309999615
+Joint,Joint corpus,SVC,Support Vector Classifier,full,4,4,0.9113060428849903,34.6387856999645
+Joint,Joint corpus,SVC,Support Vector Classifier,full,4,5,0.9180487804878049,35.03134800004773
+Joint,Joint corpus,SVC,Support Vector Classifier,full,5,1,0.949317738791423,35.67619020002894
+Joint,Joint corpus,SVC,Support Vector Classifier,full,5,2,0.9249512670565302,34.858506500022486
+Joint,Joint corpus,SVC,Support Vector Classifier,full,5,3,0.9152046783625731,35.32841059996281
+Joint,Joint corpus,SVC,Support Vector Classifier,full,5,4,0.9171539961013645,35.80273140000645
+Joint,Joint corpus,SVC,Support Vector Classifier,full,5,5,0.9082926829268293,35.40387349994853
+Joint,Joint corpus,SVC,Support Vector Classifier,full,6,1,0.9200779727095516,35.51311529998202
+Joint,Joint corpus,SVC,Support Vector Classifier,full,6,2,0.9269005847953217,35.682747400016524
+Joint,Joint corpus,SVC,Support Vector Classifier,full,6,3,0.9083820662768031,34.895379499997944
+Joint,Joint corpus,SVC,Support Vector Classifier,full,6,4,0.935672514619883,33.30282499990426
+Joint,Joint corpus,SVC,Support Vector Classifier,full,6,5,0.9190243902439025,33.00337459996808

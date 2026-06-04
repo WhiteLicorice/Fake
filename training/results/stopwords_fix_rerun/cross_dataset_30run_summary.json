@@ -1,0 +1,101 @@
+{
+  "raw_csv": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\stopwords_fix_rerun\\cross_dataset_30run_raw.csv",
+  "summary": [
+    {
+      "dataset": "Fake News Filipino 2020",
+      "classifier": "LR",
+      "classifier_name": "Logistic Regression",
+      "feature_set": "full",
+      "mean_accuracy": 0.9522877832602339,
+      "sd_accuracy": 0.009113614019420945
+    },
+    {
+      "dataset": "Fake News Filipino 2020",
+      "classifier": "MNB",
+      "classifier_name": "Multinomial Naive Bayes",
+      "feature_set": "full",
+      "mean_accuracy": 0.9205041321474983,
+      "sd_accuracy": 0.011383776565147967
+    },
+    {
+      "dataset": "Fake News Filipino 2020",
+      "classifier": "RF",
+      "classifier_name": "Random Forest",
+      "feature_set": "full",
+      "mean_accuracy": 0.9193336531432749,
+      "sd_accuracy": 0.012153861312915279
+    },
+    {
+      "dataset": "Fake News Filipino 2020",
+      "classifier": "SVC",
+      "classifier_name": "Support Vector Classifier",
+      "feature_set": "full",
+      "mean_accuracy": 0.9518981735298895,
+      "sd_accuracy": 0.009529993889011087
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "classifier": "LR",
+      "classifier_name": "Logistic Regression",
+      "feature_set": "full",
+      "mean_accuracy": 0.9454619984567901,
+      "sd_accuracy": 0.010353583381287152
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "classifier": "MNB",
+      "classifier_name": "Multinomial Naive Bayes",
+      "feature_set": "full",
+      "mean_accuracy": 0.8813706901803119,
+      "sd_accuracy": 0.015604944374103353
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "classifier": "RF",
+      "classifier_name": "Random Forest",
+      "feature_set": "full",
+      "mean_accuracy": 0.9257676707683561,
+      "sd_accuracy": 0.010687169582138825
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "classifier": "SVC",
+      "classifier_name": "Support Vector Classifier",
+      "feature_set": "full",
+      "mean_accuracy": 0.9470218333739441,
+      "sd_accuracy": 0.009948772307600617
+    },
+    {
+      "dataset": "Joint corpus",
+      "classifier": "LR",
+      "classifier_name": "Logistic Regression",
+      "feature_set": "full",
+      "mean_accuracy": 0.923083503700534,
+      "sd_accuracy": 0.009552677108004505
+    },
+    {
+      "dataset": "Joint corpus",
+      "classifier": "MNB",
+      "classifier_name": "Multinomial Naive Bayes",
+      "feature_set": "full",
+      "mean_accuracy": 0.8563368040697951,
+      "sd_accuracy": 0.013968187882985974
+    },
+    {
+      "dataset": "Joint corpus",
+      "classifier": "RF",
+      "classifier_name": "Random Forest",
+      "feature_set": "full",
+      "mean_accuracy": 0.8905231144709108,
+      "sd_accuracy": 0.011704395102383634
+    },
+    {
+      "dataset": "Joint corpus",
+      "classifier": "SVC",
+      "classifier_name": "Support Vector Classifier",
+      "feature_set": "full",
+      "mean_accuracy": 0.9227263823515428,
+      "sd_accuracy": 0.008678726606454497
+    }
+  ]
+}

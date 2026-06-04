@@ -1,0 +1,361 @@
+{
+  "lr_C": 1.0,
+  "rows": 6412,
+  "total_coefficients": 1451835,
+  "linguistic_csv": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\stopwords_fix_rerun\\lr_linguistic_coefficients_full.csv",
+  "vectorizer_csv": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\stopwords_fix_rerun\\lr_vectorizer_coefficients_full.csv",
+  "linguistic": [
+    {
+      "feature": "morph__prefix_derived_ratio",
+      "coefficient": -0.4655904102992473
+    },
+    {
+      "feature": "lex__log_ttr",
+      "coefficient": -0.4026738807924043
+    },
+    {
+      "feature": "syll__cvc_density",
+      "coefficient": -0.395495017669399
+    },
+    {
+      "feature": "lex__root_ttr",
+      "coefficient": -0.3371480995027745
+    },
+    {
+      "feature": "trad__ave_phrase_count",
+      "coefficient": -0.32424757085936107
+    },
+    {
+      "feature": "trad__ave_word_length",
+      "coefficient": -0.2987146224448443
+    },
+    {
+      "feature": "lex__ttr",
+      "coefficient": -0.2711512862467158
+    },
+    {
+      "feature": "syll__cvcc_density",
+      "coefficient": -0.2600068429585826
+    },
+    {
+      "feature": "lex__corr_ttr",
+      "coefficient": -0.23839970740504976
+    },
+    {
+      "feature": "syll__cv_density",
+      "coefficient": -0.21126766376552888
+    },
+    {
+      "feature": "syll__consonant_cluster",
+      "coefficient": -0.18432332639095692
+    },
+    {
+      "feature": "syll__v_density",
+      "coefficient": -0.1188091179686104
+    },
+    {
+      "feature": "trad__ave_syllable_count_of_word",
+      "coefficient": -0.11880911796859035
+    },
+    {
+      "feature": "syll__vc_density",
+      "coefficient": -0.11114133876406446
+    },
+    {
+      "feature": "lex__compound_tr",
+      "coefficient": -0.10925653410270246
+    },
+    {
+      "feature": "syll__vcc_density",
+      "coefficient": -0.10248928375037818
+    },
+    {
+      "feature": "morph__total_affix_derived_ratio",
+      "coefficient": -0.10237785377547132
+    },
+    {
+      "feature": "morph__participle_verb_ratio",
+      "coefficient": -0.09663324918448263
+    },
+    {
+      "feature": "morph__perfective_verb_ratio",
+      "coefficient": -0.09318142373749344
+    },
+    {
+      "feature": "sw__count_stopwords",
+      "coefficient": -0.0639488682718064
+    },
+    {
+      "feature": "trad__word_count_per_sentence",
+      "coefficient": -0.06348890038568744
+    },
+    {
+      "feature": "trad__polysyll_count",
+      "coefficient": -0.05279330732633317
+    },
+    {
+      "feature": "lex__foreign_tr",
+      "coefficient": -0.03772415293458734
+    },
+    {
+      "feature": "morph__total_affix_token_ratio",
+      "coefficient": -0.027489603025776285
+    },
+    {
+      "feature": "morph__contemplative_verb_ratio",
+      "coefficient": -0.025192486395019056
+    },
+    {
+      "feature": "morph__suffix_token_ratio",
+      "coefficient": -0.017891079832510745
+    },
+    {
+      "feature": "morph__prefix_token_ratio",
+      "coefficient": -0.009598523193265403
+    },
+    {
+      "feature": "morph__object_focus_ratio",
+      "coefficient": -0.00781560096512584
+    },
+    {
+      "feature": "morph__referential_focus_ratio",
+      "coefficient": -0.003299068309787191
+    },
+    {
+      "feature": "syll__ccvcc_density",
+      "coefficient": -0.002272999378991841
+    },
+    {
+      "feature": "morph__aux_verb_ratio",
+      "coefficient": -0.001999320764151202
+    },
+    {
+      "feature": "morph__locative_focus_ratio",
+      "coefficient": -0.0006596366393885165
+    },
+    {
+      "feature": "morph__recent_past_verb_ratio",
+      "coefficient": 0.0
+    },
+    {
+      "feature": "morph__instrumental_focus_ratio",
+      "coefficient": 0.0
+    },
+    {
+      "feature": "morph__benefactive_focus_ratio",
+      "coefficient": 0.0028476911624534377
+    },
+    {
+      "feature": "trad__word_count",
+      "coefficient": 0.014996162189232505
+    },
+    {
+      "feature": "syll__ccvccc_density",
+      "coefficient": 0.018048404891617287
+    },
+    {
+      "feature": "morph__imperfective_verb_ratio",
+      "coefficient": 0.021740660948035503
+    },
+    {
+      "feature": "lex__verb_tr",
+      "coefficient": 0.03639834946691738
+    },
+    {
+      "feature": "oov__count_oov_words",
+      "coefficient": 0.045379888280163885
+    },
+    {
+      "feature": "trad__sentence_count",
+      "coefficient": 0.06127892238873775
+    },
+    {
+      "feature": "morph__infinitive_verb_ratio",
+      "coefficient": 0.07221116179395194
+    },
+    {
+      "feature": "morph__actor_focus_ratio",
+      "coefficient": 0.09760139171629241
+    },
+    {
+      "feature": "read__readability_score",
+      "coefficient": 0.1512016086611977
+    },
+    {
+      "feature": "morph__suffix_derived_ratio",
+      "coefficient": 0.36321255652379203
+    },
+    {
+      "feature": "lex__noun_tr",
+      "coefficient": 0.4655108103851899
+    },
+    {
+      "feature": "lex__lexical_density",
+      "coefficient": 0.5002969008272488
+    }
+  ],
+  "top_fake_vectorizers": [
+    {
+      "feature": "vectorizers__bow__upang",
+      "coefficient": -0.9591229333667546
+    },
+    {
+      "feature": "vectorizers__bow__ngunit",
+      "coefficient": -0.9052103460761218
+    },
+    {
+      "feature": "vectorizers__bow__noong",
+      "coefficient": -0.7734947061121904
+    },
+    {
+      "feature": "vectorizers__bow__sinabi",
+      "coefficient": -0.7697514903282237
+    },
+    {
+      "feature": "vectorizers__bow__dakong",
+      "coefficient": -0.7613747060824204
+    },
+    {
+      "feature": "vectorizers__bow__nagsasabing",
+      "coefficient": -0.7588671481941527
+    },
+    {
+      "feature": "vectorizers__bow__ferdinand",
+      "coefficient": -0.6806106034824533
+    },
+    {
+      "feature": "vectorizers__bow__idinagdag",
+      "coefficient": -0.655430111449916
+    },
+    {
+      "feature": "vectorizers__bow__enero",
+      "coefficient": -0.6458945778485603
+    },
+    {
+      "feature": "vectorizers__bow__kumakalat",
+      "coefficient": -0.61518020519461
+    },
+    {
+      "feature": "vectorizers__bow__youtube",
+      "coefficient": -0.5922631425867481
+    },
+    {
+      "feature": "vectorizers__bow__2015",
+      "coefficient": -0.5847475594990851
+    },
+    {
+      "feature": "vectorizers__bow__eh",
+      "coefficient": -0.5656602266569776
+    },
+    {
+      "feature": "vectorizers__bow__ibalik",
+      "coefficient": -0.5469124296943437
+    },
+    {
+      "feature": "vectorizers__bow__nakalagay",
+      "coefficient": -0.5459422665711431
+    },
+    {
+      "feature": "vectorizers__bow__entertainment",
+      "coefficient": -0.54280344722116
+    },
+    {
+      "feature": "vectorizers__bow__malapit",
+      "coefficient": -0.5391353567610103
+    },
+    {
+      "feature": "vectorizers__bow__supt",
+      "coefficient": -0.5340943402018843
+    },
+    {
+      "feature": "vectorizers__bow__2014",
+      "coefficient": -0.5277707426269593
+    },
+    {
+      "feature": "vectorizers__bow__bay",
+      "coefficient": -0.5182772295469058
+    }
+  ],
+  "top_real_vectorizers": [
+    {
+      "feature": "vectorizers__bow__source",
+      "coefficient": 2.4878626995137814
+    },
+    {
+      "feature": "vectorizers__bow__below",
+      "coefficient": 1.4111359349831993
+    },
+    {
+      "feature": "vectorizers__bow__gma",
+      "coefficient": 1.339238940518621
+    },
+    {
+      "feature": "vectorizers__bow__philippines",
+      "coefficient": 1.2521390084913364
+    },
+    {
+      "feature": "vectorizers__bow__frj",
+      "coefficient": 1.1679900002921488
+    },
+    {
+      "feature": "vectorizers__bow__news",
+      "coefficient": 1.0495119925320948
+    },
+    {
+      "feature": "vectorizers__bow__ofw",
+      "coefficient": 1.0115976182459432
+    },
+    {
+      "feature": "vectorizers__bow__panoorin",
+      "coefficient": 0.9769420609439702
+    },
+    {
+      "feature": "vectorizers__bow__kaniyang",
+      "coefficient": 0.9460268676516267
+    },
+    {
+      "feature": "vectorizers__bow__ptv",
+      "coefficient": 0.9276732568967675
+    },
+    {
+      "feature": "vectorizers__bow__manila",
+      "coefficient": 0.9267388003246776
+    },
+    {
+      "feature": "vectorizers__bow__integrated",
+      "coefficient": 0.9122003679488403
+    },
+    {
+      "feature": "vectorizers__bow__tanung",
+      "coefficient": 0.8506169523475239
+    },
+    {
+      "feature": "vectorizers__bow__general",
+      "coefficient": 0.8419019867173613
+    },
+    {
+      "feature": "vectorizers__bow__full",
+      "coefficient": 0.8322990803530363
+    },
+    {
+      "feature": "vectorizers__bow__inaasahan",
+      "coefficient": 0.8305741383349708
+    },
+    {
+      "feature": "vectorizers__bow__basahin",
+      "coefficient": 0.8107060263247329
+    },
+    {
+      "feature": "vectorizers__bow__pangulong",
+      "coefficient": 0.7852975602805158
+    },
+    {
+      "feature": "vectorizers__bow__2023",
+      "coefficient": 0.7429880289639598
+    },
+    {
+      "feature": "vectorizers__bow__kababayan",
+      "coefficient": 0.723905667435868
+    }
+  ]
+}

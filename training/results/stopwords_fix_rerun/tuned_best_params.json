@@ -1,0 +1,17 @@
+{
+  "MNB": {
+    "alpha": 0.1
+  },
+  "LR": {
+    "C": 1.0
+  },
+  "RF": {
+    "max_depth": 20,
+    "min_samples_split": 2,
+    "n_estimators": 100
+  },
+  "SVC": {
+    "C": 0.1,
+    "kernel": "linear"
+  }
+}

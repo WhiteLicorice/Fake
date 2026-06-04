@@ -1,0 +1,339 @@
+{
+  "shapiro_wilk": [
+    {
+      "dataset": "Fake News Filipino 2020",
+      "classifier": "MNB",
+      "W": 0.9605763554573059,
+      "p": 0.320436954498291
+    },
+    {
+      "dataset": "Fake News Filipino 2020",
+      "classifier": "LR",
+      "W": 0.9734683632850647,
+      "p": 0.637728750705719
+    },
+    {
+      "dataset": "Fake News Filipino 2020",
+      "classifier": "RF",
+      "W": 0.9764877557754517,
+      "p": 0.7264824509620667
+    },
+    {
+      "dataset": "Fake News Filipino 2020",
+      "classifier": "SVC",
+      "W": 0.971863329410553,
+      "p": 0.5913214683532715
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "classifier": "MNB",
+      "W": 0.9416476488113403,
+      "p": 0.10074815899133682
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "classifier": "LR",
+      "W": 0.9626659750938416,
+      "p": 0.3617185354232788
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "classifier": "RF",
+      "W": 0.9780855178833008,
+      "p": 0.7726863026618958
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "classifier": "SVC",
+      "W": 0.9793739318847656,
+      "p": 0.8086710572242737
+    },
+    {
+      "dataset": "Joint corpus",
+      "classifier": "MNB",
+      "W": 0.9728447794914246,
+      "p": 0.6195719838142395
+    },
+    {
+      "dataset": "Joint corpus",
+      "classifier": "LR",
+      "W": 0.9828816056251526,
+      "p": 0.8958828449249268
+    },
+    {
+      "dataset": "Joint corpus",
+      "classifier": "RF",
+      "W": 0.9569264650344849,
+      "p": 0.25798818469047546
+    },
+    {
+      "dataset": "Joint corpus",
+      "classifier": "SVC",
+      "W": 0.9486764669418335,
+      "p": 0.15579092502593994
+    }
+  ],
+  "levene": {
+    "W": 2.0960616442094357,
+    "p": 0.020043022698868856
+  },
+  "trimmed_means_anova": [
+    {
+      "factor": "dataset",
+      "statistic": 721.3567504054481,
+      "p": 0.001
+    },
+    {
+      "factor": "classifier",
+      "statistic": 1142.943020173715,
+      "p": 0.001
+    },
+    {
+      "factor": "dataset * classifier",
+      "statistic": 124.35449286134985,
+      "p": 0.001
+    }
+  ],
+  "standard_anova_partial_eta_squared": [
+    {
+      "effect": "dataset",
+      "df_effect": 2,
+      "df_error": 348,
+      "F": 359.8802309862014,
+      "p": 1.9069578513803868e-85,
+      "partial_eta_squared": 0.6740842048438817
+    },
+    {
+      "effect": "classifier",
+      "df_effect": 3,
+      "df_error": 348,
+      "F": 487.5944945678963,
+      "p": 3.1162242335703836e-124,
+      "partial_eta_squared": 0.8078179952866492
+    },
+    {
+      "effect": "dataset * classifier",
+      "df_effect": 6,
+      "df_error": 348,
+      "F": 28.735306891160704,
+      "p": 6.735318064659021e-28,
+      "partial_eta_squared": 0.33129884381707486
+    }
+  ],
+  "posthoc": {
+    "classifier_pairs_within_dataset": [
+      {
+        "dataset": "Fake News Filipino 2020",
+        "classifier_a": "MNB",
+        "classifier_b": "LR",
+        "raw_p": 6.101889324816029e-17,
+        "bonferroni_p": 3.6611335948896174e-16
+      },
+      {
+        "dataset": "Fake News Filipino 2020",
+        "classifier_a": "MNB",
+        "classifier_b": "RF",
+        "raw_p": 0.7016625485525643,
+        "bonferroni_p": 1.0
+      },
+      {
+        "dataset": "Fake News Filipino 2020",
+        "classifier_a": "MNB",
+        "classifier_b": "SVC",
+        "raw_p": 1.5979959866258226e-16,
+        "bonferroni_p": 9.587975919754936e-16
+      },
+      {
+        "dataset": "Fake News Filipino 2020",
+        "classifier_a": "LR",
+        "classifier_b": "RF",
+        "raw_p": 1.1537960234795424e-16,
+        "bonferroni_p": 6.922776140877255e-16
+      },
+      {
+        "dataset": "Fake News Filipino 2020",
+        "classifier_a": "LR",
+        "classifier_b": "SVC",
+        "raw_p": 0.8720009099503536,
+        "bonferroni_p": 1.0
+      },
+      {
+        "dataset": "Fake News Filipino 2020",
+        "classifier_a": "RF",
+        "classifier_b": "SVC",
+        "raw_p": 2.5888631489567963e-16,
+        "bonferroni_p": 1.5533178893740777e-15
+      },
+      {
+        "dataset": "Fake News Filipino 2024",
+        "classifier_a": "MNB",
+        "classifier_b": "LR",
+        "raw_p": 2.2945702100198447e-24,
+        "bonferroni_p": 1.376742126011907e-23
+      },
+      {
+        "dataset": "Fake News Filipino 2024",
+        "classifier_a": "MNB",
+        "classifier_b": "RF",
+        "raw_p": 1.1378380108615525e-17,
+        "bonferroni_p": 6.827028065169315e-17
+      },
+      {
+        "dataset": "Fake News Filipino 2024",
+        "classifier_a": "MNB",
+        "classifier_b": "SVC",
+        "raw_p": 9.789444795007654e-25,
+        "bonferroni_p": 5.8736668770045926e-24
+      },
+      {
+        "dataset": "Fake News Filipino 2024",
+        "classifier_a": "LR",
+        "classifier_b": "RF",
+        "raw_p": 1.1226205378669908e-09,
+        "bonferroni_p": 6.735723227201945e-09
+      },
+      {
+        "dataset": "Fake News Filipino 2024",
+        "classifier_a": "LR",
+        "classifier_b": "SVC",
+        "raw_p": 0.5541573687325071,
+        "bonferroni_p": 1.0
+      },
+      {
+        "dataset": "Fake News Filipino 2024",
+        "classifier_a": "RF",
+        "classifier_b": "SVC",
+        "raw_p": 7.030532109050958e-11,
+        "bonferroni_p": 4.218319265430575e-10
+      },
+      {
+        "dataset": "Joint corpus",
+        "classifier_a": "MNB",
+        "classifier_b": "LR",
+        "raw_p": 2.0938832926459168e-27,
+        "bonferroni_p": 1.25632997558755e-26
+      },
+      {
+        "dataset": "Joint corpus",
+        "classifier_a": "MNB",
+        "classifier_b": "RF",
+        "raw_p": 1.6008371103913866e-14,
+        "bonferroni_p": 9.60502266234832e-14
+      },
+      {
+        "dataset": "Joint corpus",
+        "classifier_a": "MNB",
+        "classifier_b": "SVC",
+        "raw_p": 5.61742590297492e-27,
+        "bonferroni_p": 3.370455541784952e-26
+      },
+      {
+        "dataset": "Joint corpus",
+        "classifier_a": "LR",
+        "classifier_b": "RF",
+        "raw_p": 8.542102130248513e-17,
+        "bonferroni_p": 5.125261278149108e-16
+      },
+      {
+        "dataset": "Joint corpus",
+        "classifier_a": "LR",
+        "classifier_b": "SVC",
+        "raw_p": 0.8800679299632426,
+        "bonferroni_p": 1.0
+      },
+      {
+        "dataset": "Joint corpus",
+        "classifier_a": "RF",
+        "classifier_b": "SVC",
+        "raw_p": 6.039969395063123e-17,
+        "bonferroni_p": 3.6239816370378736e-16
+      }
+    ],
+    "dataset_pairs_within_classifier": [
+      {
+        "classifier": "MNB",
+        "dataset_a": "Fake News Filipino 2020",
+        "dataset_b": "Fake News Filipino 2024",
+        "raw_p": 1.9251113350250187e-15,
+        "bonferroni_p": 5.775334005075056e-15
+      },
+      {
+        "classifier": "MNB",
+        "dataset_a": "Fake News Filipino 2020",
+        "dataset_b": "Joint corpus",
+        "raw_p": 1.4341198764613325e-26,
+        "bonferroni_p": 4.302359629383997e-26
+      },
+      {
+        "classifier": "MNB",
+        "dataset_a": "Fake News Filipino 2024",
+        "dataset_b": "Joint corpus",
+        "raw_p": 1.7649948907795454e-08,
+        "bonferroni_p": 5.2949846723386365e-08
+      },
+      {
+        "classifier": "LR",
+        "dataset_a": "Fake News Filipino 2020",
+        "dataset_b": "Fake News Filipino 2024",
+        "raw_p": 0.008857893726339121,
+        "bonferroni_p": 0.026573681179017365
+      },
+      {
+        "classifier": "LR",
+        "dataset_a": "Fake News Filipino 2020",
+        "dataset_b": "Joint corpus",
+        "raw_p": 1.6404749595998582e-17,
+        "bonferroni_p": 4.9214248787995746e-17
+      },
+      {
+        "classifier": "LR",
+        "dataset_a": "Fake News Filipino 2024",
+        "dataset_b": "Joint corpus",
+        "raw_p": 4.366071878491417e-12,
+        "bonferroni_p": 1.309821563547425e-11
+      },
+      {
+        "classifier": "RF",
+        "dataset_a": "Fake News Filipino 2020",
+        "dataset_b": "Fake News Filipino 2024",
+        "raw_p": 0.03359606606216527,
+        "bonferroni_p": 0.1007881981864958
+      },
+      {
+        "classifier": "RF",
+        "dataset_a": "Fake News Filipino 2020",
+        "dataset_b": "Joint corpus",
+        "raw_p": 3.5450756809740365e-13,
+        "bonferroni_p": 1.063522704292211e-12
+      },
+      {
+        "classifier": "RF",
+        "dataset_a": "Fake News Filipino 2024",
+        "dataset_b": "Joint corpus",
+        "raw_p": 1.4502356638108043e-17,
+        "bonferroni_p": 4.350706991432413e-17
+      },
+      {
+        "classifier": "SVC",
+        "dataset_a": "Fake News Filipino 2020",
+        "dataset_b": "Fake News Filipino 2024",
+        "raw_p": 0.057419564680745876,
+        "bonferroni_p": 0.17225869404223762
+      },
+      {
+        "classifier": "SVC",
+        "dataset_a": "Fake News Filipino 2020",
+        "dataset_b": "Joint corpus",
+        "raw_p": 6.986809443525235e-18,
+        "bonferroni_p": 2.0960428330575706e-17
+      },
+      {
+        "classifier": "SVC",
+        "dataset_a": "Fake News Filipino 2024",
+        "dataset_b": "Joint corpus",
+        "raw_p": 2.8382966871394623e-14,
+        "bonferroni_p": 8.514890061418387e-14
+      }
+    ]
+  }
+}

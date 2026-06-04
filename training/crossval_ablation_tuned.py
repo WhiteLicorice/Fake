@@ -10,6 +10,7 @@ extractors match the existing progressive ablation logic.
 from __future__ import annotations
 
 import argparse
+import os
 import sys
 import warnings
 from contextlib import redirect_stderr, redirect_stdout
@@ -18,6 +19,7 @@ from pathlib import Path
 from typing import TextIO
 
 import pandas as pd
+from joblib import Parallel, delayed
 from sklearn.base import clone
 from sklearn.compose import ColumnTransformer
 from sklearn.ensemble import RandomForestClassifier
@@ -28,6 +30,10 @@ from sklearn.model_selection import RepeatedKFold, train_test_split
 from sklearn.naive_bayes import MultinomialNB
 from sklearn.pipeline import FeatureUnion, Pipeline
 from sklearn.svm import SVC
+
+BASE_DIR = Path(__file__).resolve().parent
+os.chdir(BASE_DIR)
+sys.path.insert(0, str(BASE_DIR))
 
 from root.scripts.BPE import BPETokenizer
 from root.scripts.FILTRANS import (
@@ -45,7 +51,6 @@ warnings.filterwarnings(
     "ignore", category=UserWarning, module="sklearn.feature_extraction.text"
 )
 
-BASE_DIR = Path(__file__).resolve().parent
 LOAD_FROM_CSV = True
 BASE_RANDOM_STATE = 42
 REPETITIONS = 6
@@ -53,14 +58,14 @@ N_FOLDS = 5
 
 CLASSIFIERS = [
     ("MNB", MultinomialNB(alpha=0.1)),
-    ("LR", LogisticRegression(C=1.0, max_iter=2000, n_jobs=-1)),
+    ("LR", LogisticRegression(C=1.0, max_iter=2000, n_jobs=1)),
     (
         "RF",
         RandomForestClassifier(
             n_estimators=100,
             max_depth=20,
             min_samples_split=2,
-            n_jobs=-1,
+            n_jobs=1,
             random_state=BASE_RANDOM_STATE,
         ),
     ),
@@ -267,13 +272,6 @@ def run_condition(
     cv = RepeatedKFold(
         n_splits=N_FOLDS, n_repeats=REPETITIONS, random_state=BASE_RANDOM_STATE
     )
-    pipeline = Pipeline(
-        steps=[
-            ("features", FeatureUnion(feature_steps)),
-            ("classifier", clone(classifier)),
-        ]
-    )
-
     print("")
     print(
         "Condition | "
@@ -281,11 +279,17 @@ def run_condition(
         f"classifier={classifier_id}"
     )
 
-    rows = []
-    accuracies = []
-    for run_index, (train_index, test_index) in enumerate(cv.split(X_train), start=1):
+    splits = list(enumerate(cv.split(X_train), start=1))
+
+    def fit_fold(run_index, train_index, test_index) -> dict:
         repeat = ((run_index - 1) // N_FOLDS) + 1
         fold = ((run_index - 1) % N_FOLDS) + 1
+        pipeline = Pipeline(
+            steps=[
+                ("features", FeatureUnion(feature_steps)),
+                ("classifier", clone(classifier)),
+            ]
+        )
         X_train_fold = X_train.iloc[train_index]
         X_val_fold = X_train.iloc[test_index]
         y_train_fold = y_train.iloc[train_index]
@@ -294,28 +298,34 @@ def run_condition(
         pipeline.fit(X_train_fold, y_train_fold)
         y_val_pred = pipeline.predict(X_val_fold)
         accuracy = accuracy_score(y_val_fold, y_val_pred)
-        accuracies.append(accuracy)
 
-        print(
+        message = (
             "Fold metric | "
             f"dataset={dataset_name} | feature_set={feature_label} | "
             f"classifier={classifier_id} | repeat={repeat} | fold={fold} | "
             f"accuracy={accuracy:.9f}"
         )
 
-        rows.append(
-            {
-                "dataset_key": dataset_key,
-                "dataset": dataset_name,
-                "feature_set": feature_label,
-                "features": ",".join(step_name for step_name, _ in feature_steps),
-                "classifier": classifier_id,
-                "repeat": repeat,
-                "fold": fold,
-                "accuracy": accuracy,
-            }
-        )
+        return {
+            "dataset_key": dataset_key,
+            "dataset": dataset_name,
+            "feature_set": feature_label,
+            "features": ",".join(step_name for step_name, _ in feature_steps),
+            "classifier": classifier_id,
+            "repeat": repeat,
+            "fold": fold,
+            "accuracy": accuracy,
+            "log": message,
+        }
 
+    rows = Parallel(n_jobs=4, pre_dispatch="2*n_jobs")(
+        delayed(fit_fold)(run_index, train_index, test_index)
+        for run_index, (train_index, test_index) in splits
+    )
+    for row in rows:
+        print(row.pop("log"))
+
+    accuracies = [row["accuracy"] for row in rows]
     mean_accuracy = sum(accuracies) / len(accuracies)
     print(f"Accuracies: {accuracies}")
     print(
@@ -323,6 +333,90 @@ def run_condition(
         f"{REPETITIONS} repetitions of {N_FOLDS}-fold cross-validation "
         f"with {classifier_id}: {mean_accuracy:.9f}"
     )
+    return rows
+
+
+def run_feature_set_condition(
+    dataset_key: str,
+    dataset_name: str,
+    feature_label: str,
+    feature_steps: list,
+    classifiers: list[tuple[str, object]],
+    X_train: pd.DataFrame,
+    y_train: pd.Series,
+) -> list[dict]:
+    cv = RepeatedKFold(
+        n_splits=N_FOLDS, n_repeats=REPETITIONS, random_state=BASE_RANDOM_STATE
+    )
+
+    print("")
+    print(
+        "Feature-set condition | "
+        f"dataset={dataset_name} | feature_set={feature_label} | "
+        f"classifiers={','.join(classifier_id for classifier_id, _ in classifiers)}"
+    )
+
+    splits = list(enumerate(cv.split(X_train), start=1))
+    feature_names = ",".join(step_name for step_name, _ in feature_steps)
+
+    def fit_fold(run_index, train_index, test_index) -> list[dict]:
+        repeat = ((run_index - 1) // N_FOLDS) + 1
+        fold = ((run_index - 1) % N_FOLDS) + 1
+        feature_union = FeatureUnion(feature_steps)
+        X_train_fold = X_train.iloc[train_index]
+        X_val_fold = X_train.iloc[test_index]
+        y_train_fold = y_train.iloc[train_index]
+        y_val_fold = y_train.iloc[test_index]
+
+        X_train_features = feature_union.fit_transform(X_train_fold, y_train_fold)
+        X_val_features = feature_union.transform(X_val_fold)
+
+        fold_rows = []
+        for classifier_id, classifier in classifiers:
+            fitted_classifier = clone(classifier)
+            fitted_classifier.fit(X_train_features, y_train_fold)
+            y_val_pred = fitted_classifier.predict(X_val_features)
+            accuracy = accuracy_score(y_val_fold, y_val_pred)
+
+            message = (
+                "Fold metric | "
+                f"dataset={dataset_name} | feature_set={feature_label} | "
+                f"classifier={classifier_id} | repeat={repeat} | fold={fold} | "
+                f"accuracy={accuracy:.9f}"
+            )
+            fold_rows.append(
+                {
+                    "dataset_key": dataset_key,
+                    "dataset": dataset_name,
+                    "feature_set": feature_label,
+                    "features": feature_names,
+                    "classifier": classifier_id,
+                    "repeat": repeat,
+                    "fold": fold,
+                    "accuracy": accuracy,
+                    "log": message,
+                }
+            )
+        return fold_rows
+
+    nested_rows = Parallel(n_jobs=4, pre_dispatch="2*n_jobs")(
+        delayed(fit_fold)(run_index, train_index, test_index)
+        for run_index, (train_index, test_index) in splits
+    )
+    rows = [row for fold_rows in nested_rows for row in fold_rows]
+    for row in rows:
+        print(row.pop("log"))
+
+    for classifier_id, _ in classifiers:
+        accuracies = [
+            row["accuracy"] for row in rows if row["classifier"] == classifier_id
+        ]
+        mean_accuracy = sum(accuracies) / len(accuracies)
+        print(
+            "Mean accuracy for "
+            f"{REPETITIONS} repetitions of {N_FOLDS}-fold cross-validation "
+            f"with {classifier_id}: {mean_accuracy:.9f}"
+        )
     return rows
 
 
@@ -475,10 +569,12 @@ def run(output_dir: Path, log_path: Path) -> None:
     raw_csv_path = output_dir / "tuned_feature_ablation_raw.csv"
     summary_path = output_dir / "tuned_feature_ablation_summary.md"
 
-    if raw_csv_path.exists():
-        raw_csv_path.unlink()
     if summary_path.exists():
         summary_path.unlink()
+    if raw_csv_path.exists():
+        existing_frame = pd.read_csv(raw_csv_path)
+    else:
+        existing_frame = pd.DataFrame()
 
     print(f"Tuned Feature Ablation Results ({started_at})")
     print(f"Output directory: {output_dir}")
@@ -493,9 +589,31 @@ def run(output_dir: Path, log_path: Path) -> None:
         "RF(n_estimators=100, max_depth=20, min_samples_split=2); "
         "SVC(C=0.1, kernel=linear)."
     )
-    refresh_stopword_feature_csvs()
+    print("Using existing Step 0 stop-word caches; no feature CSVs are regenerated here.")
 
-    all_rows: list[dict] = []
+    if existing_frame.empty:
+        print("No existing raw CSV found; starting from the first condition.")
+    else:
+        print(
+            "Resuming from existing raw CSV | "
+            f"rows={len(existing_frame)} | path={raw_csv_path}"
+        )
+
+    all_rows: list[dict] = existing_frame.to_dict(orient="records")
+    expected_condition_rows = REPETITIONS * N_FOLDS * len(CLASSIFIERS)
+
+    def condition_complete(dataset_key: str, feature_label: str) -> bool:
+        if existing_frame.empty:
+            return False
+        subset = existing_frame[
+            (existing_frame["dataset_key"] == dataset_key)
+            & (existing_frame["feature_set"] == feature_label)
+        ]
+        return (
+            len(subset) == expected_condition_rows
+            and set(subset["classifier"]) == {key for key, _ in CLASSIFIERS}
+        )
+
     datasets = [
         ("Cruz", "Fake News Filipino 2020"),
         ("Lupac", "Fake News Filipino 2024"),
@@ -523,19 +641,24 @@ def run(output_dir: Path, log_path: Path) -> None:
         for feature_label, feature_step in zip(FEATURE_SET_LABELS, all_feature_steps()):
             feature_steps.append(feature_step)
             active_steps = list(feature_steps)
-            for classifier_id, classifier in CLASSIFIERS:
-                rows = run_condition(
-                    dataset_key=dataset_key,
-                    dataset_name=dataset_name,
-                    feature_label=feature_label,
-                    feature_steps=active_steps,
-                    classifier_id=classifier_id,
-                    classifier=classifier,
-                    X_train=X_train,
-                    y_train=y_train,
+            if condition_complete(dataset_key, feature_label):
+                print(
+                    "Skipping completed condition | "
+                    f"dataset={dataset_name} | feature_set={feature_label} | "
+                    f"rows={expected_condition_rows}"
                 )
-                all_rows.extend(rows)
-                append_raw_rows(raw_csv_path, rows)
+                continue
+            rows = run_feature_set_condition(
+                dataset_key=dataset_key,
+                dataset_name=dataset_name,
+                feature_label=feature_label,
+                feature_steps=active_steps,
+                classifiers=CLASSIFIERS,
+                X_train=X_train,
+                y_train=y_train,
+            )
+            all_rows.extend(rows)
+            append_raw_rows(raw_csv_path, rows)
 
     finished_at = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     print("")

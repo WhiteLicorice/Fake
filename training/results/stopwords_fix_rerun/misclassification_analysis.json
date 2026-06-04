@@ -1,0 +1,320 @@
+{
+  "classification_outcomes": [
+    {
+      "article_id": "false_positive_article",
+      "gold_label": 0,
+      "predicted_label": 0,
+      "previous_outcome": "FP",
+      "new_outcome": "TP",
+      "classification_changed": true
+    },
+    {
+      "article_id": "true_positive_article",
+      "gold_label": 0,
+      "predicted_label": 0,
+      "previous_outcome": "TP",
+      "new_outcome": "TP",
+      "classification_changed": false
+    },
+    {
+      "article_id": "false_negative_article",
+      "gold_label": 1,
+      "predicted_label": 0,
+      "previous_outcome": "FN",
+      "new_outcome": "FN",
+      "classification_changed": false
+    },
+    {
+      "article_id": "true_negative_article",
+      "gold_label": 1,
+      "predicted_label": 1,
+      "previous_outcome": "TN",
+      "new_outcome": "TN",
+      "classification_changed": false
+    }
+  ],
+  "linguistic_features": [
+    {
+      "article_id": "false_positive_article",
+      "word_count": 129,
+      "sentence_count": 8,
+      "polysyll_count": 4,
+      "ave_word_length": 5.186046511627907,
+      "ave_phrase_count": 2.125,
+      "ave_syllable_count_of_word": 2.131782945736434,
+      "word_count_per_sentence": 16.125,
+      "consonant_cluster": 0.5968992248062015,
+      "v_density": 2.131782945736434,
+      "cv_density": 1.806201550387597,
+      "vc_density": 1.5968992248062015,
+      "cvc_density": 0.9302325581395349,
+      "vcc_density": 0.4806201550387597,
+      "cvcc_density": 0.3488372093023256,
+      "ccvcc_density": 0.06201550387596899,
+      "ccvccc_density": 0.0,
+      "count_oov_words": 16,
+      "count_stopwords": 44,
+      "readability_score": 14.028
+    },
+    {
+      "article_id": "true_positive_article",
+      "word_count": 132,
+      "sentence_count": 9,
+      "polysyll_count": 5,
+      "ave_word_length": 5.371212121212121,
+      "ave_phrase_count": 3.0,
+      "ave_syllable_count_of_word": 2.0984848484848486,
+      "word_count_per_sentence": 14.666666666666666,
+      "consonant_cluster": 0.7196969696969697,
+      "v_density": 2.0984848484848486,
+      "cv_density": 1.7954545454545454,
+      "vc_density": 1.6590909090909092,
+      "cvc_density": 1.0227272727272727,
+      "vcc_density": 0.553030303030303,
+      "cvcc_density": 0.4318181818181818,
+      "ccvcc_density": 0.07575757575757576,
+      "ccvccc_density": 0.015151515151515152,
+      "count_oov_words": 24,
+      "count_stopwords": 40,
+      "readability_score": 13.937666666666667
+    },
+    {
+      "article_id": "false_negative_article",
+      "word_count": 110,
+      "sentence_count": 5,
+      "polysyll_count": 6,
+      "ave_word_length": 5.472727272727273,
+      "ave_phrase_count": 1.6,
+      "ave_syllable_count_of_word": 2.118181818181818,
+      "word_count_per_sentence": 22.0,
+      "consonant_cluster": 0.8818181818181818,
+      "v_density": 2.118181818181818,
+      "cv_density": 1.7636363636363637,
+      "vc_density": 1.5545454545454545,
+      "cvc_density": 0.9727272727272728,
+      "vcc_density": 0.7181818181818181,
+      "cvcc_density": 0.4909090909090909,
+      "ccvcc_density": 0.13636363636363635,
+      "ccvccc_density": 0.00909090909090909,
+      "count_oov_words": 8,
+      "count_stopwords": 47,
+      "readability_score": 13.659
+    },
+    {
+      "article_id": "true_negative_article",
+      "word_count": 142,
+      "sentence_count": 9,
+      "polysyll_count": 5,
+      "ave_word_length": 4.845070422535211,
+      "ave_phrase_count": 1.7777777777777777,
+      "ave_syllable_count_of_word": 1.9788732394366197,
+      "word_count_per_sentence": 15.777777777777779,
+      "consonant_cluster": 0.5422535211267606,
+      "v_density": 1.9788732394366197,
+      "cv_density": 1.6408450704225352,
+      "vc_density": 1.5774647887323943,
+      "cvc_density": 0.9084507042253521,
+      "vcc_density": 0.44366197183098594,
+      "cvcc_density": 0.29577464788732394,
+      "ccvcc_density": 0.028169014084507043,
+      "ccvccc_density": 0.0,
+      "count_oov_words": 18,
+      "count_stopwords": 56,
+      "readability_score": 15.30877777777778
+    }
+  ],
+  "vectorizer_predictors": [
+    {
+      "article_id": "false_positive_article",
+      "direction": "lowest",
+      "feature": "bow__supt",
+      "coefficient": -0.518007556616753
+    },
+    {
+      "article_id": "false_positive_article",
+      "direction": "lowest",
+      "feature": "bow__iba",
+      "coefficient": -0.4636120726129067
+    },
+    {
+      "article_id": "false_positive_article",
+      "direction": "lowest",
+      "feature": "bow__director",
+      "coefficient": -0.35800327239489416
+    },
+    {
+      "article_id": "false_positive_article",
+      "direction": "lowest",
+      "feature": "bow__senior",
+      "coefficient": -0.3079142259899259
+    },
+    {
+      "article_id": "false_positive_article",
+      "direction": "highest",
+      "feature": "bow__ulat",
+      "coefficient": 0.33863024984335544
+    },
+    {
+      "article_id": "false_positive_article",
+      "direction": "highest",
+      "feature": "bow__pumasok",
+      "coefficient": 0.3596469619049798
+    },
+    {
+      "article_id": "false_positive_article",
+      "direction": "highest",
+      "feature": "bow__reklamo",
+      "coefficient": 0.3878508554003901
+    },
+    {
+      "article_id": "false_positive_article",
+      "direction": "highest",
+      "feature": "bow__office",
+      "coefficient": 0.5401497509175403
+    },
+    {
+      "article_id": "true_positive_article",
+      "direction": "lowest",
+      "feature": "bow__noong",
+      "coefficient": -0.785752988260537
+    },
+    {
+      "article_id": "true_positive_article",
+      "direction": "lowest",
+      "feature": "bow__supt",
+      "coefficient": -0.518007556616753
+    },
+    {
+      "article_id": "true_positive_article",
+      "direction": "lowest",
+      "feature": "bow__iba",
+      "coefficient": -0.4636120726129067
+    },
+    {
+      "article_id": "true_positive_article",
+      "direction": "lowest",
+      "feature": "bow__sina",
+      "coefficient": -0.3601172946018054
+    },
+    {
+      "article_id": "true_positive_article",
+      "direction": "highest",
+      "feature": "bow__suspek",
+      "coefficient": 0.34219935111811595
+    },
+    {
+      "article_id": "true_positive_article",
+      "direction": "highest",
+      "feature": "bow__madaling",
+      "coefficient": 0.4106708212924922
+    },
+    {
+      "article_id": "true_positive_article",
+      "direction": "highest",
+      "feature": "bow__driver",
+      "coefficient": 0.4155955975237327
+    },
+    {
+      "article_id": "true_positive_article",
+      "direction": "highest",
+      "feature": "bow__office",
+      "coefficient": 0.5401497509175403
+    },
+    {
+      "article_id": "false_negative_article",
+      "direction": "lowest",
+      "feature": "bow__noong",
+      "coefficient": -0.785752988260537
+    },
+    {
+      "article_id": "false_negative_article",
+      "direction": "lowest",
+      "feature": "bow__board",
+      "coefficient": -0.38913849615958684
+    },
+    {
+      "article_id": "false_negative_article",
+      "direction": "lowest",
+      "feature": "bow__about",
+      "coefficient": -0.35079545138326856
+    },
+    {
+      "article_id": "false_negative_article",
+      "direction": "lowest",
+      "feature": "bow__kanyang",
+      "coefficient": -0.3052964344900618
+    },
+    {
+      "article_id": "false_negative_article",
+      "direction": "highest",
+      "feature": "bow__taon",
+      "coefficient": 0.3131043930626255
+    },
+    {
+      "article_id": "false_negative_article",
+      "direction": "highest",
+      "feature": "bow__para",
+      "coefficient": 0.31763127094596144
+    },
+    {
+      "article_id": "false_negative_article",
+      "direction": "highest",
+      "feature": "bow__pagbibigay",
+      "coefficient": 0.3994799212850633
+    },
+    {
+      "article_id": "false_negative_article",
+      "direction": "highest",
+      "feature": "bow__2018",
+      "coefficient": 0.45007518564181925
+    },
+    {
+      "article_id": "true_negative_article",
+      "direction": "lowest",
+      "feature": "bow__mayo",
+      "coefficient": -0.34101951576304174
+    },
+    {
+      "article_id": "true_negative_article",
+      "direction": "lowest",
+      "feature": "bow__de",
+      "coefficient": -0.28864929235410963
+    },
+    {
+      "article_id": "true_negative_article",
+      "direction": "lowest",
+      "feature": "bow__umaga",
+      "coefficient": -0.2762305333633591
+    },
+    {
+      "article_id": "true_negative_article",
+      "direction": "lowest",
+      "feature": "bow__cbn",
+      "coefficient": -0.27224870796856465
+    },
+    {
+      "article_id": "true_negative_article",
+      "direction": "highest",
+      "feature": "bow__patay",
+      "coefficient": 0.42937496064107306
+    },
+    {
+      "article_id": "true_negative_article",
+      "direction": "highest",
+      "feature": "bow__anyos",
+      "coefficient": 0.5025005476684709
+    },
+    {
+      "article_id": "true_negative_article",
+      "direction": "highest",
+      "feature": "bow__kaniyang",
+      "coefficient": 0.9324410209046597
+    },
+    {
+      "article_id": "true_negative_article",
+      "direction": "highest",
+      "feature": "bow__news",
+      "coefficient": 1.1138354488585758
+    }
+  ]
+}

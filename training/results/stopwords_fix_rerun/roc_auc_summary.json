@@ -1,0 +1,29 @@
+{
+  "raw_csv": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\stopwords_fix_rerun\\roc_auc_30run_raw.csv",
+  "summary": [
+    {
+      "classifier": "LR",
+      "classifier_name": "Logistic Regression",
+      "mean_auc": 0.975503335854204,
+      "sd_auc": 0.004597366810622132
+    },
+    {
+      "classifier": "MNB",
+      "classifier_name": "Multinomial Naive Bayes",
+      "mean_auc": 0.9218767504730558,
+      "sd_auc": 0.00980027525630574
+    },
+    {
+      "classifier": "RF",
+      "classifier_name": "Random Forest",
+      "mean_auc": 0.960274462021265,
+      "sd_auc": 0.005898443216801734
+    },
+    {
+      "classifier": "SVC",
+      "classifier_name": "Support Vector Classifier",
+      "mean_auc": 0.9735950592789676,
+      "sd_auc": 0.005171355091483727
+    }
+  ]
+}

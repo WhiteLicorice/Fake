@@ -1,0 +1,78 @@
+{
+  "descriptives": [
+    {
+      "dataset": "Fake News Filipino 2020",
+      "feature": "OOV count",
+      "mean_key": "mean_oov",
+      "mean": 17.60199625701809,
+      "sd": 13.536869941304241,
+      "n": 3206
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "feature": "OOV count",
+      "mean_key": "mean_oov",
+      "mean": 22.217092950717404,
+      "sd": 19.970828204927642,
+      "n": 3206
+    },
+    {
+      "dataset": "Fake News Filipino 2020",
+      "feature": "Readability index",
+      "mean_key": "mean_readability",
+      "mean": 20.514713542823806,
+      "sd": 12.286306978704587,
+      "n": 3206
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "feature": "Readability index",
+      "mean_key": "mean_readability",
+      "mean": 19.66452175147024,
+      "sd": 14.455996636240865,
+      "n": 3206
+    },
+    {
+      "dataset": "Fake News Filipino 2020",
+      "feature": "Stop word count",
+      "mean_key": "mean_stopwords",
+      "mean": 77.7963194011229,
+      "sd": 54.791979316040425,
+      "n": 3206
+    },
+    {
+      "dataset": "Fake News Filipino 2024",
+      "feature": "Stop word count",
+      "mean_key": "mean_stopwords",
+      "mean": 74.54772301933873,
+      "sd": 60.867617273614805,
+      "n": 3206
+    }
+  ],
+  "mann_whitney": [
+    {
+      "feature": "OOV count",
+      "U": 5814710.5,
+      "p": 7.708579055081286e-20,
+      "bonferroni_corrected_p": 2.312573716524386e-19,
+      "rank_biserial_r": 0.1314387714239793,
+      "significant_at_0.0167": true
+    },
+    {
+      "feature": "Readability index",
+      "U": 4745072.0,
+      "p": 1.0487351861710568e-07,
+      "bonferroni_corrected_p": 3.146205558513171e-07,
+      "rank_biserial_r": -0.07669376936335448,
+      "significant_at_0.0167": true
+    },
+    {
+      "feature": "Stop word count",
+      "U": 4759872.0,
+      "p": 3.079567634962658e-07,
+      "bonferroni_corrected_p": 9.238702904887973e-07,
+      "rank_biserial_r": -0.07381395379608335,
+      "significant_at_0.0167": true
+    }
+  ]
+}
