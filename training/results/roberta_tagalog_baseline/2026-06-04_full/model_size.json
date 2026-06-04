@@ -1,0 +1,6 @@
+{
+  "model": "jcblaise/roberta-tagalog-base",
+  "parameter_count": 109083650,
+  "model_size_mb": 418.16830921173096,
+  "representative_model_dir": "results\\roberta_tagalog_baseline\\2026-06-04_full\\representative_joint_model"
+}

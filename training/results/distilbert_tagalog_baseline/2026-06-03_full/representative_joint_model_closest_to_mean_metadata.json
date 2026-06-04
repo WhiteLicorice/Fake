@@ -1,0 +1,35 @@
+{
+  "dataset_key": "combined",
+  "dataset": "Combined",
+  "fold_number": 15,
+  "repeat_number": 3,
+  "split_number": 5,
+  "seed": 56,
+  "train_size": 4104,
+  "validation_size": 1025,
+  "accuracy": 0.9170731707317074,
+  "f1_macro": 0.9170681188431704,
+  "f1_fake": 0.9164208456243856,
+  "f1_real": 0.9177153920619556,
+  "roc_auc": 0.9736251979775828,
+  "elapsed_seconds": 152.76281129999552,
+  "distance_from_mean_accuracy": 0.00048701247246363266,
+  "joint_mean_accuracy": 0.9165861582592437,
+  "model_dir": "results\\distilbert_tagalog_baseline\\2026-06-03_full\\representative_joint_model_closest_to_mean",
+  "parameter_count": 66631682,
+  "rerun_elapsed_seconds": 150.87933669995982,
+  "rerun_accuracy": 0.9160975609756098,
+  "rerun_f1_macro": 0.916095564439368,
+  "rerun_roc_auc": 0.97369943957115,
+  "rerun_confusion_matrix": [
+    [
+      467,
+      45
+    ],
+    [
+      41,
+      472
+    ]
+  ],
+  "saved_at": "2026-06-04T23:18:15"
+}

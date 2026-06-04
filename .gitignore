@@ -1,3 +1,7 @@
+# Tensors
+*.safetensors
+*.bin
+
 # Logs
 logs
 *.log

@@ -1,0 +1,23 @@
+{
+  "dataset_key": "combined",
+  "dataset": "Combined",
+  "fold_number": 10,
+  "repeat_number": 2,
+  "split_number": 5,
+  "seed": 51,
+  "train_size": 4104,
+  "validation_size": 1025,
+  "accuracy": 0.9521951219512196,
+  "f1_macro": 0.9521905713809762,
+  "f1_fake": 0.9526570048309178,
+  "f1_real": 0.9517241379310344,
+  "roc_auc": 0.9938798276072124,
+  "elapsed_seconds": 290.9667185000144,
+  "distance_from_mean_accuracy": 0.00015781549628401947,
+  "joint_mean_accuracy": 0.9520373064549356,
+  "representative_model_dir": "results\\roberta_tagalog_baseline\\2026-06-04_full\\representative_joint_model",
+  "representative_rerun_accuracy": 0.9521951219512195,
+  "representative_rerun_f1_macro": 0.9521905713809762,
+  "representative_rerun_roc_auc": 0.9938817312378168,
+  "representative_rerun_batch_size": 16
+}
