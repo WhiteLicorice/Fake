@@ -1,11 +1,11 @@
 {
   "status": "complete",
-  "command_used": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\venv\\Scripts\\python.exe training\\results\\appendix_roc_auc_true_30fold\\run_true_30fold_roc_auc.py --models all --resume",
+  "command_used": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\venv\\Scripts\\python.exe D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\appendix_roc_auc_true_30fold\\run_true_30fold_roc_auc.py --models LR_deploy --resume --run-dir D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\appendix_roc_auc_true_30fold\\runs\\2026-06-05_08-51-21_unified_joint_30fold",
   "script_path": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\appendix_roc_auc_true_30fold\\run_true_30fold_roc_auc.py",
   "copied_script_path": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\appendix_roc_auc_true_30fold\\runs\\2026-06-05_08-51-21_unified_joint_30fold\\run_true_30fold_roc_auc.py",
-  "copied_script_sha256": "43667e888b442326898c83f91fe5afc959ae74e332e27cc145b6862caf64a482",
-  "git_commit_sha": "ce3090038e081869efc770f0af04177de70c0363",
-  "git_status_summary": "?? training/results/appendix_roc_auc_true_30fold/",
+  "copied_script_sha256": "23b611645f0ef7ecde39ecdd41bcd51cf767ea9b459030b766fb688d738d004b",
+  "git_commit_sha": "5d1cf6cc2c037fe2a7bc7cb10bd0d28f67e2bbba",
+  "git_status_summary": "M training/results/appendix_roc_auc_true_30fold/run_true_30fold_roc_auc.py\n M training/results/appendix_roc_auc_true_30fold/runs/2026-06-05_08-51-21_unified_joint_30fold/fold_metrics.csv\n M training/results/appendix_roc_auc_true_30fold/runs/2026-06-05_08-51-21_unified_joint_30fold/run_manifest.json\n M training/results/appendix_roc_auc_true_30fold/runs/2026-06-05_08-51-21_unified_joint_30fold/run_true_30fold_roc_auc.py\n?? training/results/appendix_roc_auc_true_30fold/runs/2026-06-05_08-51-21_unified_joint_30fold/predictions/LR_deploy/\n?? training/results/appendix_roc_auc_true_30fold/runs/2026-06-05_08-51-21_unified_joint_30fold/roc_raw/LR_deploy/",
   "python_executable": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\venv\\Scripts\\python.exe",
   "python_version": "3.11.7 (tags/v3.11.7:fa7a6f2, Dec  4 2023, 19:24:49) [MSC v.1937 64 bit (AMD64)]",
   "platform": "Windows-10-10.0.26200-SP0",
@@ -93,6 +93,7 @@
       "MNB",
       "RF",
       "LR",
+      "LR_deploy",
       "SVC"
     ],
     "transformers": {
@@ -100,13 +101,22 @@
       "RoBERTa": "jcblaise/roberta-tagalog-base"
     },
     "requested": [
-      "MNB",
-      "RF",
-      "LR",
-      "SVC",
-      "DistilBERT",
-      "RoBERTa"
+      "LR_deploy"
     ]
+  },
+  "feature_sets": {
+    "LR_deploy": {
+      "feature_set": "deployment",
+      "features": [
+        "vectorizers",
+        "read",
+        "oov",
+        "sw",
+        "trad",
+        "syll"
+      ],
+      "include_lex_morph": false
+    }
   },
   "seeds": {
     "base_seed": 42,
@@ -140,21 +150,32 @@
         "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Lupac\\MorphFeatures.csv"
       ]
     },
+    "deployment_feature_paths": {
+      "Cruz": [
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Cruz\\TradFeatures.csv",
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Cruz\\SyllFeatures.csv",
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Cruz\\OovFeatures.csv",
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Cruz\\SwFeatures.csv",
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Cruz\\ReadFeatures.csv"
+      ],
+      "Lupac": [
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Lupac\\TradFeatures.csv",
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Lupac\\SyllFeatures.csv",
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Lupac\\OovFeatures.csv",
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Lupac\\SwFeatures.csv",
+        "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\root\\datasets\\Lupac\\ReadFeatures.csv"
+      ]
+    },
     "tuned_best_params": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\stopwords_fix_rerun\\tuned_best_params.json"
   },
-  "start_timestamp": "2026-06-05T08:51:21",
-  "end_timestamp": "2026-06-05T15:56:02",
-  "total_runtime_seconds": 25481.0,
+  "start_timestamp": "2026-06-05T17:07:01",
+  "end_timestamp": "2026-06-05T18:22:39",
+  "total_runtime_seconds": 4538.006003,
   "run_dir": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\appendix_roc_auc_true_30fold\\runs\\2026-06-05_08-51-21_unified_joint_30fold",
   "log_path": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\appendix_roc_auc_true_30fold\\runs\\2026-06-05_08-51-21_unified_joint_30fold\\run.log",
   "config_signature": {
     "models": [
-      "MNB",
-      "RF",
-      "LR",
-      "SVC",
-      "DistilBERT",
-      "RoBERTa"
+      "LR_deploy"
     ],
     "seed": 42,
     "folds": 5,
@@ -245,6 +266,36 @@
     "predictions/LR/repeat_6_fold_3_predictions.csv.gz",
     "predictions/LR/repeat_6_fold_4_predictions.csv.gz",
     "predictions/LR/repeat_6_fold_5_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_1_fold_1_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_1_fold_2_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_1_fold_3_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_1_fold_4_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_1_fold_5_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_2_fold_1_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_2_fold_2_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_2_fold_3_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_2_fold_4_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_2_fold_5_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_3_fold_1_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_3_fold_2_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_3_fold_3_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_3_fold_4_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_3_fold_5_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_4_fold_1_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_4_fold_2_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_4_fold_3_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_4_fold_4_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_4_fold_5_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_5_fold_1_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_5_fold_2_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_5_fold_3_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_5_fold_4_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_5_fold_5_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_6_fold_1_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_6_fold_2_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_6_fold_3_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_6_fold_4_predictions.csv.gz",
+    "predictions/LR_deploy/repeat_6_fold_5_predictions.csv.gz",
     "predictions/MNB/repeat_1_fold_1_predictions.csv.gz",
     "predictions/MNB/repeat_1_fold_2_predictions.csv.gz",
     "predictions/MNB/repeat_1_fold_3_predictions.csv.gz",
@@ -429,6 +480,36 @@
     "roc_raw/LR/repeat_6_fold_3_roc.csv",
     "roc_raw/LR/repeat_6_fold_4_roc.csv",
     "roc_raw/LR/repeat_6_fold_5_roc.csv",
+    "roc_raw/LR_deploy/repeat_1_fold_1_roc.csv",
+    "roc_raw/LR_deploy/repeat_1_fold_2_roc.csv",
+    "roc_raw/LR_deploy/repeat_1_fold_3_roc.csv",
+    "roc_raw/LR_deploy/repeat_1_fold_4_roc.csv",
+    "roc_raw/LR_deploy/repeat_1_fold_5_roc.csv",
+    "roc_raw/LR_deploy/repeat_2_fold_1_roc.csv",
+    "roc_raw/LR_deploy/repeat_2_fold_2_roc.csv",
+    "roc_raw/LR_deploy/repeat_2_fold_3_roc.csv",
+    "roc_raw/LR_deploy/repeat_2_fold_4_roc.csv",
+    "roc_raw/LR_deploy/repeat_2_fold_5_roc.csv",
+    "roc_raw/LR_deploy/repeat_3_fold_1_roc.csv",
+    "roc_raw/LR_deploy/repeat_3_fold_2_roc.csv",
+    "roc_raw/LR_deploy/repeat_3_fold_3_roc.csv",
+    "roc_raw/LR_deploy/repeat_3_fold_4_roc.csv",
+    "roc_raw/LR_deploy/repeat_3_fold_5_roc.csv",
+    "roc_raw/LR_deploy/repeat_4_fold_1_roc.csv",
+    "roc_raw/LR_deploy/repeat_4_fold_2_roc.csv",
+    "roc_raw/LR_deploy/repeat_4_fold_3_roc.csv",
+    "roc_raw/LR_deploy/repeat_4_fold_4_roc.csv",
+    "roc_raw/LR_deploy/repeat_4_fold_5_roc.csv",
+    "roc_raw/LR_deploy/repeat_5_fold_1_roc.csv",
+    "roc_raw/LR_deploy/repeat_5_fold_2_roc.csv",
+    "roc_raw/LR_deploy/repeat_5_fold_3_roc.csv",
+    "roc_raw/LR_deploy/repeat_5_fold_4_roc.csv",
+    "roc_raw/LR_deploy/repeat_5_fold_5_roc.csv",
+    "roc_raw/LR_deploy/repeat_6_fold_1_roc.csv",
+    "roc_raw/LR_deploy/repeat_6_fold_2_roc.csv",
+    "roc_raw/LR_deploy/repeat_6_fold_3_roc.csv",
+    "roc_raw/LR_deploy/repeat_6_fold_4_roc.csv",
+    "roc_raw/LR_deploy/repeat_6_fold_5_roc.csv",
     "roc_raw/MNB/repeat_1_fold_1_roc.csv",
     "roc_raw/MNB/repeat_1_fold_2_roc.csv",
     "roc_raw/MNB/repeat_1_fold_3_roc.csv",
@@ -555,11 +636,15 @@
     "run_manifest.json",
     "run_true_30fold_roc_auc.py"
   ],
-  "aggregate_refresh": {
-    "command_used": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\venv\\Scripts\\python.exe training\\results\\appendix_roc_auc_true_30fold\\run_true_30fold_roc_auc.py --models all --aggregate-only --run-dir D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\appendix_roc_auc_true_30fold\\runs\\2026-06-05_08-51-21_unified_joint_30fold",
-    "start_timestamp": "2026-06-05T16:15:44",
-    "end_timestamp": "2026-06-05T16:15:50",
-    "total_runtime_seconds": 6.598672,
-    "purpose": "Regenerated summaries, figures, report wording, copied script, and output file list from saved prediction files."
-  }
+  "summary_models": [
+    "MNB",
+    "RF",
+    "LR",
+    "LR_deploy",
+    "SVC",
+    "DistilBERT",
+    "RoBERTa"
+  ],
+  "fold_metric_rows": 210,
+  "model_auc_summary_rows": 7
 }

@@ -65,7 +65,9 @@ from sklearn.metrics import accuracy_score, f1_score, roc_auc_score, roc_curve
 from sklearn.model_selection import RepeatedStratifiedKFold, train_test_split
 
 from rerun_common import (
+    DEPLOYMENT_FEATURE_NAMES,
     FEATURE_FILES,
+    FULL_FEATURE_NAMES,
     make_pipeline,
     positive_scores,
     tuned_classifiers,
@@ -78,20 +80,37 @@ N_SPLITS = 5
 N_REPEATS = 6
 MEAN_FPR = np.linspace(0.0, 1.0, 200)
 
-MODEL_ORDER = ["MNB", "RF", "LR", "SVC", "DistilBERT", "RoBERTa"]
-CLASSICAL_MODELS = ["MNB", "RF", "LR", "SVC"]
+MODEL_ORDER = ["MNB", "RF", "LR", "LR_deploy", "SVC", "DistilBERT", "RoBERTa"]
+CLASSICAL_MODELS = ["MNB", "RF", "LR", "LR_deploy", "SVC"]
 TRANSFORMER_MODELS = ["DistilBERT", "RoBERTa"]
 TRANSFORMER_MODEL_NAMES = {
     "DistilBERT": "jcblaise/distilbert-tagalog-base-cased",
     "RoBERTa": "jcblaise/roberta-tagalog-base",
 }
+MODEL_DISPLAY_NAMES = {
+    "LR_deploy": "LR-deploy",
+}
 MODEL_COLORS = {
     "LR": "#0173B2",
+    "LR_deploy": "#56B4E9",
     "MNB": "#DE8F05",
     "RF": "#029E73",
     "SVC": "#D55E00",
     "DistilBERT": "#CC78BC",
     "RoBERTa": "#CA9161",
+}
+MODEL_LINESTYLES = {
+    "LR_deploy": ":",
+}
+MODEL_CLASSIFIER_KEYS = {
+    "LR_deploy": "LR",
+}
+MODEL_INCLUDE_LEX_MORPH = {
+    "LR_deploy": False,
+}
+MODEL_FEATURE_SETS = {
+    "full": FULL_FEATURE_NAMES,
+    "deployment": DEPLOYMENT_FEATURE_NAMES,
 }
 PM = "+/-"
 TITLE_DASH = "-"
@@ -141,6 +160,17 @@ FOLD_METRIC_COLUMNS = [
     "roc_path",
 ]
 
+FOLD_SPLIT_COLUMNS = [
+    "split_number",
+    "repeat",
+    "fold",
+    "role",
+    "combined_row_number",
+    "train_partition_position",
+    "combined_row_id",
+    "y_true",
+]
+
 
 class Tee:
     """Write console output to terminal and run.log."""
@@ -150,13 +180,19 @@ class Tee:
 
     def write(self, data: str) -> int:
         for stream in self.streams:
-            stream.write(data)
-            stream.flush()
+            try:
+                stream.write(data)
+                stream.flush()
+            except OSError:
+                continue
         return len(data)
 
     def flush(self) -> None:
         for stream in self.streams:
-            stream.flush()
+            try:
+                stream.flush()
+            except OSError:
+                continue
 
     def isatty(self) -> bool:
         return any(getattr(stream, "isatty", lambda: False)() for stream in self.streams)
@@ -261,6 +297,37 @@ def selected_models(raw_models: Iterable[str]) -> list[str]:
         return MODEL_ORDER.copy()
     requested = set(models)
     return [model for model in MODEL_ORDER if model in requested]
+
+
+def model_display_name(model: str) -> str:
+    return MODEL_DISPLAY_NAMES.get(model, model)
+
+
+def model_classifier_key(model: str) -> str:
+    return MODEL_CLASSIFIER_KEYS.get(model, model)
+
+
+def include_lex_morph_for_model(model: str) -> bool:
+    return MODEL_INCLUDE_LEX_MORPH.get(model, True)
+
+
+def model_feature_set_name(model: str) -> str:
+    if model in TRANSFORMER_MODELS:
+        return "raw_text"
+    return "full" if include_lex_morph_for_model(model) else "deployment"
+
+
+def model_feature_names(model: str) -> list[str]:
+    feature_set = model_feature_set_name(model)
+    if feature_set == "raw_text":
+        return ["raw_text"]
+    return list(MODEL_FEATURE_SETS[feature_set])
+
+
+def model_linestyle(model: str) -> str:
+    if model in MODEL_LINESTYLES:
+        return MODEL_LINESTYLES[model]
+    return "--" if model in TRANSFORMER_MODELS else "-"
 
 
 def model_config_signature(args: argparse.Namespace, models: list[str]) -> dict[str, object]:
@@ -380,12 +447,17 @@ def torch_environment() -> dict[str, object]:
 
 def data_source_paths() -> dict[str, object]:
     feature_paths = {}
+    deployment_feature_paths = {}
     for dataset in ["Cruz", "Lupac"]:
         dataset_dir = TRAINING_DIR / "root" / "datasets" / dataset
         feature_paths[dataset] = [str(dataset_dir / filename) for filename in FEATURE_FILES]
+        deployment_feature_paths[dataset] = [
+            str(dataset_dir / filename) for filename in FEATURE_FILES[:5]
+        ]
     return {
         "article_paths": {key: str(path) for key, path in ARTICLE_PATHS.items()},
         "feature_paths": feature_paths,
+        "deployment_feature_paths": deployment_feature_paths,
         "tuned_best_params": str(
             TRAINING_DIR / "results" / "stopwords_fix_rerun" / "tuned_best_params.json"
         ),
@@ -442,7 +514,7 @@ def initialize_manifest(
 ) -> dict:
     prior_manifest = None
     prior_manifest_path = run_dir / "run_manifest.json"
-    if args.aggregate_only and prior_manifest_path.exists():
+    if prior_manifest_path.exists():
         try:
             prior_manifest = read_json(prior_manifest_path)
         except json.JSONDecodeError:
@@ -468,6 +540,14 @@ def initialize_manifest(
             "transformers": TRANSFORMER_MODEL_NAMES,
             "requested": models,
         },
+        "feature_sets": {
+            model: {
+                "feature_set": model_feature_set_name(model),
+                "features": model_feature_names(model),
+                "include_lex_morph": include_lex_morph_for_model(model),
+            }
+            for model in models
+        },
         "seeds": {
             "base_seed": args.seed,
             "fold_seed_rule": "base_seed + split_number - 1",
@@ -489,6 +569,17 @@ def initialize_manifest(
         training_provenance = prior_manifest.get("training_run_provenance")
         if isinstance(training_provenance, dict):
             manifest["training_run_provenance"] = training_provenance
+        else:
+            manifest["previous_run_provenance"] = {
+                key: prior_manifest.get(key)
+                for key in [
+                    "command_used",
+                    "start_timestamp",
+                    "end_timestamp",
+                    "total_runtime_seconds",
+                    "status",
+                ]
+            }
     write_manifest(run_dir, manifest)
     return manifest
 
@@ -588,16 +679,11 @@ def make_fold_specs(train_frame: pd.DataFrame, args: argparse.Namespace) -> list
     return specs
 
 
-def save_fold_splits(
-    run_dir: Path,
+def build_fold_splits_frame(
     train_frame: pd.DataFrame,
     holdout_frame: pd.DataFrame,
     specs: list[FoldSpec],
-) -> Path:
-    path = run_dir / "fold_splits.csv"
-    if path.exists():
-        return path
-
+) -> pd.DataFrame:
     rows: list[dict[str, object]] = []
     for role, frame in [("outer_train", train_frame), ("outer_holdout", holdout_frame)]:
         for _, row in frame.iterrows():
@@ -637,8 +723,53 @@ def save_fold_splits(
                         "y_true": int(row["label"]),
                     }
                 )
+    return pd.DataFrame(rows, columns=FOLD_SPLIT_COLUMNS)
 
-    pd.DataFrame(rows).to_csv(path, index=False)
+
+def normalized_fold_splits(frame: pd.DataFrame) -> pd.DataFrame:
+    normalized = frame.copy()
+    for column in FOLD_SPLIT_COLUMNS:
+        if column not in normalized.columns:
+            raise ValueError(f"fold_splits.csv missing required column: {column}")
+    normalized = normalized[FOLD_SPLIT_COLUMNS].copy()
+    int_columns = [
+        "split_number",
+        "repeat",
+        "fold",
+        "combined_row_number",
+        "y_true",
+    ]
+    for column in int_columns:
+        normalized[column] = pd.to_numeric(normalized[column], errors="raise").astype(int)
+    normalized["train_partition_position"] = (
+        pd.to_numeric(normalized["train_partition_position"], errors="coerce")
+        .fillna(-1)
+        .astype(int)
+    )
+    normalized["role"] = normalized["role"].astype(str)
+    normalized["combined_row_id"] = normalized["combined_row_id"].astype(str)
+    return normalized.sort_values(FOLD_SPLIT_COLUMNS).reset_index(drop=True)
+
+
+def save_fold_splits(
+    run_dir: Path,
+    train_frame: pd.DataFrame,
+    holdout_frame: pd.DataFrame,
+    specs: list[FoldSpec],
+) -> Path:
+    path = run_dir / "fold_splits.csv"
+    generated = build_fold_splits_frame(train_frame, holdout_frame, specs)
+    if path.exists():
+        existing = pd.read_csv(path)
+        expected = normalized_fold_splits(generated)
+        observed = normalized_fold_splits(existing)
+        if not expected.equals(observed):
+            raise ValueError(
+                f"Existing fold_splits.csv does not match regenerated unified splits: {path}"
+            )
+        return path
+
+    generated.to_csv(path, index=False)
     return path
 
 
@@ -927,7 +1058,7 @@ def run_classical_fold(
 
     pipeline = make_pipeline(
         classifier_for_fold(classifier, spec.seed),
-        include_lex_morph=True,
+        include_lex_morph=include_lex_morph_for_model(model),
     )
     started = time.perf_counter()
     pipeline.fit(X_train, y_train)
@@ -1261,7 +1392,7 @@ def run_model(
     completed = 0
 
     if model in CLASSICAL_MODELS:
-        classifier = classical_classifiers[model]
+        classifier = classical_classifiers[model_classifier_key(model)]
         for spec in specs:
             if not args.force and fold_complete(run_dir, metrics_path, model, spec):
                 completed += 1
@@ -1530,8 +1661,8 @@ def plot_roc_curves(
             continue
         mean_auc, sd_auc = auc_lookup[model]
         color = MODEL_COLORS[model]
-        linestyle = "--" if model in TRANSFORMER_MODELS else "-"
-        label = f"{model} (AUC = {mean_auc:.3f} {PM} {sd_auc:.3f})"
+        linestyle = model_linestyle(model)
+        label = f"{model_display_name(model)} (AUC = {mean_auc:.3f} {PM} {sd_auc:.3f})"
         ax.fill_between(
             rows["mean_fpr"].to_numpy(dtype=float),
             rows["lower_tpr"].to_numpy(dtype=float),
@@ -1605,6 +1736,10 @@ def write_report(
         "- Inner evaluation: `RepeatedStratifiedKFold(n_splits=5, n_repeats=6, random_state=42)`."
     )
     lines.append("- Positive ROC score target: class `1`.")
+    lines.append(
+        "- `LR_deploy` uses the deployment feature set "
+        "(TF-IDF, BOW, READ, OOV, SW, TRAD, SYLL) and excludes LEX/MORPH."
+    )
     lines.append("- Figures are regenerated from saved fold prediction files.")
     lines.append("")
     lines.append("## AUC Summary")
@@ -1615,7 +1750,7 @@ def write_report(
     lines.append("|---|---:|---:|---:|---:|---:|---:|")
     for _, row in auc_summary.iterrows():
         lines.append(
-            f"| {row['model']} | {int(row['n_folds'])} | "
+            f"| {model_display_name(str(row['model']))} | {int(row['n_folds'])} | "
             f"{float(row['mean_auc']):.6f} | {float(row['sd_auc']):.6f} | "
             f"{float(row['ci95_low']):.6f}-{float(row['ci95_high']):.6f} | "
             f"{float(row['mean_accuracy']):.6f} | {float(row['mean_f1_macro']):.6f} |"
@@ -1650,20 +1785,20 @@ def write_report(
     lines.append(
         f"Figure. ROC Curves {TITLE_DASH} Classical ML Classifiers "
         "(Joint Corpus, 30-Run CV). Lines show the mean ROC curve across unified "
-        "CV folds; shaded bands show +/- 1 SD."
+        "CV folds; shaded bands show +/- 1 SD. LR-deploy is dotted."
     )
     lines.append("")
     lines.append(
         f"Figure. ROC Curves {TITLE_DASH} All Models (Joint Corpus, 30-Run CV). "
-        "Classical ML models are shown with solid lines and transformer models "
-        "with dashed lines. Legend entries report mean ROC-AUC +/- SD from the "
-        "saved fold-level predictions."
+        "Classical ML models are shown with solid lines, LR-deploy with a dotted "
+        "line, and transformer models with dashed lines. Legend entries report "
+        "mean ROC-AUC +/- SD from the saved fold-level predictions."
     )
     lines.append("")
     lines.append("## Completion")
     lines.append("")
     expected_full = len(MODEL_ORDER) * N_SPLITS * N_REPEATS
-    lines.append(f"- Requested models: {', '.join(models)}")
+    lines.append(f"- Requested models: {', '.join(model_display_name(model) for model in models)}")
     lines.append(f"- Saved fold metric rows: {len(metrics)}")
     lines.append(f"- Full all-model target rows: {expected_full}")
     lines.append("")
@@ -1677,9 +1812,12 @@ def summarize_and_plot(run_dir: Path, models: list[str]) -> tuple[pd.DataFrame, 
     auc_summary.to_csv(run_dir / "model_auc_summary.csv", index=False)
     roc_summary = make_roc_tpr_summary(run_dir, models)
 
-    present_classical = [
-        model for model in ["MNB", "RF", "LR", "SVC"] if model in set(auc_summary["model"])
-    ]
+    present_classical = (
+        auc_summary[auc_summary["model"].isin(CLASSICAL_MODELS)]
+        .sort_values("mean_auc", ascending=False)["model"]
+        .astype(str)
+        .tolist()
+    )
     if present_classical:
         plot_roc_curves(
             run_dir=run_dir,
@@ -1702,6 +1840,12 @@ def summarize_and_plot(run_dir: Path, models: list[str]) -> tuple[pd.DataFrame, 
         )
     write_report(run_dir, models, metrics, auc_summary)
     return metrics, auc_summary
+
+
+def models_with_saved_predictions(run_dir: Path, requested_models: list[str]) -> list[str]:
+    present = [model for model in MODEL_ORDER if iter_prediction_files(run_dir, model)]
+    merged = [model for model in MODEL_ORDER if model in set(present) | set(requested_models)]
+    return merged
 
 
 def dry_run(args: argparse.Namespace, models: list[str], run_dir: Path) -> None:
@@ -1794,11 +1938,15 @@ def main() -> None:
                 )
                 write_manifest(run_dir, manifest)
 
-        metrics, auc_summary = summarize_and_plot(run_dir, models)
+        summary_models = models_with_saved_predictions(run_dir, models)
+        metrics, auc_summary = summarize_and_plot(run_dir, summary_models)
         print("\nAUC summary")
         print(auc_summary.to_string(index=False))
         print(f"\nfold_metric_rows={len(metrics)}")
 
+        manifest["summary_models"] = summary_models
+        manifest["fold_metric_rows"] = len(metrics)
+        manifest["model_auc_summary_rows"] = len(auc_summary)
         manifest["status"] = "complete"
         manifest["end_timestamp"] = datetime.now().isoformat(timespec="seconds")
         manifest["total_runtime_seconds"] = (datetime.now() - start_time).total_seconds()
