@@ -1,0 +1,68 @@
+{
+  "mean_fpr_points": 200,
+  "classical_raw_csv": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\stopwords_fix_rerun\\roc_auc_30run_raw.csv",
+  "distilbert_run_dir": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\distilbert_tagalog_baseline\\2026-06-03_full",
+  "roberta_run_dir": "D:\\Creative Corner\\Projects\\Software\\Fake\\training\\results\\roberta_tagalog_baseline\\2026-06-04_full",
+  "curves": {
+    "MNB": {
+      "model": "MNB",
+      "auc_mean": 0.921876750473056,
+      "auc_sd": 0.009800275256305727,
+      "n_curves": 1,
+      "source": "representative fold; 30-fold scalar AUC stats from saved CSV",
+      "representative_auc": 0.9219415308912806,
+      "representative_fold": 5,
+      "representative_repeat": 4
+    },
+    "LR": {
+      "model": "LR",
+      "auc_mean": 0.9755033358542041,
+      "auc_sd": 0.004597366810622133,
+      "n_curves": 1,
+      "source": "representative fold; 30-fold scalar AUC stats from saved CSV",
+      "representative_auc": 0.9754697048004132,
+      "representative_fold": 3,
+      "representative_repeat": 3
+    },
+    "RF": {
+      "model": "RF",
+      "auc_mean": 0.9602744620212648,
+      "auc_sd": 0.0058984432168017525,
+      "n_curves": 1,
+      "source": "representative fold; 30-fold scalar AUC stats from saved CSV",
+      "representative_auc": 0.9605525155798752,
+      "representative_fold": 1,
+      "representative_repeat": 3
+    },
+    "SVC": {
+      "model": "SVC",
+      "auc_mean": 0.9735950592789678,
+      "auc_sd": 0.005171355091483727,
+      "n_curves": 1,
+      "source": "representative fold; 30-fold scalar AUC stats from saved CSV",
+      "representative_auc": 0.9738104287017332,
+      "representative_fold": 3,
+      "representative_repeat": 5
+    },
+    "DistilBERT": {
+      "model": "DistilBERT",
+      "auc_mean": 0.9738038183955304,
+      "auc_sd": 0.003926083809494374,
+      "n_curves": 1,
+      "source": "representative fold; 30-fold scalar AUC stats from metrics.csv",
+      "representative_auc": 0.97369943957115,
+      "representative_fold": 15,
+      "representative_repeat": 3
+    },
+    "RoBERTa": {
+      "model": "RoBERTa",
+      "auc_mean": 0.9901821294313256,
+      "auc_sd": 0.0028383120805878423,
+      "n_curves": 1,
+      "source": "representative fold; 30-fold scalar AUC stats from metrics.csv",
+      "representative_auc": 0.9938817312378168,
+      "representative_fold": 10,
+      "representative_repeat": 2
+    }
+  }
+}
