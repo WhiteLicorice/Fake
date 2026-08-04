@@ -1,64 +1,79 @@
-from fastapi import FastAPI
-from fastapi.responses import FileResponse
-from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel
-
-import string as string
+import logging
 from contextlib import asynccontextmanager
+from pathlib import Path
 from pickle import load as ml_load
+from typing import Literal
 
-#   Initialize objects that will live across the lifespan of the app
+from fastapi import FastAPI, HTTPException
+from fastapi.middleware.cors import CORSMiddleware
+from pydantic import BaseModel, Field
+
+
+LOGGER = logging.getLogger("fake_api")
+MODEL_ID = "LogisticRegression"
+VERSION = "1.0.0"
+MODEL_PATH = Path(__file__).resolve().parent / "root" / "models" / f"{MODEL_ID}.pkl"
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-	global ml_model
-	with open(f"root/models/{model_id}.pkl", "rb") as file:
-		ml_model = ml_load(file)
-	yield
+    """Load the deployment model once before the service accepts requests."""
+    with MODEL_PATH.open("rb") as model_file:
+        app.state.ml_model = ml_load(model_file)
+    LOGGER.info("Loaded model %s from %s", MODEL_ID, MODEL_PATH)
+    yield
+    app.state.ml_model = None
 
-# 	Declare FastAPI instance
-app = FastAPI(lifespan=lifespan)
-version = "0.0.0.0.0.0.0.1"
-model_id = "LogisticRegression" 
 
-#	Configure middleware to allow all requests from all sources
+app = FastAPI(title="FaKe API", version=VERSION, lifespan=lifespan)
+
+# The userscript can run on arbitrary article origins, so the API must accept
+# cross-origin requests. Credentials are not used or accepted.
 app.add_middleware(
-	CORSMiddleware,
-	allow_origins=['*'],
-	allow_credentials=True,
-	allow_methods=['*'],
-	allow_headers=['*'],
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "OPTIONS"],
+    allow_headers=["Content-Type"],
 )
 
-#	Define prototype for valid news articles -> news_body : string
+
 class News(BaseModel):
-	news_body: str
+    news_body: str = Field(min_length=20, max_length=1_000_000)
 
-@app.get('/')
-async def health_check():
-	return {'health': f'Running version {version} of Fake_API with model {model_id}'}
 
-#	Main endpoint for making requests to machine learning microservice
-@app.post("/check-news")
-async def check_news(news: News):
-	#	Log received news article in the console
-	print(news.news_body)
-	#	Await call to machine learning model
-	is_fake_news = await call_model(news.news_body)
-	#	Log returned bool -> True | False as string
-	print(is_fake_news)
-	#	Return json containing prediction of machine learning model
-	return {"status": is_fake_news}
+class PredictionResponse(BaseModel):
+    # `status` is retained for compatibility with the dashboard and userscript.
+    status: bool
+    label: Literal["Fake", "Real"]
+    model: str
+    version: str
 
-#	Function for making asynchronous calls to machine learning model microservice
-async def call_model(article):
-    #   Make predictions on the extracted features
-	prediction = await make_prediction([article])
-	print(prediction)
-	if prediction[0] == 1:
-		return False  # Real    
-	else:
-		return True  # Fake
 
-async def make_prediction(tokens):
-	prediction = ml_model.predict(tokens)
-	return prediction
+@app.get("/")
+@app.get("/health")
+def health_check():
+    return {
+        "health": "ready",
+        "model": MODEL_ID,
+        "version": VERSION,
+    }
+
+
+@app.post("/check-news", response_model=PredictionResponse)
+def check_news(news: News):
+    LOGGER.info("Classifying article with %d characters", len(news.news_body))
+
+    try:
+        prediction = app.state.ml_model.predict([news.news_body])
+    except Exception as error:
+        LOGGER.exception("Prediction failed")
+        raise HTTPException(status_code=500, detail="Prediction failed") from error
+
+    is_fake = bool(prediction[0] == 0)
+    return PredictionResponse(
+        status=is_fake,
+        label="Fake" if is_fake else "Real",
+        model=MODEL_ID,
+        version=VERSION,
+    )
